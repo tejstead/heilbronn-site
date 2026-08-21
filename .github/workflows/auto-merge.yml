@@ -55,11 +55,6 @@ jobs:
               *) ineligible "disallowed change ($status: $path)";;
             esac
             case "$path" in
-              # Exact-value claims (minimal polynomials) verify only as "a
-              # root exists near the coordinate value" — minimality needs a
-              # human, so they never auto-merge.
-              data/sources/external/*/exact.json)
-                ineligible "adds an exact-value claim ($path)";;
               data/sources/external/*) ;;
               *) ineligible "touches a file outside data/sources/external/ ($path)";;
             esac

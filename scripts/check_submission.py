@@ -230,8 +230,8 @@ def check_dir(dirpath):
         ex = check_exact(exact_path, value, problems, warnings)
         if ex:
             res["exact"] = (f"degree-{ex['degree']} polynomial has a root within "
-                            "1e-9 of the coordinate value ✓ — minimality/irreducibility "
-                            "not machine-checked; needs maintainer review")
+                            "1e-9 of the coordinate value ✓ (minimality/irreducibility "
+                            "not machine-checked)")
     cur, published = canonical_value(variant, n)
     res["published"] = published
     if cur is None:

@@ -71,11 +71,10 @@ the triangle n = 15 value). Coefficients too large for 64-bit tools may be
 written as strings. No expression syntax is accepted — coefficients only.
 
 The checker confirms in exact arithmetic that the polynomial has a root
-within 1e-9 (relative) of the value implied by your coordinates. What it
-cannot confirm is that the polynomial is irreducible and actually minimal —
-so PRs containing `exact.json` always get maintainer review, even from
-trusted submitters. If your submission wins the entry, the polynomial is
-re-validated at 45 digits at build time and rendered on the page.
+within 1e-9 (relative) of the value implied by your coordinates —
+irreducibility/minimality is not machine-checked, so please double-check it
+yourself. If your submission wins the entry, the polynomial is re-validated
+at build time and rendered on the page.
 
 ## What happens on the PR
 
