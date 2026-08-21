@@ -167,12 +167,12 @@ def provenance_lines(doc, derived):
         lines.append(f"Found by <strong>{c['found']['name']}</strong>"
                      + (f", {c['found']['date']}" if c["found"]["date"] else "") + ".")
     if c["proved"]:
-        line = (f"Proved optimal by <strong>{c['proved']['name']}</strong>"
-                + (f", {c['proved']['date']}" if c["proved"]["date"] else ""))
         proof = doc.get("proof")
+        head = "Proved optimal"
         if proof and proof.get("url"):
-            line += f' (<a href="{html.escape(proof["url"], quote=True)}">proof</a>)'
-        lines.append(line + ".")
+            head = f'<a href="{html.escape(proof["url"], quote=True)}">Proved optimal</a>'
+        lines.append(f"{head} by <strong>{c['proved']['name']}</strong>"
+                     + (f", {c['proved']['date']}" if c["proved"]["date"] else "") + ".")
     for note in doc.get("notes", []):
         lines.append(note)
     src = doc.get("coordinates_source")
@@ -389,16 +389,21 @@ def render_all(env, docs, derived_map, assets):
             derived = derived_map.get((v, n))
             val = doc["value"]
             dec = val.get("exact_decimal") or val.get("decimal")
+            # Rendered with |safe (for the proof link), so escape the names.
             credit_lines = []
             c = doc["credit"]
             if c["trivial"]:
                 credit_lines.append("Trivial.")
             if c["found"]:
-                credit_lines.append(f"Found by {c['found']['name']}"
-                                    + (f", {c['found']['date']}" if c["found"]["date"] else "") + ".")
+                credit_lines.append(f"Found by {html.escape(c['found']['name'])}"
+                                    + (f", {html.escape(c['found']['date'])}" if c["found"]["date"] else "") + ".")
             if c["proved"]:
-                credit_lines.append(f"Proved optimal by {c['proved']['name']}"
-                                    + (f", {c['proved']['date']}" if c["proved"]["date"] else "") + ".")
+                proof = doc.get("proof")
+                head = "Proved optimal"
+                if proof and proof.get("url"):
+                    head = f'<a href="{html.escape(proof["url"], quote=True)}">Proved optimal</a>'
+                credit_lines.append(f"{head} by {html.escape(c['proved']['name'])}"
+                                    + (f", {html.escape(c['proved']['date'])}" if c["proved"]["date"] else "") + ".")
             symline = None
             if derived:
                 sym = derived["symmetry"]
