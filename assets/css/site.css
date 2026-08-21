@@ -235,3 +235,8 @@ thead th { font-family: var(--sans); font-size: .78rem; text-transform: uppercas
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+/* Leaderboard */
+.lb-wrap { display: flex; gap: 2.5rem; flex-wrap: wrap; margin: 1rem 0 2rem; }
+.lb-wrap table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.lb-wrap span[title] { cursor: help; border-bottom: 1px dotted var(--line); }
