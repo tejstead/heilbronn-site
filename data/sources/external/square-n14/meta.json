@@ -1,0 +1,5 @@
+{
+ "ref": "github.com/rhyschappell/heilbronn-n14-exact",
+ "credit": "Rhys Chappell, August 2026",
+ "note": "exact algebraic realization of Beyleveld's configuration: all coordinates in Q(a) with 8a³−12a²−12a+1=0; re-verified here (26 exact ties at the minimum)"
+}

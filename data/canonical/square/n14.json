@@ -5,71 +5,79 @@
  "frame": "unit-square",
  "points": [
   [
-   "0.077620206075158",
+   "0.07762020607515831841127120676",
    "0"
   ],
   [
-   "0.922379793924848",
+   "0.9223797939248416815887287932",
    "1"
   ],
   [
-   "0.922379793924848",
+   "0.9223797939248416815887287932",
    "0"
   ],
   [
-   "0.077620206075158",
+   "0.07762020607515831841127120676",
    "1"
   ],
   [
    "0",
-   "0.186885917341429"
+   "0.1868859173414283540461624388"
   ],
   [
    "1",
-   "0.813114082658572"
+   "0.8131140826585716459538375612"
   ],
   [
    "1",
-   "0.186885917341428"
+   "0.1868859173414283540461624388"
   ],
   [
    "0",
-   "0.813114082658572"
+   "0.8131140826585716459538375612"
   ],
   [
-   "0.292332650904471",
-   "0.321344897737659"
+   "0.2923326509044785968820651658",
+   "0.3213448977376519417969324569"
   ],
   [
-   "0.707667349095523",
-   "0.678655102262354"
+   "0.7076673490955214031179348342",
+   "0.6786551022623480582030675431"
   ],
   [
-   "0.7076673490955",
-   "0.321344897737659"
+   "0.7076673490955214031179348342",
+   "0.3213448977376519417969324569"
   ],
   [
-   "0.292332650904478",
-   "0.678655102262348"
-  ],
-  [
-   "0.5",
-   "0.138277958099444"
+   "0.2923326509044785968820651658",
+   "0.6786551022623480582030675431"
   ],
   [
    "0.5",
-   "0.861722041900557"
+   "0.1382779580994433805497585232"
+  ],
+  [
+   "0.5",
+   "0.8617220419005566194502414768"
   ]
  ],
  "value": {
-  "decimal": "0.024303979620983627703534362",
-  "fraction": "12151989810491813851767181/500000000000000000000000000",
+  "decimal": "0.0243039796209924867482019577942",
+  "fraction": "121519898104962433741009788970838984274034928375563749/5000000000000000000000000000000000000000000000000000000",
   "published": "A = .02430+",
   "published_decimal": "0.02430",
   "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
-  "minimal_polynomial": null
+  "minimal_polynomial": "320*x**3 + 768*x**2 - 60*x + 1",
+  "exact_poly": {
+   "poly": "320*x**3 + 768*x**2 - 60*x + 1",
+   "near": 0.0243,
+   "which": "smallest positive root",
+   "note": "exact realization of Beyleveld's configuration by Rhys Chappell; coordinates algebraic of degree 3"
+  },
+  "exact_decimal": "0.0243039796209924867482019578100155839585389904",
+  "poly_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>320</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>768</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>60</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow></math>"
  },
  "status": "record",
  "page_relation": "OK",
@@ -83,29 +91,35 @@
  },
  "proof": null,
  "coordinates_source": {
-  "kind": "reconstructed",
-  "ref": "heilbronn-site reconstruct/reconstruct.py",
-  "note": "reconstructed by local optimization; matches published value 0.02430+",
-  "basis": "tightened-original"
+  "kind": "external",
+  "ref": "github.com/rhyschappell/heilbronn-n14-exact",
+  "note": "exact algebraic realization of Beyleveld's configuration: all coordinates in Q(a) with 8a³−12a²−12a+1=0; re-verified here (26 exact ties at the minimum)",
+  "basis": null
  },
- "coordinates_reconstructed": true,
+ "coordinates_reconstructed": false,
  "symmetry": {
   "label": "Vertically and horizontally symmetric"
  },
  "notes": [],
- "changelog": [],
+ "changelog": [
+  {
+   "date": "2026-08-21",
+   "text": "coordinates replaced by Rhys Chappell's exact realization of Beyleveld's configuration; value identified as the smallest positive root of 320A³ + 768A² − 60A + 1 = 0.024303979620992… (github.com/rhyschappell/heilbronn-n14-exact, re-verified here)"
+  }
+ ],
  "references": [
-  "repo-spiralulam"
+  "repo-spiralulam",
+  "chappell-2026-n14"
  ],
  "verify": {
   "n": 14,
   "triples_checked": 364,
-  "value": "0.024303979620983627703534362",
-  "value_fraction": "12151989810491813851767181/500000000000000000000000000",
+  "value": "0.0243039796209924867482019577942",
+  "value_fraction": "121519898104962433741009788970838984274034928375563749/5000000000000000000000000000000000000000000000000000000",
   "min_triple": [
-   5,
-   10,
-   12
+   4,
+   11,
+   13
   ],
   "num_min_ties": 26,
   "feasible": true,

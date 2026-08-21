@@ -210,5 +210,15 @@
     "note": "computed here from the Comellas–Yebra closed-form configuration (arXiv:2603.11107 appendix)"
    }
   }
+ },
+ "square/14": {
+  "value": {
+   "exact_poly": {
+    "poly": "320*x**3 + 768*x**2 - 60*x + 1",
+    "near": 0.0243,
+    "which": "smallest positive root",
+    "note": "exact realization of Beyleveld's configuration by Rhys Chappell; coordinates algebraic of degree 3"
+   }
+  }
  }
 }
