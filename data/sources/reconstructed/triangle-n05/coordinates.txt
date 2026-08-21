@@ -1,0 +1,11 @@
+# Heilbronn triangle n=5 — RECONSTRUCTED configuration
+# exact value of these literals: 0.171572875253807781839348609276
+# published entry: A = 3 - 2√2 = .171+ (Proved by Royce Peng in 1989.)
+# Reconstructed by numerical optimization seeded from the published
+# value and symmetry; matches both, but is not claimed to be the
+# original author's exact arrangement.
+0.000000000000000	0.292893217308394
+0.414213559362982	0.585786440637018
+0.000000000000000	0.707106782691606
+0.414213559362973	0.000000000000000
+0.999999999999996	0.000000000000000

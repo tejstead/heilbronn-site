@@ -1,0 +1,13 @@
+# Heilbronn triangle n=7 — RECONSTRUCTED configuration
+# exact value of these literals: 0.097222222222221777777777777778
+# published entry: A = 7/72 = .0972+ (Found by David Cantrell, July 2006.; Proved by Z. Zeng and L. Chen in 2019.)
+# Reconstructed by numerical optimization seeded from the published
+# value and symmetry; matches both, but is not claimed to be the
+# original author's exact arrangement.
+0.000000000000000	0.833333333333334
+0.333333333333333	0.333333333333333
+0.000000000000000	0.250000000000000
+0.250000000000000	0.750000000000000
+0.166666666666667	0.000000000000000
+0.750000000000000	0.000000000000000
+0.833333333333333	0.166666666666667

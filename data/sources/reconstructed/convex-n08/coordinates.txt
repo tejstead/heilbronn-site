@@ -1,0 +1,14 @@
+# Heilbronn convex n=8 — RECONSTRUCTED configuration
+# exact value of these literals: 0.0800001393294662954539520880303
+# published entry: A = .0800+ (Found by David Cantrell in June 2007.)
+# Reconstructed by numerical optimization seeded from the published
+# value and symmetry; matches both, but is not claimed to be the
+# original author's exact arrangement.
+-0.038585837162603	0.215792372809492
+0.766121952914210	0.127435089509379
+-0.754247370355547	0.681039272912030
+0.682804635747801	0.523250305555135
+0.168004594214716	-0.765655890404237
+-0.319565783292486	-0.973459272852005
+-0.511910701174843	0.958275791386876
+-0.639474592594152	-0.471632716879703

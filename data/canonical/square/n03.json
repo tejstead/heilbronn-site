@@ -1,0 +1,70 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 3,
+ "frame": "unit-square",
+ "points": [
+  [
+   "0.0",
+   "0.0"
+  ],
+  [
+   "1.0",
+   "0.0"
+  ],
+  [
+   "0.0",
+   "1.0"
+  ]
+ ],
+ "value": {
+  "decimal": "0.5",
+  "fraction": "1/2",
+  "published": "A = 1/2 = .5",
+  "published_decimal": "0.5",
+  "published_lower_bound": false,
+  "exact_text": "1/2",
+  "exact_sympy": "1/2",
+  "minimal_polynomial": null,
+  "exact_display": "1/2",
+  "exact_decimal": "0.500000000000000000000000000000000000000000000",
+  "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></math>"
+ },
+ "status": "trivial",
+ "page_relation": "OK",
+ "credit": {
+  "found": null,
+  "proved": null,
+  "trivial": true
+ },
+ "coordinates_source": {
+  "kind": "spiralulam",
+  "ref": "spiralulam/heilbronn config_n03.json",
+  "note": "trivial",
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "Symmetric about a diagonal"
+ },
+ "notes": [
+  "One of an infinite family of solutions."
+ ],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 3,
+  "triples_checked": 1,
+  "value": "0.5",
+  "value_fraction": "1/2",
+  "min_triple": [
+   0,
+   1,
+   2
+  ],
+  "num_min_ties": 1,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

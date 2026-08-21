@@ -1,0 +1,17 @@
+{
+ "a": {
+  "n": 10,
+  "triples_checked": 120,
+  "value": "0.0519930715229428518406971234639",
+  "value_fraction": "159450681020904006393033109541/3066767866378957927209394518755",
+  "min_triple": [
+   6,
+   8,
+   9
+  ],
+  "num_min_ties": 16,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": 8
+ }
+}

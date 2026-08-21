@@ -1,0 +1,49 @@
+# Runs on every PR that touches data/sources/external/: re-verifies the
+# submitted coordinates in exact arithmetic and writes a Markdown report.
+# This job runs the PR's own code with a read-only token and no secrets;
+# the report is posted as a PR comment by submission-comment.yml, which has
+# write permission but never checks out or executes PR code.
+name: submission-verify
+
+on:
+  pull_request:
+    paths:
+      - "data/sources/external/**"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify submissions (exact arithmetic, stdlib only)
+        run: |
+          python3 scripts/check_submission.py \
+            --base "origin/${{ github.base_ref }}" --out report.md \
+            || echo "CHECK_FAILED=1" >> "$GITHUB_ENV"
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Record PR number for the comment workflow
+        if: always()
+        run: echo "${{ github.event.pull_request.number }}" > pr_number.txt
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: submission-report
+          path: |
+            report.md
+            pr_number.txt
+
+      - name: Fail the check if any submission was invalid
+        if: env.CHECK_FAILED == '1'
+        run: exit 1

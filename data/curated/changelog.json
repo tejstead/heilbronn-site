@@ -1,0 +1,120 @@
+{
+ "triangle/13": [
+  {
+   "date": "≤2018",
+   "text": "0.0265013 — Peter Karpov (published at inversed.ru/Ascension)"
+  },
+  {
+   "date": "2026-07",
+   "text": "0.0265565 — Tej Stead, current record"
+  }
+ ],
+ "square/13": [
+  {
+   "date": "2011-08",
+   "text": "0.0270192722 — Peter Karpov (coordinates published 2018 at inversed.ru/Ascension)"
+  },
+  {
+   "date": "2026-08",
+   "text": "0.0270199167 — in-basin tightening of Karpov's coordinates (this site)"
+  }
+ ],
+ "square/15": [
+  {
+   "date": "2011-08",
+   "text": "0.0211056819 — Peter Karpov (coordinates published 2018 at inversed.ru/Ascension)"
+  },
+  {
+   "date": "2026-08",
+   "text": "0.0211061686 — in-basin tightening of Karpov's coordinates (this site)"
+  }
+ ],
+ "square/17": [
+  {
+   "date": "2026-07",
+   "text": "0.016481+ — Tej Stead (current page entry)"
+  },
+  {
+   "date": "2026-08-03",
+   "text": "0.0172616771 — cnemri via AlphaEvolve (verified here; awaiting page update)"
+  }
+ ],
+ "square/21": [
+  {
+   "date": "2026-07",
+   "text": "0.00987+ — Tej Stead"
+  },
+  {
+   "date": "2026-08",
+   "text": "0.010814+ — Tej Stead (current page entry)"
+  },
+  {
+   "date": "2026-08-03",
+   "text": "0.0110002677 — cnemri via AlphaEvolve (verified here; awaiting page update)"
+  }
+ ],
+ "square/22": [
+  {
+   "date": "2026-07",
+   "text": "0.00886+ → 0.009458+ — Tej Stead"
+  },
+  {
+   "date": "2026-08",
+   "text": "0.009569+ — Nathan Sudermann-Merx (current page entry)"
+  },
+  {
+   "date": "2026-08-03",
+   "text": "0.0104725344 — cnemri via AlphaEvolve (verified here; awaiting page update)"
+  }
+ ],
+ "square/18": [
+  {
+   "date": "2026-07-07",
+   "text": "0.014432+ — Tej Stead"
+  },
+  {
+   "date": "2026-07-22",
+   "text": "0.01447+ — William Shanley"
+  },
+  {
+   "date": "2026-08-18",
+   "text": "0.01459+ — Nathan Sudermann-Merx, current record (coordinates and figure not public)"
+  }
+ ],
+ "square/25": [
+  {
+   "date": "2026-07-23",
+   "text": "0.00669+ — Tej Stead (first listed)"
+  },
+  {
+   "date": "2026-07-31",
+   "text": "0.006808+ — Marc-Emmanuel Coupvent des Graviers"
+  },
+  {
+   "date": "2026-08-03",
+   "text": "0.007110+ — Tej Stead"
+  },
+  {
+   "date": "2026-08-18",
+   "text": "0.007243+ — Nathan Sudermann-Merx"
+  },
+  {
+   "date": "2026-08-20",
+   "text": "0.007327+ — Nathan Sudermann-Merx, current record (coordinates and figure not public)"
+  },
+  {
+   "date": "2026-08-20",
+   "text": "0.0074071846 — independent search, this site (new record candidate, awaiting submission)"
+  }
+ ],
+ "triangle/15": [
+  {
+   "date": "2007-06",
+   "text": "0.0210+ — David Cantrell (page entry)"
+  },
+  {
+   "date": "2026-08-21",
+   "text": "coordinates replaced by the exact tie-system solution; value identified as the unique real root of 5250987A⁵ + 1609650A⁴ + 161469A³ + 5438A² − 13A − 4 = 0.021090769460266… (this site)"
+  }
+ ]
+}

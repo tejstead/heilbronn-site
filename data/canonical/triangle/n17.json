@@ -1,0 +1,124 @@
+{
+ "schema_version": 1,
+ "variant": "triangle",
+ "n": 17,
+ "frame": "right",
+ "points": [
+  [
+   "0.500273269823762",
+   "0.23723992831946"
+  ],
+  [
+   "0.212401052094003",
+   "0.24110353412187"
+  ],
+  [
+   "0.473510204858277",
+   "0.44606258370032"
+  ],
+  [
+   "0.376365343264938",
+   "0.623634656735062"
+  ],
+  [
+   "0",
+   "0.142063265102524"
+  ],
+  [
+   "0.064263762807255",
+   "0.77763613698354"
+  ],
+  [
+   "0.167648436278733",
+   "0.776393856437565"
+  ],
+  [
+   "0.054758174820321",
+   "0.441907758483109"
+  ],
+  [
+   "0.653962045879782",
+   "0.346037954120218"
+  ],
+  [
+   "0.617824516943247",
+   "0"
+  ],
+  [
+   "0",
+   "0.610195398932714"
+  ],
+  [
+   "0.239450150764569",
+   "0.489720188620186"
+  ],
+  [
+   "0.802466163999386",
+   "0.141576128716911"
+  ],
+  [
+   "0.431954747404967",
+   "0.072221234913333"
+  ],
+  [
+   "0.089934062546126",
+   "0.050124390167165"
+  ],
+  [
+   "0.79291565137848",
+   "0.050124390167165"
+  ],
+  [
+   "0.307921992921757",
+   "0"
+  ]
+ ],
+ "value": {
+  "decimal": "0.01553367502784164290615081042",
+  "fraction": "776683751392082145307540521/50000000000000000000000000000",
+  "published": "A = .01553+",
+  "published_decimal": "0.01553",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "re-polished from the published record figure — the record holder's arrangement with re-derived coordinates",
+  "basis": "figure"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "Not symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 17,
+  "triples_checked": 680,
+  "value": "0.01553367502784164290615081042",
+  "value_fraction": "776683751392082145307540521/50000000000000000000000000000",
+  "min_triple": [
+   1,
+   5,
+   16
+  ],
+  "num_min_ties": 29,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

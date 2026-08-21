@@ -1,0 +1,92 @@
+{
+ "schema_version": 1,
+ "variant": "convex",
+ "n": 9,
+ "frame": "free",
+ "points": [
+  [
+   "-0.978143313864012",
+   "0.251963288405615"
+  ],
+  [
+   "1.154064770213658",
+   "-0.319911253495731"
+  ],
+  [
+   "0.316952722982959",
+   "0.599958673097161"
+  ],
+  [
+   "-0.555956326574031",
+   "-0.63212140271807"
+  ],
+  [
+   "-0.53241073469228",
+   "0.641322313326714"
+  ],
+  [
+   "0.51606855210519",
+   "-0.599686540838394"
+  ],
+  [
+   "-0.989916485794449",
+   "-0.384778904698857"
+  ],
+  [
+   "1.050437376849919",
+   "0.181897418207972"
+  ],
+  [
+   "0.171386768168136",
+   "0.074609941595343"
+  ]
+ ],
+ "value": {
+  "decimal": "0.0640647523079415295202316672673",
+  "fraction": "93077583085619256136431357545/1452867290241302746159233367836",
+  "published": "A = .0640+",
+  "published_decimal": "0.0640",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "reconstructed by local optimization; matches published value 0.0640+",
+  "basis": "value-and-symmetry"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "2-fold symmetry"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 9,
+  "triples_checked": 84,
+  "value": "0.0640647523079415295202316672673",
+  "value_fraction": "93077583085619256136431357545/1452867290241302746159233367836",
+  "min_triple": [
+   6,
+   7,
+   8
+  ],
+  "num_min_ties": 11,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": 8
+ }
+}

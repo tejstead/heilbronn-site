@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Heilbronn — {{ title }}{% endblock %}
+{% block description %}{{ intro_plain }}{% endblock %}
+{% block content %}
+<h1>{{ title }}</h1>
+{{ intro | safe }}
+
+<div class="entries">
+{% for e in entries %}
+<section class="entry" id="{{ e.n }}">
+  <div class="entry-n"><a href="{{ base }}/{{ slug }}/{{ e.n }}/">{{ e.n }}.</a></div>
+  <a class="entry-fig" href="{{ base }}/{{ slug }}/{{ e.n }}/" aria-label="n = {{ e.n }} details">
+    {% if e.fig %}{{ e.fig | safe }}{% else %}<span class="placeholder">?</span>{% endif %}
+  </a>
+  <div class="entry-text">
+    <p class="entry-value">A =
+      {%- if e.mathml %} {{ e.mathml | safe }} ={% elif e.exact_text %} <span class="exact-form">{{ e.exact_text }}</span> ={% endif %}
+      <span class="digits">{{ e.dec }}</span>
+    </p>
+    {% if e.poly_mathml %}<p class="entry-line entry-sym">Root of {{ e.poly_mathml | safe }}.</p>{% endif %}
+    {% for line in e.credit_lines %}<p class="entry-line">{{ line }}</p>{% endfor %}
+    {% if e.symline %}<p class="entry-line entry-sym">{{ e.symline | capitalize }}.</p>{% endif %}
+    {% if e.behind %}<p class="entry-line entry-note">Record coordinates unpublished; best public configuration shown.</p>{% endif %}
+    <p class="entry-links">
+      <a href="{{ base }}/{{ slug }}/{{ e.n }}/">details &amp; viewer</a> ·
+      <a href="{{ base }}/{{ slug }}/{{ e.n }}/points.txt">coordinates</a>
+      <span class="badge badge-{{ e.status }}">{{ e.status }}</span>{% if e.recon %} <span class="badge badge-recon">{{ e.recon }}</span>{% endif %}
+    </p>
+  </div>
+</section>
+{% endfor %}
+</div>
+{% endblock %}

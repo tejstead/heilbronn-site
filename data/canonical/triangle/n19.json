@@ -1,0 +1,132 @@
+{
+ "schema_version": 1,
+ "variant": "triangle",
+ "n": 19,
+ "frame": "right",
+ "points": [
+  [
+   "0.039264662103195",
+   "0.195337344045728"
+  ],
+  [
+   "0.549257972771029",
+   "0.450742027228971"
+  ],
+  [
+   "0.41407680883868",
+   "0.405995113990789"
+  ],
+  [
+   "0.727778610639135",
+   "0"
+  ],
+  [
+   "0",
+   "0.058474984928689"
+  ],
+  [
+   "0.023450080553093",
+   "0.948860402052836"
+  ],
+  [
+   "0",
+   "0.852449954296044"
+  ],
+  [
+   "0.05950222827745",
+   "0.597924626014505"
+  ],
+  [
+   "0.38531197265277",
+   "0.114161520732247"
+  ],
+  [
+   "0.126524858458152",
+   "0.873475141541703"
+  ],
+  [
+   "0.387908651795712",
+   "0.547436163634368"
+  ],
+  [
+   "0.196775865659514",
+   "0.438836482230312"
+  ],
+  [
+   "0.188089976192992",
+   "0.244600667600578"
+  ],
+  [
+   "0.605932880030854",
+   "0.230700105146013"
+  ],
+  [
+   "0.733937179292727",
+   "0.198428149455726"
+  ],
+  [
+   "0.574562364356166",
+   "0.104383291425328"
+  ],
+  [
+   "0.303690798918532",
+   "0.017990708005988"
+  ],
+  [
+   "0.95431977459994",
+   "0.017990708005988"
+  ],
+  [
+   "0.068749913838625",
+   "0"
+  ]
+ ],
+ "value": {
+  "decimal": "0.01170527592165227387837754723",
+  "fraction": "1170527592165227387837754723/100000000000000000000000000000",
+  "published": "A = .01170+",
+  "published_decimal": "0.01170",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "re-polished from the published record figure — the record holder's arrangement with re-derived coordinates",
+  "basis": "figure"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "Not symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 19,
+  "triples_checked": 969,
+  "value": "0.01170527592165227387837754723",
+  "value_fraction": "1170527592165227387837754723/100000000000000000000000000000",
+  "min_triple": [
+   9,
+   10,
+   13
+  ],
+  "num_min_ties": 30,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

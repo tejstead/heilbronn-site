@@ -1,0 +1,134 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 17,
+ "frame": "unit-square",
+ "points": [
+  [
+   "0.247326052713176",
+   "0"
+  ],
+  [
+   "0.702500586060952",
+   "0.718701044094748"
+  ],
+  [
+   "0.054260882610544",
+   "0.09639842999816"
+  ],
+  [
+   "0.099716380436438",
+   "1"
+  ],
+  [
+   "0.811011328926192",
+   "1"
+  ],
+  [
+   "1",
+   "0.297711220812091"
+  ],
+  [
+   "0.494475608776827",
+   "0.897030956001883"
+  ],
+  [
+   "0.734550637708523",
+   "0.354378617991127"
+  ],
+  [
+   "0",
+   "0.302308268721974"
+  ],
+  [
+   "0.639108649654037",
+   "0"
+  ],
+  [
+   "0",
+   "0.938555828365232"
+  ],
+  [
+   "0.942888833494965",
+   "0.088118651554753"
+  ],
+  [
+   "0.121992930397655",
+   "0.615202017386934"
+  ],
+  [
+   "0.364427016165909",
+   "0.573246976790536"
+  ],
+  [
+   "1",
+   "0.951039958295406"
+  ],
+  [
+   "0.361401837393109",
+   "0.263620756290299"
+  ],
+  [
+   "0.942888833494965",
+   "0.692612593067994"
+  ]
+ ],
+ "value": {
+  "decimal": "0.0172616770725236010888553888455",
+  "fraction": "34523354145047202177710777691/2000000000000000000000000000000",
+  "published": "A = .016481+",
+  "published_decimal": "0.016481",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "BEATS",
+ "credit": {
+  "found": {
+   "name": "Tej Stead",
+   "date": "July 2026"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "external",
+  "ref": "github.com/cnemri/heilbronn-alphaevolve",
+  "note": "independently re-verified in exact arithmetic by this site; submitted to Erich Friedman and open as PR #1 on TejSteadQC/heilbronn-configurations since 2026-08-03",
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "Not symmetric"
+ },
+ "notes": [],
+ "changelog": [
+  {
+   "date": "2026-07",
+   "text": "0.016481+ — Tej Stead (current page entry)"
+  },
+  {
+   "date": "2026-08-03",
+   "text": "0.0172616771 — cnemri via AlphaEvolve (verified here; awaiting page update)"
+  }
+ ],
+ "references": [],
+ "verify": {
+  "n": 17,
+  "triples_checked": 680,
+  "value": "0.0172616770725236010888553888455",
+  "value_fraction": "34523354145047202177710777691/2000000000000000000000000000000",
+  "min_triple": [
+   2,
+   15,
+   16
+  ],
+  "num_min_ties": 27,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ },
+ "page_note": "Verified improvement by <strong>cnemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the page's value <code>.016481+</code>. Submitted to Erich Friedman and open as PR #1 on the companion repository since 2026-08-03."
+}

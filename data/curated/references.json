@@ -1,0 +1,156 @@
+{
+ "bib": {
+  "goldberg-1972": {
+   "kind": "web",
+   "url": "https://doi.org/10.2307/2687869",
+   "title": "M. Goldberg, Maximizing the smallest triangle made by N points in a square, Mathematics Magazine 45(3) (1972) 135–144"
+  },
+  "yang-zhang-zeng-1992": {
+   "kind": "note",
+   "title": "L. Yang, J. Z. Zhang, Z. B. Zeng, A conjecture on the first several Heilbronn numbers and a computation, Chinese Ann. Math. Ser. A 13 (1992) 503–515"
+  },
+  "dress-yang-zeng-1995": {
+   "kind": "web",
+   "url": "https://doi.org/10.1007/978-1-4613-3557-3_13",
+   "title": "A. Dress, L. Yang, Z. Zeng, Heilbronn problem for six points in a planar convex body, in Minimax and Applications, Springer (1995) 173–190"
+  },
+  "comellas-yebra-2002": {
+   "kind": "doi",
+   "id": "10.37236/1623",
+   "url": "https://doi.org/10.37236/1623",
+   "title": "F. Comellas, J. L. A. Yebra, New lower bounds for Heilbronn numbers, Electron. J. Combin. 9 (2002) #R6"
+  },
+  "chen-zeng-2011": {
+   "kind": "doi",
+   "id": "10.1007/978-3-642-21046-4_11",
+   "url": "https://doi.org/10.1007/978-3-642-21046-4_11",
+   "title": "Z. Chen, Z. Zeng, On the Heilbronn optimal configuration of seven points in the square, Automated Deduction in Geometry, LNAI 6301, Springer (2011) 196–224"
+  },
+  "chen-zeng-zhou-2014": {
+   "kind": "doi",
+   "id": "10.1007/s10878-012-9585-5",
+   "url": "https://doi.org/10.1007/s10878-012-9585-5",
+   "title": "L. Chen, Z. Zeng, W. Zhou, An upper bound of Heilbronn number for eight points in triangles, J. Comb. Optim. 28(4) (2014) 854–874"
+  },
+  "chen-gpgpu-2016": {
+   "kind": "doi",
+   "id": "10.1007/s10898-016-0453-1",
+   "url": "https://doi.org/10.1007/s10898-016-0453-1",
+   "title": "L. Chen et al., Searching approximate global optimal Heilbronn configurations of nine points in the unit square via GPGPU computing, J. Global Optim. (2016)"
+  },
+  "dehbi-zeng-2022": {
+   "kind": "doi",
+   "id": "10.1007/s11424-022-1220-7",
+   "url": "https://doi.org/10.1007/s11424-022-1220-7",
+   "title": "L. Dehbi, Z. Zeng, Heilbronn's problem of eight points in the square, J. Syst. Sci. Complex. (2022)"
+  },
+  "alphaevolve-2025": {
+   "kind": "arxiv",
+   "id": "2506.13131",
+   "url": "https://arxiv.org/abs/2506.13131",
+   "title": "AlphaEvolve (Google DeepMind), 2025 — new configurations for triangle n=11 and convex n=13, 14"
+  },
+  "sudermann-merx-2026-square": {
+   "kind": "arxiv",
+   "id": "2603.11107",
+   "url": "https://arxiv.org/abs/2603.11107",
+   "title": "N. Sudermann-Merx, Certified global optimality and exact coordinates for Heilbronn configurations in the square (2026)"
+  },
+  "sudermann-merx-2026-triangle": {
+   "kind": "arxiv",
+   "id": "2607.15021",
+   "url": "https://arxiv.org/abs/2607.15021",
+   "title": "N. Sudermann-Merx, The Heilbronn problem in triangles: boundary structure and certified optima for n ≤ 8 (2026)"
+  },
+  "cohen-pohoata-zakharov-2023": {
+   "kind": "arxiv",
+   "id": "2305.18253",
+   "url": "https://arxiv.org/abs/2305.18253",
+   "title": "A. Cohen, C. Pohoata, D. Zakharov, A new upper bound for the Heilbronn triangle problem (2023)"
+  },
+  "monji-modir-kocuk-2025": {
+   "kind": "arxiv",
+   "id": "2512.14505",
+   "url": "https://arxiv.org/abs/2512.14505",
+   "title": "Monji, Modir, Kocuk, Solving the Heilbronn triangle problem using global optimization methods (2025)"
+  },
+  "oeis-a343851": {
+   "kind": "oeis",
+   "id": "A343851",
+   "url": "https://oeis.org/A343851",
+   "title": "OEIS A343851 — decimal expansion of the n=7 Heilbronn constant for the square"
+  },
+  "oeis-a379533": {
+   "kind": "oeis",
+   "id": "A379533",
+   "url": "https://oeis.org/A379533",
+   "title": "OEIS A379533 — (√13−1)/36, the n=8 Heilbronn constant for the square"
+  },
+  "oeis-a379534": {
+   "kind": "oeis",
+   "id": "A379534",
+   "url": "https://oeis.org/A379534",
+   "title": "OEIS A379534 — (9√65−55)/320, the n=9 Heilbronn constant for the square"
+  },
+  "friedman-square": {
+   "kind": "web",
+   "url": "https://erich-friedman.github.io/packing/heilbronn/",
+   "title": "E. Friedman, The Heilbronn problem for squares (Packing Center)"
+  },
+  "friedman-triangle": {
+   "kind": "web",
+   "url": "https://erich-friedman.github.io/packing/heiltri/",
+   "title": "E. Friedman, The Heilbronn problem for triangles (Packing Center)"
+  },
+  "friedman-convex": {
+   "kind": "web",
+   "url": "https://erich-friedman.github.io/packing/heilconvex/",
+   "title": "E. Friedman, The Heilbronn problem for convex regions (Packing Center)"
+  },
+  "mathworld": {
+   "kind": "web",
+   "url": "https://mathworld.wolfram.com/HeilbronnTriangleProblem.html",
+   "title": "MathWorld — Heilbronn Triangle Problem"
+  },
+  "wikipedia": {
+   "kind": "web",
+   "url": "https://en.wikipedia.org/wiki/Heilbronn_triangle_problem",
+   "title": "Wikipedia — Heilbronn triangle problem"
+  },
+  "repo-tejsteadqc": {
+   "kind": "web",
+   "url": "https://github.com/TejSteadQC/heilbronn-configurations",
+   "title": "TejSteadQC/heilbronn-configurations — coordinates, dual verifiers, search toolkit"
+  },
+  "repo-spiralulam": {
+   "kind": "web",
+   "url": "https://github.com/spiralulam/heilbronn",
+   "title": "spiralulam/heilbronn — square configurations n ≤ 16, exact coordinates, optimization models (MIT)"
+  },
+  "repo-alphaevolve": {
+   "kind": "web",
+   "url": "https://github.com/google-deepmind/alphaevolve_results",
+   "title": "google-deepmind/alphaevolve_results — published AlphaEvolve constructions"
+  }
+ },
+ "by_config": {
+  "square/5": ["yang-zhang-zeng-1992"],
+  "square/6": ["dress-yang-zeng-1995"],
+  "square/7": ["chen-zeng-2011", "comellas-yebra-2002", "oeis-a343851"],
+  "square/8": ["dehbi-zeng-2022", "comellas-yebra-2002", "oeis-a379533"],
+  "square/9": ["sudermann-merx-2026-square", "chen-gpgpu-2016", "comellas-yebra-2002", "oeis-a379534"],
+  "square/10": ["comellas-yebra-2002"],
+  "square/11": ["goldberg-1972"],
+  "square/12": ["comellas-yebra-2002"],
+  "square/13": ["repo-spiralulam"],
+  "square/14": ["repo-spiralulam"],
+  "square/15": ["repo-spiralulam"],
+  "square/16": ["repo-spiralulam"],
+  "triangle/6": ["yang-zhang-zeng-1992"],
+  "triangle/8": ["sudermann-merx-2026-triangle", "chen-zeng-zhou-2014"],
+  "triangle/11": ["alphaevolve-2025"],
+  "convex/6": ["dress-yang-zeng-1995"],
+  "convex/13": ["alphaevolve-2025"],
+  "convex/14": ["alphaevolve-2025"]
+ }
+}

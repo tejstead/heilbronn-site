@@ -1,0 +1,79 @@
+{
+ "schema_version": 1,
+ "variant": "convex",
+ "n": 5,
+ "frame": "free",
+ "points": [
+  [
+   "0.000000000000000000000000000000",
+   "1.000000000000000000000000000000"
+  ],
+  [
+   "-0.951056516295153572116439333379",
+   "0.309016994374947424102293417182"
+  ],
+  [
+   "-0.587785252292473129168705954639",
+   "-0.809016994374947424102293417182"
+  ],
+  [
+   "0.587785252292473129168705954639",
+   "-0.809016994374947424102293417182"
+  ],
+  [
+   "0.951056516295153572116439333379",
+   "0.309016994374947424102293417182"
+  ]
+ ],
+ "value": {
+  "decimal": "0.276393202250021030359082633127",
+  "fraction": "109527315024819501255347726009800256650644437004324931735766/396273548456313988381849722240990144021644056521946935855429",
+  "published": "A = (5 - √5) / 10 = .276+",
+  "published_decimal": "0.276",
+  "published_lower_bound": true,
+  "exact_text": "(5 - √5) / 10",
+  "exact_sympy": "(5 - sqrt(5))/10",
+  "minimal_polynomial": null,
+  "exact_display": "(5 − √5) / 10",
+  "exact_decimal": "0.276393202250021030359082633126872376455938164",
+  "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mrow><mn>5</mn><mo>−</mo><msqrt><mn>5</mn></msqrt></mrow></mrow><mrow><mn>10</mn></mrow></mfrac></math>"
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "exact-construction",
+  "ref": "data/sources/exact/constructions.py",
+  "note": "regular pentagon",
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "5-fold dihedral symmetry"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 5,
+  "triples_checked": 10,
+  "value": "0.276393202250021030359082633127",
+  "value_fraction": "109527315024819501255347726009800256650644437004324931735766/396273548456313988381849722240990144021644056521946935855429",
+  "min_triple": [
+   1,
+   2,
+   3
+  ],
+  "num_min_ties": 5,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": 5
+ }
+}

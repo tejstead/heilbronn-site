@@ -1,0 +1,103 @@
+{
+ "schema_version": 1,
+ "variant": "convex",
+ "n": 11,
+ "frame": "free",
+ "points": [
+  [
+   "64.386425093325616",
+   "0.592869759668926"
+  ],
+  [
+   "127.09397651335632",
+   "0.561855193992729"
+  ],
+  [
+   "1.530145736485524",
+   "42.645870782572872"
+  ],
+  [
+   "189.652799996577888",
+   "42.552827085544368"
+  ],
+  [
+   "64.088969219707064",
+   "84.636842674124528"
+  ],
+  [
+   "126.796520639737808",
+   "84.605828108448368"
+  ],
+  [
+   "1.232689862866987",
+   "126.689843697028512"
+  ],
+  [
+   "189.355344122959328",
+   "126.596800000000016"
+  ],
+  [
+   "95.219653024508528",
+   "147.654315077128096"
+  ],
+  [
+   "32.363373667668484",
+   "189.707316100032032"
+  ],
+  [
+   "157.778476507730048",
+   "189.645286968679712"
+  ]
+ ],
+ "value": {
+  "decimal": "0.0425531914893616083570194785962",
+  "fraction": "219590938650506573674926115255655/5160387058286915852841507261921752",
+  "published": "A = 2/47 = .0425+",
+  "published_decimal": "0.0425",
+  "published_lower_bound": true,
+  "exact_text": "2/47",
+  "exact_sympy": "2/47",
+  "minimal_polynomial": null,
+  "exact_display": "2/47",
+  "exact_decimal": "0.0425531914893617021276595744680851063829787234",
+  "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>2</mn></mrow><mrow><mn>47</mn></mrow></mfrac></math>"
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "reconstructed by local optimization; matches published value 0.0425+",
+  "basis": "figure"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "2-fold symmetry"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 11,
+  "triples_checked": 165,
+  "value": "0.0425531914893616083570194785962",
+  "value_fraction": "219590938650506573674926115255655/5160387058286915852841507261921752",
+  "min_triple": [
+   0,
+   1,
+   2
+  ],
+  "num_min_ties": 28,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": 8
+ }
+}

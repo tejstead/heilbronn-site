@@ -1,0 +1,98 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 8,
+ "frame": "unit-square",
+ "points": [
+  [
+   "0",
+   "0"
+  ],
+  [
+   "0.7675918792439982155198702112",
+   "0"
+  ],
+  [
+   "1",
+   "0.188580484696445039271154374"
+  ],
+  [
+   "1",
+   "1"
+  ],
+  [
+   "0",
+   "0.811419515303554960728845626"
+  ],
+  [
+   "0.2324081207560017844801297888",
+   "1"
+  ],
+  [
+   "0.2324081207560017844801297888",
+   "0.3771609693928900785423087481"
+  ],
+  [
+   "0.7675918792439982155198702112",
+   "0.6228390306071099214576912519"
+  ]
+ ],
+ "value": {
+  "decimal": "0.0723764243184441470310894796160",
+  "fraction": "452352651990275918944309247599695478979628951660243199/6250000000000000000000000000000000000000000000000000000",
+  "published": "A = (√13-1) / 36 = .07237+",
+  "published_decimal": "0.07237",
+  "published_lower_bound": true,
+  "exact_text": "(√13-1) / 36",
+  "exact_sympy": "(sqrt(13) - 1)/36",
+  "minimal_polynomial": null,
+  "exact_display": "(√13 − 1) / 36",
+  "exact_decimal": "0.0723764243184441470310894796519582207292026826",
+  "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mrow><msqrt><mn>13</mn></msqrt><mo>−</mo><mn>1</mn></mrow></mrow><mrow><mn>36</mn></mrow></mfrac></math>"
+ },
+ "status": "proven",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "F. Comellas and J. Yebra",
+   "date": "December 2001"
+  },
+  "proved": {
+   "name": "L. Dehbi and Z. Zeng",
+   "date": "2022"
+  },
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "paper",
+  "ref": "arXiv:2603.11107",
+  "note": null,
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "180° Rotationally symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [
+  "dehbi-zeng-2022",
+  "comellas-yebra-2002",
+  "oeis-a379533"
+ ],
+ "verify": {
+  "n": 8,
+  "triples_checked": 56,
+  "value": "0.0723764243184441470310894796160",
+  "value_fraction": "452352651990275918944309247599695478979628951660243199/6250000000000000000000000000000000000000000000000000000",
+  "min_triple": [
+   1,
+   4,
+   6
+  ],
+  "num_min_ties": 12,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

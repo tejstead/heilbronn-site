@@ -1,0 +1,87 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 6,
+ "frame": "unit-square",
+ "points": [
+  [
+   "0.0",
+   "0.0"
+  ],
+  [
+   "0.5",
+   "0.0"
+  ],
+  [
+   "1.0",
+   "0.5"
+  ],
+  [
+   "0.5",
+   "1.0"
+  ],
+  [
+   "0.0",
+   "0.5"
+  ],
+  [
+   "1.0",
+   "1.0"
+  ]
+ ],
+ "value": {
+  "decimal": "0.125",
+  "fraction": "1/8",
+  "published": "A = 1/8 = .125",
+  "published_decimal": "0.125",
+  "published_lower_bound": false,
+  "exact_text": "1/8",
+  "exact_sympy": "1/8",
+  "minimal_polynomial": null,
+  "exact_display": "1/8",
+  "exact_decimal": "0.125000000000000000000000000000000000000000000",
+  "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>8</mn></mrow></mfrac></math>"
+ },
+ "status": "proven",
+ "page_relation": "OK",
+ "credit": {
+  "found": null,
+  "proved": {
+   "name": "A. Dress, L. Yang, and Z. B. Zeng",
+   "date": "1995"
+  },
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "spiralulam",
+  "ref": "spiralulam/heilbronn config_n06.json",
+  "note": "Dress, Yang, Zeng (1995)",
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "Vertically and horizontally symmetric"
+ },
+ "notes": [
+  "One of an infinite family of solutions."
+ ],
+ "changelog": [],
+ "references": [
+  "dress-yang-zeng-1995"
+ ],
+ "verify": {
+  "n": 6,
+  "triples_checked": 20,
+  "value": "0.125",
+  "value_fraction": "1/8",
+  "min_triple": [
+   0,
+   1,
+   2
+  ],
+  "num_min_ties": 6,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

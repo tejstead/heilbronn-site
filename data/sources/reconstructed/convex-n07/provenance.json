@@ -1,0 +1,10 @@
+{
+ "ref": "heilbronn-site reconstruct/reconstruct.py",
+ "note": "reconstructed by local optimization; matches published value 0.111+",
+ "date": "2026-08-20",
+ "method": "sym+multistart polish/tighten, 45s budget, seed 0",
+ "detected_symmetry": "120\u00b0 Rotationally symmetric",
+ "published_symmetry": "3-fold dihedral symmetry",
+ "symmetry_match": false,
+ "basis": "value-and-symmetry"
+}

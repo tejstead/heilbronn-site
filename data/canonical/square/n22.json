@@ -1,0 +1,158 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 22,
+ "frame": "unit-square",
+ "points": [
+  [
+   "1",
+   "0.851029633232732"
+  ],
+  [
+   "0.954444651169053",
+   "0.53615034600482"
+  ],
+  [
+   "0.466388947657918",
+   "0.212648391427316"
+  ],
+  [
+   "0.141733527487841",
+   "0.668862846408992"
+  ],
+  [
+   "0.601069660894203",
+   "1"
+  ],
+  [
+   "0",
+   "0.932545346450584"
+  ],
+  [
+   "0.392223774827233",
+   "0.921518014551548"
+  ],
+  [
+   "0.131588626494261",
+   "0.038469137790036"
+  ],
+  [
+   "0.943394552505179",
+   "0"
+  ],
+  [
+   "0.650375285674911",
+   "0.390856808767281"
+  ],
+  [
+   "0.831883213428991",
+   "0.756299342048302"
+  ],
+  [
+   "0.168116786571006",
+   "0.243700657951699"
+  ],
+  [
+   "0.349624714325087",
+   "0.609143191232716"
+  ],
+  [
+   "0.056605447494816",
+   "1"
+  ],
+  [
+   "0.868411373505734",
+   "0.961530862209965"
+  ],
+  [
+   "0.607776225172773",
+   "0.078481985448449"
+  ],
+  [
+   "1",
+   "0.06745465354941"
+  ],
+  [
+   "0.398930339105802",
+   "0"
+  ],
+  [
+   "0.85826647251216",
+   "0.331137153591005"
+  ],
+  [
+   "0.53361105234209",
+   "0.787351608572676"
+  ],
+  [
+   "0.045555348830945",
+   "0.463849653995173"
+  ],
+  [
+   "0",
+   "0.148970366767271"
+  ]
+ ],
+ "value": {
+  "decimal": "0.010472534423501604596579454623",
+  "fraction": "10472534423501604596579454623/1000000000000000000000000000000",
+  "published": "A = 0.009569+",
+  "published_decimal": "0.009569",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "BEATS",
+ "credit": {
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "external",
+  "ref": "github.com/cnemri/heilbronn-alphaevolve",
+  "note": "independently re-verified in exact arithmetic by this site; submitted to Erich Friedman and open as PR #1 on TejSteadQC/heilbronn-configurations since 2026-08-03",
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "Symmetric with respect to both diagonals"
+ },
+ "notes": [],
+ "changelog": [
+  {
+   "date": "2026-07",
+   "text": "0.00886+ → 0.009458+ — Tej Stead"
+  },
+  {
+   "date": "2026-08",
+   "text": "0.009569+ — Nathan Sudermann-Merx (current page entry)"
+  },
+  {
+   "date": "2026-08-03",
+   "text": "0.0104725344 — cnemri via AlphaEvolve (verified here; awaiting page update)"
+  }
+ ],
+ "references": [],
+ "verify": {
+  "n": 22,
+  "triples_checked": 1540,
+  "value": "0.010472534423501604596579454623",
+  "value_fraction": "10472534423501604596579454623/1000000000000000000000000000000",
+  "min_triple": [
+   9,
+   13,
+   16
+  ],
+  "num_min_ties": 40,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ },
+ "page_note": "Verified improvement by <strong>cnemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the page's value <code>.009569+</code>. Submitted to Erich Friedman and open as PR #1 on the companion repository since 2026-08-03."
+}

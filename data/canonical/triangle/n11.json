@@ -1,0 +1,102 @@
+{
+ "schema_version": 1,
+ "variant": "triangle",
+ "n": 11,
+ "frame": "right",
+ "points": [
+  [
+   "0.855969059106645",
+   "0.000000000000000"
+  ],
+  [
+   "0.295651145881334",
+   "0.000000000000000"
+  ],
+  [
+   "0.082072295413957",
+   "0.852732769678901"
+  ],
+  [
+   "0.243787797674798",
+   "0.378106101162603"
+  ],
+  [
+   "0.507250590094781",
+   "0.337039497095273"
+  ],
+  [
+   "0.000000000000000",
+   "0.277452977915506"
+  ],
+  [
+   "0.082072295413957",
+   "0.065194934907143"
+  ],
+  [
+   "0.295651145881332",
+   "0.704348854118668"
+  ],
+  [
+   "0.000000000000000",
+   "0.722547022084497"
+  ],
+  [
+   "0.507250590094787",
+   "0.155709912809945"
+  ],
+  [
+   "0.855969059106648",
+   "0.144030940893352"
+  ]
+ ],
+ "value": {
+  "decimal": "0.036529889880029800850674405395",
+  "fraction": "7305977976005960170134881079/200000000000000000000000000000",
+  "published": "A = .03652+",
+  "published_decimal": "0.03652",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "AlphaEvolve",
+   "date": "June 2025"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "alphaevolve",
+  "ref": "google-deepmind/alphaevolve_results (arXiv:2506.13131)",
+  "note": "converted from the equilateral frame",
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "Reflectional symmetry"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [
+  "alphaevolve-2025"
+ ],
+ "verify": {
+  "n": 11,
+  "triples_checked": 165,
+  "value": "0.036529889880029800850674405395",
+  "value_fraction": "7305977976005960170134881079/200000000000000000000000000000",
+  "min_triple": [
+   1,
+   2,
+   3
+  ],
+  "num_min_ties": 17,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

@@ -1,0 +1,136 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 20,
+ "frame": "unit-square",
+ "points": [
+  [
+   "0.201575119873051",
+   "1"
+  ],
+  [
+   "0.682341910122142",
+   "1"
+  ],
+  [
+   "0.939057066082293",
+   "0.9462876556958"
+  ],
+  [
+   "0.0537123443042",
+   "0.939057066082294"
+  ],
+  [
+   "0.41380660851587",
+   "0.912830651726359"
+  ],
+  [
+   "1",
+   "0.79842488012695"
+  ],
+  [
+   "0",
+   "0.682341910122142"
+  ],
+  [
+   "0.428788876514226",
+   "0.665466596077546"
+  ],
+  [
+   "0.912830651726358",
+   "0.586193391484131"
+  ],
+  [
+   "0.665466596077546",
+   "0.571211123485774"
+  ],
+  [
+   "0.334533403922454",
+   "0.428788876514226"
+  ],
+  [
+   "0.087169348273641",
+   "0.41380660851587"
+  ],
+  [
+   "0.571211123485774",
+   "0.334533403922454"
+  ],
+  [
+   "1",
+   "0.317658089877858"
+  ],
+  [
+   "0",
+   "0.201575119873051"
+  ],
+  [
+   "0.58619339148413",
+   "0.087169348273641"
+  ],
+  [
+   "0.9462876556958",
+   "0.060942933917707"
+  ],
+  [
+   "0.060942933917707",
+   "0.0537123443042"
+  ],
+  [
+   "0.317658089877858",
+   "0"
+  ],
+  [
+   "0.798424880126949",
+   "0"
+  ]
+ ],
+ "value": {
+  "decimal": "0.012911555683941858938602390276",
+  "fraction": "3227888920985464734650597569/250000000000000000000000000000",
+  "published": "A = 0.01291+",
+  "published_decimal": "0.01291",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "William Shanley",
+   "date": "July 2026"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "re-polished from the published record figure — the record holder's arrangement with re-derived coordinates",
+  "basis": "figure"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "180° Rotationally symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 20,
+  "triples_checked": 1140,
+  "value": "0.012911555683941858938602390276",
+  "value_fraction": "3227888920985464734650597569/250000000000000000000000000000",
+  "min_triple": [
+   15,
+   16,
+   17
+  ],
+  "num_min_ties": 36,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

@@ -1,0 +1,154 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 21,
+ "frame": "unit-square",
+ "points": [
+  [
+   "0.775961886139577",
+   "0"
+  ],
+  [
+   "0.040255432098713",
+   "0.039940752619194"
+  ],
+  [
+   "0.207258746768101",
+   "0.334893226958595"
+  ],
+  [
+   "0.905475877140264",
+   "0.22217779151801"
+  ],
+  [
+   "0",
+   "0.167638321367728"
+  ],
+  [
+   "0",
+   "0.850483520400199"
+  ],
+  [
+   "0.984132335119709",
+   "0.844247667237993"
+  ],
+  [
+   "0.519245114465057",
+   "0.253018675070275"
+  ],
+  [
+   "0.63314182608863",
+   "0.568466411056504"
+  ],
+  [
+   "0.063745854616377",
+   "0.511948244489188"
+  ],
+  [
+   "0.225132621773284",
+   "0"
+  ],
+  [
+   "1",
+   "0.554201350620695"
+  ],
+  [
+   "0.858696756437963",
+   "1"
+  ],
+  [
+   "0.036833619712273",
+   "1"
+  ],
+  [
+   "0.951422834371504",
+   "0.055646113862897"
+  ],
+  [
+   "0.290752794155485",
+   "0.686226803122086"
+  ],
+  [
+   "0.493163125948289",
+   "0.971579628409109"
+  ],
+  [
+   "0.610943563105387",
+   "0.810865848929488"
+  ],
+  [
+   "0.265859474326354",
+   "0.871154190404465"
+  ],
+  [
+   "0.914599000595997",
+   "0.667936282681381"
+  ],
+  [
+   "0.55629487001707",
+   "0.075809322953682"
+  ]
+ ],
+ "value": {
+  "decimal": "0.01100026769170850288955653949",
+  "fraction": "1100026769170850288955653949/100000000000000000000000000000",
+  "published": "A = .010814+",
+  "published_decimal": "0.010814",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "BEATS",
+ "credit": {
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "external",
+  "ref": "github.com/cnemri/heilbronn-alphaevolve",
+  "note": "independently re-verified in exact arithmetic by this site; submitted to Erich Friedman and open as PR #1 on TejSteadQC/heilbronn-configurations since 2026-08-03",
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "Not symmetric"
+ },
+ "notes": [],
+ "changelog": [
+  {
+   "date": "2026-07",
+   "text": "0.00987+ — Tej Stead"
+  },
+  {
+   "date": "2026-08",
+   "text": "0.010814+ — Tej Stead (current page entry)"
+  },
+  {
+   "date": "2026-08-03",
+   "text": "0.0110002677 — cnemri via AlphaEvolve (verified here; awaiting page update)"
+  }
+ ],
+ "references": [],
+ "verify": {
+  "n": 21,
+  "triples_checked": 1330,
+  "value": "0.01100026769170850288955653949",
+  "value_fraction": "1100026769170850288955653949/100000000000000000000000000000",
+  "min_triple": [
+   5,
+   9,
+   13
+  ],
+  "num_min_ties": 36,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ },
+ "page_note": "Verified improvement by <strong>cnemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the page's value <code>.010814+</code>. Submitted to Erich Friedman and open as PR #1 on the companion repository since 2026-08-03."
+}

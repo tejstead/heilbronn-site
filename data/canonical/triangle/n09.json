@@ -1,0 +1,95 @@
+{
+ "schema_version": 1,
+ "variant": "triangle",
+ "n": 9,
+ "frame": "right",
+ "points": [
+  [
+   "0.875",
+   "0.125"
+  ],
+  [
+   "0",
+   "0.875"
+  ],
+  [
+   "0.125",
+   "0"
+  ],
+  [
+   "0",
+   "0.107142857142857"
+  ],
+  [
+   "0.892857142857143",
+   "0"
+  ],
+  [
+   "0.107142857142857",
+   "0.892857142857143"
+  ],
+  [
+   "0.178571428571429",
+   "0.392857142857143"
+  ],
+  [
+   "0.428571428571428",
+   "0.178571428571429"
+  ],
+  [
+   "0.392857142857143",
+   "0.428571428571428"
+  ]
+ ],
+ "value": {
+  "decimal": "0.054846938775509867346938775511",
+  "fraction": "54846938775509867346938775511/1000000000000000000000000000000",
+  "published": "A = 43/784 = .0548+",
+  "published_decimal": "0.0548",
+  "published_lower_bound": true,
+  "exact_text": "43/784",
+  "exact_sympy": "43/784",
+  "minimal_polynomial": null,
+  "exact_display": "43/784",
+  "exact_decimal": "0.0548469387755102040816326530612244897959183673",
+  "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>43</mn></mrow><mrow><mn>784</mn></mrow></mfrac></math>"
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "David Cantrell",
+   "date": "July 2006"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "reconstructed by local optimization; matches published value 0.0548+ and symmetry (120° Rotationally symmetric)",
+  "basis": "value-and-symmetry"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "120° Rotationally symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 9,
+  "triples_checked": 84,
+  "value": "0.054846938775509867346938775511",
+  "value_fraction": "54846938775509867346938775511/1000000000000000000000000000000",
+  "min_triple": [
+   6,
+   7,
+   8
+  ],
+  "num_min_ties": 13,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

@@ -1,0 +1,65 @@
+# Daily watcher: fetch Friedman's three Heilbronn pages, parse them into the
+# facts snapshot, and open a PR when anything changed. Review the PR (parser
+# breakage and credit subtleties are exactly what review is for), update
+# data/curated/changelog.json for genuine record changes, merge, then run
+# `make deploy` locally.
+name: friedman-watch
+
+on:
+  schedule:
+    - cron: "23 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch and parse the pages
+        run: python3 scripts/friedman_sync.py --out /tmp/new.json
+
+      - name: Diff against the committed snapshot
+        id: diff
+        run: |
+          OLD=$(ls data/sources/friedman/parsed-*.json | sort | tail -1)
+          echo "old=$OLD" >> "$GITHUB_OUTPUT"
+          if python3 scripts/friedman_sync.py --diff "$OLD" /tmp/new.json | tee /tmp/diff.txt; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open a PR with the new snapshot
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          DATE=$(date -u +%F)
+          BRANCH="friedman-sync-$DATE"
+          if git ls-remote --exit-code origin "refs/heads/$BRANCH" >/dev/null 2>&1; then
+            echo "branch $BRANCH already exists — a previous PR is still open"; exit 0
+          fi
+          cp /tmp/new.json "data/sources/friedman/parsed-$DATE.json"
+          git config user.name "friedman-watch[bot]"
+          git config user.email "friedman-watch@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add data/sources/friedman/
+          git commit -m "friedman: snapshot $DATE"
+          git push -u origin "$BRANCH"
+          {
+            echo "Changes on Friedman's pages since \`$(basename "${{ steps.diff.outputs.old }}")\`:"
+            echo
+            echo '```'
+            cat /tmp/diff.txt
+            echo '```'
+            echo
+            echo "After merging: update \`data/curated/changelog.json\` for genuine"
+            echo "record changes, then rebuild and deploy (\`make deploy\`)."
+          } > /tmp/body.md
+          gh pr create --title "Friedman pages changed ($DATE)" --body-file /tmp/body.md

@@ -1,0 +1,105 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 11,
+ "frame": "unit-square",
+ "points": [
+  [
+   "0.3333333333333333333333333333",
+   "0"
+  ],
+  [
+   "0.6666666666666666666666666667",
+   "0"
+  ],
+  [
+   "0",
+   "0.2222222222222222222222222222"
+  ],
+  [
+   "1",
+   "0.2222222222222222222222222222"
+  ],
+  [
+   "0.3333333333333333333333333333",
+   "0.4444444444444444444444444444"
+  ],
+  [
+   "0.6666666666666666666666666667",
+   "0.4444444444444444444444444444"
+  ],
+  [
+   "0",
+   "0.6666666666666666666666666667"
+  ],
+  [
+   "1",
+   "0.6666666666666666666666666667"
+  ],
+  [
+   "0.5",
+   "0.7777777777777777777777777778"
+  ],
+  [
+   "0.1666666666666666666666666667",
+   "1"
+  ],
+  [
+   "0.8333333333333333333333333333",
+   "1"
+  ]
+ ],
+ "value": {
+  "decimal": "0.0370370370370370370370370370019",
+  "fraction": "740740740740740740740740740037037037037037037037037037/20000000000000000000000000000000000000000000000000000000",
+  "published": "A = 1/27 = .03704+",
+  "published_decimal": "0.03704",
+  "published_lower_bound": true,
+  "exact_text": "1/27",
+  "exact_sympy": "1/27",
+  "minimal_polynomial": null,
+  "exact_display": "1/27",
+  "exact_decimal": "0.0370370370370370370370370370370370370370370370",
+  "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>27</mn></mrow></mfrac></math>"
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "Michael Goldberg",
+   "date": "1972"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "paper",
+  "ref": "arXiv:2603.11107",
+  "note": "Goldberg's rational configuration, value exactly 1/27",
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "Horizontally symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [
+  "goldberg-1972"
+ ],
+ "verify": {
+  "n": 11,
+  "triples_checked": 165,
+  "value": "0.0370370370370370370370370370019",
+  "value_fraction": "740740740740740740740740740037037037037037037037037037/20000000000000000000000000000000000000000000000000000000",
+  "min_triple": [
+   0,
+   5,
+   7
+  ],
+  "num_min_ties": 28,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

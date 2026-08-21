@@ -1,0 +1,182 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 25,
+ "frame": "unit-square",
+ "points": [
+  [
+   "0.104077564040371",
+   "0.971638026918651"
+  ],
+  [
+   "0.951052418176936",
+   "0.929211928381551"
+  ],
+  [
+   "0.683880748345185",
+   "0.885625976608298"
+  ],
+  [
+   "0",
+   "0.921992543850534"
+  ],
+  [
+   "1",
+   "0.796913425920575"
+  ],
+  [
+   "0.240342192735728",
+   "0.877116385209359"
+  ],
+  [
+   "0.516184564732799",
+   "1"
+  ],
+  [
+   "0.818488018877785",
+   "0.984857217341109"
+  ],
+  [
+   "0.30816422468519",
+   "0.721353153183304"
+  ],
+  [
+   "0.881517083417365",
+   "0.662491310230954"
+  ],
+  [
+   "0.746711623859164",
+   "0.634584621206158"
+  ],
+  [
+   "0.049060154200727",
+   "0.660871685957536"
+  ],
+  [
+   "0.185536931461299",
+   "0.628307735540155"
+  ],
+  [
+   "0.736823436926526",
+   "0.333900897741415"
+  ],
+  [
+   "0.189321794562344",
+   "0.351384995716538"
+  ],
+  [
+   "0.90431382017175",
+   "0.285139439879055"
+  ],
+  [
+   "0.056569444282859",
+   "0.313121624537085"
+  ],
+  [
+   "0.624842548587708",
+   "0.246253217766712"
+  ],
+  [
+   "0.316921645769205",
+   "0.256417012193162"
+  ],
+  [
+   "0.116490992550559",
+   "0"
+  ],
+  [
+   "0.679939332983375",
+   "0.102336201129661"
+  ],
+  [
+   "0.248454436139588",
+   "0.094912142657906"
+  ],
+  [
+   "0.958878578825844",
+   "0.03178104813852"
+  ],
+  [
+   "0",
+   "0.056303816953263"
+  ],
+  [
+   "0.822054318826986",
+   "0"
+  ]
+ ],
+ "value": {
+  "decimal": "0.0074071845861995054072267642655",
+  "fraction": "14814369172399010814453528531/2000000000000000000000000000000",
+  "published": "A = .007327+",
+  "published_decimal": "0.007327",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "BEATS",
+ "credit": {
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "found by independent basin-hopping search (this site, using the companion repository's attack.py, seeded from our previous best); exceeds the published record .007327+ — new record candidate, dual-verified",
+  "basis": "original-this-site"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "Not symmetric"
+ },
+ "notes": [],
+ "changelog": [
+  {
+   "date": "2026-07-23",
+   "text": "0.00669+ — Tej Stead (first listed)"
+  },
+  {
+   "date": "2026-07-31",
+   "text": "0.006808+ — Marc-Emmanuel Coupvent des Graviers"
+  },
+  {
+   "date": "2026-08-03",
+   "text": "0.007110+ — Tej Stead"
+  },
+  {
+   "date": "2026-08-18",
+   "text": "0.007243+ — Nathan Sudermann-Merx"
+  },
+  {
+   "date": "2026-08-20",
+   "text": "0.007327+ — Nathan Sudermann-Merx, current record (coordinates and figure not public)"
+  },
+  {
+   "date": "2026-08-20",
+   "text": "0.0074071846 — independent search, this site (new record candidate, awaiting submission)"
+  }
+ ],
+ "references": [],
+ "verify": {
+  "n": 25,
+  "triples_checked": 2300,
+  "value": "0.0074071845861995054072267642655",
+  "value_fraction": "14814369172399010814453528531/2000000000000000000000000000000",
+  "min_triple": [
+   9,
+   15,
+   22
+  ],
+  "num_min_ties": 42,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ },
+ "page_note": "Independent search by this site (using the companion repository's toolkit) found these coordinates, exceeding the published record <code>.007327+</code> by 1.08% — a new record candidate, dual-verified and ready for submission."
+}

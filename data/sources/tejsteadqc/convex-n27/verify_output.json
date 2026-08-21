@@ -1,0 +1,32 @@
+{
+ "a": {
+  "n": 27,
+  "triples_checked": 2925,
+  "value": "0.00780376027372161968567885631627",
+  "value_fraction": "15607520547443241298967573404/2000000000000000247010388986767",
+  "min_triple": [
+   2,
+   9,
+   17
+  ],
+  "num_min_ties": 45,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": 13
+ },
+ "b": {
+  "n": 27,
+  "triples_checked": 2925,
+  "value": "0.00780376027372161968567885631627",
+  "value_fraction": "15607520547443241298967573404/2000000000000000247010388986767",
+  "min_triple": [
+   2,
+   9,
+   17
+  ],
+  "num_min_ties": 45,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": 13
+ }
+}

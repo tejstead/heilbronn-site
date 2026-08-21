@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Heilbronn — Methods & resources{% endblock %}
+{% block content %}
+<h1>Methods &amp; resources</h1>
+{{ body | safe }}
+<h2>Bibliography</h2>
+<ul class="refs">
+{% for r in bib %}
+  <li>{% if r.url %}<a href="{{ r.url }}">{{ r.title }}</a>{% else %}{{ r.title }}{% endif %}</li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,10 @@
+{
+ "ref": "heilbronn-site reconstruct/reconstruct.py",
+ "note": "exact reconstruction: the twelve points carrying all 15 minimal triples form a mirror-symmetric frame solved as the exact critical point of its tie system (degree-5 algebraic); the three remaining points are floaters (all their triples ≥ 1.0178× the minimum), each confined to a triangular cell of diameter ≈ 0.003 and placed at its cell's maximal-clearance point. Literals: exact values rounded to 30 decimals, rotation images taken of the rounded generators",
+ "date": "2026-08-21",
+ "method": "image seed + symmetric polish, then exact solve of the D3-reduced tie system (Groebner; c root of 10206c^5-16317c^4+9720c^3-2632c^2+320c-16) with floaters at per-cell LP optima",
+ "detected_symmetry": "120° Rotationally symmetric",
+ "published_symmetry": "120° Rotationally symmetric",
+ "symmetry_match": true,
+ "basis": "figure"
+}

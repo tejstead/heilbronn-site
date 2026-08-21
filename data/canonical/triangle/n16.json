@@ -1,0 +1,120 @@
+{
+ "schema_version": 1,
+ "variant": "triangle",
+ "n": 16,
+ "frame": "right",
+ "points": [
+  [
+   "0.114679122197268",
+   "0.885320877802732"
+  ],
+  [
+   "0",
+   "0.882678661998546"
+  ],
+  [
+   "0.13636505831172",
+   "0.588447391795157"
+  ],
+  [
+   "0.31551572066785",
+   "0.588734155569521"
+  ],
+  [
+   "0.487924914582195",
+   "0.488668462033777"
+  ],
+  [
+   "0.023406623384028",
+   "0.487924914582192"
+  ],
+  [
+   "0.333333333333333",
+   "0.333333333333333"
+  ],
+  [
+   "0.095750123762628",
+   "0.315515720667851"
+  ],
+  [
+   "0.588447391795158",
+   "0.275187549893121"
+  ],
+  [
+   "0.275187549893124",
+   "0.136365058311718"
+  ],
+  [
+   "0",
+   "0.114679122197267"
+  ],
+  [
+   "0.882678661998549",
+   "0.117321338001451"
+  ],
+  [
+   "0.588734155569521",
+   "0.095750123762628"
+  ],
+  [
+   "0.488668462033778",
+   "0.023406623384028"
+  ],
+  [
+   "0.117321338001452",
+   "0"
+  ],
+  [
+   "0.88532087780273",
+   "0"
+  ]
+ ],
+ "value": {
+  "decimal": "0.01797627598723430820286744296",
+  "fraction": "224703449840428852535843037/12500000000000000000000000000",
+  "published": "A = .0179+",
+  "published_decimal": "0.0179",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "reconstructed by local optimization; matches published value 0.0179+ and symmetry (120° Rotationally symmetric)",
+  "basis": "figure"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "120° Rotationally symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 16,
+  "triples_checked": 560,
+  "value": "0.01797627598723430820286744296",
+  "value_fraction": "224703449840428852535843037/12500000000000000000000000000",
+  "min_triple": [
+   4,
+   6,
+   10
+  ],
+  "num_min_ties": 27,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

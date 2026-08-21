@@ -1,0 +1,11 @@
+{
+ "ref": "heilbronn-site reconstruct/reconstruct.py",
+ "note": "re-polished from the published record figure \u2014 the record holder's arrangement with re-derived coordinates; dual-verified (a/b agree exactly); all 31 points match the published record figure 1:1 (mean 2.0px, max 3.5px at figure scale)",
+ "date": "2026-08-20",
+ "method": "sym+multistart polish/tighten, 30s budget, seed 0",
+ "detected_symmetry": "Not symmetric",
+ "published_symmetry": "Not symmetric",
+ "symmetry_match": true,
+ "figure_match": "all 31 points match the published record figure 1:1 (mean 2.0px, max 3.5px at figure scale)",
+ "basis": "figure"
+}

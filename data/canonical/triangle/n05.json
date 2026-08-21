@@ -1,0 +1,81 @@
+{
+ "schema_version": 1,
+ "variant": "triangle",
+ "n": 5,
+ "frame": "right",
+ "points": [
+  [
+   "0",
+   "0"
+  ],
+  [
+   "0.5857864376269049511983112758",
+   "0"
+  ],
+  [
+   "0",
+   "1"
+  ],
+  [
+   "0.5857864376269049511983112758",
+   "0.4142135623730950488016887242"
+  ],
+  [
+   "0.1715728752538099023966225516",
+   "0.4142135623730950488016887242"
+  ]
+ ],
+ "value": {
+  "decimal": "0.171572875253809902396622551573",
+  "fraction": "4289321881345247559915563789314242287890508342735591641/25000000000000000000000000000000000000000000000000000000",
+  "published": "A = 3 - 2√2 = .171+",
+  "published_decimal": "0.171",
+  "published_lower_bound": true,
+  "exact_text": "3 - 2√2",
+  "exact_sympy": "3 - 2*sqrt(2)",
+  "minimal_polynomial": null,
+  "exact_display": "3 − 2√2",
+  "exact_decimal": "0.171572875253809902396622551580603842860656249",
+  "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>3</mn><mo>−</mo><mrow><mn>2</mn><msqrt><mn>2</mn></msqrt></mrow></mrow></math>"
+ },
+ "status": "proven",
+ "page_relation": "OK",
+ "credit": {
+  "found": null,
+  "proved": {
+   "name": "Royce Peng",
+   "date": "1989"
+  },
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "paper",
+  "ref": "arXiv:2607.15021",
+  "note": "one member of the optimal family",
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "Horizontally symmetric"
+ },
+ "notes": [
+  "One of an infinite family of solutions."
+ ],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 5,
+  "triples_checked": 10,
+  "value": "0.171572875253809902396622551573",
+  "value_fraction": "4289321881345247559915563789314242287890508342735591641/25000000000000000000000000000000000000000000000000000000",
+  "min_triple": [
+   0,
+   3,
+   4
+  ],
+  "num_min_ties": 4,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

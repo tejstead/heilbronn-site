@@ -1,0 +1,85 @@
+{
+ "schema_version": 1,
+ "variant": "convex",
+ "n": 6,
+ "frame": "free",
+ "points": [
+  [
+   "0.000000000000000000000000000000",
+   "1.000000000000000000000000000000"
+  ],
+  [
+   "-0.866025403784438646763723170752",
+   "0.499999999999999999999999999999"
+  ],
+  [
+   "-0.866025403784438646763723170752",
+   "-0.500000000000000000000000000000"
+  ],
+  [
+   "0.000000000000000000000000000000",
+   "-1.000000000000000000000000000000"
+  ],
+  [
+   "0.866025403784438646763723170752",
+   "-0.499999999999999999999999999999"
+  ],
+  [
+   "0.866025403784438646763723170752",
+   "0.499999999999999999999999999999"
+  ]
+ ],
+ "value": {
+  "decimal": "0.166666666666666666666666666666",
+  "fraction": "999999999999999999999999999998/5999999999999999999999999999997",
+  "published": "A = 1/6 = .166+",
+  "published_decimal": "0.166",
+  "published_lower_bound": true,
+  "exact_text": "1/6",
+  "exact_sympy": "1/6",
+  "minimal_polynomial": null,
+  "exact_display": "1/6",
+  "exact_decimal": "0.166666666666666666666666666666666666666666667",
+  "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>6</mn></mrow></mfrac></math>"
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "exact-construction",
+  "ref": "data/sources/exact/constructions.py",
+  "note": "regular hexagon",
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "6-fold dihedral symmetry"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [
+  "dress-yang-zeng-1995"
+ ],
+ "verify": {
+  "n": 6,
+  "triples_checked": 20,
+  "value": "0.166666666666666666666666666666",
+  "value_fraction": "999999999999999999999999999998/5999999999999999999999999999997",
+  "min_triple": [
+   0,
+   4,
+   5
+  ],
+  "num_min_ties": 6,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": 6
+ }
+}

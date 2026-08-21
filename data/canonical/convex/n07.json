@@ -1,0 +1,87 @@
+{
+ "schema_version": 1,
+ "variant": "convex",
+ "n": 7,
+ "frame": "free",
+ "points": [
+  [
+   "-0.853847185298913",
+   "0.122686198685049"
+  ],
+  [
+   "0.20237295770524",
+   "-0.832495182572002"
+  ],
+  [
+   "0.501474227593679",
+   "0.559808983886958"
+  ],
+  [
+   "-0.9534613992559",
+   "-0.341387385610831"
+  ],
+  [
+   "0.654079577909261",
+   "-0.686726830288829"
+  ],
+  [
+   "0.149381821346638",
+   "0.87811421589966"
+  ],
+  [
+   "-0.05",
+   "-0.049999999999998"
+  ]
+ ],
+ "value": {
+  "decimal": "0.111111111111110998117184675199",
+  "fraction": "390246244451052011394452451829/3512216200059471674281962495312",
+  "published": "A = 1/9 = .111+",
+  "published_decimal": "0.111",
+  "published_lower_bound": true,
+  "exact_text": "1/9",
+  "exact_sympy": "1/9",
+  "minimal_polynomial": null,
+  "exact_display": "1/9",
+  "exact_decimal": "0.111111111111111111111111111111111111111111111",
+  "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>9</mn></mrow></mfrac></math>"
+ },
+ "status": "proven",
+ "page_relation": "OK",
+ "credit": {
+  "found": null,
+  "proved": {
+   "name": "Zhenbing Zeng and Lu Yang",
+   "date": "1995"
+  },
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "reconstructed by local optimization; matches published value 0.111+",
+  "basis": "value-and-symmetry"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "3-fold dihedral symmetry"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 7,
+  "triples_checked": 35,
+  "value": "0.111111111111110998117184675199",
+  "value_fraction": "390246244451052011394452451829/3512216200059471674281962495312",
+  "min_triple": [
+   0,
+   3,
+   6
+  ],
+  "num_min_ties": 6,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": 6
+ }
+}

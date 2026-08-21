@@ -1,0 +1,10 @@
+{
+ "ref": "heilbronn-site reconstruct/reconstruct.py",
+ "note": "found by independent basin-hopping search (this site, using the companion repository's attack.py, seeded from our previous best); exceeds the published record .007327+ \u2014 new record candidate, dual-verified",
+ "date": "2026-08-20",
+ "method": "attack.py basin-hopping, 2 workers x 1800s, seeded from 0.0072446759",
+ "detected_symmetry": "Not symmetric",
+ "published_symmetry": "Not symmetric",
+ "symmetry_match": true,
+ "basis": "original-this-site"
+}

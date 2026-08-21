@@ -1,0 +1,96 @@
+{
+ "schema_version": 1,
+ "variant": "triangle",
+ "n": 10,
+ "frame": "right",
+ "points": [
+  [
+   "0",
+   "1"
+  ],
+  [
+   "0.126744324881756",
+   "0.622775842160294"
+  ],
+  [
+   "0.329919253259536",
+   "0.592206877878477"
+  ],
+  [
+   "0",
+   "0.407922756981487"
+  ],
+  [
+   "0.672889779896044",
+   "0.327110220103951"
+  ],
+  [
+   "0.349692485216114",
+   "0.301462115616943"
+  ],
+  [
+   "0.073261962336053",
+   "0.076424821568453"
+  ],
+  [
+   "0.640835949266549",
+   "0.076424821568453"
+  ],
+  [
+   "0.221002771087441",
+   "0"
+  ],
+  [
+   "0.932464624621955",
+   "0"
+  ]
+ ],
+ "value": {
+  "decimal": "0.043376740678049452938271455183",
+  "fraction": "43376740678049452938271455183/1000000000000000000000000000000",
+  "published": "A = .0433+",
+  "published_decimal": "0.0433",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "reconstructed by local optimization; matches published value 0.0433+ and symmetry (Not symmetric)",
+  "basis": "figure"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "Not symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 10,
+  "triples_checked": 120,
+  "value": "0.043376740678049452938271455183",
+  "value_fraction": "43376740678049452938271455183/1000000000000000000000000000000",
+  "min_triple": [
+   3,
+   6,
+   8
+  ],
+  "num_min_ties": 14,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

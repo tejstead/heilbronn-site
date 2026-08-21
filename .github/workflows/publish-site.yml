@@ -1,0 +1,58 @@
+# Continuous deploy, pull-based: every push to main builds the site and
+# uploads dist/ as a tarball on the rolling "site" release. The server polls
+# that release every 5 minutes (deploy/site-pull.sh via cron) and syncs it
+# into /srv/www/math — so a merged PR is live within ~10 minutes. No server
+# credentials exist on GitHub; the box only makes outbound HTTPS.
+name: publish-site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-site
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build the site
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+          .venv/bin/python -m build
+
+      - name: Commit regenerated canonical data (if ingest changed it)
+        # Keeps the committed data/canonical/ in sync with what the deployed
+        # site was built from (e.g. after a submission PR merges). Pushes made
+        # with the workflow token do not trigger workflows, so no loop.
+        run: |
+          if ! git diff --quiet data/canonical; then
+            git config user.name "site-publish[bot]"
+            git config user.email "site-publish@users.noreply.github.com"
+            git add data/canonical
+            git commit -m "canonical: regenerate after merge"
+            git push
+          fi
+
+      - name: Publish dist/ to the rolling release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tar -C dist -czf site.tar.gz .
+          git rev-parse HEAD > site.sha
+          gh release view site >/dev/null 2>&1 || gh release create site \
+            --prerelease --title "site build (rolling)" \
+            --notes "Latest build of main. Pulled by the server every 5 minutes — see deploy/site-pull.sh. Not a versioned release."
+          gh release upload site site.tar.gz site.sha --clobber

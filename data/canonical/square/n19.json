@@ -1,0 +1,132 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 19,
+ "frame": "unit-square",
+ "points": [
+  [
+   "0.056794048787809",
+   "0.93940374539054"
+  ],
+  [
+   "0.970503817394573",
+   "0.061162128643842"
+  ],
+  [
+   "0.683454079649825",
+   "0.572394526662145"
+  ],
+  [
+   "0.429673072816364",
+   "0.912165004727179"
+  ],
+  [
+   "0.440828067543",
+   "0.663662947009694"
+  ],
+  [
+   "0.598102881914822",
+   "0.088456631979203"
+  ],
+  [
+   "0.702354217051639",
+   "1"
+  ],
+  [
+   "0.954754066728982",
+   "0.945606977621395"
+  ],
+  [
+   "0",
+   "0.675578467966734"
+  ],
+  [
+   "1",
+   "0.342975591448706"
+  ],
+  [
+   "0.585788527001872",
+   "0.332307600637957"
+  ],
+  [
+   "0.93082188289273",
+   "0.589686516715299"
+  ],
+  [
+   "0.343649452408682",
+   "0.428497492241508"
+  ],
+  [
+   "0.062875749348981",
+   "0.05579399523204"
+  ],
+  [
+   "0.815991210162954",
+   "0.00059565790624"
+  ],
+  [
+   "0.210152201717968",
+   "1"
+  ],
+  [
+   "0.09069582232106",
+   "0.415934630988787"
+  ],
+  [
+   "0",
+   "0.204184795456017"
+  ],
+  [
+   "0.339097206982608",
+   "0"
+  ]
+ ],
+ "value": {
+  "decimal": "0.0133861776173687205577346807455",
+  "fraction": "26772355234737441115469361491/2000000000000000000000000000000",
+  "published": "A = 0.01338+",
+  "published_decimal": "0.01338",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "William Shanley",
+   "date": "July 2026"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "re-polished from the published record figure — the record holder's arrangement with re-derived coordinates",
+  "basis": "figure"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "Not symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 19,
+  "triples_checked": 969,
+  "value": "0.0133861776173687205577346807455",
+  "value_fraction": "26772355234737441115469361491/2000000000000000000000000000000",
+  "min_triple": [
+   1,
+   9,
+   11
+  ],
+  "num_min_ties": 32,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

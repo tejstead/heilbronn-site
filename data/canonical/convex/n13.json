@@ -1,0 +1,110 @@
+{
+ "schema_version": 1,
+ "variant": "convex",
+ "n": 13,
+ "frame": "free",
+ "points": [
+  [
+   "0.7262503272554176",
+   "0.4388890568372681"
+  ],
+  [
+   "0.5700515606090156",
+   "0.3079437775114338"
+  ],
+  [
+   "0.6327871120895331",
+   "0.5328479759933831"
+  ],
+  [
+   "0.6416207987804122",
+   "0.3127021123869771"
+  ],
+  [
+   "0.5148490471164644",
+   "0.3395137443428024"
+  ],
+  [
+   "0.5679223148906077",
+   "0.5390628289790125"
+  ],
+  [
+   "0.495131275787839",
+   "0.412356593381595"
+  ],
+  [
+   "0.5800095646202962",
+   "0.4677155159762986"
+  ],
+  [
+   "0.6499329141672348",
+   "0.3910833999601802"
+  ],
+  [
+   "0.5584150294032443",
+   "0.3865226684973668"
+  ],
+  [
+   "0.7052096091448784",
+   "0.4870264273613025"
+  ],
+  [
+   "0.7055856016358004",
+   "0.3662981535556451"
+  ],
+  [
+   "0.5096822331932992",
+   "0.4988636033313493"
+  ]
+ ],
+ "value": {
+  "decimal": "0.0309368890348956196016368467380",
+  "fraction": "126105514343648799416927860940/4076218336026180103298077571009",
+  "published": "A = .03093+",
+  "published_decimal": "0.03093",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "alphaevolve",
+  "ref": "google-deepmind/alphaevolve_results (arXiv:2506.13131)",
+  "note": null,
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "No symmetry"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [
+  "alphaevolve-2025"
+ ],
+ "verify": {
+  "n": 13,
+  "triples_checked": 286,
+  "value": "0.0309368890348956196016368467380",
+  "value_fraction": "126105514343648799416927860940/4076218336026180103298077571009",
+  "min_triple": [
+   0,
+   2,
+   10
+  ],
+  "num_min_ties": 15,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": 10
+ }
+}

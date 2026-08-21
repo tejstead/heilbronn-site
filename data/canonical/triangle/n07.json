@@ -1,0 +1,90 @@
+{
+ "schema_version": 1,
+ "variant": "triangle",
+ "n": 7,
+ "frame": "right",
+ "points": [
+  [
+   "0.1666666666666666666666666667",
+   "0"
+  ],
+  [
+   "0.75",
+   "0"
+  ],
+  [
+   "0",
+   "0.25"
+  ],
+  [
+   "0.8333333333333333333333333333",
+   "0.1666666666666666666666666667"
+  ],
+  [
+   "0",
+   "0.8333333333333333333333333333"
+  ],
+  [
+   "0.25",
+   "0.75"
+  ],
+  [
+   "0.3333333333333333333333333333",
+   "0.3333333333333333333333333333"
+  ]
+ ],
+ "value": {
+  "decimal": "0.0972222222222222222222222221778",
+  "fraction": "4861111111111111111111111108888888888888888888888888889/50000000000000000000000000000000000000000000000000000000",
+  "published": "A = 7/72 = .0972+",
+  "published_decimal": "0.0972",
+  "published_lower_bound": true,
+  "exact_text": "7/72",
+  "exact_sympy": "7/72",
+  "minimal_polynomial": null,
+  "exact_display": "7/72",
+  "exact_decimal": "0.0972222222222222222222222222222222222222222222",
+  "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>7</mn></mrow><mrow><mn>72</mn></mrow></mfrac></math>"
+ },
+ "status": "proven",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "David Cantrell",
+   "date": "July 2006"
+  },
+  "proved": {
+   "name": "Z. Zeng and L. Chen",
+   "date": "2019"
+  },
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "paper",
+  "ref": "arXiv:2607.15021",
+  "note": null,
+  "basis": null
+ },
+ "coordinates_reconstructed": false,
+ "symmetry": {
+  "label": "120° Rotationally symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 7,
+  "triples_checked": 35,
+  "value": "0.0972222222222222222222222221778",
+  "value_fraction": "4861111111111111111111111108888888888888888888888888889/50000000000000000000000000000000000000000000000000000000",
+  "min_triple": [
+   2,
+   3,
+   6
+  ],
+  "num_min_ties": 9,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

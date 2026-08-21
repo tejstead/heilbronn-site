@@ -1,0 +1,14 @@
+# Heilbronn triangle n=8 — RECONSTRUCTED configuration
+# exact value of these literals: 0.067789213254196898218756861476
+# published entry: A = .0677+ (Found by David Cantrell in July 2006.; Proved by Nathan Sudermann-Merx in 2026.)
+# Reconstructed by numerical optimization seeded from the published
+# value and symmetry; matches both, but is not claimed to be the
+# original author's exact arrangement.
+0.888607734966284	0.111392265033716
+0.111999705654030	0.000000000000000
+0.720562726018855	0.000000000000000
+0.439307097839210	0.484405907813651
+0.395276367904075	0.212129872844957
+0.000000000000000	0.155433665397645
+0.111999705654030	0.605262423310289
+0.000000000000000	1.000000000000000

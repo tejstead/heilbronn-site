@@ -1,0 +1,120 @@
+{
+ "schema_version": 1,
+ "variant": "convex",
+ "n": 16,
+ "frame": "free",
+ "points": [
+  [
+   "0.0130325908247",
+   "0.394872885795022"
+  ],
+  [
+   "-0.394872885795022",
+   "0.0130325908247"
+  ],
+  [
+   "-0.0130325908247",
+   "-0.394872885795022"
+  ],
+  [
+   "0.394872885795022",
+   "-0.0130325908247"
+  ],
+  [
+   "-0.281785838762288",
+   "-0.990035662166502"
+  ],
+  [
+   "0.990035662166502",
+   "-0.281785838762288"
+  ],
+  [
+   "0.281785838762288",
+   "0.990035662166502"
+  ],
+  [
+   "-0.990035662166502",
+   "0.281785838762289"
+  ],
+  [
+   "0.693286040764032",
+   "-0.740611131451272"
+  ],
+  [
+   "0.740611131451272",
+   "0.693286040764032"
+  ],
+  [
+   "-0.693286040764032",
+   "0.740611131451272"
+  ],
+  [
+   "-0.740611131451272",
+   "-0.693286040764032"
+  ],
+  [
+   "0.215892411130126",
+   "-1.006461294886619"
+  ],
+  [
+   "1.006461294886619",
+   "0.215892411130126"
+  ],
+  [
+   "-0.215892411130126",
+   "1.006461294886619"
+  ],
+  [
+   "-1.006461294886619",
+   "-0.215892411130126"
+  ]
+ ],
+ "value": {
+  "decimal": "0.0222728771289807384536723067288",
+  "fraction": "140149336495404501866503094902/6292376852968257703836940508139",
+  "published": "A = .0222+",
+  "published_decimal": "0.0222",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "reconstructed by local optimization; matches published value 0.0222+ and symmetry (4-fold dihedral symmetry)",
+  "basis": "figure"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "4-fold dihedral symmetry"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 16,
+  "triples_checked": 560,
+  "value": "0.0222728771289807384536723067288",
+  "value_fraction": "140149336495404501866503094902/6292376852968257703836940508139",
+  "min_triple": [
+   1,
+   2,
+   7
+  ],
+  "num_min_ties": 28,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": 12
+ }
+}

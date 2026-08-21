@@ -1,0 +1,103 @@
+{
+ "schema_version": 1,
+ "variant": "triangle",
+ "n": 8,
+ "frame": "right",
+ "points": [
+  [
+   "0.888607734966284",
+   "0.111392265033716"
+  ],
+  [
+   "0.11199970565403",
+   "0"
+  ],
+  [
+   "0.720562726018855",
+   "0"
+  ],
+  [
+   "0.43930709783921",
+   "0.484405907813651"
+  ],
+  [
+   "0.395276367904075",
+   "0.212129872844957"
+  ],
+  [
+   "0",
+   "0.155433665397645"
+  ],
+  [
+   "0.11199970565403",
+   "0.605262423310289"
+  ],
+  [
+   "0",
+   "1"
+  ]
+ ],
+ "value": {
+  "decimal": "0.067789213254196898218756861476",
+  "fraction": "16947303313549224554689215369/250000000000000000000000000000",
+  "published": "A = .0677+",
+  "published_decimal": "0.0677",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": "1216512*t**7 + 1022976*t**6 - 2745456*t**5 + 2218730*t**4 + 32206304*t**3 - 19148615*t**2 + 3156103*t - 86233",
+  "exact_poly": {
+   "poly": "1216512*t**7 + 1022976*t**6 - 2745456*t**5 + 2218730*t**4 + 32206304*t**3 - 19148615*t**2 + 3156103*t - 86233",
+   "near": 0.0339,
+   "which": "root near 0.0339",
+   "scale": 2,
+   "note": "polynomial for the unit right triangle; A is twice its root"
+  },
+  "exact_decimal": "0.0677892132541972123588108049740286304958007014",
+  "poly_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1216512</mn><msup><mi>t</mi><mn>7</mn></msup><mo>+</mo><mn>1022976</mn><msup><mi>t</mi><mn>6</mn></msup><mo>−</mo><mn>2745456</mn><msup><mi>t</mi><mn>5</mn></msup><mo>+</mo><mn>2218730</mn><msup><mi>t</mi><mn>4</mn></msup><mo>+</mo><mn>32206304</mn><msup><mi>t</mi><mn>3</mn></msup><mo>−</mo><mn>19148615</mn><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mn>3156103</mn><mi>t</mi><mo>−</mo><mn>86233</mn></mrow></math>"
+ },
+ "status": "proven",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "David Cantrell",
+   "date": "July 2006"
+  },
+  "proved": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "2026"
+  },
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "reconstructed by local optimization; matches published value 0.0677+ and symmetry (Not symmetric)",
+  "basis": "value-and-symmetry"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "Not symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [
+  "sudermann-merx-2026-triangle",
+  "chen-zeng-zhou-2014"
+ ],
+ "verify": {
+  "n": 8,
+  "triples_checked": 56,
+  "value": "0.067789213254196898218756861476",
+  "value_fraction": "16947303313549224554689215369/250000000000000000000000000000",
+  "min_triple": [
+   0,
+   3,
+   7
+  ],
+  "num_min_ties": 11,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

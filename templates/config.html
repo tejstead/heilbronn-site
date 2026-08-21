@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block title %}Heilbronn — {{ variant_title }}, n = {{ n }}{% endblock %}
+{% block description %}Best known Heilbronn configuration for {{ n }} points ({{ variant_title | lower }}): A = {{ value_short }}. Exact coordinates, symmetry, minimal triangles, downloads.{% endblock %}
+{% block content %}
+<nav class="crumbs">
+  <a href="{{ base }}/{{ slug }}/">{{ variant_title }}</a>
+  <span class="crumb-n">n = {{ n }}</span>
+  <span class="crumb-nav">
+    {% if prev %}<a href="{{ base }}/{{ slug }}/{{ prev }}/" rel="prev">← {{ prev }}</a>{% endif %}
+    {% if next %}<a href="{{ base }}/{{ slug }}/{{ next }}/" rel="next">{{ next }} →</a>{% endif %}
+  </span>
+</nav>
+
+<h1>{{ variant_title }}, n = {{ n }} <span class="badge badge-{{ status }}">{{ status }}</span>{% if recon %} <span class="badge badge-recon">{{ recon }}</span>{% endif %}</h1>
+
+<div class="value-block">
+{% if exact_decimal %}
+  <div class="value-main">A =
+    {% if exact_mathml %}{{ exact_mathml | safe }}
+    {% elif exact_display %}<span class="exact-form">{{ exact_display }}</span>
+    {% elif poly_mathml %}the {{ poly_which or "real" }} root of {{ poly_mathml | safe }}
+    {% else %}the {{ poly_which or "real" }} root of <span class="poly">{{ poly }}</span>{% endif %}
+  </div>
+  <div class="value-dec">= <span class="digits">{{ exact_decimal }}</span>…</div>
+  {% if poly_mathml and (exact_mathml or exact_display) %}
+  <div class="value-poly">root of {{ poly_mathml | safe }}{% if poly_note %} — {{ poly_note }}{% endif %}</div>
+  {% elif poly and poly_note %}
+  <div class="value-poly">{{ poly_note }}</div>
+  {% endif %}
+{% elif value_full %}
+  <div class="value-main">A = <span class="digits">{{ value_head }}</span></div>
+  <details class="value-more">
+    <summary>full precision</summary>
+    <p>Exact value of the published coordinate literals:
+    <code>{{ value_full }}</code></p>
+  </details>
+{% else %}
+  <div class="value-main">A = <span class="digits">{{ value_short }}</span>
+    <span class="value-note">(published value; coordinates unavailable)</span></div>
+{% endif %}
+</div>
+
+{% if banner %}<div class="banner banner-{{ banner.kind }}">{{ banner.text | safe }}</div>{% endif %}
+
+{% if figure %}
+<figure class="viewer" data-variant="{{ slug }}" data-n="{{ n }}">
+  {{ figure | safe }}
+  <div class="viewer-controls" hidden>
+    {% if classes and classes[0].swatch %}
+    <div class="ctl-group" data-role="cc">
+      <span class="ctl-label">Classes</span>
+      {% for cls in classes %}
+      <button class="chip cc-{{ cls.cc }}" data-cc="{{ cls.cc }}" title="side lengths {{ cls.sides }}">{{ cls.count }}×</button>
+      {% endfor %}
+      <button class="chip chip-all" data-cc="all">all</button>
+    </div>
+    {% endif %}
+    {% if sym_controls %}
+    <div class="ctl-group" data-role="sym">
+      <span class="ctl-label">Symmetry</span>
+      {% for s in sym_controls %}
+      <button class="chip sym-chip" data-sym="{{ s.key }}">{{ s.label }}</button>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+  <figcaption>{{ fig_caption }}</figcaption>
+</figure>
+{% else %}
+<div class="placeholder-fig">
+  <p>Coordinates for this configuration are not publicly available yet.
+  The published figure is on <a href="{{ friedman_url }}">Friedman's page</a>.</p>
+</div>
+{% endif %}
+
+<section>
+  <h2>Symmetry</h2>
+  <p>{{ symmetry_text }}</p>
+  {% if orbit_line %}<p class="dl-note">{{ orbit_line }}</p>{% endif %}
+</section>
+
+{% if classes %}
+<section>
+  <h2>Minimal triangles</h2>
+  <p>{{ tie_count }} triangle{{ 's' if tie_count != 1 }} tied (within relative
+  10<sup>−9</sup>) at the minimal area{% if classes | length > 1 %},
+  in {{ classes | length }} congruence classes{% endif %}:</p>
+  <div class="table-scroll">
+  <table class="classes">
+    <thead><tr>{% if classes[0].swatch %}<th></th>{% endif %}<th>count</th><th>side lengths</th><th>triangles (point indices)</th></tr></thead>
+    <tbody>
+    {% for cls in classes %}
+      <tr>
+        {% if cls.swatch %}<td><span class="swatch cc-{{ cls.cc }}"></span></td>{% endif %}
+        <td>{{ cls.count }}</td>
+        <td><code>{{ cls.sides }}</code></td>
+        <td class="tri-list">{{ cls.tris }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</section>
+{% endif %}
+
+<section>
+  <h2>Provenance</h2>
+  <ul class="provenance">
+    {% for line in provenance %}<li>{{ line | safe }}</li>{% endfor %}
+  </ul>
+  {% if changelog %}
+  <h3>Record history</h3>
+  <ul class="changelog">
+    {% for e in changelog %}<li><span class="cl-date">{{ e.date }}</span> {{ e.text }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+</section>
+
+{% if downloads %}
+<section>
+  <h2>Downloads</h2>
+  <ul class="downloads">
+    {% for d in downloads %}<li><a href="{{ d.href }}" download>{{ d.label }}</a> <span class="dl-note">{{ d.note }}</span></li>{% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% if references %}
+<section>
+  <h2>References</h2>
+  <ul class="refs">
+    {% for r in references %}
+    <li>{% if r.url %}<a href="{{ r.url }}">{{ r.title }}</a>{% else %}{{ r.title }}{% endif %}</li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<nav class="cross-links">
+  <span>Same n elsewhere:</span>
+  {% for x in cross %}<a href="{{ base }}/{{ x.slug }}/{{ n }}/">{{ x.title }}</a>{% endfor %}
+  <a href="{{ friedman_url }}">Friedman's page</a>
+</nav>
+
+{% if figure %}<script src="{{ base }}/assets/{{ assets['viewer.js'] }}" defer></script>{% endif %}
+{% endblock %}

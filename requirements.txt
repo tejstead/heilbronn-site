@@ -1,0 +1,7 @@
+jinja2
+mpmath
+sympy
+numpy
+scipy
+shapely
+Brotli

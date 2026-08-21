@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Heilbronn — Verifier{% endblock %}
+{% block description %}Paste coordinates and verify a Heilbronn configuration exactly, in your browser.{% endblock %}
+{% block content %}
+<h1>Configuration verifier</h1>
+<p>Paste coordinates (one <code>x y</code> pair per line; <code>#</code> starts a
+comment — the same format as this site's <code>points.txt</code> downloads).
+Everything runs in your browser with <strong>exact rational arithmetic</strong>:
+the value reported is the exact minimum triangle area implied by your decimal
+literals, over all C(n,3) triples, normalized for the chosen container.</p>
+
+<noscript><p class="banner">The verifier needs JavaScript — it computes
+everything client-side; nothing is uploaded.</p></noscript>
+
+<div class="verifier-row">
+  <label>Container:
+    <select id="variant">
+      <option value="square">square [0,1]²</option>
+      <option value="triangle">triangle (0,0),(1,0),(0,1)</option>
+      <option value="triangle-eq">triangle, equilateral frame</option>
+      <option value="convex">convex (hull of the points)</option>
+    </select>
+  </label>
+  <button class="primary" id="verify">Verify</button>
+  <button id="load-example">Load example</button>
+</div>
+<textarea id="input" class="verifier-input" spellcheck="false"
+  placeholder="0.000000000000000&#9;0.916589578257652&#10;0.162954749142019&#9;0.673669001541504&#10;…"></textarea>
+
+<div id="verdict" hidden></div>
+<pre id="output" class="verifier-out" hidden></pre>
+
+<p class="dl-note">The JSON output matches the schema of the
+<code>verify_output.json</code> files in
+<a href="https://github.com/TejSteadQC/heilbronn-configurations">heilbronn-configurations</a>.
+Comparison against this site's best known values uses <code>values.json</code>
+from the current build.</p>
+
+<script>window.HEILBRONN_VALUES_URL = "{{ base }}/assets/{{ values_name }}";</script>
+<script src="{{ base }}/assets/{{ assets['verifier.js'] }}" defer></script>
+{% endblock %}

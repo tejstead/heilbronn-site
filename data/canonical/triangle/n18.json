@@ -1,0 +1,128 @@
+{
+ "schema_version": 1,
+ "variant": "triangle",
+ "n": 18,
+ "frame": "right",
+ "points": [
+  [
+   "0.051003158849664",
+   "0.803294479264095"
+  ],
+  [
+   "0.353986073373785",
+   "0"
+  ],
+  [
+   "0.646013926626216",
+   "0.353986073373784"
+  ],
+  [
+   "0.243574276219153",
+   "0.243574276219157"
+  ],
+  [
+   "0.051003158849664",
+   "0.145702361886243"
+  ],
+  [
+   "0.353986073373789",
+   "0.64601392662621"
+  ],
+  [
+   "0",
+   "0.646013926626214"
+  ],
+  [
+   "0",
+   "0.353986073373788"
+  ],
+  [
+   "0.803294479264094",
+   "0.145702361886242"
+  ],
+  [
+   "0.145702361886242",
+   "0.803294479264094"
+  ],
+  [
+   "0.243574276219157",
+   "0.51285144756169"
+  ],
+  [
+   "0.073652978691409",
+   "0.463173510654296"
+  ],
+  [
+   "0.463173510654297",
+   "0.463173510654294"
+  ],
+  [
+   "0.512851447561691",
+   "0.243574276219152"
+  ],
+  [
+   "0.463173510654295",
+   "0.073652978691409"
+  ],
+  [
+   "0.145702361886242",
+   "0.051003158849664"
+  ],
+  [
+   "0.803294479264093",
+   "0.051003158849664"
+  ],
+  [
+   "0.646013926626211",
+   "0"
+  ]
+ ],
+ "value": {
+  "decimal": "0.014894342987958971827277617711",
+  "fraction": "14894342987958971827277617711/1000000000000000000000000000000",
+  "published": "A = .01489+",
+  "published_decimal": "0.01489",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "re-polished from the published record figure — the record holder's arrangement with re-derived coordinates",
+  "basis": "figure"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "Fully symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [],
+ "verify": {
+  "n": 18,
+  "triples_checked": 816,
+  "value": "0.014894342987958971827277617711",
+  "value_fraction": "14894342987958971827277617711/1000000000000000000000000000000",
+  "min_triple": [
+   3,
+   7,
+   16
+  ],
+  "num_min_ties": 33,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

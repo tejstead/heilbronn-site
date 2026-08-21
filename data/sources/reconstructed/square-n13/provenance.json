@@ -1,0 +1,10 @@
+{
+ "ref": "heilbronn-site reconstruct/reconstruct.py",
+ "note": "in-basin tightening of Peter Karpov's configuration (published at inversed.ru/Ascension, score 0.0270192722391139); same arrangement, fully converged coordinates",
+ "date": "2026-08-20",
+ "method": "gentle in-basin tightening of the published float64 coordinates (spiralulam)",
+ "detected_symmetry": "Not symmetric",
+ "published_symmetry": "Not symmetric",
+ "symmetry_match": true,
+ "basis": "tightened-original"
+}

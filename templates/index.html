@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>The Heilbronn Problem</h1>
+<p class="lede">Place <em>n</em> points in a region of unit area so that the
+smallest triangle formed by any three of them has the largest possible
+area A(n).</p>
+
+<p>Best known configurations for three containers, after
+<a href="https://erich-friedman.github.io/packing/">Erich Friedman's Packing
+Center</a> — with exact coordinates for download, congruence and symmetry
+shown on every figure, links to the proofs, and an in-browser
+<a href="{{ base }}/verifier/">verifier</a>.</p>
+
+<div class="index-figs">
+{% for v in variants %}
+  <a href="{{ base }}/{{ v.slug }}/">
+    {{ v.thumb | safe }}
+    <span class="fig-title">{{ v.title }}</span>
+    <span class="fig-blurb">{{ v.blurb }}</span>
+  </a>
+{% endfor %}
+</div>
+
+<h2>Best known values</h2>
+<p class="table-legend">Truncated to 8 decimals; <span class="proven-mark">▲</span> marks
+entries proven optimal.</p>
+<div class="table-scroll">
+<table class="values">
+  <thead><tr><th>n</th><th>square</th><th>triangle</th><th>convex</th></tr></thead>
+  <tbody>
+  {% for row in value_rows %}
+    <tr>
+      <th>{{ row.n }}</th>
+      {% for cell in row.cells %}
+      <td>{% if cell %}<a href="{{ base }}/{{ cell.slug }}/{{ row.n }}/"
+        {% if cell.proven %}class="proven"{% endif %}>{{ cell.display }}</a>{% else %}—{% endif %}</td>
+      {% endfor %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

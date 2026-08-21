@@ -1,0 +1,13 @@
+# Heilbronn convex n=7 — RECONSTRUCTED configuration
+# exact value of these literals: 0.111111111111110998117184675199
+# published entry: A = 1/9 = .111+ (Proved by Zhenbing Zeng and Lu Yang in 1995.)
+# Reconstructed by numerical optimization seeded from the published
+# value and symmetry; matches both, but is not claimed to be the
+# original author's exact arrangement.
+-0.853847185298913	0.122686198685049
+0.202372957705240	-0.832495182572002
+0.501474227593679	0.559808983886958
+-0.953461399255900	-0.341387385610831
+0.654079577909261	-0.686726830288829
+0.149381821346638	0.878114215899660
+-0.050000000000000	-0.049999999999998

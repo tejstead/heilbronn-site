@@ -1,0 +1,114 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 14,
+ "frame": "unit-square",
+ "points": [
+  [
+   "0.077620206075158",
+   "0"
+  ],
+  [
+   "0.922379793924848",
+   "1"
+  ],
+  [
+   "0.922379793924848",
+   "0"
+  ],
+  [
+   "0.077620206075158",
+   "1"
+  ],
+  [
+   "0",
+   "0.186885917341429"
+  ],
+  [
+   "1",
+   "0.813114082658572"
+  ],
+  [
+   "1",
+   "0.186885917341428"
+  ],
+  [
+   "0",
+   "0.813114082658572"
+  ],
+  [
+   "0.292332650904471",
+   "0.321344897737659"
+  ],
+  [
+   "0.707667349095523",
+   "0.678655102262354"
+  ],
+  [
+   "0.7076673490955",
+   "0.321344897737659"
+  ],
+  [
+   "0.292332650904478",
+   "0.678655102262348"
+  ],
+  [
+   "0.5",
+   "0.138277958099444"
+  ],
+  [
+   "0.5",
+   "0.861722041900557"
+  ]
+ ],
+ "value": {
+  "decimal": "0.024303979620983627703534362",
+  "fraction": "12151989810491813851767181/500000000000000000000000000",
+  "published": "A = .02430+",
+  "published_decimal": "0.02430",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "Mark Beyleveld",
+   "date": "August 2006"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "reconstructed by local optimization; matches published value 0.02430+",
+  "basis": "tightened-original"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "Vertically and horizontally symmetric"
+ },
+ "notes": [],
+ "changelog": [],
+ "references": [
+  "repo-spiralulam"
+ ],
+ "verify": {
+  "n": 14,
+  "triples_checked": 364,
+  "value": "0.024303979620983627703534362",
+  "value_fraction": "12151989810491813851767181/500000000000000000000000000",
+  "min_triple": [
+   5,
+   10,
+   12
+  ],
+  "num_min_ties": 26,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

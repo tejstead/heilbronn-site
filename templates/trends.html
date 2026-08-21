@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Heilbronn — Trends{% endblock %}
+{% block description %}The Heilbronn record data as charts: A(n) across variants, the asymptotic n²·A(n) view, and the growth of tied minimal triangles.{% endblock %}
+{% block content %}
+<h1>Trends</h1>
+<p>The record tables as data. Every point is a configuration on this site,
+exactly verified; larger dots are proven optimal, and each point carries its
+value on hover.</p>
+
+<figure class="chart">{{ charts["values"] | safe }}
+<figcaption>Best known values fall roughly like n<sup>−2</sup> — the straight-line
+decay on the log scale. The three variants order as convex &gt; triangle ≥
+square for small n and converge as n grows.</figcaption></figure>
+
+<figure class="chart">{{ charts["normalized"] | safe }}
+<figcaption>Multiplying by n² makes the conjectured behavior visible:
+Komlós–Pintz–Szemerédi proved A(n) ≥ c·log n / n², so n²·A(n) should grow
+slowly without bound; the best known upper bound (Cohen–Pohoata–Zakharov 2023)
+decays as n<sup>−8/7−1/2000</sup>·n² for large n. In this range the curve drifts in a
+narrow band — the asymptotics are nowhere in sight at n ≤ 35.</figcaption></figure>
+
+<figure class="chart">{{ charts["ties"] | safe }}
+<figcaption>How many triangles tie for the minimum, per configuration —
+growth of the critical set is an open question posed by Sudermann-Merx
+(arXiv:2603.11107); this is the complete census across all three variants.
+Dips below the trend usually mean under-converged coordinates rather than
+mathematics: rows whose records aren't public yet sit visibly low.</figcaption></figure>
+
+<h2>State of the frontier</h2>
+<ul>
+<li>Proven optimal: square n ≤ 9, triangle n ≤ 8, convex n ≤ 7. Everything else is a best known configuration.</li>
+<li>Three rows (square 18, convex 32, convex 35) have records whose coordinates and current figures are not public; the site shows the best verifiable configurations until they surface.</li>
+<li>Four verified improvements are ahead of Friedman's pages: square 17, 21, 22 (cnemri, via AlphaEvolve) and square 25 (this site).</li>
+</ul>
+{% endblock %}

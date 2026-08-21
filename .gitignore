@@ -1,0 +1,12 @@
+dist/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+reconstruct/cache/
+
+# private: deploy target, correspondence drafts, pending claim bundles
+deploy/host.local
+reconstruct/outreach/
+reconstruct/claims-out/
+.pytest_cache/

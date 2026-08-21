@@ -1,0 +1,127 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 15,
+ "frame": "unit-square",
+ "points": [
+  [
+   "0.933799006734226",
+   "1"
+  ],
+  [
+   "0.287121945653082",
+   "0.302952263937884"
+  ],
+  [
+   "0.34221025641502",
+   "0.701379679196502"
+  ],
+  [
+   "0.963215730061134",
+   "0.095655759909701"
+  ],
+  [
+   "0.066620630519064",
+   "0.633622600828812"
+  ],
+  [
+   "0.648962961081715",
+   "0"
+  ],
+  [
+   "0.277551432349488",
+   "1"
+  ],
+  [
+   "0.066620630519064",
+   "0"
+  ],
+  [
+   "0.589951719647521",
+   "0.272537524502954"
+  ],
+  [
+   "0.602869725475512",
+   "0.92820405359327"
+  ],
+  [
+   "0.895612447110205",
+   "0.684269377750175"
+  ],
+  [
+   "0",
+   "0.192396430627152"
+  ],
+  [
+   "0.670698095404408",
+   "0.614945501795038"
+  ],
+  [
+   "0",
+   "0.924966910847664"
+  ],
+  [
+   "1",
+   "0.399792098745977"
+  ]
+ ],
+ "value": {
+  "decimal": "0.021106168589171656299342018148",
+  "fraction": "5276542147292914074835504537/250000000000000000000000000000",
+  "published": "A = .02111+",
+  "published_decimal": "0.02111",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "Peter Karpov",
+   "date": "August 2011"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "in-basin tightening of Peter Karpov's configuration (published at inversed.ru/Ascension, score 0.0211056818784151); same arrangement, fully converged coordinates",
+  "basis": "tightened-original"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "Not symmetric"
+ },
+ "notes": [],
+ "changelog": [
+  {
+   "date": "2011-08",
+   "text": "0.0211056819 — Peter Karpov (coordinates published 2018 at inversed.ru/Ascension)"
+  },
+  {
+   "date": "2026-08",
+   "text": "0.0211061686 — in-basin tightening of Karpov's coordinates (this site)"
+  }
+ ],
+ "references": [
+  "repo-spiralulam"
+ ],
+ "verify": {
+  "n": 15,
+  "triples_checked": 455,
+  "value": "0.021106168589171656299342018148",
+  "value_fraction": "5276542147292914074835504537/250000000000000000000000000000",
+  "min_triple": [
+   12,
+   13,
+   14
+  ],
+  "num_min_ties": 24,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

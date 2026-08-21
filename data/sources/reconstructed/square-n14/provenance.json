@@ -1,0 +1,10 @@
+{
+ "ref": "heilbronn-site reconstruct/reconstruct.py",
+ "note": "reconstructed by local optimization; matches published value 0.02430+",
+ "date": "2026-08-20",
+ "method": "gentle in-basin tightening of the published float64 coordinates (spiralulam)",
+ "detected_symmetry": "2-fold dihedral symmetry",
+ "published_symmetry": "Vertically and horizontally symmetric",
+ "symmetry_match": false,
+ "basis": "tightened-original"
+}

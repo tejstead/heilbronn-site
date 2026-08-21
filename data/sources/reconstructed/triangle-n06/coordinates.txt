@@ -1,0 +1,12 @@
+# Heilbronn triangle n=6 — RECONSTRUCTED configuration
+# exact value of these literals: 0.124999999999999984634438001822
+# published entry: A = 1/8 = .125 (Found by L. Yang, J. Z. Zhang, and Z. B. Zeng in 1991.; Proved by L. Yang, J. Z. Zhang, and Z. B. Zeng in 1994.)
+# Reconstructed by numerical optimization seeded from the published
+# value and symmetry; matches both, but is not claimed to be the
+# original author's exact arrangement.
+0.000000000000000	0.249999997228217
+0.750000002771783	0.000000000000000
+0.249999997228217	0.750000002771783
+0.750000002771783	0.249999997228217
+0.000000000000000	0.750000002771783
+0.249999997228217	0.000000000000000

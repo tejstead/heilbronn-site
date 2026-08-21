@@ -1,0 +1,119 @@
+{
+ "schema_version": 1,
+ "variant": "square",
+ "n": 13,
+ "frame": "unit-square",
+ "points": [
+  [
+   "0.964767763985652",
+   "0.087631131275387"
+  ],
+  [
+   "0",
+   "1"
+  ],
+  [
+   "0.896992264055792",
+   "0.902531190186335"
+  ],
+  [
+   "0.761361484694717",
+   "0.441984131915572"
+  ],
+  [
+   "0.655287738105373",
+   "1"
+  ],
+  [
+   "0.748535826963033",
+   "0"
+  ],
+  [
+   "0",
+   "0.099261701153732"
+  ],
+  [
+   "1",
+   "0.461351460314331"
+  ],
+  [
+   "0.328522986188698",
+   "0.633306592733028"
+  ],
+  [
+   "0.087950516283685",
+   "0.614434520928982"
+  ],
+  [
+   "0.345077364847219",
+   "0.901516128540429"
+  ],
+  [
+   "0.087950516283685",
+   "0"
+  ],
+  [
+   "0.500129515589133",
+   "0.149245794589567"
+  ]
+ ],
+ "value": {
+  "decimal": "0.027019916669111101000446039172",
+  "fraction": "6754979167277775250111509793/250000000000000000000000000000",
+  "published": "A = .02702+",
+  "published_decimal": "0.02702",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": null
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "Peter Karpov",
+   "date": "August 2011"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "in-basin tightening of Peter Karpov's configuration (published at inversed.ru/Ascension, score 0.0270192722391139); same arrangement, fully converged coordinates",
+  "basis": "tightened-original"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "Not symmetric"
+ },
+ "notes": [],
+ "changelog": [
+  {
+   "date": "2011-08",
+   "text": "0.0270192722 — Peter Karpov (coordinates published 2018 at inversed.ru/Ascension)"
+  },
+  {
+   "date": "2026-08",
+   "text": "0.0270199167 — in-basin tightening of Karpov's coordinates (this site)"
+  }
+ ],
+ "references": [
+  "repo-spiralulam"
+ ],
+ "verify": {
+  "n": 13,
+  "triples_checked": 286,
+  "value": "0.027019916669111101000446039172",
+  "value_fraction": "6754979167277775250111509793/250000000000000000000000000000",
+  "min_triple": [
+   4,
+   6,
+   8
+  ],
+  "num_min_ties": 20,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}

@@ -1,0 +1,136 @@
+{
+ "schema_version": 1,
+ "variant": "triangle",
+ "n": 15,
+ "frame": "right",
+ "points": [
+  [
+   "0.04115636331009554308882404369",
+   "0.9176872733798089138223519126"
+  ],
+  [
+   "0.04115636331009554308882404369",
+   "0.04115636331009554308882404369"
+  ],
+  [
+   "0.9176872733798089138223519126",
+   "0.04115636331009554308882404369"
+  ],
+  [
+   "0",
+   "0.7562273214151210006395264308"
+  ],
+  [
+   "0.2437726785848789993604735692",
+   "0"
+  ],
+  [
+   "0.7562273214151210006395264308",
+   "0.2437726785848789993604735692"
+  ],
+  [
+   "0.2437726785848789993604735692",
+   "0.7562273214151210006395264308"
+  ],
+  [
+   "0",
+   "0.2437726785848789993604735692"
+  ],
+  [
+   "0.7562273214151210006395264308",
+   "0"
+  ],
+  [
+   "0.2070744579922296933935153833",
+   "0.5207668094397275930360037929"
+  ],
+  [
+   "0.2721587325680427135704808238",
+   "0.2070744579922296933935153833"
+  ],
+  [
+   "0.5207668094397275930360037929",
+   "0.2721587325680427135704808238"
+  ],
+  [
+   "0.06521800131734992510310433667",
+   "0.4673909993413250374484478317"
+  ],
+  [
+   "0.4673909993413250374484478317",
+   "0.06521800131734992510310433667"
+  ],
+  [
+   "0.4673909993413250374484478317",
+   "0.4673909993413250374484478317"
+  ]
+ ],
+ "value": {
+  "decimal": "0.0210907694602666879593204075894",
+  "fraction": "210907694602666879593204075893662632011429957310123250499/10000000000000000000000000000000000000000000000000000000000",
+  "published": "A = .0210+",
+  "published_decimal": "0.0210",
+  "published_lower_bound": true,
+  "exact_text": null,
+  "exact_sympy": null,
+  "minimal_polynomial": "5250987*x**5 + 1609650*x**4 + 161469*x**3 + 5438*x**2 - 13*x - 4",
+  "exact_poly": {
+   "poly": "5250987*x**5 + 1609650*x**4 + 161469*x**3 + 5438*x**2 - 13*x - 4",
+   "near": 0.0211,
+   "which": "unique real root",
+   "note": "leading coefficient 3⁷·7⁴"
+  },
+  "exact_decimal": "0.0210907694602666879593204076637693494055410966",
+  "poly_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>5250987</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>1609650</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>161469</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>5438</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>13</mn><mi>x</mi><mo>−</mo><mn>4</mn></mrow></math>"
+ },
+ "status": "record",
+ "page_relation": "OK",
+ "credit": {
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false
+ },
+ "coordinates_source": {
+  "kind": "reconstructed",
+  "ref": "heilbronn-site reconstruct/reconstruct.py",
+  "note": "exact reconstruction: the twelve points carrying all 15 minimal triples form a mirror-symmetric frame solved as the exact critical point of its tie system (degree-5 algebraic); the three remaining points are floaters (all their triples ≥ 1.0178× the minimum), each confined to a triangular cell of diameter ≈ 0.003 and placed at its cell's maximal-clearance point. Literals: exact values rounded to 30 decimals, rotation images taken of the rounded generators",
+  "basis": "figure"
+ },
+ "coordinates_reconstructed": true,
+ "symmetry": {
+  "label": "120° Rotationally symmetric"
+ },
+ "notes": [
+  "The tight structure splits 12 + 3: twelve points form a mirror-symmetric frame carrying all 15 minimal triples — the exact critical point of its tie system, with coordinates algebraic of degree 5 — while the other three are floaters whose every triple stays ≥ 1.0178× the minimum.",
+  "Each floater is confined to a triangular cell of diameter ≈ 0.003; the six such cells form two mirror-image orbits and the floaters must occupy alternating cells, so the configuration is chiral — the frame's mirror symmetry cannot extend to all 15 points. Floaters are placed at their cell's maximal-clearance point, which pins the whole configuration algebraically."
+ ],
+ "changelog": [
+  {
+   "date": "2007-06",
+   "text": "0.0210+ — David Cantrell (page entry)"
+  },
+  {
+   "date": "2026-08-21",
+   "text": "coordinates replaced by the exact tie-system solution; value identified as the unique real root of 5250987A⁵ + 1609650A⁴ + 161469A³ + 5438A² − 13A − 4 = 0.021090769460266… (this site)"
+  }
+ ],
+ "references": [],
+ "verify": {
+  "n": 15,
+  "triples_checked": 455,
+  "value": "0.0210907694602666879593204075894",
+  "value_fraction": "210907694602666879593204075893662632011429957310123250499/10000000000000000000000000000000000000000000000000000000000",
+  "min_triple": [
+   0,
+   2,
+   14
+  ],
+  "num_min_ties": 15,
+  "feasible": true,
+  "violations": [],
+  "hull_vertex_count": null
+ }
+}
