@@ -42,17 +42,24 @@
   "exact_decimal": "0.166666666666666666666666666666666666666666667",
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>6</mn></mrow></mfrac></math>"
  },
- "status": "record",
+ "status": "proven",
  "page_relation": "OK",
  "credit": {
   "found": {
    "name": "David Cantrell",
    "date": "June 2007"
   },
-  "proved": null,
+  "proved": {
+   "name": "Andreas Dress, Lu Yang, and Zhenbing Zeng",
+   "date": "1995"
+  },
   "trivial": false
  },
- "proof": null,
+ "proof": {
+  "id": "dress-yang-zeng-1995",
+  "title": "A. Dress, L. Yang, Z. Zeng, Heilbronn problem for six points in a planar convex body, in Minimax and Applications, Springer (1995) 173–190",
+  "url": "https://doi.org/10.1007/978-1-4613-3557-3_13"
+ },
  "coordinates_source": {
   "kind": "exact-construction",
   "ref": "data/sources/exact/constructions.py",
@@ -82,5 +89,6 @@
   "feasible": true,
   "violations": [],
   "hull_vertex_count": 6
- }
+ },
+ "page_note": "Friedman's page credits only the configuration (Cantrell, 2007); the value itself was settled in 1995 — Dress, Yang and Zeng proved that any six points in a convex body K span a triangle of area at most |K|/6, and that 1/6 is sharp."
 }
