@@ -1,0 +1,5 @@
+{
+ "ref": "TejSteadQC/heilbronn-configurations, claims batch 2026-08-21 (heilbronn-experiments pipeline)",
+ "credit": "Tej Stead, August 2026",
+ "note": "obtained from the n=32 configuration by point deletion; growing the n=30 record by one point converges to the same value"
+}
