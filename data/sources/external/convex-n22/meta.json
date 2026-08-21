@@ -1,0 +1,5 @@
+{
+ "ref": "Original full-precision coordinates of the August 2026 Packing Center submissions by Nathan Sudermann-Merx",
+ "credit": "Nathan Sudermann-Merx, August 2026",
+ "note": "Original author's full-precision coordinates for the Packing Center entry credited to Sudermann-Merx (August 2026). orbit-seeded searcher (LP relocation, min-norm ascent), finished by sign-fixed cell QCP and equal-critical-area continuation"
+}
