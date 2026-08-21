@@ -131,6 +131,18 @@
    "kind": "web",
    "url": "https://github.com/google-deepmind/alphaevolve_results",
    "title": "google-deepmind/alphaevolve_results — published AlphaEvolve constructions"
+  },
+  "yang-zeng-1995-convex7": {
+   "kind": "doi",
+   "id": "10.1007/978-1-4613-3557-3_14",
+   "url": "https://doi.org/10.1007/978-1-4613-3557-3_14",
+   "title": "L. Yang, Z. Zeng, Heilbronn problem for seven points in a planar convex body, in Minimax and Applications, Springer (1995) 191–218"
+  },
+  "zeng-chen-2019-triangle7": {
+   "kind": "doi",
+   "id": "10.1007/978-3-030-26831-2_30",
+   "url": "https://doi.org/10.1007/978-3-030-26831-2_30",
+   "title": "Z. Zeng, L. Chen, Determining the Heilbronn configuration of seven points in triangles via symbolic computation, CASC 2019, LNCS 11661, Springer (2019) 458–477"
   }
  },
  "by_config": {
@@ -195,6 +207,12 @@
   ],
   "convex/14": [
    "alphaevolve-2025"
+  ],
+  "convex/7": [
+   "yang-zeng-1995-convex7"
+  ],
+  "triangle/7": [
+   "zeng-chen-2019-triangle7"
   ]
  },
  "proofs": {
@@ -205,6 +223,8 @@
   "square/9": "sudermann-merx-2026-square",
   "triangle/6": "yang-zhang-zeng-1992",
   "triangle/8": "sudermann-merx-2026-triangle",
-  "convex/6": "dress-yang-zeng-1995"
+  "convex/6": "dress-yang-zeng-1995",
+  "convex/7": "yang-zeng-1995-convex7",
+  "triangle/7": "zeng-chen-2019-triangle7"
  }
 }

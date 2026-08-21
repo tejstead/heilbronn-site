@@ -59,7 +59,11 @@
   },
   "trivial": false
  },
- "proof": null,
+ "proof": {
+  "id": "zeng-chen-2019-triangle7",
+  "title": "Z. Zeng, L. Chen, Determining the Heilbronn configuration of seven points in triangles via symbolic computation, CASC 2019, LNCS 11661, Springer (2019) 458–477",
+  "url": "https://doi.org/10.1007/978-3-030-26831-2_30"
+ },
  "coordinates_source": {
   "kind": "paper",
   "ref": "arXiv:2607.15021",
@@ -72,7 +76,9 @@
  },
  "notes": [],
  "changelog": [],
- "references": [],
+ "references": [
+  "zeng-chen-2019-triangle7"
+ ],
  "verify": {
   "n": 7,
   "triples_checked": 35,
