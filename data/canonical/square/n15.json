@@ -68,19 +68,19 @@
  "value": {
   "decimal": "0.021106168589171656299342018148",
   "fraction": "5276542147292914074835504537/250000000000000000000000000000",
-  "published": "A = .02111+",
-  "published_decimal": "0.02111",
+  "published": "A = .02121+",
+  "published_decimal": "0.02121",
   "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "OK",
+ "page_relation": "BEHIND",
  "credit": {
   "found": {
-   "name": "Peter Karpov",
-   "date": "August 2011"
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
   },
   "proved": null,
   "trivial": false
@@ -105,6 +105,10 @@
   {
    "date": "2026-08",
    "text": "0.0211061686 — in-basin tightening of Karpov's coordinates (this site)"
+  },
+  {
+   "date": "2026-08-21",
+   "text": ".02121+ — Nathan Sudermann-Merx (page entry; coordinates not yet public)"
   }
  ],
  "references": [

@@ -92,18 +92,18 @@
  "value": {
   "decimal": "0.01100026769170850288955653949",
   "fraction": "1100026769170850288955653949/100000000000000000000000000000",
-  "published": "A = .010814+",
-  "published_decimal": "0.010814",
+  "published": "A = .01117+",
+  "published_decimal": "0.01117",
   "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "BEATS",
+ "page_relation": "BEHIND",
  "credit": {
   "found": {
-   "name": "Chouaieb Nemri (AlphaEvolve, Google Cloud)",
+   "name": "Tej Stead",
    "date": "August 2026"
   },
   "proved": null,
@@ -133,6 +133,10 @@
   {
    "date": "2026-08-03",
    "text": "0.0110002677 — cnemri via AlphaEvolve (verified here; awaiting page update)"
+  },
+  {
+   "date": "2026-08-21",
+   "text": ".01117+ — page entry update; coordinates not yet public"
   }
  ],
  "references": [],
@@ -150,6 +154,5 @@
   "feasible": true,
   "violations": [],
   "hull_vertex_count": null
- },
- "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the page's value <code>.010814+</code>. Submitted to Erich Friedman and open as PR #1 on the companion repository since 2026-08-03."
+ }
 }
