@@ -18,7 +18,7 @@
       <span class="digits">{{ e.dec }}</span>
     </p>
     {% if e.poly_mathml %}<p class="entry-line entry-sym">Root of {{ e.poly_mathml | safe }}.</p>{% endif %}
-    {% for line in e.credit_lines %}<p class="entry-line">{{ line }}</p>{% endfor %}
+    {% for line in e.credit_lines %}<p class="entry-line">{{ line | safe }}</p>{% endfor %}
     {% if e.symline %}<p class="entry-line entry-sym">{{ e.symline | capitalize }}.</p>{% endif %}
     {% if e.behind %}<p class="entry-line entry-note">Record coordinates unpublished; best public configuration shown.</p>{% endif %}
     <p class="entry-links">
