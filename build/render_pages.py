@@ -538,6 +538,11 @@ def render_extra(env, assets, values_name):
     (DIST / "methods" / "index.html").write_text(
         env.get_template("methods.html").render(
             dict(common, section="methods", body=METHODS_BODY, bib=list(bib.values()))))
+    from .leaderboard import leaderboards
+    (DIST / "leaderboard").mkdir(parents=True, exist_ok=True)
+    (DIST / "leaderboard" / "index.html").write_text(
+        env.get_template("leaderboard.html").render(
+            dict(common, section="leaderboard", boards=leaderboards(load_docs()))))
     (DIST / "verifier").mkdir(parents=True, exist_ok=True)
     (DIST / "verifier" / "index.html").write_text(
         env.get_template("verifier.html").render(
@@ -549,7 +554,8 @@ SITE_ORIGIN = "https://math.tejstead.com"
 
 
 def write_sitemap_and_404(env, common):
-    urls = [f"{BASE}/", f"{BASE}/trends/", f"{BASE}/verifier/", f"{BASE}/methods/"]
+    urls = [f"{BASE}/", f"{BASE}/trends/", f"{BASE}/leaderboard/",
+            f"{BASE}/verifier/", f"{BASE}/methods/"]
     for v in VARIANTS:
         urls.append(f"{BASE}/{v}/")
         for n in NS:
