@@ -1,0 +1,5 @@
+{
+ "ref": "test: current record coordinates at 6-decimal precision",
+ "credit": "pipeline test, August 2026",
+ "note": "valid but should trail the canonical value slightly"
+}

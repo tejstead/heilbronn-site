@@ -1,0 +1,5 @@
+{
+ "ref": "test: exact n15 solution, transcription slip in the 30th decimal",
+ "credit": "pipeline test, August 2026",
+ "note": "deliberately subtly infeasible \u2014 should be caught"
+}
