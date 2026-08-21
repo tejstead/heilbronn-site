@@ -6,7 +6,8 @@
 <title>{% block title %}The Heilbronn Problem{% endblock %}</title>
 <meta name="description" content="{% block description %}The Heilbronn problem for squares, triangles and convex regions: best known configurations with exact coordinates, proofs, and an interactive viewer.{% endblock %}">
 <link rel="stylesheet" href="{{ base }}/assets/{{ assets['site.css'] }}">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,10 90,85 10,85' fill='%23e4572e'/%3E%3C/svg%3E">
+{% set fav = favicons.get(section) if section is defined else None %}
+<link rel="icon" href="{{ fav or favicons['default'] }}">
 {% block head %}{% endblock %}
 </head>
 <body>

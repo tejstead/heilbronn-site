@@ -3,6 +3,7 @@
 import hashlib
 import html
 import json
+import math
 import pathlib
 import re
 import shutil
@@ -557,10 +558,53 @@ def write_sitemap_and_404(env, common):
         f"User-agent: *\nAllow: /\nSitemap: {SITE_ORIGIN}{BASE}/sitemap.xml\n")
 
 
+FAVICON_DEFAULT = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' "
+                   "viewBox='0 0 100 100'%3E%3Cpolygon points='50,10 90,85 10,85' "
+                   "fill='%23e4572e'/%3E%3C/svg%3E")
+
+
+def _favicon_uri(variant, n):
+    """Per-variant favicon drawn from the actual canonical configuration:
+    the container outline plus the record's points, in the brand orange."""
+    p = CANONICAL / variant / f"n{n:02d}.json"
+    if not p.exists():
+        return None
+    doc = json.loads(p.read_text())
+    if not doc.get("points"):
+        return None
+    pts = [(float(x), float(y)) for x, y in doc["points"]]
+    if variant == "triangle":
+        pts = [(x + y / 2, y * math.sqrt(3) / 2) for x, y in pts]
+        h = math.sqrt(3) / 2
+        outline = [(0.0, 0.0), (1.0, 0.0), (0.5, h)]
+    else:
+        h = 1.0
+        outline = [(0.0, 0.0), (1.0, 0.0), (1.0, 1.0), (0.0, 1.0)]
+    s = 88.0
+    x0, y0 = (100 - s) / 2, (100 - h * s) / 2
+    def tx(q):
+        return (round(x0 + q[0] * s, 1), round(y0 + (h - q[1]) * s, 1))
+    shape = " ".join(f"{x},{y}" for x, y in (tx(q) for q in outline))
+    dots = "".join(f"<circle cx='{x}' cy='{y}' r='5.5'/>"
+                   for x, y in (tx(q) for q in pts))
+    svg = (f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>"
+           f"<polygon points='{shape}' fill='none' stroke='#e4572e' "
+           f"stroke-width='5' stroke-linejoin='round'/>"
+           f"<g fill='#e4572e'>{dots}</g></svg>")
+    return "data:image/svg+xml," + (svg.replace("<", "%3C").replace(">", "%3E")
+                                       .replace("#", "%23").replace(" ", "%20"))
+
+
 def make_env():
-    return jinja2.Environment(
+    env = jinja2.Environment(
         loader=jinja2.FileSystemLoader(ROOT / "templates"),
         autoescape=True, trim_blocks=True, lstrip_blocks=True)
+    env.globals["favicons"] = {
+        "square": _favicon_uri("square", 16) or FAVICON_DEFAULT,
+        "triangle": _favicon_uri("triangle", 18) or FAVICON_DEFAULT,
+        "default": FAVICON_DEFAULT,
+    }
+    return env
 
 
 def render(docs=None, derived_map=None):

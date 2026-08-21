@@ -45,7 +45,8 @@
   "exact_poly": {
    "poly": "152*x**3 + 12*x**2 - 14*x + 1",
    "near": 0.0839,
-   "which": "smallest positive"
+   "which": "smallest positive",
+   "note": "three real roots (casus irreducibilis): no real nested-root form exists"
   },
   "exact_decimal": "0.0838590090075134066379667435447605568443247682",
   "poly_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>152</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>12</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>14</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow></math>"

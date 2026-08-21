@@ -31,7 +31,8 @@
    "exact_poly": {
     "poly": "152*x**3 + 12*x**2 - 14*x + 1",
     "near": 0.0839,
-    "which": "smallest positive"
+    "which": "smallest positive",
+    "note": "three real roots (casus irreducibilis): no real nested-root form exists"
    }
   }
  },
@@ -177,7 +178,7 @@
     "poly": "5250987*x**5 + 1609650*x**4 + 161469*x**3 + 5438*x**2 - 13*x - 4",
     "near": 0.0211,
     "which": "unique real root",
-    "note": "leading coefficient 3⁷·7⁴"
+    "note": "leading coefficient 3⁷·7⁴; Galois group S₅, so no radical (nested-root) form exists"
    }
   },
   "notes": [
