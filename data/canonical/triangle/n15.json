@@ -77,7 +77,7 @@
   "exact_poly": {
    "poly": "5250987*x**5 + 1609650*x**4 + 161469*x**3 + 5438*x**2 - 13*x - 4",
    "near": 0.0211,
-   "which": "unique real root",
+   "which": "unique real",
    "note": "leading coefficient 3⁷·7⁴; Galois group S₅, so no radical (nested-root) form exists"
   },
   "exact_decimal": "0.0210907694602666879593204076637693494055410966",

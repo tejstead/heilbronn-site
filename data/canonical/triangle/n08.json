@@ -49,7 +49,7 @@
   "exact_poly": {
    "poly": "1216512*t**7 + 1022976*t**6 - 2745456*t**5 + 2218730*t**4 + 32206304*t**3 - 19148615*t**2 + 3156103*t - 86233",
    "near": 0.0339,
-   "which": "root near 0.0339",
+   "which": "unique real",
    "scale": 2,
    "note": "polynomial for the unit right triangle; A is twice its root"
   },

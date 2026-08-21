@@ -73,7 +73,7 @@
   "exact_poly": {
    "poly": "320*x**3 + 768*x**2 - 60*x + 1",
    "near": 0.0243,
-   "which": "smallest positive root",
+   "which": "smallest positive",
    "note": "exact form computed by Rhys Chappell"
   },
   "exact_decimal": "0.0243039796209924867482019578100155839585389904",

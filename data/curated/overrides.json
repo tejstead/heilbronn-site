@@ -95,7 +95,7 @@
    "exact_poly": {
     "poly": "1216512*t**7 + 1022976*t**6 - 2745456*t**5 + 2218730*t**4 + 32206304*t**3 - 19148615*t**2 + 3156103*t - 86233",
     "near": 0.0339,
-    "which": "root near 0.0339",
+    "which": "unique real",
     "scale": 2,
     "note": "polynomial for the unit right triangle; A is twice its root"
    }
@@ -164,7 +164,7 @@
    "exact_poly": {
     "poly": "1944*v**3 - 648*v**2 + 66*v - 1",
     "near": 0.0182,
-    "which": "smallest real"
+    "which": "unique real"
    }
   }
  },
@@ -182,7 +182,7 @@
    "exact_poly": {
     "poly": "5250987*x**5 + 1609650*x**4 + 161469*x**3 + 5438*x**2 - 13*x - 4",
     "near": 0.0211,
-    "which": "unique real root",
+    "which": "unique real",
     "note": "leading coefficient 3⁷·7⁴; Galois group S₅, so no radical (nested-root) form exists"
    }
   },
@@ -196,7 +196,7 @@
    "exact_poly": {
     "poly": "3456*x**3 - 1764*x**2 + 268*x - 9",
     "near": 0.04654,
-    "which": "unique real root",
+    "which": "unique real",
     "note": "computed here from the Comellas–Yebra closed-form configuration (arXiv:2603.11107 appendix)"
    }
   }
@@ -206,7 +206,7 @@
    "exact_poly": {
     "poly": "64*x**3 + 80*x**2 + 28*x - 1",
     "near": 0.0326,
-    "which": "unique real root",
+    "which": "unique real",
     "note": "computed here from the Comellas–Yebra closed-form configuration (arXiv:2603.11107 appendix)"
    }
   }
@@ -216,7 +216,7 @@
    "exact_poly": {
     "poly": "320*x**3 + 768*x**2 - 60*x + 1",
     "near": 0.0243,
-    "which": "smallest positive root",
+    "which": "smallest positive",
     "note": "exact form computed by Rhys Chappell"
    }
   },

@@ -65,7 +65,7 @@
   "exact_poly": {
    "poly": "64*x**3 + 80*x**2 + 28*x - 1",
    "near": 0.0326,
-   "which": "unique real root",
+   "which": "unique real",
    "note": "computed here from the Comellas–Yebra closed-form configuration (arXiv:2603.11107 appendix)"
   },
   "exact_decimal": "0.0325988586918196982187640066235154080492419884",
