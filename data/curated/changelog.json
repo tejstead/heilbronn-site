@@ -128,5 +128,11 @@
    "date": "2026-08-21",
    "text": "value identified as the unique real root of 64A³ + 80A² + 28A − 1 = 0 (this site, from the published closed-form configuration)"
   }
+ ],
+ "square/14": [
+  {
+   "date": "2026-08-21",
+   "text": "coordinates replaced by Rhys Chappell's exact realization of Beyleveld's configuration; value identified as the smallest positive root of 320A³ + 768A² − 60A + 1 = 0.024303979620992… (github.com/rhyschappell/heilbronn-n14-exact, re-verified here)"
+  }
  ]
 }

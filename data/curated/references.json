@@ -143,6 +143,11 @@
    "id": "10.1007/978-3-030-26831-2_30",
    "url": "https://doi.org/10.1007/978-3-030-26831-2_30",
    "title": "Z. Zeng, L. Chen, Determining the Heilbronn configuration of seven points in triangles via symbolic computation, CASC 2019, LNCS 11661, Springer (2019) 458–477"
+  },
+  "chappell-2026-n14": {
+   "kind": "web",
+   "url": "https://github.com/rhyschappell/heilbronn-n14-exact",
+   "title": "R. Chappell, Exact realization of the best-known n=14 Heilbronn configuration (2026), github.com/rhyschappell/heilbronn-n14-exact"
   }
  },
  "by_config": {
@@ -181,7 +186,8 @@
    "repo-spiralulam"
   ],
   "square/14": [
-   "repo-spiralulam"
+   "repo-spiralulam",
+   "chappell-2026-n14"
   ],
   "square/15": [
    "repo-spiralulam"
