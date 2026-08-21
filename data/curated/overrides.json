@@ -217,8 +217,11 @@
     "poly": "320*x**3 + 768*x**2 - 60*x + 1",
     "near": 0.0243,
     "which": "smallest positive root",
-    "note": "exact realization of Beyleveld's configuration by Rhys Chappell; coordinates algebraic of degree 3"
+    "note": "exact form computed by Rhys Chappell"
    }
-  }
+  },
+  "notes": [
+   "Exact value and coordinates computed by <strong>Rhys Chappell</strong>, August 2026 — an exact algebraic realization of Beyleveld's configuration (coordinates in Q(a), 8a³ − 12a² − 12a + 1 = 0), re-verified here."
+  ]
  }
 }
