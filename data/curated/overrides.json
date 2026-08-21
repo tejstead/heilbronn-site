@@ -1,7 +1,4 @@
 {
- "triangle/13": {
-  "page_note": "Friedman's page prints <code>.0265556+</code> — a digit transposition of the submitted value 0.0265565…; the record and credit are otherwise up to date."
- },
  "square/3": {
   "value": {
    "exact_display": "1/2",
@@ -170,9 +167,6 @@
  },
  "square/17": {
   "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the page's value <code>.016481+</code>. Submitted to Erich Friedman and open as PR #1 on the companion repository since 2026-08-03."
- },
- "square/21": {
-  "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the page's value <code>.010814+</code>. Submitted to Erich Friedman and open as PR #1 on the companion repository since 2026-08-03."
  },
  "square/22": {
   "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the page's value <code>.009569+</code>. Submitted to Erich Friedman and open as PR #1 on the companion repository since 2026-08-03."

@@ -27,6 +27,10 @@
   {
    "date": "2026-08",
    "text": "0.0211061686 — in-basin tightening of Karpov's coordinates (this site)"
+  },
+  {
+   "date": "2026-08-21",
+   "text": ".02121+ — Nathan Sudermann-Merx (page entry; coordinates not yet public)"
   }
  ],
  "square/17": [
@@ -51,6 +55,10 @@
   {
    "date": "2026-08-03",
    "text": "0.0110002677 — cnemri via AlphaEvolve (verified here; awaiting page update)"
+  },
+  {
+   "date": "2026-08-21",
+   "text": ".01117+ — page entry update; coordinates not yet public"
   }
  ],
  "square/22": [
@@ -133,6 +141,12 @@
   {
    "date": "2026-08-21",
    "text": "coordinates replaced by Rhys Chappell's exact realization of Beyleveld's configuration; value identified as the smallest positive root of 320A³ + 768A² − 60A + 1 = 0.024303979620992… (github.com/rhyschappell/heilbronn-n14-exact, re-verified here)"
+  }
+ ],
+ "square/26": [
+  {
+   "date": "2026-08-21",
+   "text": ".007078+ — page entry update; coordinates not yet public"
   }
  ]
 }

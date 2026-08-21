@@ -112,18 +112,18 @@
  "value": {
   "decimal": "0.00840326812361442518737191546950",
   "fraction": "5602178749076286147923682499/666666666666666986741630274490",
-  "published": "A = .008402+",
-  "published_decimal": "0.008402",
+  "published": "A = .008403+",
+  "published_decimal": "0.008403",
   "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "BEATS",
+ "page_relation": "OK",
  "credit": {
   "found": {
-   "name": "Nathan Sudermann-Merx",
+   "name": "Tej Stead",
    "date": "August 2026"
   },
   "proved": null,
