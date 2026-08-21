@@ -107,7 +107,7 @@
  "page_relation": "BEATS",
  "credit": {
   "found": {
-   "name": "cnemri (AlphaEvolve, Google Cloud)",
+   "name": "Chouaieb Nemri (AlphaEvolve, Google Cloud)",
    "date": "August 2026"
   },
   "proved": null,
@@ -155,5 +155,5 @@
   "violations": [],
   "hull_vertex_count": null
  },
- "page_note": "Verified improvement by <strong>cnemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the page's value <code>.009569+</code>. Submitted to Erich Friedman and open as PR #1 on the companion repository since 2026-08-03."
+ "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the page's value <code>.009569+</code>. Submitted to Erich Friedman and open as PR #1 on the companion repository since 2026-08-03."
 }

@@ -25,6 +25,7 @@ ALIASES = {
     "a. dress": "Andreas Dress",
     "f. comellas": "Francesc Comellas",
     "j. yebra": "José Luis Andres Yebra",
+    "chouaieb nemri (alphaevolve, google cloud)": "Chouaieb Nemri",
 }
 
 _SPLIT = re.compile(r",\s*(?:and\s+)?|\s+and\s+")
