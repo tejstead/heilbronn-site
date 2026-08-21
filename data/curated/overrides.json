@@ -177,9 +177,6 @@
  "square/22": {
   "page_note": "Verified improvement by <strong>cnemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the page's value <code>.009569+</code>. Submitted to Erich Friedman and open as PR #1 on the companion repository since 2026-08-03."
  },
- "square/25": {
-  "page_note": "Independent search by this site (using the companion repository's toolkit) found these coordinates, exceeding the published record <code>.007327+</code> by 1.08% — a new record candidate, dual-verified and ready for submission."
- },
  "triangle/15": {
   "value": {
    "exact_poly": {

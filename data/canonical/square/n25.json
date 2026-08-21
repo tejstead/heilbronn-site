@@ -119,7 +119,7 @@
  "page_relation": "BEATS",
  "credit": {
   "found": {
-   "name": "Nathan Sudermann-Merx",
+   "name": "Tej Stead",
    "date": "August 2026"
   },
   "proved": null,
@@ -178,6 +178,5 @@
   "feasible": true,
   "violations": [],
   "hull_vertex_count": null
- },
- "page_note": "Independent search by this site (using the companion repository's toolkit) found these coordinates, exceeding the published record <code>.007327+</code> by 1.08% — a new record candidate, dual-verified and ready for submission."
+ }
 }

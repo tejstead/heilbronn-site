@@ -399,6 +399,18 @@ def canonical_doc(variant, n, entry, cand, res, page_relation, override, changel
         "references": refs or [],
         "verify": res and {k: v for k, v in res.items() if k != "_value"},
     }
+    # When an external submission's value beats the published record, the
+    # find belongs to the submitter (meta.json credit), not to the holder of
+    # the superseded page entry.
+    if (cand and cand.get("kind") == "external" and cand.get("credit")
+            and page_relation == "BEATS"):
+        m = re.match(r"^(.+?),\s*((?:%s)\s+\d{4}|\d{4})$" % "|".join(MONTHS),
+                     cand["credit"].strip())
+        if m:
+            doc["credit"]["found"] = {"name": m.group(1), "date": m.group(2)}
+        else:
+            doc["credit"]["found"] = {"name": cand["credit"].strip(), "date": None}
+
     if cand and cand.get("delta_exact") and not doc["value"]["exact_text"]:
         doc["value"]["exact_text"] = cand["delta_exact"]
     if override:
