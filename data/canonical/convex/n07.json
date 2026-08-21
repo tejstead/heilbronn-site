@@ -56,7 +56,11 @@
   },
   "trivial": false
  },
- "proof": null,
+ "proof": {
+  "id": "yang-zeng-1995-convex7",
+  "title": "L. Yang, Z. Zeng, Heilbronn problem for seven points in a planar convex body, in Minimax and Applications, Springer (1995) 191–218",
+  "url": "https://doi.org/10.1007/978-1-4613-3557-3_14"
+ },
  "coordinates_source": {
   "kind": "reconstructed",
   "ref": "heilbronn-site reconstruct/reconstruct.py",
@@ -69,7 +73,9 @@
  },
  "notes": [],
  "changelog": [],
- "references": [],
+ "references": [
+  "yang-zeng-1995-convex7"
+ ],
  "verify": {
   "n": 7,
   "triples_checked": 35,
