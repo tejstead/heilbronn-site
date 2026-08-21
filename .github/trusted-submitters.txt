@@ -4,3 +4,4 @@
 # Any PR touching code, templates, workflows, or curated data always waits
 # for maintainer review, regardless of this list.
 tejstead
+tejsteadqc
