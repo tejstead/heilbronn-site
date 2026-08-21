@@ -1,0 +1,5 @@
+{
+ "ref": "Original full-precision coordinates of the August 2026 Packing Center submissions by Nathan Sudermann-Merx",
+ "credit": "Nathan Sudermann-Merx, August 2026",
+ "note": "Fully asymmetric and rigid; replaced Karpov's 2011 entry. orbit-seeded searcher (LP relocation, min-norm ascent), finished by sign-fixed cell QCP and equal-critical-area continuation"
+}
