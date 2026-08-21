@@ -20,6 +20,7 @@ digit counts, point counts) because this runs on untrusted pull requests.
 """
 
 import argparse
+import itertools
 import json
 import pathlib
 import re
@@ -30,7 +31,8 @@ from fractions import Fraction
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from build.vendor.verify_exact import verify, fraction_to_30sig  # noqa: E402
-from build.derive import detect_symmetry, friedman_label  # noqa: E402
+from build.derive import (detect_symmetry, friedman_label,  # noqa: E402
+                          minimal_triangles, congruence_classes)
 
 SUBMISSION_ROOT = "data/sources/external"
 DIR_RE = re.compile(r"^(square|triangle|convex)-n(\d{2})$")
@@ -221,9 +223,32 @@ def check_dir(dirpath):
 
     value = v["_value"]
     res["value_30sig"] = fraction_to_30sig(value)
-    sym = detect_symmetry(variant, [(float(x), float(y)) for x, y in points])
+    fpoints = [(float(x), float(y)) for x, y in points]
+    sym = detect_symmetry(variant, fpoints)
     res["symmetry"] = friedman_label(sym, variant) + f" ({sym['group']})" + \
         (" — approximate" if sym.get("approx") else "")
+
+    # Tie structure as the page will render it, plus an under-convergence
+    # warning: ties are exact within rel 1e-9, so coordinates need ~12+
+    # digits or the intended tie picture collapses to whatever the literals
+    # actually achieve.
+    min_area, ties = minimal_triangles(points)
+    res["classes"] = len(congruence_classes(fpoints, ties))
+    res["ties"] = len(ties)
+    fmin = float(min_area)
+    tie_set = set(ties)
+    near = sum(
+        1 for t in itertools.combinations(range(len(fpoints)), 3)
+        if t not in tie_set
+        and abs((fpoints[t[1]][0] - fpoints[t[0]][0]) * (fpoints[t[2]][1] - fpoints[t[0]][1])
+                - (fpoints[t[1]][1] - fpoints[t[0]][1]) * (fpoints[t[2]][0] - fpoints[t[0]][0])) / 2
+            <= fmin * (1 + 1e-6))
+    if near:
+        warnings.append(
+            f"{near} more triangle(s) lie within 1e-6 of the minimum but outside "
+            "the 1e-9 tie window — if these are meant to be exact ties, the "
+            "coordinates are under-converged; submit more digits so the page "
+            "shows the full tie structure")
 
     exact_path = dirpath / "exact.json"
     if exact_path.exists():
@@ -286,7 +311,8 @@ def render(results, out_of_scope):
                 f"| detected symmetry | {r['symmetry']} |",
                 *([f"| exact value claim | {r['exact']} |"] if r.get("exact") else []),
                 f"| triples checked | {v['triples_checked']}, "
-                f"{v['num_min_ties']} tied at the minimum |",
+                f"{r['ties']} tied at the minimum in {r['classes']} congruence "
+                f"class{'es' if r['classes'] != 1 else ''} |",
                 "",
             ]
         else:
