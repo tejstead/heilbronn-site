@@ -11,6 +11,11 @@ Everything is generated ahead of time on a laptop; the server only serves
 static files (precompressed, long-cached). No JS except the viewer and
 verifier enhancements — every page works fully with JS disabled.
 
+**Have a better configuration — or the exact value for one?** See
+[CONTRIBUTING.md](CONTRIBUTING.md): submissions are plain pull requests
+(coordinates, provenance, optionally a minimal polynomial), verified
+automatically in exact arithmetic and live on the site minutes after merge.
+
 ## Layout
 
 - `data/sources/` — vendored upstream inputs, each with `ATTRIBUTION.md`

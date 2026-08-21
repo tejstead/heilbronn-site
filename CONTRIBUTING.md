@@ -6,12 +6,14 @@ requests, verified automatically in exact arithmetic.
 
 ## What to add
 
-One directory per configuration:
+One directory per configuration — two required files, plus an optional
+third if you know the exact algebraic value:
 
 ```
 data/sources/external/<variant>-nNN/
-├── coordinates.txt
-└── meta.json
+├── coordinates.txt    required — the configuration
+├── meta.json          required — provenance, credit, page note
+└── exact.json         optional — the value's minimal polynomial
 ```
 
 `<variant>` is `square`, `triangle`, or `convex`; `NN` is the zero-padded
