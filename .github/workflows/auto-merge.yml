@@ -1,64 +1,81 @@
-# Auto-merge for trusted submitters: if the PR author is listed in
-# .github/trusted-submitters.txt (read from main, never from the PR) and the
-# PR only adds/modifies files under data/sources/external/, enable GitHub
-# auto-merge — the PR then merges the moment the required checks (ci "test"
-# + submission-verify "verify") pass, with no human review. Any other PR, or
-# a push that makes an eligible PR ineligible, gets auto-merge disabled and
-# waits for normal review.
+# Merge-on-green for trusted submitters: when submission-verify succeeds on a
+# PR, this workflow merges it — but only if the author is listed in
+# .github/trusted-submitters.txt (read from main, never from the PR), the PR
+# only adds/modifies files under data/sources/external/, the PR head is still
+# exactly the verified commit, and the ci "test" check has also succeeded on
+# that commit. Everyone else's PR just waits for the maintainer.
 #
-# pull_request_target runs with write permission, so this workflow must never
-# check out or execute code from the PR — it only reads the base branch and
-# calls the API.
+# This replaces GitHub's auto-merge feature deliberately: the merge is an
+# explicit act performed only after the required checks have actually
+# succeeded on the verified sha, so no branch-protection or bypass subtlety
+# can reorder it. Triggered by workflow_run, so it runs with write permission
+# from the workflow definition on main and never executes PR code.
 name: auto-merge
 
 on:
-  pull_request_target:
-    types: [opened, reopened, synchronize, ready_for_review]
+  workflow_run:
+    workflows: ["submission-verify"]
+    types: [completed]
 
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
-  gate:
+  merge:
     runs-on: ubuntu-latest
-    if: "!github.event.pull_request.draft"
+    if: >
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request'
     steps:
-      - uses: actions/checkout@v4  # checks out the BASE branch (main)
+      - uses: actions/checkout@v4  # main — the trusted list and nothing else
 
-      - name: Enable or disable auto-merge
+      - name: Merge if trusted, submission-only, and all checks green
         env:
           GH_TOKEN: ${{ github.token }}
-          AUTHOR: ${{ github.event.pull_request.user.login }}
-          PR: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
           REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
-          ineligible() {
-            echo "$1 — normal review required"
-            gh pr merge --disable-auto "$PR" --repo "$REPO" 2>/dev/null || true
-            exit 0
-          }
-
           list=.github/trusted-submitters.txt
-          [ -f "$list" ] || ineligible "no trusted-submitters list"
-          grep -vE '^\s*(#|$)' "$list" | grep -ixq -- "$AUTHOR" \
-            || ineligible "author @$AUTHOR is not a trusted submitter"
+          [ -f "$list" ] || { echo "no trusted list"; exit 0; }
 
-          files=$(gh api "repos/$REPO/pulls/$PR/files" --paginate \
-                    --jq '.[] | .status + " " + .filename')
-          [ -n "$files" ] || ineligible "empty PR"
-          while IFS= read -r line; do
-            status=${line%% *}; path=${line#* }
-            case "$status" in
-              added|modified) ;;
-              *) ineligible "disallowed change ($status: $path)";;
-            esac
-            case "$path" in
-              data/sources/external/*) ;;
-              *) ineligible "touches a file outside data/sources/external/ ($path)";;
-            esac
-          done <<< "$files"
+          prs=$(gh api "repos/$REPO/commits/$SHA/pulls" --jq '.[] | select(.state=="open") | .number')
+          [ -n "$prs" ] || { echo "no open PR for $SHA"; exit 0; }
 
-          gh pr merge --auto --squash "$PR" --repo "$REPO"
-          echo "auto-merge enabled — merges when required checks pass"
+          for pr in $prs; do
+            author=$(gh pr view "$pr" --repo "$REPO" --json author -q .author.login)
+            if ! grep -vE '^\s*(#|$)' "$list" | grep -ixq -- "$author"; then
+              echo "PR #$pr: @$author not a trusted submitter — normal review"; continue
+            fi
+            head=$(gh pr view "$pr" --repo "$REPO" --json headRefOid -q .headRefOid)
+            if [ "$head" != "$SHA" ]; then
+              echo "PR #$pr: head moved since verification — the new run will handle it"; continue
+            fi
+            bad=0
+            while IFS= read -r line; do
+              status=${line%% *}; path=${line#* }
+              case "$status" in added|modified) ;; *) bad=1;; esac
+              case "$path" in data/sources/external/*) ;; *) bad=1;; esac
+            done < <(gh api "repos/$REPO/pulls/$pr/files" --paginate \
+                       --jq '.[] | .status + " " + .filename')
+            if [ "$bad" = 1 ]; then
+              echo "PR #$pr: touches files outside the submission lane — normal review"; continue
+            fi
+
+            # ci must also be green on this exact commit (poll up to 10 min)
+            ok=""
+            for i in $(seq 1 40); do
+              c=$(gh api "repos/$REPO/commits/$SHA/check-runs" \
+                    --jq '[.check_runs[] | select(.name=="test")][0].conclusion // "pending"')
+              [ "$c" = "success" ] && { ok=1; break; }
+              case "$c" in failure|cancelled|timed_out|action_required)
+                echo "PR #$pr: ci test = $c — not merging"; break;;
+              esac
+              sleep 15
+            done
+            [ -n "$ok" ] || continue
+
+            gh pr merge --squash "$pr" --repo "$REPO"
+            echo "PR #$pr merged"
+          done
