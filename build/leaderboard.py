@@ -31,7 +31,18 @@ _SPLIT = re.compile(r",\s*(?:and\s+)?|\s+and\s+")
 
 
 def split_names(credit):
-    return [p.strip() for p in _SPLIT.split(credit.strip()) if p.strip()]
+    raw = [p.strip() for p in _SPLIT.split(credit.strip()) if p.strip()]
+    # re-join fragments that were split inside parentheses:
+    # "cnemri (AlphaEvolve, Google Cloud)" is one name, not two
+    parts, buf = [], ""
+    for p in raw:
+        buf = f"{buf}, {p}" if buf else p
+        if buf.count("(") == buf.count(")"):
+            parts.append(buf)
+            buf = ""
+    if buf:
+        parts.append(buf)
+    return parts
 
 
 def canon(name):
