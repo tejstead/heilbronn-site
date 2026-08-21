@@ -425,7 +425,7 @@ def canonical_doc(variant, n, entry, cand, res, page_relation, override, changel
         doc["value"]["exact_poly"] = {
             "poly": coeffs_to_poly(cand["exact_coeffs"]),
             "near": float(res["_value"]),
-            "which": "root nearest the coordinate value",
+            "which": "coordinate-matched",
             "note": "minimal polynomial submitted with the coordinates",
         }
     finalize_exact(doc, res)

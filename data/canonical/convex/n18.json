@@ -90,7 +90,7 @@
   "exact_poly": {
    "poly": "1944*v**3 - 648*v**2 + 66*v - 1",
    "near": 0.0182,
-   "which": "smallest real"
+   "which": "unique real"
   },
   "exact_decimal": "0.0182388954634910572362139010433579317373186207",
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mrow><mn>2</mn><mo>−</mo><mroot><mrow><mrow><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo>−</mo><mfrac><mrow><msqrt><mfrac><mrow><mn>239</mn></mrow><mrow><mn>3</mn></mrow></mfrac></msqrt></mrow><mrow><mn>6</mn></mrow></mfrac></mrow></mrow><mn>3</mn></mroot><mo>−</mo><mroot><mrow><mrow><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msqrt><mfrac><mrow><mn>239</mn></mrow><mrow><mn>3</mn></mrow></mfrac></msqrt></mrow><mrow><mn>6</mn></mrow></mfrac></mrow></mrow><mn>3</mn></mroot></mrow></mrow><mrow><mn>18</mn></mrow></mfrac></math>",
