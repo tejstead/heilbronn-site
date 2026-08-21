@@ -105,6 +105,41 @@ def fmt15(fr):
     return f"{sign}{v // 10**15}.{v % 10**15:015d}"
 
 
+def _external_exact_coeffs(path):
+    """Contributor-supplied minimal polynomial (see CONTRIBUTING.md): integer
+    coefficients, constant first, in exact.json. Returned as list[int] or
+    None. Deliberately data-only — the sympy expression string is built here
+    from validated integers, never parsed from contributor text."""
+    if not path.exists():
+        return None
+    data = json.loads(path.read_text())
+    raw = data.get("minimal_polynomial")
+    if not isinstance(raw, list) or not 2 <= len(raw) <= 65:
+        return None
+    coeffs = []
+    for c in raw:
+        if isinstance(c, str) and c.lstrip("-").isdigit():
+            c = int(c)
+        if not isinstance(c, int) or isinstance(c, bool) or c.bit_length() > 4096:
+            return None
+        coeffs.append(c)
+    return coeffs if coeffs[-1] != 0 else None
+
+
+def coeffs_to_poly(coeffs):
+    terms = []
+    for i, c in enumerate(coeffs):
+        if c == 0:
+            continue
+        if i == 0:
+            terms.append(str(c))
+        elif i == 1:
+            terms.append(f"{c}*x")
+        else:
+            terms.append(f"{c}*x**{i}")
+    return " + ".join(terms).replace("+ -", "- ")
+
+
 def gather_candidates(variant, n):
     """Yield candidate dicts: {points (list of [str,str]), kind, ref, note}."""
     tag = f"{variant}-n{n:02d}"
@@ -156,6 +191,7 @@ def gather_candidates(variant, n):
             "ref": meta["ref"],
             "note": meta.get("note"),
             "credit": meta.get("credit"),
+            "exact_coeffs": _external_exact_coeffs(ext / "exact.json"),
         }
 
     pap = SOURCES / "papers" / tag
@@ -355,6 +391,19 @@ def canonical_doc(variant, n, entry, cand, res, page_relation, override, changel
         doc["value"]["exact_text"] = cand["delta_exact"]
     if override:
         deep_update(doc, override)
+    # A minimal polynomial submitted alongside external coordinates applies
+    # only when the curated overrides carry no exact form of their own —
+    # curation always wins. finalize_exact then validates it against the
+    # coordinates (45 digits, rel 1e-9) and drops it loudly on mismatch.
+    if (cand and cand.get("exact_coeffs") and res is not None
+            and not doc["value"].get("exact_sympy")
+            and not doc["value"].get("exact_poly")):
+        doc["value"]["exact_poly"] = {
+            "poly": coeffs_to_poly(cand["exact_coeffs"]),
+            "near": float(res["_value"]),
+            "which": "root nearest the coordinate value",
+            "note": "minimal polynomial submitted with the coordinates",
+        }
     finalize_exact(doc, res)
     return doc
 

@@ -54,6 +54,29 @@ starting with `#` are comments.
 `ref` is required; `credit` and `note` are optional but encouraged. The
 `note` is shown on the configuration's page, so write it for readers.
 
+### exact.json (optional — for exact values)
+
+If you know the configuration's exact value, add its **minimal polynomial**
+as an integer coefficient list, constant term first, for the normalized
+value A the site reports:
+
+```json
+{
+ "minimal_polynomial": [-4, -13, 5438, 161469, 1609650, 5250987]
+}
+```
+
+(that example encodes 5250987A⁵ + 1609650A⁴ + 161469A³ + 5438A² − 13A − 4,
+the triangle n = 15 value). Coefficients too large for 64-bit tools may be
+written as strings. No expression syntax is accepted — coefficients only.
+
+The checker confirms in exact arithmetic that the polynomial has a root
+within 1e-9 (relative) of the value implied by your coordinates. What it
+cannot confirm is that the polynomial is irreducible and actually minimal —
+so PRs containing `exact.json` always get maintainer review, even from
+trusted submitters. If your submission wins the entry, the polynomial is
+re-validated at 45 digits at build time and rendered on the page.
+
 ## What happens on the PR
 
 A workflow re-verifies every changed submission with the site's exact

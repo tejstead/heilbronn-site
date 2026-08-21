@@ -39,6 +39,8 @@ MAX_COORD_BYTES = 64 * 1024
 MAX_META_BYTES = 8 * 1024
 MAX_POINTS = 100
 META_KEYS = {"ref": (True, 300), "credit": (False, 300), "note": (False, 2000)}
+MAX_POLY_DEGREE = 64
+MAX_COEFF_BITS = 4096
 
 
 def fail(problems, msg):
@@ -100,6 +102,72 @@ def check_meta(path, problems, warnings):
     return meta
 
 
+def parse_poly_coeffs(raw, problems):
+    """exact.json's minimal_polynomial: integer coefficients, constant term
+    first. Accepts ints or strings of digits (for coefficients too large for
+    other tools' JSON parsers). Returns list[int] or None."""
+    if not isinstance(raw, list) or not 2 <= len(raw) <= MAX_POLY_DEGREE + 1:
+        fail(problems, "`minimal_polynomial` must be a list of 2 to "
+                       f"{MAX_POLY_DEGREE + 1} integer coefficients, constant term first")
+        return None
+    coeffs = []
+    for i, c in enumerate(raw):
+        if isinstance(c, str) and re.fullmatch(r"-?\d{1,1300}", c):
+            c = int(c)
+        if not isinstance(c, int) or isinstance(c, bool):
+            fail(problems, f"`minimal_polynomial[{i}]` is not an integer")
+            return None
+        if c.bit_length() > MAX_COEFF_BITS:
+            fail(problems, f"`minimal_polynomial[{i}]` exceeds {MAX_COEFF_BITS} bits")
+            return None
+        coeffs.append(c)
+    if coeffs[-1] == 0:
+        fail(problems, "`minimal_polynomial` has a zero leading coefficient")
+        return None
+    return coeffs
+
+
+def check_exact(path, value, problems, warnings):
+    """Validate an exact-value claim against the submission's own exact
+    rational value: the polynomial must change sign across
+    [value(1-1e-9), value(1+1e-9)], all in exact arithmetic."""
+    if path.stat().st_size > MAX_META_BYTES:
+        fail(problems, f"`exact.json` is larger than {MAX_META_BYTES // 1024} KB")
+        return None
+    try:
+        data = json.loads(path.read_text())
+    except json.JSONDecodeError as exc:
+        fail(problems, f"`exact.json` is not valid JSON: {exc}")
+        return None
+    if not isinstance(data, dict) or "minimal_polynomial" not in data:
+        fail(problems, "`exact.json` must be an object with `minimal_polynomial`")
+        return None
+    for key in data:
+        if key not in ("minimal_polynomial", "note"):
+            warnings.append(f"`exact.json` has unknown key `{key}` (ignored)")
+    coeffs = parse_poly_coeffs(data["minimal_polynomial"], problems)
+    if coeffs is None:
+        return None
+
+    def P(q):
+        acc = Fraction(0)
+        for c in reversed(coeffs):
+            acc = acc * q + c
+        return acc
+
+    delta = value / 10 ** 9
+    lo, hi = P(value - delta), P(value + delta)
+    if not (lo == 0 or hi == 0 or (lo < 0) != (hi < 0)):
+        fail(problems, "`exact.json`: the polynomial has no sign change within "
+                       "1e-9 (relative) of the value implied by the coordinates "
+                       "— the claimed exact value does not match this submission")
+        return None
+    from math import gcd
+    if gcd(*(abs(c) for c in coeffs)) > 1:
+        warnings.append("`exact.json`: coefficients share a common factor")
+    return {"degree": len(coeffs) - 1, "coeffs": coeffs}
+
+
 def canonical_value(variant, n):
     path = ROOT / "data" / "canonical" / variant / f"n{n:02d}.json"
     if not path.exists():
@@ -131,7 +199,7 @@ def check_dir(dirpath):
     check_meta(dirpath / "meta.json", problems, warnings)
     for extra in sorted(p.name for p in dirpath.iterdir()
                         if p.name not in ("coordinates.txt", "meta.json",
-                                          "verify_output.json")):
+                                          "exact.json", "verify_output.json")):
         warnings.append(f"unexpected file `{extra}` (only coordinates.txt and "
                         "meta.json are read)")
     if points is None:
@@ -156,6 +224,14 @@ def check_dir(dirpath):
     sym = detect_symmetry(variant, [(float(x), float(y)) for x, y in points])
     res["symmetry"] = friedman_label(sym, variant) + f" ({sym['group']})" + \
         (" — approximate" if sym.get("approx") else "")
+
+    exact_path = dirpath / "exact.json"
+    if exact_path.exists():
+        ex = check_exact(exact_path, value, problems, warnings)
+        if ex:
+            res["exact"] = (f"degree-{ex['degree']} polynomial has a root within "
+                            "1e-9 of the coordinate value ✓ — minimality/irreducibility "
+                            "not machine-checked; needs maintainer review")
     cur, published = canonical_value(variant, n)
     res["published"] = published
     if cur is None:
@@ -208,6 +284,7 @@ def render(results, out_of_scope):
                 f"| vs current canonical | {r['relation']} |",
                 f"| published page entry | `{r['published'] or '—'}` |",
                 f"| detected symmetry | {r['symmetry']} |",
+                *([f"| exact value claim | {r['exact']} |"] if r.get("exact") else []),
                 f"| triples checked | {v['triples_checked']}, "
                 f"{v['num_min_ties']} tied at the minimum |",
                 "",
