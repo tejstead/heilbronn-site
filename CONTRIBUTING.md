@@ -62,6 +62,12 @@ PR with the exact value, the tie count, and how it compares to the current
 canonical entry. Invalid submissions (infeasible, malformed, wrong point
 count) fail the check.
 
+Submissions are reviewed by the maintainer before merging. Contributors
+listed in `.github/trusted-submitters.txt` skip review: their PRs merge
+automatically once verification passes — but only when the PR touches
+nothing but submission directories. Any change to code, templates, or
+curated data always requires review.
+
 A submission that verifies but scores **below** the current value is still
 welcome when it has provenance value — for example an original author's
 arrangement for an entry we only have as a reconstruction. Say so in the

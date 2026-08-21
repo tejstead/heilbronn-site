@@ -1,6 +1,7 @@
 """Render the whole site into dist/heilbronn/ from the canonical data."""
 
 import hashlib
+import html
 import json
 import pathlib
 import re
@@ -181,8 +182,11 @@ def provenance_lines(doc, derived):
             "paper": "exact, as published in",
             "external": "by an external contributor, re-verified here",
         }.get(src["kind"], src["kind"])
-        note = f" — {src['note']}" if src.get("note") else ""
-        lines.append(f"Coordinates {kind_text}: <code>{src['ref']}</code>{note}.")
+        # ref and note flow in from source meta.json files — for the
+        # "external" kind that is contributor-supplied text, and provenance
+        # lines render with |safe, so escape rather than trust it.
+        note = f" — {html.escape(src['note'])}" if src.get("note") else ""
+        lines.append(f"Coordinates {kind_text}: <code>{html.escape(src['ref'])}</code>{note}.")
     if doc.get("verify"):
         v = doc["verify"]
         lines.append(

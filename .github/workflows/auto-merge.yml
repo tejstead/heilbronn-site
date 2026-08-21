@@ -1,0 +1,64 @@
+# Auto-merge for trusted submitters: if the PR author is listed in
+# .github/trusted-submitters.txt (read from main, never from the PR) and the
+# PR only adds/modifies files under data/sources/external/, enable GitHub
+# auto-merge — the PR then merges the moment the required checks (ci "test"
+# + submission-verify "verify") pass, with no human review. Any other PR, or
+# a push that makes an eligible PR ineligible, gets auto-merge disabled and
+# waits for normal review.
+#
+# pull_request_target runs with write permission, so this workflow must never
+# check out or execute code from the PR — it only reads the base branch and
+# calls the API.
+name: auto-merge
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    if: "!github.event.pull_request.draft"
+    steps:
+      - uses: actions/checkout@v4  # checks out the BASE branch (main)
+
+      - name: Enable or disable auto-merge
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          ineligible() {
+            echo "$1 — normal review required"
+            gh pr merge --disable-auto "$PR" --repo "$REPO" 2>/dev/null || true
+            exit 0
+          }
+
+          list=.github/trusted-submitters.txt
+          [ -f "$list" ] || ineligible "no trusted-submitters list"
+          grep -vE '^\s*(#|$)' "$list" | grep -ixq -- "$AUTHOR" \
+            || ineligible "author @$AUTHOR is not a trusted submitter"
+
+          files=$(gh api "repos/$REPO/pulls/$PR/files" --paginate \
+                    --jq '.[] | .status + " " + .filename')
+          [ -n "$files" ] || ineligible "empty PR"
+          while IFS= read -r line; do
+            status=${line%% *}; path=${line#* }
+            case "$status" in
+              added|modified) ;;
+              *) ineligible "disallowed change ($status: $path)";;
+            esac
+            case "$path" in
+              data/sources/external/*) ;;
+              *) ineligible "touches a file outside data/sources/external/ ($path)";;
+            esac
+          done <<< "$files"
+
+          gh pr merge --auto --squash "$PR" --repo "$REPO"
+          echo "auto-merge enabled — merges when required checks pass"

@@ -47,3 +47,8 @@ coordinates — none of his images are copied. Coordinates come from
 [spiralulam/heilbronn](https://github.com/spiralulam/heilbronn) (MIT),
 [google-deepmind/alphaevolve_results](https://github.com/google-deepmind/alphaevolve_results),
 published exact constructions, or local reconstruction (labeled as such).
+
+## License
+
+Code is [MIT](LICENSE). Vendored data under `data/sources/` carries its own
+attribution — see the `ATTRIBUTION.md` next to each source.

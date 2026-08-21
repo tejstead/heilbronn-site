@@ -1,0 +1,6 @@
+# GitHub usernames (one per line, case-insensitive) whose PRs auto-merge
+# WITHOUT review — but only when the PR adds/modifies files under
+# data/sources/external/ and nothing else, and the exact verifier passes.
+# Any PR touching code, templates, workflows, or curated data always waits
+# for maintainer review, regardless of this list.
+tejstead

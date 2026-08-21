@@ -30,6 +30,7 @@ from fractions import Fraction
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from build.vendor.verify_exact import verify, fraction_to_30sig  # noqa: E402
+from build.derive import detect_symmetry, friedman_label  # noqa: E402
 
 SUBMISSION_ROOT = "data/sources/external"
 DIR_RE = re.compile(r"^(square|triangle|convex)-n(\d{2})$")
@@ -152,6 +153,9 @@ def check_dir(dirpath):
 
     value = v["_value"]
     res["value_30sig"] = fraction_to_30sig(value)
+    sym = detect_symmetry(variant, [(float(x), float(y)) for x, y in points])
+    res["symmetry"] = friedman_label(sym, variant) + f" ({sym['group']})" + \
+        (" — approximate" if sym.get("approx") else "")
     cur, published = canonical_value(variant, n)
     res["published"] = published
     if cur is None:
@@ -203,6 +207,7 @@ def render(results, out_of_scope):
                 f"| value (exact, 30 digits) | `{r['value_30sig']}` |",
                 f"| vs current canonical | {r['relation']} |",
                 f"| published page entry | `{r['published'] or '—'}` |",
+                f"| detected symmetry | {r['symmetry']} |",
                 f"| triples checked | {v['triples_checked']}, "
                 f"{v['num_min_ties']} tied at the minimum |",
                 "",

@@ -8,6 +8,11 @@ name: publish-site
 on:
   push:
     branches: [main]
+  # Auto-merged PRs (merged by the Actions token) do not emit push events
+  # that trigger workflows, so a schedule catches them: the cheap check job
+  # compares HEAD against the published build and skips when nothing changed.
+  schedule:
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -18,7 +23,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.cmp.outputs.changed }}
+    steps:
+      - id: cmp
+        run: |
+          published=$(curl -fsSL --max-time 30 \
+            "https://github.com/${{ github.repository }}/releases/download/site/site.sha" \
+            || echo none)
+          if [ "$published" = "${{ github.sha }}" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "HEAD already published — nothing to do"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
   publish:
+    needs: check
+    if: needs.check.outputs.changed == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

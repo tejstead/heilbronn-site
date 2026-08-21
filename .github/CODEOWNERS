@@ -1,0 +1,9 @@
+# Everything needs maintainer review before merge...
+* @tejstead
+
+# ...except coordinate submissions, which have no code owner: they are
+# gated by the exact verifier (submission-verify) instead, and PRs from
+# .github/trusted-submitters.txt that touch ONLY this path may auto-merge
+# once checks pass. Anyone else's submission still waits for the maintainer
+# to click merge.
+data/sources/external/
