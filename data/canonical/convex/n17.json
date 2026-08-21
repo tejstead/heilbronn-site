@@ -93,6 +93,7 @@
   "proved": null,
   "trivial": false
  },
+ "proof": null,
  "coordinates_source": {
   "kind": "author",
   "ref": "TejSteadQC/heilbronn-configurations claims/12-extension-convex-n17",

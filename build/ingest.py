@@ -277,7 +277,17 @@ def ingest():
     snapshot = latest_snapshot()
     overrides = load_curated("overrides.json")
     changelog = load_curated("changelog.json")
-    refs_by_config = load_curated("references.json").get("by_config", {})
+    refdata = load_curated("references.json")
+    refs_by_config = refdata.get("by_config", {})
+    bib = refdata.get("bib", {})
+    proofs = refdata.get("proofs", {})
+
+    def proof_for(key):
+        rid = proofs.get(key)
+        if not rid:
+            return None
+        entry = bib.get(rid, {})
+        return {"id": rid, "title": entry.get("title"), "url": entry.get("url")}
 
     audit = []
     for variant in VARIANTS:
@@ -304,7 +314,7 @@ def ingest():
                 # Still emit a coordinate-less canonical row so pages render.
                 doc = canonical_doc(variant, n, entry, None, None, rel,
                                     overrides.get(key), changelog.get(key),
-                                    refs_by_config.get(key))
+                                    refs_by_config.get(key), proof_for(key))
             else:
                 cand, res = best
                 value = res["_value"]
@@ -320,7 +330,7 @@ def ingest():
                               fraction_to_30sig(value)[:12]))
                 doc = canonical_doc(variant, n, entry, cand, res, rel,
                                     overrides.get(key), changelog.get(key),
-                                    refs_by_config.get(key))
+                                    refs_by_config.get(key), proof_for(key))
             path = outdir / f"n{n:02d}.json"
             path.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")
 
@@ -335,14 +345,15 @@ def ingest():
     return audit
 
 
-def canonical_doc(variant, n, entry, cand, res, page_relation, override, changelog, refs):
+def canonical_doc(variant, n, entry, cand, res, page_relation, override, changelog,
+                  refs, proof=None):
     trivial, found, proved = parse_credits(entry) if entry else (False, None, None)
     # Status describes the VALUE only; coordinate provenance (including
     # reconstruction) is a separate fact carried by coordinates_source and
     # surfaced as its own tag, never as a competing status.
-    if trivial:
-        status = "trivial"
-    elif proved:
+    # Trivial cases are proven (the credit keeps the trivial flag, and the
+    # page comments "Trivial configuration." instead of a separate badge).
+    if trivial or proved:
         status = "proven"
     else:
         status = "record"
@@ -374,6 +385,7 @@ def canonical_doc(variant, n, entry, cand, res, page_relation, override, changel
             "proved": proved,
             "trivial": trivial,
         },
+        "proof": proof,
         "coordinates_source": ({
             "kind": cand["kind"],
             "ref": cand["ref"],

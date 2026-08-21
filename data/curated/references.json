@@ -134,23 +134,76 @@
   }
  },
  "by_config": {
-  "square/5": ["yang-zhang-zeng-1992"],
-  "square/6": ["dress-yang-zeng-1995"],
-  "square/7": ["chen-zeng-2011", "comellas-yebra-2002", "oeis-a343851"],
-  "square/8": ["dehbi-zeng-2022", "comellas-yebra-2002", "oeis-a379533"],
-  "square/9": ["sudermann-merx-2026-square", "chen-gpgpu-2016", "comellas-yebra-2002", "oeis-a379534"],
-  "square/10": ["comellas-yebra-2002"],
-  "square/11": ["goldberg-1972"],
-  "square/12": ["comellas-yebra-2002"],
-  "square/13": ["repo-spiralulam"],
-  "square/14": ["repo-spiralulam"],
-  "square/15": ["repo-spiralulam"],
-  "square/16": ["repo-spiralulam"],
-  "triangle/6": ["yang-zhang-zeng-1992"],
-  "triangle/8": ["sudermann-merx-2026-triangle", "chen-zeng-zhou-2014"],
-  "triangle/11": ["alphaevolve-2025"],
-  "convex/6": ["dress-yang-zeng-1995"],
-  "convex/13": ["alphaevolve-2025"],
-  "convex/14": ["alphaevolve-2025"]
+  "square/5": [
+   "yang-zhang-zeng-1992"
+  ],
+  "square/6": [
+   "dress-yang-zeng-1995"
+  ],
+  "square/7": [
+   "chen-zeng-2011",
+   "comellas-yebra-2002",
+   "oeis-a343851"
+  ],
+  "square/8": [
+   "dehbi-zeng-2022",
+   "comellas-yebra-2002",
+   "oeis-a379533"
+  ],
+  "square/9": [
+   "sudermann-merx-2026-square",
+   "chen-gpgpu-2016",
+   "comellas-yebra-2002",
+   "oeis-a379534"
+  ],
+  "square/10": [
+   "comellas-yebra-2002"
+  ],
+  "square/11": [
+   "goldberg-1972"
+  ],
+  "square/12": [
+   "comellas-yebra-2002"
+  ],
+  "square/13": [
+   "repo-spiralulam"
+  ],
+  "square/14": [
+   "repo-spiralulam"
+  ],
+  "square/15": [
+   "repo-spiralulam"
+  ],
+  "square/16": [
+   "repo-spiralulam"
+  ],
+  "triangle/6": [
+   "yang-zhang-zeng-1992"
+  ],
+  "triangle/8": [
+   "sudermann-merx-2026-triangle",
+   "chen-zeng-zhou-2014"
+  ],
+  "triangle/11": [
+   "alphaevolve-2025"
+  ],
+  "convex/6": [
+   "dress-yang-zeng-1995"
+  ],
+  "convex/13": [
+   "alphaevolve-2025"
+  ],
+  "convex/14": [
+   "alphaevolve-2025"
+  ]
+ },
+ "proofs": {
+  "square/5": "yang-zhang-zeng-1992",
+  "square/6": "dress-yang-zeng-1995",
+  "square/7": "chen-zeng-2011",
+  "square/8": "dehbi-zeng-2022",
+  "square/9": "sudermann-merx-2026-square",
+  "triangle/6": "yang-zhang-zeng-1992",
+  "triangle/8": "sudermann-merx-2026-triangle"
  }
 }

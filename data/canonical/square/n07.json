@@ -64,6 +64,11 @@
   },
   "trivial": false
  },
+ "proof": {
+  "id": "chen-zeng-2011",
+  "title": "Z. Chen, Z. Zeng, On the Heilbronn optimal configuration of seven points in the square, Automated Deduction in Geometry, LNAI 6301, Springer (2011) 196–224",
+  "url": "https://doi.org/10.1007/978-3-642-21046-4_11"
+ },
  "coordinates_source": {
   "kind": "paper",
   "ref": "arXiv:2603.11107",

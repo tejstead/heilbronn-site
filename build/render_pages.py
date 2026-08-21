@@ -167,8 +167,12 @@ def provenance_lines(doc, derived):
         lines.append(f"Found by <strong>{c['found']['name']}</strong>"
                      + (f", {c['found']['date']}" if c["found"]["date"] else "") + ".")
     if c["proved"]:
-        lines.append(f"Proved optimal by <strong>{c['proved']['name']}</strong>"
-                     + (f", {c['proved']['date']}" if c["proved"]["date"] else "") + ".")
+        line = (f"Proved optimal by <strong>{c['proved']['name']}</strong>"
+                + (f", {c['proved']['date']}" if c["proved"]["date"] else ""))
+        proof = doc.get("proof")
+        if proof and proof.get("url"):
+            line += f' (<a href="{html.escape(proof["url"], quote=True)}">proof</a>)'
+        lines.append(line + ".")
     for note in doc.get("notes", []):
         lines.append(note)
     src = doc.get("coordinates_source")

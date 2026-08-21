@@ -72,6 +72,7 @@
   "proved": null,
   "trivial": false
  },
+ "proof": null,
  "coordinates_source": {
   "kind": "paper",
   "ref": "arXiv:2603.11107",

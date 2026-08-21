@@ -141,6 +141,7 @@
   "proved": null,
   "trivial": false
  },
+ "proof": null,
  "coordinates_source": {
   "kind": "author",
   "ref": "TejSteadQC/heilbronn-configurations claims-2026-08-20/square-n29",

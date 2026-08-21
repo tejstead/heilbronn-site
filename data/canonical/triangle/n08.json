@@ -69,6 +69,11 @@
   },
   "trivial": false
  },
+ "proof": {
+  "id": "sudermann-merx-2026-triangle",
+  "title": "N. Sudermann-Merx, The Heilbronn problem in triangles: boundary structure and certified optima for n ≤ 8 (2026)",
+  "url": "https://arxiv.org/abs/2607.15021"
+ },
  "coordinates_source": {
   "kind": "reconstructed",
   "ref": "heilbronn-site reconstruct/reconstruct.py",

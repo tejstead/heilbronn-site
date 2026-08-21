@@ -34,13 +34,14 @@
   "exact_decimal": "0.500000000000000000000000000000000000000000000",
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></math>"
  },
- "status": "trivial",
+ "status": "proven",
  "page_relation": "OK",
  "credit": {
   "found": null,
   "proved": null,
   "trivial": true
  },
+ "proof": null,
  "coordinates_source": {
   "kind": "spiralulam",
   "ref": "spiralulam/heilbronn config_n04.json",

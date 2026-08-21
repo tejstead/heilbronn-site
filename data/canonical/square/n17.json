@@ -93,6 +93,7 @@
   "proved": null,
   "trivial": false
  },
+ "proof": null,
  "coordinates_source": {
   "kind": "external",
   "ref": "github.com/cnemri/heilbronn-alphaevolve",

@@ -52,6 +52,11 @@
   },
   "trivial": false
  },
+ "proof": {
+  "id": "dress-yang-zeng-1995",
+  "title": "A. Dress, L. Yang, Z. Zeng, Heilbronn problem for six points in a planar convex body, in Minimax and Applications, Springer (1995) 173–190",
+  "url": "https://doi.org/10.1007/978-1-4613-3557-3_13"
+ },
  "coordinates_source": {
   "kind": "spiralulam",
   "ref": "spiralulam/heilbronn config_n06.json",

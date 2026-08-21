@@ -69,6 +69,7 @@
   "proved": null,
   "trivial": false
  },
+ "proof": null,
  "coordinates_source": {
   "kind": "alphaevolve",
   "ref": "google-deepmind/alphaevolve_results (arXiv:2506.13131)",

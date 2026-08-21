@@ -30,13 +30,14 @@
   "exact_decimal": "1.00000000000000000000000000000000000000000000",
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn></math>"
  },
- "status": "trivial",
+ "status": "proven",
  "page_relation": "OK",
  "credit": {
   "found": null,
   "proved": null,
   "trivial": true
  },
+ "proof": null,
  "coordinates_source": {
   "kind": "exact-construction",
   "ref": "data/sources/exact/constructions.py",

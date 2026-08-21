@@ -52,6 +52,7 @@
   "proved": null,
   "trivial": false
  },
+ "proof": null,
  "coordinates_source": {
   "kind": "exact-construction",
   "ref": "data/sources/exact/constructions.py",

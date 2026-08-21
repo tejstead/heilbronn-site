@@ -101,6 +101,7 @@
   "proved": null,
   "trivial": false
  },
+ "proof": null,
  "coordinates_source": {
   "kind": "reconstructed",
   "ref": "heilbronn-site reconstruct/reconstruct.py",

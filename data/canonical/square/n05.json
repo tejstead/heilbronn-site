@@ -48,6 +48,11 @@
   },
   "trivial": false
  },
+ "proof": {
+  "id": "yang-zhang-zeng-1992",
+  "title": "L. Yang, J. Z. Zhang, Z. B. Zeng, A conjecture on the first several Heilbronn numbers and a computation, Chinese Ann. Math. Ser. A 13 (1992) 503–515",
+  "url": null
+ },
  "coordinates_source": {
   "kind": "paper",
   "ref": "arXiv:2603.11107",

@@ -106,6 +106,7 @@
   "proved": null,
   "trivial": false
  },
+ "proof": null,
  "coordinates_source": {
   "kind": "author",
   "ref": "TejSteadQC/heilbronn-configurations claims/03-exact-convex-n18",

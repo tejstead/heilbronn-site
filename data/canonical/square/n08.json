@@ -63,6 +63,11 @@
   },
   "trivial": false
  },
+ "proof": {
+  "id": "dehbi-zeng-2022",
+  "title": "L. Dehbi, Z. Zeng, Heilbronn's problem of eight points in the square, J. Syst. Sci. Complex. (2022)",
+  "url": "https://doi.org/10.1007/s11424-022-1220-7"
+ },
  "coordinates_source": {
   "kind": "paper",
   "ref": "arXiv:2603.11107",

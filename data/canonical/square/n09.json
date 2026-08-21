@@ -67,6 +67,11 @@
   },
   "trivial": false
  },
+ "proof": {
+  "id": "sudermann-merx-2026-square",
+  "title": "N. Sudermann-Merx, Certified global optimality and exact coordinates for Heilbronn configurations in the square (2026)",
+  "url": "https://arxiv.org/abs/2603.11107"
+ },
  "coordinates_source": {
   "kind": "paper",
   "ref": "arXiv:2603.11107",
