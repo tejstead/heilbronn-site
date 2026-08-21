@@ -116,5 +116,17 @@
    "date": "2026-08-21",
    "text": "coordinates replaced by the exact tie-system solution; value identified as the unique real root of 5250987A⁵ + 1609650A⁴ + 161469A³ + 5438A² − 13A − 4 = 0.021090769460266… (this site)"
   }
+ ],
+ "square/10": [
+  {
+   "date": "2026-08-21",
+   "text": "value identified as the unique real root of 3456A³ − 1764A² + 268A − 9 = 0 (this site, from the published closed-form configuration)"
+  }
+ ],
+ "square/12": [
+  {
+   "date": "2026-08-21",
+   "text": "value identified as the unique real root of 64A³ + 80A² + 28A − 1 = 0 (this site, from the published closed-form configuration)"
+  }
  ]
 }

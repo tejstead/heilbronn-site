@@ -185,5 +185,25 @@
    "The tight structure splits 12 + 3: twelve points form a mirror-symmetric frame carrying all 15 minimal triples — the exact critical point of its tie system, with coordinates algebraic of degree 5 — while the other three are floaters whose every triple stays ≥ 1.0178× the minimum.",
    "Each floater is confined to a triangular cell of diameter ≈ 0.003; the six such cells form two mirror-image orbits and the floaters must occupy alternating cells, so the configuration is chiral — the frame's mirror symmetry cannot extend to all 15 points. Floaters are placed at their cell's maximal-clearance point, which pins the whole configuration algebraically."
   ]
+ },
+ "square/10": {
+  "value": {
+   "exact_poly": {
+    "poly": "3456*x**3 - 1764*x**2 + 268*x - 9",
+    "near": 0.04654,
+    "which": "unique real root",
+    "note": "computed here from the Comellas–Yebra closed-form configuration (arXiv:2603.11107 appendix)"
+   }
+  }
+ },
+ "square/12": {
+  "value": {
+   "exact_poly": {
+    "poly": "64*x**3 + 80*x**2 + 28*x - 1",
+    "near": 0.0326,
+    "which": "unique real root",
+    "note": "computed here from the Comellas–Yebra closed-form configuration (arXiv:2603.11107 appendix)"
+   }
+  }
  }
 }

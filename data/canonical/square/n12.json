@@ -61,7 +61,15 @@
   "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
-  "minimal_polynomial": null
+  "minimal_polynomial": "64*x**3 + 80*x**2 + 28*x - 1",
+  "exact_poly": {
+   "poly": "64*x**3 + 80*x**2 + 28*x - 1",
+   "near": 0.0326,
+   "which": "unique real root",
+   "note": "computed here from the Comellas–Yebra closed-form configuration (arXiv:2603.11107 appendix)"
+  },
+  "exact_decimal": "0.0325988586918196982187640066235154080492419884",
+  "poly_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>64</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>80</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>28</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></math>"
  },
  "status": "record",
  "page_relation": "OK",
@@ -85,7 +93,12 @@
   "label": "Completely symmetric"
  },
  "notes": [],
- "changelog": [],
+ "changelog": [
+  {
+   "date": "2026-08-21",
+   "text": "value identified as the unique real root of 64A³ + 80A² + 28A − 1 = 0 (this site, from the published closed-form configuration)"
+  }
+ ],
  "references": [
   "comellas-yebra-2002"
  ],
