@@ -1,5 +1,5 @@
 {
- "ref": "Original full-precision coordinates of the August 2026 Packing Center submissions by Nathan Sudermann-Merx",
- "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "orbit-seeded searcher (LP relocation, min-norm ascent), finished by sign-fixed cell QCP and equal-critical-area continuation"
+ "ref": "github.com/rhyschappell (surgery/cascade search; verified in exact rational arithmetic)",
+ "credit": "Rhys Chappell, August 2026",
+ "note": "Improves the previous value 0.007078864441 by 1.13%. Found by point insertion/deletion surgery between neighboring record configurations followed by local maximin refinement (SLSQP + high-precision Newton on the active-triangle system)."
 }
