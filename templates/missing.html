@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Heilbronn — Missing coordinates{% endblock %}
+{% block description %}The wanted list: Heilbronn record entries whose coordinates were never published — reconstructions stand in for them. If you have the originals, submissions are pull requests.{% endblock %}
+{% block content %}
+<h1>Missing coordinates</h1>
+<p>Every entry on this site shows verified coordinates — but not always the
+<em>record holder's own</em>. This page lists what's missing. If any of it is
+yours (or you can reach whoever it belongs to), a submission is a plain pull
+request — see
+<a href="https://github.com/tejstead/heilbronn-site/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>;
+coordinates are verified in exact arithmetic and go live within minutes of
+merging, credited to their finder.</p>
+
+{% if gap %}
+<h2>No coordinates at all</h2>
+<p class="table-legend">The value is known only from the record table; nothing
+to draw, nothing to verify.</p>
+<div class="table-scroll"><table>
+<thead><tr><th>entry</th><th>published</th><th>found by</th></tr></thead>
+<tbody>
+{% for r in gap %}<tr>
+  <td><a href="{{ base }}/{{ r.variant }}/{{ r.n }}/">{{ r.variant }} n={{ r.n }}</a></td>
+  <td><code>{{ r.published or "—" }}</code></td>
+  <td>{{ r.found.name or "—" }}{% if r.found.date %}, {{ r.found.date }}{% endif %}</td>
+</tr>{% endfor %}
+</tbody></table></div>
+{% endif %}
+
+{% if behind %}
+<h2>Records we cannot show</h2>
+<p class="table-legend">The published record exceeds every configuration with
+public coordinates. The entry's page shows the best exactly verified
+arrangement instead.</p>
+<div class="table-scroll"><table>
+<thead><tr><th>entry</th><th>published record</th><th>best verified here</th><th>held by</th></tr></thead>
+<tbody>
+{% for r in behind %}<tr>
+  <td><a href="{{ base }}/{{ r.variant }}/{{ r.n }}/">{{ r.variant }} n={{ r.n }}</a></td>
+  <td><code>{{ r.published or "—" }}</code></td>
+  <td><code>{{ r.ours }}</code></td>
+  <td>{{ r.found.name or "—" }}{% if r.found.date %}, {{ r.found.date }}{% endif %}</td>
+</tr>{% endfor %}
+</tbody></table></div>
+{% endif %}
+
+<h2>Originals never published</h2>
+<p class="table-legend">These entries are shown as reconstructions — numerical
+re-derivations seeded from the published figures, matching the published value
+and symmetry — because no independent source of the finder's own arrangement
+exists anywhere we know of. The originals live only with their finders.</p>
+<div class="table-scroll"><table>
+<thead><tr><th>entry</th><th>published</th><th>found by</th></tr></thead>
+<tbody>
+{% for r in wanted %}<tr>
+  <td><a href="{{ base }}/{{ r.variant }}/{{ r.n }}/">{{ r.variant }} n={{ r.n }}</a></td>
+  <td><code>{{ r.published or "—" }}</code></td>
+  <td>{{ r.found.name or "—" }}{% if r.found.date %}, {{ r.found.date }}{% endif %}</td>
+</tr>{% endfor %}
+</tbody></table></div>
+
+<p class="table-legend">Also welcome, beyond coordinates: exact algebraic
+values (minimal polynomials) for any entry that shows only a decimal — see
+the <a href="{{ base }}/methods/">methods page</a> for how those are
+validated.</p>
+{% endblock %}
