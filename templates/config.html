@@ -73,6 +73,26 @@
 </div>
 {% endif %}
 
+{% if family %}
+<section class="family-section">
+  <h2>The family of optima</h2>
+  <figure class="viewer family">
+    {{ family.svg | safe }}
+    <div class="family-controls" hidden>
+      <button class="chip fam-play" aria-pressed="false">play</button>
+      <input class="fam-range" type="range" min="0" max="1000"
+        value="{{ family.stored_tick }}" list="fam-ticks"
+        aria-label="family parameter {{ family.param.name }}">
+      <datalist id="fam-ticks"><option value="{{ family.stored_tick }}"></option></datalist>
+      <span class="fam-readout">{{ family.param.name }} = <span class="fam-val"></span></span>
+      <span class="fam-readout fam-ties"></span>
+    </div>
+    <figcaption>{{ family.caption }}</figcaption>
+    <script type="application/json" class="family-data">{{ family.json | safe }}</script>
+  </figure>
+</section>
+{% endif %}
+
 <section>
   <h2>Symmetry</h2>
   <p>{{ symmetry_text }}</p>
@@ -143,4 +163,5 @@
 </nav>
 
 {% if figure %}<script src="{{ base }}/assets/{{ assets['viewer.js'] }}" defer></script>{% endif %}
+{% if family %}<script src="{{ base }}/assets/{{ assets['family.js'] }}" defer></script>{% endif %}
 {% endblock %}

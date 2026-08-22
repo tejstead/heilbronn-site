@@ -47,6 +47,9 @@ def _style(class_count, single):
         ".mintri{fill-opacity:.3;stroke-width:2;stroke-linejoin:round}"
         ".points circle{fill:#23232b;stroke:#fdfcfa;stroke-width:2.5}"
         ".points circle.orbit-hl{stroke:#b33c1a;stroke-width:4}"
+        ".points circle.free{fill:#eb6834}"
+        ".traces polyline{fill:none;stroke:#eb6834;stroke-width:2.5;"
+        "stroke-dasharray:3 8;opacity:.9}"
         ".sym{display:none}"
         ".sym line{stroke:#b33c1a;stroke-width:2;stroke-dasharray:10 8}"
         ".sym circle{fill:none;stroke:#b33c1a;stroke-width:2}"
@@ -55,6 +58,8 @@ def _style(class_count, single):
         ".domain{stroke:#4b4b54}"
         ".points circle{fill:#e8e6e1;stroke:#16161a}"
         ".points circle.orbit-hl{stroke:#ef7d54}"
+        ".points circle.free{fill:#d95926}"
+        ".traces polyline{stroke:#d95926}"
         ".sym line,.sym circle{stroke:#ef7d54}"
         + "".join(dark) +
         "}"
@@ -117,6 +122,71 @@ def domain_outline(variant, points, tf):
     else:
         corners = convex_hull([(float(x), float(y)) for x, y in points])
     return _poly([tf(x, y) for x, y in corners], **{"class": "outline"})
+
+
+def family_svg(variant, points_str, derived, fam, svg_id="famfig"):
+    """Second figure for entries with a proven family: the stored member plus
+    dashed traces of each moving point across the family. Returns
+    (svg, payload) where payload carries canvas-space samples for family.js.
+    """
+    pts = [(float(x), float(y)) for x, y in points_str]
+    sample_pts = [[(float(x), float(y)) for x, y in s] for s in fam["samples"]]
+    if variant == "convex":
+        allpts = [p for s in sample_pts for p in s] + pts
+        tf = _convex_tf(allpts)
+    else:
+        tf = transform_for(variant, pts)
+
+    canvas_samples = [[[round(c, 2) for c in tf(x, y)] for (x, y) in s]
+                      for s in sample_pts]
+
+    hull_order = None
+    if variant == "convex":
+        hull = convex_hull(pts)
+        lookup = {(x, y): i for i, (x, y) in enumerate(pts)}
+        hull_order = [lookup[tuple(h)] for h in hull]
+        domain = _poly([tf(x, y) for x, y in hull], **{"class": "outline"})
+    else:
+        domain = domain_outline(variant, points_str, tf)
+
+    mintris = []
+    for t in derived["ties"]:
+        tri = [tf(*pts[i]) for i in t]
+        mintris.append(_poly(tri, **{"class": "mintri cc-0",
+                                     "data_tri": ",".join(map(str, t))}))
+
+    traces = []
+    for i in fam["moving"]:
+        path = " ".join(f"{x:.2f},{y:.2f}"
+                        for s in canvas_samples for x, y in [s[i]])
+        traces.append(f'<polyline points="{path}"/>')
+
+    circles = []
+    for i, (x, y) in enumerate(pts):
+        cx, cy = tf(x, y)
+        free = " free" if i in fam["moving"] else ""
+        circles.append(f'<circle class="pt{free}" data-idx="{i}" '
+                       f'cx="{_fmt(cx)}" cy="{_fmt(cy)}" r="7"/>')
+
+    payload = {
+        "samples": canvas_samples,
+        "moving": fam["moving"],
+        "hull": hull_order,
+        "param": fam["param"],
+        "tieTol": 1e-4,
+    }
+    svg = (
+        f'<svg id="{svg_id}" xmlns="http://www.w3.org/2000/svg" '
+        f'viewBox="0 0 {SIZE} {SIZE}" role="img" class="single" '
+        f'aria-label="family of optimal configurations, {variant} n = {len(pts)}">'
+        + _style(1, True)
+        + f'<g class="domain">{domain}</g>'
+        f'<g class="mintris">{"".join(mintris)}</g>'
+        f'<g class="traces">{"".join(traces)}</g>'
+        f'<g class="points">{"".join(circles)}</g>'
+        f'</svg>'
+    )
+    return svg, payload
 
 
 def figure_svg(variant, points_str, derived, svg_id="fig"):

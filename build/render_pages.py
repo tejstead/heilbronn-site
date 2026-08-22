@@ -10,7 +10,8 @@ import shutil
 import jinja2
 
 from .derive import derive, friedman_label
-from .svggen import figure_svg
+from .families import generate as family_generate
+from .svggen import family_svg, figure_svg
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SOURCES_DIR = pathlib.Path(__file__).resolve().parent.parent / "data" / "sources"
@@ -312,8 +313,21 @@ def render_all(env, docs, derived_map, assets):
     for (v, n), doc in docs.items():
         derived = derived_map.get((v, n))
         figure = None
+        family = None
+        fam_spec = None
         if doc["points"]:
             figure = figure_svg(v, doc["points"], derived, svg_id="fig")
+            fam_spec = family_generate(v, n, doc)
+            if fam_spec:
+                fsvg, payload = family_svg(v, doc["points"], derived, fam_spec)
+                family = {
+                    "svg": fsvg,
+                    "caption": fam_spec["caption"],
+                    "param": fam_spec["param"],
+                    "stored_tick": round(fam_spec["param"]["stored_at"] * 1000),
+                    "json": json.dumps(payload, separators=(",", ":"))
+                            .replace("</", "<\\/"),
+                }
         avail = [m for m in NS if (v, m) in docs]
         idx = avail.index(n)
         refs = []
@@ -366,7 +380,11 @@ def render_all(env, docs, derived_map, assets):
                 {"href": "points.csv", "label": "points.csv", "note": "coordinates, CSV"},
                 {"href": "points.json", "label": "points.json", "note": "full record: value, provenance, verification"},
                 {"href": "figure.svg", "label": "figure.svg", "note": "this figure"},
-            ] if doc["points"] else []),
+            ] + ([
+                {"href": "family.json", "label": "family.json",
+                 "note": "the optimal family: exact endpoints, 30-decimal sample members"},
+            ] if family else []) if doc["points"] else []),
+            family=family,
             references=refs,
             prev=avail[idx - 1] if idx > 0 else None,
             next=avail[idx + 1] if idx + 1 < len(avail) else None,
@@ -379,6 +397,18 @@ def render_all(env, docs, derived_map, assets):
         if figure:
             (out.parent / "figure.svg").write_text(
                 '<?xml version="1.0" encoding="UTF-8"?>\n' + figure)
+        if fam_spec:
+            (out.parent / "family.json").write_text(json.dumps({
+                "variant": v, "n": n,
+                "param": fam_spec["param"],
+                "moving": fam_spec["moving"],
+                "samples": fam_spec["samples"],
+                "caption": fam_spec["caption"],
+                "verification": (
+                    "each sample's 30-decimal literals verified in exact "
+                    "arithmetic to within relative 1e-20 of the stored "
+                    "configuration's exact value at build time"),
+            }, indent=1))
 
     # Variant pages: one long page of classic entry rows, one per n.
     for v in VARIANTS:
