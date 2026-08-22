@@ -1,5 +1,5 @@
 {
- "ref": "TejSteadQC/heilbronn-configurations, claims batch 2026-08-21 (heilbronn-experiments pipeline)",
- "credit": "Tej Stead, August 2026",
- "note": "greedy insertion ladder from the n=32 record basin"
+ "ref": "github.com/rhyschappell (surgery/cascade search)",
+ "credit": "Rhys Chappell, August 2026",
+ "note": "Improves the previous value 0.004842335413 by 3.68%. Found by point insertion/deletion surgery between neighboring record configurations followed by constrained local maximin refinement."
 }
