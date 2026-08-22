@@ -40,6 +40,29 @@ CONSTRUCTIONS = {
         "note": "vertices plus centroid; one of an infinite family",
     },
     ("convex", 3): {"points": regular_polygon(3), "note": "any triangle"},
+    ("convex", 7): {
+        # Derived exactly on this site from the tie structure of the proven
+        # optimum (Yang–Zeng 1995, value exactly 1/9): the optimal
+        # configurations form a one-parameter family — center + two
+        # equilateral-triangle orbits 30° apart with radius ratio
+        # s ∈ [√3/2, 2/√3], every member achieving exactly 1/9. This is the
+        # s = 2/√3 endpoint member (9 minimal triangles), matching the
+        # published figure. Coordinates: (0,1), (±√3/2, −1/2),
+        # (−1/√3, ±1), (2/√3, 0), and the center.
+        "points": [
+            ["0", "1"],
+            ["-0.866025403784438646763723170752", "-0.5"],
+            ["0.866025403784438646763723170752", "-0.5"],
+            ["-0.577350269189625764509148780501", "1"],
+            ["-0.577350269189625764509148780501", "-1"],
+            ["1.154700538379251529018297561003", "0"],
+            ["0", "0"],
+        ],
+        "note": ("one member (s = 2/√3, matching the published figure) of the "
+                 "one-parameter optimal family derived here: center + two "
+                 "equilateral-triangle orbits 30° apart, radius ratio "
+                 "s ∈ [√3/2, 2/√3], all achieving exactly 1/9"),
+    },
     ("convex", 4): {"points": regular_polygon(4), "note": "square (any parallelogram)"},
     ("convex", 5): {"points": regular_polygon(5), "note": "regular pentagon"},
     ("convex", 6): {"points": regular_polygon(6), "note": "regular hexagon"},
