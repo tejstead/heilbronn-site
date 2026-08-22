@@ -32,20 +32,20 @@
   "published_decimal": "0.276",
   "published_lower_bound": true,
   "exact_text": "(5 - √5) / 10",
-  "exact_sympy": "(5 - sqrt(5))/10",
-  "minimal_polynomial": null,
-  "exact_display": "(5 − √5) / 10",
-  "exact_decimal": "0.276393202250021030359082633126872376455938164",
-  "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mrow><mn>5</mn><mo>−</mo><msqrt><mn>5</mn></msqrt></mrow></mrow><mrow><mn>10</mn></mrow></mfrac></math>"
+  "exact_sympy": null,
+  "minimal_polynomial": null
  },
- "status": "record",
+ "status": "proven",
  "page_relation": "OK",
  "credit": {
   "found": {
    "name": "David Cantrell",
    "date": "June 2007"
   },
-  "proved": null,
+  "proved": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
   "trivial": false
  },
  "proof": null,
@@ -59,8 +59,15 @@
  "symmetry": {
   "label": "5-fold dihedral symmetry"
  },
- "notes": [],
- "changelog": [],
+ "notes": [
+  "The optimality proof (Tej Stead, August 2026) is not yet published; a link will follow."
+ ],
+ "changelog": [
+  {
+   "date": "2026-08-22",
+   "text": "marked proven: optimality of the regular pentagon proved by Tej Stead, August 2026 (unpublished; link to follow)"
+  }
+ ],
  "references": [],
  "verify": {
   "n": 5,

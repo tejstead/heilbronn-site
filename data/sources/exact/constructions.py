@@ -39,6 +39,21 @@ CONSTRUCTIONS = {
                     "0.333333333333333333333333333333"]],
         "note": "vertices plus centroid; one of an infinite family",
     },
+    ("triangle", 9): {
+        # The reconstruction converged to exact rationals: every coordinate
+        # is a multiple of 1/56 and the value is exactly 43/784 = 43/28².
+        # A Goldberg-style grid configuration (Cantrell's arrangement).
+        "points": [
+            ["0.875", "0.125"], ["0", "0.875"], ["0.125", "0"],
+            ["0", "0.107142857142857142857142857142"],
+            ["0.892857142857142857142857142857", "0"],
+            ["0.107142857142857142857142857142", "0.892857142857142857142857142857"],
+            ["0.178571428571428571428571428571", "0.392857142857142857142857142857"],
+            ["0.428571428571428571428571428571", "0.178571428571428571428571428571"],
+            ["0.392857142857142857142857142857", "0.428571428571428571428571428571"],
+        ],
+        "note": "exact rational configuration on a 1/56 grid, value exactly 43/784; identified here from the reconstruction's convergence",
+    },
     ("convex", 3): {"points": regular_polygon(3), "note": "any triangle"},
     ("convex", 7): {
         # Derived exactly on this site from the tie structure of the proven

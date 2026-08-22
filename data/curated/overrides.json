@@ -117,10 +117,16 @@
   }
  },
  "convex/5": {
-  "value": {
-   "exact_display": "(5 − √5) / 10",
-   "exact_sympy": "(5 - sqrt(5))/10"
-  }
+  "status": "proven",
+  "credit": {
+   "proved": {
+    "name": "Tej Stead",
+    "date": "August 2026"
+   }
+  },
+  "notes": [
+   "The optimality proof (Tej Stead, August 2026) is not yet published; a link will follow."
+  ]
  },
  "convex/6": {
   "value": {

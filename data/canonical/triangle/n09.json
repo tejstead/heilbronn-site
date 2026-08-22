@@ -18,32 +18,32 @@
   ],
   [
    "0",
-   "0.107142857142857"
+   "0.107142857142857142857142857142"
   ],
   [
-   "0.892857142857143",
+   "0.892857142857142857142857142857",
    "0"
   ],
   [
-   "0.107142857142857",
-   "0.892857142857143"
+   "0.107142857142857142857142857142",
+   "0.892857142857142857142857142857"
   ],
   [
-   "0.178571428571429",
-   "0.392857142857143"
+   "0.178571428571428571428571428571",
+   "0.392857142857142857142857142857"
   ],
   [
-   "0.428571428571428",
-   "0.178571428571429"
+   "0.428571428571428571428571428571",
+   "0.178571428571428571428571428571"
   ],
   [
-   "0.392857142857143",
-   "0.428571428571428"
+   "0.392857142857142857142857142857",
+   "0.428571428571428571428571428571"
   ]
  ],
  "value": {
-  "decimal": "0.054846938775509867346938775511",
-  "fraction": "54846938775509867346938775511/1000000000000000000000000000000",
+  "decimal": "0.0548469387755102040816326530608",
+  "fraction": "54846938775510204081632653060793367346938775510204081632653/1000000000000000000000000000000000000000000000000000000000000",
   "published": "A = 43/784 = .0548+",
   "published_decimal": "0.0548",
   "published_lower_bound": true,
@@ -66,27 +66,32 @@
  },
  "proof": null,
  "coordinates_source": {
-  "kind": "reconstructed",
-  "ref": "heilbronn-site reconstruct/reconstruct.py",
-  "note": "reconstructed by local optimization; matches published value 0.0548+ and symmetry (120° Rotationally symmetric)",
-  "basis": "value-and-symmetry"
+  "kind": "exact-construction",
+  "ref": "data/sources/exact/constructions.py",
+  "note": "exact rational configuration on a 1/56 grid, value exactly 43/784; identified here from the reconstruction's convergence",
+  "basis": null
  },
- "coordinates_reconstructed": true,
+ "coordinates_reconstructed": false,
  "symmetry": {
   "label": "120° Rotationally symmetric"
  },
  "notes": [],
- "changelog": [],
+ "changelog": [
+  {
+   "date": "2026-08-22",
+   "text": "coordinates identified as exact rationals on a 1/56 grid (value exactly 43/784); replaces the reconstruction (this site)"
+  }
+ ],
  "references": [],
  "verify": {
   "n": 9,
   "triples_checked": 84,
-  "value": "0.054846938775509867346938775511",
-  "value_fraction": "54846938775509867346938775511/1000000000000000000000000000000",
+  "value": "0.0548469387755102040816326530608",
+  "value_fraction": "54846938775510204081632653060793367346938775510204081632653/1000000000000000000000000000000000000000000000000000000000000",
   "min_triple": [
-   6,
-   7,
-   8
+   1,
+   5,
+   6
   ],
   "num_min_ties": 13,
   "feasible": true,
