@@ -40,7 +40,9 @@ jobs:
           list=.github/trusted-submitters.txt
           [ -f "$list" ] || { echo "no trusted list"; exit 0; }
 
-          prs=$(gh api "repos/$REPO/commits/$SHA/pulls" --jq '.[] | select(.state=="open") | .number')
+          # commits/{sha}/pulls misses fork PRs, so match open PRs by head sha
+          prs=$(gh pr list --repo "$REPO" --state open --json number,headRefOid \
+                  --jq ".[] | select(.headRefOid == \"$SHA\") | .number")
           [ -n "$prs" ] || { echo "no open PR for $SHA"; exit 0; }
 
           for pr in $prs; do
