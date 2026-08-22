@@ -1,0 +1,5 @@
+{
+ "ref": "github.com/rhyschappell (surgery/cascade search; verified in exact rational arithmetic)",
+ "credit": "Rhys Chappell, August 2026",
+ "note": "Improves the previous value 0.006790349241 by 0.52%. Found by point insertion/deletion surgery between neighboring record configurations followed by local maximin refinement (SLSQP + high-precision Newton on the active-triangle system)."
+}

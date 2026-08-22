@@ -1,5 +1,5 @@
 {
- "ref": "TejSteadQC/heilbronn-configurations, claims batch 2026-08-21 (heilbronn-experiments pipeline)",
- "credit": "Tej Stead, August 2026",
- "note": "found with the search program evolved by cnemri (heilbronn-alphaevolve), finished with a trust-region SLP polisher; part of the 2026-08-21 batch"
+ "ref": "github.com/rhyschappell (surgery/cascade search; verified in exact rational arithmetic)",
+ "credit": "Rhys Chappell, August 2026",
+ "note": "Improves the previous value 0.004269676641 by 0.95%. Found by point insertion/deletion surgery between neighboring record configurations followed by local maximin refinement (SLSQP + high-precision Newton on the active-triangle system)."
 }
