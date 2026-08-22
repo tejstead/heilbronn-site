@@ -166,5 +166,11 @@
    "date": "2026-08-22",
    "text": "marked proven: optimality of the regular pentagon proved by Tej Stead, August 2026 (unpublished; link to follow)"
   }
+ ],
+ "triangle/8": [
+  {
+   "date": "2026-08-22",
+   "text": "exact realization of the certified optimum: tie system solved to 400 digits, every coordinate identified as an explicit degree-7 algebraic number (this site); replaces the reconstruction"
+  }
  ]
 }

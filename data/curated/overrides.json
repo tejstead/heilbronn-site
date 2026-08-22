@@ -94,7 +94,7 @@
     "near": 0.0339,
     "which": "unique real",
     "scale": 2,
-    "note": "polynomial for the unit right triangle; A is twice its root"
+    "note": "polynomial for the unit right triangle, A twice its root; Galois group S₇ (Sudermann-Merx), so no radical form exists"
    }
   }
  },

@@ -39,6 +39,24 @@ CONSTRUCTIONS = {
                     "0.333333333333333333333333333333"]],
         "note": "vertices plus centroid; one of an infinite family",
     },
+    ("triangle", 8): {
+        # Exact realization of the certified optimum (Sudermann-Merx 2026,
+        # arXiv:2607.15021): the 11-triangle tie system solved to 400
+        # digits, each coordinate identified as an explicit degree-7
+        # algebraic number (see triangle-n08-coordinate-minpolys.json).
+        # 2*min-area equals the certified septic root exactly.
+        "points": [
+            ["0.888607734966284163841259909257", "0.111392265033715836158740090743"],
+            ["0.111999705654029949029324356726", "0"],
+            ["0.720562726018855112355721845127", "0"],
+            ["0.439307097839209917412298611307", "0.484405907813650743134099078538"],
+            ["0.395276367904074664542156913136", "0.212129872844956775236907723322"],
+            ["0", "0.155433665397645381124515838859"],
+            ["0.111999705654029949029324356726", "0.605262423310288723455274536510"],
+            ["0", "1"],
+        ],
+        "note": "exact realization of the certified optimum: each coordinate an explicit degree-7 algebraic number, identified here from the tie system (minimal polynomials in data/sources/exact/triangle-n08-coordinate-minpolys.json)",
+    },
     ("triangle", 9): {
         # The reconstruction converged to exact rationals: every coordinate
         # is a multiple of 1/56 and the value is exactly 43/784 = 43/28².
