@@ -5,3 +5,6 @@
 # for maintainer review, regardless of this list.
 tejstead
 tejsteadqc
+rhyschappell
+spiralulam
+cnemri
