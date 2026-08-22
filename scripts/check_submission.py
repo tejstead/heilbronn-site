@@ -34,7 +34,13 @@ from build.vendor.verify_exact import verify, fraction_to_30sig  # noqa: E402
 from build.derive import (detect_symmetry, friedman_label,  # noqa: E402
                           minimal_triangles, congruence_classes)
 
-SUBMISSION_ROOT = "data/sources/external"
+# Lanes the automated pipeline verifies. external/ is the community lane
+# (meta.json needs "ref"); tejsteadqc/ is the companion-repo sync lane
+# (meta.json needs "origin").
+SUBMISSION_ROOTS = {
+    "data/sources/external": "ref",
+    "data/sources/tejsteadqc": "origin",
+}
 DIR_RE = re.compile(r"^(square|triangle|convex)-n(\d{2})$")
 NUM_RE = re.compile(r"^-?\d{1,6}(\.\d{1,200})?$")
 MAX_COORD_BYTES = 64 * 1024
@@ -74,7 +80,20 @@ def parse_coordinates(path, problems):
     return points
 
 
-def check_meta(path, problems, warnings):
+def meta_keys_for(dirpath):
+    lane = str(pathlib.Path(dirpath).parent).replace("\\", "/")
+    for root, req in SUBMISSION_ROOTS.items():
+        if lane.endswith(root):
+            keys = dict(META_KEYS)
+            if req != "ref":
+                del keys["ref"]
+                keys[req] = (True, 300)
+                keys["value_fraction"] = (False, 200)
+            return keys
+    return META_KEYS
+
+
+def check_meta(path, problems, warnings, keys=META_KEYS):
     if not path.exists():
         fail(problems, "`meta.json` is missing")
         return None
@@ -89,7 +108,7 @@ def check_meta(path, problems, warnings):
     if not isinstance(meta, dict):
         fail(problems, "`meta.json` must be a JSON object")
         return None
-    for key, (required, maxlen) in META_KEYS.items():
+    for key, (required, maxlen) in keys.items():
         if key not in meta:
             if required:
                 fail(problems, f"`meta.json` is missing required key `{key}`")
@@ -99,7 +118,7 @@ def check_meta(path, problems, warnings):
         elif len(meta[key]) > maxlen:
             fail(problems, f"`meta.json` key `{key}` exceeds {maxlen} characters")
     for key in meta:
-        if key not in META_KEYS:
+        if key not in keys:
             warnings.append(f"`meta.json` has unknown key `{key}` (ignored by ingest)")
     return meta
 
@@ -198,7 +217,7 @@ def check_dir(dirpath):
         fail(problems, "`coordinates.txt` is missing")
         return res
     points = parse_coordinates(coord_path, problems)
-    check_meta(dirpath / "meta.json", problems, warnings)
+    check_meta(dirpath / "meta.json", problems, warnings, meta_keys_for(dirpath))
     for extra in sorted(p.name for p in dirpath.iterdir()
                         if p.name not in ("coordinates.txt", "meta.json",
                                           "exact.json", "verify_output.json")):
@@ -281,11 +300,15 @@ def changed_submission_dirs(base):
     out = proc.stdout
     dirs, out_of_scope = set(), []
     for line in out.splitlines():
-        if line.startswith(SUBMISSION_ROOT + "/"):
-            rel = pathlib.Path(line).parent
-            if rel != pathlib.Path(SUBMISSION_ROOT):
-                dirs.add(ROOT / pathlib.Path(*rel.parts[:4]))
-        elif line:
+        if not line:
+            continue
+        for root in SUBMISSION_ROOTS:
+            if line.startswith(root + "/"):
+                rel = pathlib.Path(line).parent
+                if rel != pathlib.Path(root):
+                    dirs.add(ROOT / pathlib.Path(*rel.parts[:4]))
+                break
+        else:
             out_of_scope.append(line)
     return sorted(dirs), out_of_scope
 
@@ -293,8 +316,7 @@ def changed_submission_dirs(base):
 def render(results, out_of_scope):
     lines = ["<!-- submission-verify -->", "## Coordinate submission check", ""]
     if not results:
-        lines.append("No submission directories under "
-                     f"`{SUBMISSION_ROOT}/` changed in this PR.")
+        lines.append("No submission directories changed in this PR.")
     for r in results:
         head = f"### `{pathlib.Path(r['dir']).name}`"
         lines.append(head)
@@ -324,7 +346,7 @@ def render(results, out_of_scope):
         lines.append("")
     if out_of_scope:
         lines.append(f"This PR also touches {len(out_of_scope)} file(s) outside "
-                     f"`{SUBMISSION_ROOT}/` — fine, but they get a human review, "
+                     "the submission lanes — fine, but they get a human review, "
                      "not this automated one:")
         lines += [f"- `{p}`" for p in out_of_scope[:20]]
         if len(out_of_scope) > 20:
