@@ -1,5 +1,5 @@
 {
- "ref": "TejSteadQC/heilbronn-configurations, claims batch 2026-08-21 (heilbronn-experiments pipeline)",
- "credit": "Tej Stead, August 2026",
- "note": "stress-weighted ruin-and-recreate (architecture from cnemri's evolved program, ported to this variant) warm-started from the previous record"
+ "ref": "github.com/rhyschappell (surgery/cascade search)",
+ "credit": "Rhys Chappell, August 2026",
+ "note": "Improves the previous value 0.003613313746 by 1.63%. Found by point insertion/deletion surgery between neighboring record configurations followed by constrained local maximin refinement."
 }

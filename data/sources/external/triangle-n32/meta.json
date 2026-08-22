@@ -1,0 +1,5 @@
+{
+ "ref": "github.com/rhyschappell (surgery/cascade search)",
+ "credit": "Rhys Chappell, August 2026",
+ "note": "Improves the previous value 0.004177954667 by 0.48%. Found by point insertion/deletion surgery between neighboring record configurations followed by constrained local maximin refinement."
+}
