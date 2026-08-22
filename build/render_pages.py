@@ -13,6 +13,7 @@ from .derive import derive, friedman_label
 from .svggen import figure_svg
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+SOURCES_DIR = pathlib.Path(__file__).resolve().parent.parent / "data" / "sources"
 CANONICAL = ROOT / "data" / "canonical"
 DIST = ROOT / "dist" / "heilbronn"
 
@@ -570,6 +571,41 @@ tallied on the <a href="/heilbronn/leaderboard/">leaderboard</a>.</p>
 """
 
 
+
+
+def missing_coords(docs):
+    """The wanted list: entries whose record coordinates are not on file.
+    - gap: no coordinates at all (value known only from the page)
+    - behind: the page's record exceeds every verified source we hold
+    - wanted: shown as a reconstruction with NO independent source — the
+      original arrangement exists only with its finder."""
+    gap, behind, wanted = [], [], []
+    for (v, n), doc in sorted(docs.items()):
+        row = {
+            "variant": v, "n": n,
+            "published": doc["value"].get("published"),
+            "found": (doc["credit"].get("found") or {}),
+            "ours": (doc["value"].get("decimal") or "")[:10],
+        }
+        if not doc.get("points"):
+            gap.append(row)
+            continue
+        if doc.get("page_relation") == "BEHIND":
+            behind.append(row)
+            continue
+        if doc.get("coordinates_reconstructed"):
+            tag = f"{v}-n{n:02d}"
+            others = [SOURCES_DIR / "tejsteadqc" / tag,
+                      SOURCES_DIR / "external" / tag,
+                      SOURCES_DIR / "papers" / tag,
+                      SOURCES_DIR / "spiralulam" / f"config_n{n:02d}.json" if v == "square" else SOURCES_DIR / "spiralulam" / "absent",
+                      SOURCES_DIR / "alphaevolve" / f"{v}_n{n}.txt"]
+            if not any(p.exists() for p in others):
+                wanted.append(row)
+    return {"gap": gap, "behind": behind, "wanted": wanted}
+
+
+
 def render_extra(env, assets, values_name):
     """Pages that need the values.json asset name (written by downloads)."""
     common = {"base": BASE, "assets": assets, "snapshot_date": snapshot_date()}
@@ -583,6 +619,10 @@ def render_extra(env, assets, values_name):
     (DIST / "methods" / "index.html").write_text(
         env.get_template("methods.html").render(
             dict(common, section="methods", body=METHODS_BODY, bib=list(bib.values()))))
+    (DIST / "missing").mkdir(parents=True, exist_ok=True)
+    (DIST / "missing" / "index.html").write_text(
+        env.get_template("missing.html").render(
+            dict(common, section="missing", **missing_coords(load_docs()))))
     from .leaderboard import leaderboards
     (DIST / "leaderboard").mkdir(parents=True, exist_ok=True)
     (DIST / "leaderboard" / "index.html").write_text(
@@ -600,7 +640,7 @@ SITE_ORIGIN = "https://math.tejstead.com"
 
 def write_sitemap_and_404(env, common):
     urls = [f"{BASE}/", f"{BASE}/trends/", f"{BASE}/leaderboard/",
-            f"{BASE}/verifier/", f"{BASE}/methods/"]
+            f"{BASE}/missing/", f"{BASE}/verifier/", f"{BASE}/methods/"]
     for v in VARIANTS:
         urls.append(f"{BASE}/{v}/")
         for n in NS:
