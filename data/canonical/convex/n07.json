@@ -5,37 +5,37 @@
  "frame": "free",
  "points": [
   [
-   "-0.853847185298913",
-   "0.122686198685049"
+   "0",
+   "1"
   ],
   [
-   "0.20237295770524",
-   "-0.832495182572002"
+   "-0.866025403784438646763723170752",
+   "-0.5"
   ],
   [
-   "0.501474227593679",
-   "0.559808983886958"
+   "0.866025403784438646763723170752",
+   "-0.5"
   ],
   [
-   "-0.9534613992559",
-   "-0.341387385610831"
+   "-0.577350269189625764509148780501",
+   "1"
   ],
   [
-   "0.654079577909261",
-   "-0.686726830288829"
+   "-0.577350269189625764509148780501",
+   "-1"
   ],
   [
-   "0.149381821346638",
-   "0.87811421589966"
+   "1.154700538379251529018297561003",
+   "0"
   ],
   [
-   "-0.05",
-   "-0.049999999999998"
+   "0",
+   "0"
   ]
  ],
  "value": {
-  "decimal": "0.111111111111110998117184675199",
-  "fraction": "390246244451052011394452451829/3512216200059471674281962495312",
+  "decimal": "0.111111111111111111111111111111",
+  "fraction": "577350269189625764509148780501/5196152422706631880582339024512",
   "published": "A = 1/9 = .111+",
   "published_decimal": "0.111",
   "published_lower_bound": true,
@@ -62,31 +62,39 @@
   "url": "https://doi.org/10.1007/978-1-4613-3557-3_14"
  },
  "coordinates_source": {
-  "kind": "reconstructed",
-  "ref": "heilbronn-site reconstruct/reconstruct.py",
-  "note": "reconstructed by local optimization; matches published value 0.111+",
-  "basis": "value-and-symmetry"
+  "kind": "exact-construction",
+  "ref": "data/sources/exact/constructions.py",
+  "note": "one member (s = 2/√3, matching the published figure) of the one-parameter optimal family derived here: center + two equilateral-triangle orbits 30° apart, radius ratio s ∈ [√3/2, 2/√3], all achieving exactly 1/9",
+  "basis": null
  },
- "coordinates_reconstructed": true,
+ "coordinates_reconstructed": false,
  "symmetry": {
   "label": "3-fold dihedral symmetry"
  },
- "notes": [],
- "changelog": [],
+ "notes": [
+  "Derived exactly on this site: the optimal configurations form a one-parameter family — the center plus two equilateral-triangle orbits 30° apart, radius ratio s anywhere in [√3/2, 2/√3], every member achieving exactly 1/9. Shown: the s = 2/√3 endpoint member (9 minimal triangles), matching the published figure.",
+  "The family is chiral: only the 120° rotation survives — no mirror-symmetric optimum exists (the mirror image is the s ↦ 1/s member of the reflected family)."
+ ],
+ "changelog": [
+  {
+   "date": "2026-08-22",
+   "text": "coordinates replaced by an exact construction derived from the tie structure of the proven optimum: a one-parameter optimal family (s ∈ [√3/2, 2/√3]), shown at s = 2/√3; value exactly 1/9 (this site)"
+  }
+ ],
  "references": [
   "yang-zeng-1995-convex7"
  ],
  "verify": {
   "n": 7,
   "triples_checked": 35,
-  "value": "0.111111111111110998117184675199",
-  "value_fraction": "390246244451052011394452451829/3512216200059471674281962495312",
+  "value": "0.111111111111111111111111111111",
+  "value_fraction": "577350269189625764509148780501/5196152422706631880582339024512",
   "min_triple": [
    0,
    3,
-   6
+   5
   ],
-  "num_min_ties": 6,
+  "num_min_ties": 9,
   "feasible": true,
   "violations": [],
   "hull_vertex_count": 6
