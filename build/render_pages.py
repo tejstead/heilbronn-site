@@ -475,23 +475,42 @@ def recon_label(doc):
 
 METHODS_BODY = """
 <p>Everything on this site is generated ahead of time from exact coordinate
-data; the pages you're reading are static files. The generator, data and
-deployment live in the site repository.</p>
+data; the pages you're reading are static files. The generator, the data,
+the verification and search code, and the deployment all live in one public
+repository, <a href="https://github.com/tejstead/heilbronn-site">tejstead/heilbronn-site</a>:
+every value shown here can be reproduced from what is in that tree. Merges
+to it deploy automatically; the record tables are re-checked daily against
+Friedman's pages.</p>
 
 <h2>Where the coordinates come from</h2>
 <ul>
+<li><strong>Community submissions</strong> — records and exact values arrive
+as pull requests
+(<a href="https://github.com/tejstead/heilbronn-site/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>):
+a directory of decimal literals plus provenance, verified in exact
+arithmetic by CI, with the report posted on the PR. Submissions from trusted
+regulars merge automatically once verification passes and are live minutes
+later. Recent records arrived this way from Nathan Sudermann-Merx, Rhys
+Chappell, and Chouaieb Nemri.</li>
 <li><a href="https://github.com/TejSteadQC/heilbronn-configurations">TejSteadQC/heilbronn-configurations</a>
-— coordinates for n = 17…35 in all three variants (and several records below
-that), each verified by two independent exact verifiers; also the search
-toolkit used to find and polish them (trust-region successive-LP polishing,
-KKT tightening, symmetry-restricted search).</li>
+— the working repository for this site's own record campaigns (n = 17…35
+across the variants and batches below that); its search toolkit is vendored
+here under <code>search/</code>.</li>
+<li><a href="https://github.com/cnemri/heilbronn-alphaevolve">cnemri/heilbronn-alphaevolve</a>
+— Chouaieb Nemri's AlphaEvolve-evolved search program (square n = 17, 21, 22
+records); the evolved program's architecture also powers several of the later
+batch records.</li>
 <li><a href="https://github.com/spiralulam/heilbronn">spiralulam/heilbronn</a>
-(MIT) — square configurations for n = 3…16, the companion repository to
-Nathan Sudermann-Merx's certified-optimality work, including the previously
-unpublished configurations of Peter Karpov (n = 13, 15) and Mark Beyleveld
-(n = 14, 16).</li>
+(MIT) — companion repository to Nathan Sudermann-Merx's certified-optimality
+papers: square n = 3…16, including the previously unpublished configurations
+of Peter Karpov and Mark Beyleveld. His original coordinates for later
+entries were also submitted here directly.</li>
+<li><a href="https://github.com/rhyschappell/heilbronn-n14-exact">rhyschappell/heilbronn-n14-exact</a>
+— Rhys Chappell's exact algebraic realization of the n = 14 square
+configuration; he has since contributed further records and the degree-15
+exact value for square n = 24.</li>
 <li><a href="https://github.com/google-deepmind/alphaevolve_results">google-deepmind/alphaevolve_results</a>
-— the AlphaEvolve constructions (triangle n = 11, convex n = 13, 14).</li>
+— the original AlphaEvolve constructions (triangle n = 11, convex n = 13, 14).</li>
 <li>Published exact constructions from the proofs (see the bibliography).</li>
 <li>Local reconstruction: for configurations whose coordinates were never
 published (mostly David Cantrell's), we re-derive them by numerical
@@ -501,11 +520,36 @@ labeled <em>reconstructed</em> and never claim to be the original author's
 exact arrangement.</li>
 </ul>
 
+<h2>How records are found</h2>
+<p>The search toolkit (<code>search/</code> in the site repository) combines
+basin-hopping over perturb-and-polish cycles (<code>attack.py</code>),
+trust-region successive-LP polishing with KKT tightening
+(<code>refine.py</code>), symmetry-restricted search (<code>sym.py</code>),
+n&nbsp;→&nbsp;n+1 laddering and symmetric seeding, and consensus checks
+across independent runs. Several 2026 records instead came from programs
+evolved by AlphaEvolve — search code written by an LLM-guided evolutionary
+loop — run and extended by the contributors above.</p>
+
+<h2>Exact values</h2>
+<p>Where an entry shows a closed form or a minimal polynomial, it comes from
+one of three routes: the optimality proofs; contributor-supplied polynomials
+(submitted alongside coordinates and re-validated against them at 45 digits
+at build time); or derivation on this site — identifying the tight triangles,
+reducing by the configuration's symmetry, and solving the resulting tie
+system exactly (Gröbner bases, then linear programs for any slack points).
+The triangle n&nbsp;=&nbsp;15 quintic and the square n&nbsp;=&nbsp;10, 12
+cubics were obtained this way. Whether a value is displayed as nested
+radicals or as a polynomial is not taste but Galois theory: several entries
+provably have no radical form, and the pages say so.</p>
+
 <h2>Verification</h2>
 <p>Every configuration on this site is checked with exact rational
 arithmetic: the coordinates' decimal literals are taken exactly, all C(n,3)
 triangle areas are enumerated, and the reported value is the exact minimum,
-normalized to a unit-area container. The in-browser
+normalized to a unit-area container. Two independent verifiers
+(<code>search/verify_a.py</code>, <code>search/verify_b.py</code>) agree on
+every entry; the build runs a library form of the first, submissions are
+re-verified by CI, and the in-browser
 <a href="/heilbronn/verifier/">verifier</a> runs the same computation.</p>
 
 <h2>Normalization conventions</h2>
@@ -521,7 +565,8 @@ problem is affine-invariant, so coordinates are stored in the right frame
 decades by <a href="https://erich-friedman.github.io/packing/">Erich
 Friedman</a>; values, credits and symmetry labels are recorded from his
 pages, and each configuration page links back to its row. His images are not
-reproduced — every figure is regenerated from coordinates.</p>
+reproduced — every figure is regenerated from coordinates. Who holds what is
+tallied on the <a href="/heilbronn/leaderboard/">leaderboard</a>.</p>
 """
 
 
