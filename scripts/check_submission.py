@@ -34,9 +34,10 @@ from build.vendor.verify_exact import verify, fraction_to_30sig  # noqa: E402
 from build.derive import (detect_symmetry, friedman_label,  # noqa: E402
                           minimal_triangles, congruence_classes)
 
-# Lanes the automated pipeline verifies. external/ is the community lane
-# (meta.json needs "ref"); tejsteadqc/ is the companion-repo sync lane
-# (meta.json needs "origin").
+# Lanes the automated pipeline verifies. external/ is THE submission lane
+# (meta.json needs "ref") — see CONTRIBUTING.md. tejsteadqc/ is the legacy
+# companion-repo sync lane (meta.json needs "origin"), kept so existing
+# sync PRs still verify; new submissions must not use it.
 SUBMISSION_ROOTS = {
     "data/sources/external": "ref",
     "data/sources/tejsteadqc": "origin",
