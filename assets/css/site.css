@@ -175,6 +175,18 @@ h1 .badge { vertical-align: .35em; margin-left: .5rem; }
 .chip:hover, .chip[aria-pressed="true"] { background: var(--chip, var(--accent)); color: #fff; border-color: var(--chip, var(--accent)); }
 .chip-all:hover, .chip-all[aria-pressed="true"], .sym-chip:hover, .sym-chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); }
 
+/* Family viewer (slider over a proven family of optima) */
+.family-controls {
+  display: flex; align-items: center; justify-content: center; gap: .7rem;
+  flex-wrap: wrap; margin: .8rem auto 0; max-width: 34rem;
+}
+.fam-range { width: 200px; accent-color: var(--accent); }
+.fam-readout {
+  font-family: ui-monospace, Menlo, monospace; font-size: .82rem;
+  font-variant-numeric: tabular-nums;
+}
+.fam-ties { color: var(--muted); }
+
 /* Congruence-class dimming: viewer.js sets data-focus-cc on the svg */
 svg[data-focus-cc] .mintri { opacity: .12; transition: opacity .15s; }
 svg[data-focus-cc="0"] .cc-0, svg[data-focus-cc="1"] .cc-1, svg[data-focus-cc="2"] .cc-2,
