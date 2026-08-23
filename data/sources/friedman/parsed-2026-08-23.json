@@ -1,0 +1,1119 @@
+{
+ "fetched": "2026-08-23",
+ "source_urls": {
+  "square": "https://erich-friedman.github.io/packing/heilbronn/",
+  "triangle": "https://erich-friedman.github.io/packing/heiltri/",
+  "convex": "https://erich-friedman.github.io/packing/heilconvex/"
+ },
+ "variants": {
+  "square": {
+   "3": {
+    "value_text": "A = 1/2 = .5",
+    "exact_text": "1/2",
+    "decimal": "0.5",
+    "lower_bound": false,
+    "credits": [
+     "Trivial."
+    ],
+    "symmetry": "Symmetric about a diagonal",
+    "notes": [
+     "One of an infinite family of solutions."
+    ]
+   },
+   "4": {
+    "value_text": "A = 1/2 = .5",
+    "exact_text": "1/2",
+    "decimal": "0.5",
+    "lower_bound": false,
+    "credits": [
+     "Trivial."
+    ],
+    "symmetry": "Completely symmetric",
+    "notes": []
+   },
+   "5": {
+    "value_text": "A = √3 / 9 = .19245+",
+    "exact_text": "√3 / 9",
+    "decimal": "0.19245",
+    "lower_bound": true,
+    "credits": [
+     "Proved optimal by Yang Lu, Zhang Jingzhong, and Zeng Zhenbing in 1991."
+    ],
+    "symmetry": "Symmetric about a diagonal",
+    "notes": []
+   },
+   "6": {
+    "value_text": "A = 1/8 = .125",
+    "exact_text": "1/8",
+    "decimal": "0.125",
+    "lower_bound": false,
+    "credits": [
+     "Proved optimal by A. Dress, L. Yang, and Z. B. Zeng in 1995."
+    ],
+    "symmetry": "Vertically and horizontally symmetric",
+    "notes": [
+     "One of an infinite family of solutions."
+    ]
+   },
+   "7": {
+    "value_text": "A = .08386+",
+    "exact_text": null,
+    "decimal": "0.08386",
+    "lower_bound": true,
+    "credits": [
+     "Found by F. Comellas and J. Yebra, December 2001.",
+     "Proved optimal by Zhenbing Chen and Liangyu Chen in 2011."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "8": {
+    "value_text": "A = (√13-1) / 36 = .07237+",
+    "exact_text": "(√13-1) / 36",
+    "decimal": "0.07237",
+    "lower_bound": true,
+    "credits": [
+     "Found by F. Comellas and J. Yebra, December 2001.",
+     "Proved optimal by L. Dehbi and Z. Zeng in 2022."
+    ],
+    "symmetry": "180° Rotationally symmetric",
+    "notes": []
+   },
+   "9": {
+    "value_text": "A = (9√65-55) / 320 = .05487+",
+    "exact_text": "(9√65-55) / 320",
+    "decimal": "0.05487",
+    "lower_bound": true,
+    "credits": [
+     "Found by F. Comellas and J. Yebra, December 2001.",
+     "Proved optimal by Nathan Sudermann-Merx in March 2026."
+    ],
+    "symmetry": "Symmetric about a diagonal",
+    "notes": []
+   },
+   "10": {
+    "value_text": "A = .04654+",
+    "exact_text": null,
+    "decimal": "0.04654",
+    "lower_bound": true,
+    "credits": [
+     "Found by F. Comellas and J. Yebra in December 2001."
+    ],
+    "symmetry": "Symmetric about both diagonals",
+    "notes": []
+   },
+   "11": {
+    "value_text": "A = 1/27 = .03704+",
+    "exact_text": "1/27",
+    "decimal": "0.03704",
+    "lower_bound": true,
+    "credits": [
+     "Found by Michael Goldberg in 1972."
+    ],
+    "symmetry": "Horizontally symmetric",
+    "notes": []
+   },
+   "12": {
+    "value_text": "A = .03260+",
+    "exact_text": null,
+    "decimal": "0.03260",
+    "lower_bound": true,
+    "credits": [
+     "Found by F. Comellas and J. Yebra in December 2001."
+    ],
+    "symmetry": "Completely symmetric",
+    "notes": []
+   },
+   "13": {
+    "value_text": "A = .02702+",
+    "exact_text": null,
+    "decimal": "0.02702",
+    "lower_bound": true,
+    "credits": [
+     "Found by Peter Karpov in August 2011."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "14": {
+    "value_text": "A = .02430+",
+    "exact_text": null,
+    "decimal": "0.02430",
+    "lower_bound": true,
+    "credits": [
+     "Found by Mark Beyleveld in August 2006."
+    ],
+    "symmetry": "Vertically and horizontally symmetric",
+    "notes": []
+   },
+   "15": {
+    "value_text": "A = .02121+",
+    "exact_text": null,
+    "decimal": "0.02121",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "16": {
+    "value_text": "A = 7 / 341 = .02053+",
+    "exact_text": "7 / 341",
+    "decimal": "0.02053",
+    "lower_bound": true,
+    "credits": [
+     "Found by Mark Beyleveld in August 2006."
+    ],
+    "symmetry": "180° Rotationally symmetric",
+    "notes": []
+   },
+   "17": {
+    "value_text": "A = .016481+",
+    "exact_text": null,
+    "decimal": "0.016481",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in July 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "18": {
+    "value_text": "A = .01498+",
+    "exact_text": null,
+    "decimal": "0.01498",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "19": {
+    "value_text": "A = 0.01394+",
+    "exact_text": null,
+    "decimal": "0.01394",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "20": {
+    "value_text": "A = 0.01291+",
+    "exact_text": null,
+    "decimal": "0.01291",
+    "lower_bound": true,
+    "credits": [
+     "Found by William Shanley in July 2026."
+    ],
+    "symmetry": "180° Rotationally symmetric",
+    "notes": []
+   },
+   "21": {
+    "value_text": "A = .01117+",
+    "exact_text": null,
+    "decimal": "0.01117",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "22": {
+    "value_text": "A = 0.009569+",
+    "exact_text": null,
+    "decimal": "0.009569",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "Symmetric with respect to both diagonals",
+    "notes": []
+   },
+   "23": {
+    "value_text": "A = .009112+",
+    "exact_text": null,
+    "decimal": "0.009112",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "24": {
+    "value_text": "A = .008495+",
+    "exact_text": null,
+    "decimal": "0.008495",
+    "lower_bound": true,
+    "credits": [
+     "Found by Marc-Emmanuel Coupvent des Graviers in July 2026."
+    ],
+    "symmetry": "Completely symmetric",
+    "notes": []
+   },
+   "25": {
+    "value_text": "A = .007733+",
+    "exact_text": null,
+    "decimal": "0.007733",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "26": {
+    "value_text": "A = .007078+",
+    "exact_text": null,
+    "decimal": "0.007078",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "27": {
+    "value_text": "A = .006790+",
+    "exact_text": null,
+    "decimal": "0.006790",
+    "lower_bound": true,
+    "credits": [
+     "Found by Marc-Emmanuel Coupvent des Graviers in July 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "28": {
+    "value_text": "A = .006775+",
+    "exact_text": null,
+    "decimal": "0.006775",
+    "lower_bound": true,
+    "credits": [
+     "Found by Marc-Emmanuel Coupvent des Graviers in July 2026."
+    ],
+    "symmetry": "Completely symmetric",
+    "notes": []
+   },
+   "29": {
+    "value_text": "A = .005669+",
+    "exact_text": null,
+    "decimal": "0.005669",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "30": {
+    "value_text": "A = .005445+",
+    "exact_text": null,
+    "decimal": "0.005445",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "31": {
+    "value_text": "A = .005362+",
+    "exact_text": null,
+    "decimal": "0.005362",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "32": {
+    "value_text": "A = .004690+",
+    "exact_text": null,
+    "decimal": "0.004690",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "33": {
+    "value_text": "A = .004269+",
+    "exact_text": null,
+    "decimal": "0.004269",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "34": {
+    "value_text": "A = .004004+",
+    "exact_text": null,
+    "decimal": "0.004004",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "35": {
+    "value_text": "A = .003716+",
+    "exact_text": null,
+    "decimal": "0.003716",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   }
+  },
+  "triangle": {
+   "3": {
+    "value_text": "A = 1",
+    "exact_text": null,
+    "decimal": "1",
+    "lower_bound": false,
+    "credits": [
+     "Trivial."
+    ],
+    "symmetry": "Completely symmetric",
+    "notes": []
+   },
+   "4": {
+    "value_text": "A = 1/3 = .333+",
+    "exact_text": "1/3",
+    "decimal": "0.333",
+    "lower_bound": true,
+    "credits": [
+     "Trivial."
+    ],
+    "symmetry": "Completely symmetric",
+    "notes": []
+   },
+   "5": {
+    "value_text": "A = 3 - 2√2 = .171+",
+    "exact_text": "3 - 2√2",
+    "decimal": "0.171",
+    "lower_bound": true,
+    "credits": [
+     "Proved by Royce Peng in 1989."
+    ],
+    "symmetry": "Horizontally symmetric",
+    "notes": [
+     "One of an infinite family of solutions."
+    ]
+   },
+   "6": {
+    "value_text": "A = 1/8 = .125",
+    "exact_text": "1/8",
+    "decimal": "0.125",
+    "lower_bound": false,
+    "credits": [
+     "Found by L. Yang, J. Z. Zhang, and Z. B. Zeng in 1991.",
+     "Proved by L. Yang, J. Z. Zhang, and Z. B. Zeng in 1994."
+    ],
+    "symmetry": "Horizontally symmetric",
+    "notes": [
+     "One of an infinite family of solutions."
+    ]
+   },
+   "7": {
+    "value_text": "A = 7/72 = .0972+",
+    "exact_text": "7/72",
+    "decimal": "0.0972",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell, July 2006.",
+     "Proved by Z. Zeng and L. Chen in 2019."
+    ],
+    "symmetry": "120° Rotationally symmetric",
+    "notes": []
+   },
+   "8": {
+    "value_text": "A = .0677+",
+    "exact_text": null,
+    "decimal": "0.0677",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in July 2006.",
+     "Proved by Nathan Sudermann-Merx in 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "9": {
+    "value_text": "A = 43/784 = .0548+",
+    "exact_text": "43/784",
+    "decimal": "0.0548",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in July 2006."
+    ],
+    "symmetry": "120° Rotationally symmetric",
+    "notes": []
+   },
+   "10": {
+    "value_text": "A = .0433+",
+    "exact_text": null,
+    "decimal": "0.0433",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "11": {
+    "value_text": "A = .03652+",
+    "exact_text": null,
+    "decimal": "0.03652",
+    "lower_bound": true,
+    "credits": [
+     "Found by AlphaEvolve in June 2025."
+    ],
+    "symmetry": "Reflectional symmetry",
+    "notes": []
+   },
+   "12": {
+    "value_text": "A = .0310+",
+    "exact_text": null,
+    "decimal": "0.0310",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in July 2006."
+    ],
+    "symmetry": "Completely symmetric",
+    "notes": []
+   },
+   "13": {
+    "value_text": "A = .02655+",
+    "exact_text": null,
+    "decimal": "0.02655",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in July 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "14": {
+    "value_text": "A = .0237+",
+    "exact_text": null,
+    "decimal": "0.0237",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "15": {
+    "value_text": "A = .0210+",
+    "exact_text": null,
+    "decimal": "0.0210",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "120° Rotationally symmetric",
+    "notes": []
+   },
+   "16": {
+    "value_text": "A = .0179+",
+    "exact_text": null,
+    "decimal": "0.0179",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "120° Rotationally symmetric",
+    "notes": []
+   },
+   "17": {
+    "value_text": "A = .01553+",
+    "exact_text": null,
+    "decimal": "0.01553",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "18": {
+    "value_text": "A = .01489+",
+    "exact_text": null,
+    "decimal": "0.01489",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "Fully symmetric",
+    "notes": []
+   },
+   "19": {
+    "value_text": "A = .01201+",
+    "exact_text": null,
+    "decimal": "0.01201",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "20": {
+    "value_text": "A = .01119+",
+    "exact_text": null,
+    "decimal": "0.01119",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "21": {
+    "value_text": "A = .01090+",
+    "exact_text": null,
+    "decimal": "0.01090",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "22": {
+    "value_text": "A = .009575+",
+    "exact_text": null,
+    "decimal": "0.009575",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "23": {
+    "value_text": "A = .009269+",
+    "exact_text": null,
+    "decimal": "0.009269",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "24": {
+    "value_text": "A = .008985+",
+    "exact_text": null,
+    "decimal": "0.008985",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Fully symmetric",
+    "notes": []
+   },
+   "25": {
+    "value_text": "A = .007174+",
+    "exact_text": null,
+    "decimal": "0.007174",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "26": {
+    "value_text": "A = .006530+",
+    "exact_text": null,
+    "decimal": "0.006530",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "27": {
+    "value_text": "A = .006361+",
+    "exact_text": null,
+    "decimal": "0.006361",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "28": {
+    "value_text": "A = .005702+",
+    "exact_text": null,
+    "decimal": "0.005702",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "29": {
+    "value_text": "A = .005410+",
+    "exact_text": null,
+    "decimal": "0.005410",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "30": {
+    "value_text": "A = .005098+",
+    "exact_text": null,
+    "decimal": "0.005098",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "31": {
+    "value_text": "A = .004755+",
+    "exact_text": null,
+    "decimal": "0.004755",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "32": {
+    "value_text": "A = .004177+",
+    "exact_text": null,
+    "decimal": "0.004177",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "33": {
+    "value_text": "A = .003973+",
+    "exact_text": null,
+    "decimal": "0.003973",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "34": {
+    "value_text": "A = .003758+",
+    "exact_text": null,
+    "decimal": "0.003758",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   },
+   "35": {
+    "value_text": "A = .003613+",
+    "exact_text": null,
+    "decimal": "0.003613",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "Not symmetric",
+    "notes": []
+   }
+  },
+  "convex": {
+   "3": {
+    "value_text": "A = 1",
+    "exact_text": null,
+    "decimal": "1",
+    "lower_bound": false,
+    "credits": [
+     "Trivial."
+    ],
+    "symmetry": "3-fold dihedral symmetry",
+    "notes": []
+   },
+   "4": {
+    "value_text": "A = 1/2 = .500",
+    "exact_text": "1/2",
+    "decimal": "0.500",
+    "lower_bound": false,
+    "credits": [
+     "Trivial."
+    ],
+    "symmetry": "4-fold dihedral symmetry",
+    "notes": []
+   },
+   "5": {
+    "value_text": "A = (5 - √5) / 10 = .276+",
+    "exact_text": "(5 - √5) / 10",
+    "decimal": "0.276",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "5-fold dihedral symmetry",
+    "notes": []
+   },
+   "6": {
+    "value_text": "A = 1/6 = .166+",
+    "exact_text": "1/6",
+    "decimal": "0.166",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "6-fold dihedral symmetry",
+    "notes": []
+   },
+   "7": {
+    "value_text": "A = 1/9 = .111+",
+    "exact_text": "1/9",
+    "decimal": "0.111",
+    "lower_bound": true,
+    "credits": [
+     "Proved by Zhenbing Zeng and Lu Yang in 1995."
+    ],
+    "symmetry": "3-fold dihedral symmetry",
+    "notes": []
+   },
+   "8": {
+    "value_text": "A = .0800+",
+    "exact_text": null,
+    "decimal": "0.0800",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "2-fold symmetry",
+    "notes": []
+   },
+   "9": {
+    "value_text": "A = .0640+",
+    "exact_text": null,
+    "decimal": "0.0640",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "2-fold symmetry",
+    "notes": []
+   },
+   "10": {
+    "value_text": "A = .0519+",
+    "exact_text": null,
+    "decimal": "0.0519",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "2-fold dihedral symmetry",
+    "notes": []
+   },
+   "11": {
+    "value_text": "A = 2/47 = .0425+",
+    "exact_text": "2/47",
+    "decimal": "0.0425",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "2-fold symmetry",
+    "notes": []
+   },
+   "12": {
+    "value_text": "A = 2/51 = .0392+",
+    "exact_text": "2/51",
+    "decimal": "0.0392",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "3-fold dihedral symmetry",
+    "notes": []
+   },
+   "13": {
+    "value_text": "A = .03093+",
+    "exact_text": null,
+    "decimal": "0.03093",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "14": {
+    "value_text": "A = .02783+",
+    "exact_text": null,
+    "decimal": "0.02783",
+    "lower_bound": true,
+    "credits": [
+     "Found by AlphaEvolve in June 2025."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "15": {
+    "value_text": "A = .02456+",
+    "exact_text": null,
+    "decimal": "0.02456",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in July 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "16": {
+    "value_text": "A = .0222+",
+    "exact_text": null,
+    "decimal": "0.0222",
+    "lower_bound": true,
+    "credits": [
+     "Found by David Cantrell in June 2007."
+    ],
+    "symmetry": "4-fold dihedral symmetry",
+    "notes": []
+   },
+   "17": {
+    "value_text": "A = .01875+",
+    "exact_text": null,
+    "decimal": "0.01875",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "18": {
+    "value_text": "A = [2 - (3/2 - √(239/3)/6)^(1/3) - (3/2 + √(239/3)/6)^(1/3)] / 18",
+    "exact_text": "[2 - (3/2 - √(239/3)/6)^(1/3) - (3/2 + √(239/3)/6)^(1/3)] / 18",
+    "decimal": "0.018238",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in July 2026."
+    ],
+    "symmetry": "6-fold dihedral symmetry",
+    "notes": []
+   },
+   "19": {
+    "value_text": "A = .01500+",
+    "exact_text": null,
+    "decimal": "0.01500",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "20": {
+    "value_text": "A = .01446+",
+    "exact_text": null,
+    "decimal": "0.01446",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "5-fold dihedral symmetry",
+    "notes": []
+   },
+   "21": {
+    "value_text": "A = .01272+",
+    "exact_text": null,
+    "decimal": "0.01272",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "22": {
+    "value_text": "A = .01225+",
+    "exact_text": null,
+    "decimal": "0.01225",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "23": {
+    "value_text": "A = .01108+",
+    "exact_text": null,
+    "decimal": "0.01108",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "24": {
+    "value_text": "A = .01071+",
+    "exact_text": null,
+    "decimal": "0.01071",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "3-fold dihedral symmetry",
+    "notes": []
+   },
+   "25": {
+    "value_text": "A = .008870+",
+    "exact_text": null,
+    "decimal": "0.008870",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "26": {
+    "value_text": "A = .008403+",
+    "exact_text": null,
+    "decimal": "0.008403",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "27": {
+    "value_text": "A = .007877+",
+    "exact_text": null,
+    "decimal": "0.007877",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "28": {
+    "value_text": "A = .007627+",
+    "exact_text": null,
+    "decimal": "0.007627",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "7-fold dihedral symmetry",
+    "notes": []
+   },
+   "29": {
+    "value_text": "A = .006078+",
+    "exact_text": null,
+    "decimal": "0.006078",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "30": {
+    "value_text": "A = .005949+",
+    "exact_text": null,
+    "decimal": "0.005949",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "6-fold dihedral symmetry",
+    "notes": []
+   },
+   "31": {
+    "value_text": "A = .005615+",
+    "exact_text": null,
+    "decimal": "0.005615",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "5-fold dihedral symmetry",
+    "notes": []
+   },
+   "32": {
+    "value_text": "A = .005244+",
+    "exact_text": null,
+    "decimal": "0.005244",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "8-fold dihedral symmetry",
+    "notes": []
+   },
+   "33": {
+    "value_text": "A = .004842+",
+    "exact_text": null,
+    "decimal": "0.004842",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "34": {
+    "value_text": "A = .004558+",
+    "exact_text": null,
+    "decimal": "0.004558",
+    "lower_bound": true,
+    "credits": [
+     "Found by Tej Stead in August 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   },
+   "35": {
+    "value_text": "A = .004228+",
+    "exact_text": null,
+    "decimal": "0.004228",
+    "lower_bound": true,
+    "credits": [
+     "Found by Nathan Sudermann-Merx in August 2026."
+    ],
+    "symmetry": "No symmetry",
+    "notes": []
+   }
+  }
+ }
+}

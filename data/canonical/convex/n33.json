@@ -140,8 +140,8 @@
  "value": {
   "decimal": "0.00502071150468713395566427876598",
   "fraction": "13935273781260181548600287774848/2775557561562892322312904924135487",
-  "published": "A = .004614+",
-  "published_decimal": "0.004614",
+  "published": "A = .004842+",
+  "published_decimal": "0.004842",
   "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,

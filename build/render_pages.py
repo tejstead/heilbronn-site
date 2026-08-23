@@ -199,7 +199,11 @@ def provenance_lines(doc, derived):
             f"Verified in exact arithmetic: all {v['triples_checked']} triples "
             f"enumerated, {v['num_min_ties']} tied at the minimum.")
     if doc["value"].get("published"):
-        lines.append(f"Friedman's page lists: <code>{doc['value']['published']}</code>.")
+        if doc.get("page_relation") == "BEATS":
+            lines.append(f"Friedman's page still lists the previous record: "
+                         f"<code>{doc['value']['published']}</code>.")
+        else:
+            lines.append(f"Friedman's page lists: <code>{doc['value']['published']}</code>.")
     return lines
 
 
@@ -250,9 +254,24 @@ def symmetry_text(doc, derived):
         txt = f"{det} (group {sym['group']}, order {sym['order']})."
     if label and doc.get("page_relation") == "BEHIND":
         txt += f" The record configuration is listed as: {label.lower()}."
-    elif label and det.rstrip(".").lower() != label.rstrip(".").lower():
-        txt += f" (Friedman's page says: {label.lower()}.)"
+    elif label and not _same_symmetry_label(det, label):
+        if doc.get("page_relation") == "BEATS":
+            # His page still shows the superseded configuration — its label
+            # describes a different arrangement, not a disagreement about ours.
+            txt += (f" Friedman's page still shows the previous record "
+                    f"(listed as: {label.lower()}).")
+        else:
+            txt += f" (Friedman's page says: {label.lower()}.)"
     return txt
+
+
+def _same_symmetry_label(a, b):
+    """Friedman's convex pages write "No symmetry" where the square/triangle
+    pages (and our labels) say "Not symmetric" — the same statement."""
+    def norm(s):
+        s = s.rstrip(".").strip().lower()
+        return "not symmetric" if s == "no symmetry" else s
+    return norm(a) == norm(b)
 
 
 def sym_controls(derived):

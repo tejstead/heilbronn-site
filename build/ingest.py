@@ -401,7 +401,11 @@ def canonical_doc(variant, n, entry, cand, res, page_relation, override, changel
     }
     # When an external submission's value beats the published record, the
     # find belongs to the submitter (meta.json credit), not to the holder of
-    # the superseded page entry.
+    # the superseded page entry. Only at BEATS: at OK the page's credit is
+    # authoritative (external submissions can also be exact realizations of
+    # someone else's known record, e.g. square n=14). If Friedman adopts a
+    # submitted record but credits the wrong person, pin the right credit in
+    # data/curated/overrides.json when reviewing the friedman-watch PR.
     if (cand and cand.get("kind") == "external" and cand.get("credit")
             and page_relation == "BEATS"):
         m = re.match(r"^(.+?),\s*((?:%s)\s+\d{4}|\d{4})$" % "|".join(MONTHS),
