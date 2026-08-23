@@ -185,7 +185,10 @@ h1 .badge { vertical-align: .35em; margin-left: .5rem; }
   font-family: ui-monospace, Menlo, monospace; font-size: .82rem;
   font-variant-numeric: tabular-nums;
 }
-.fam-ties { color: var(--muted); }
+/* Reserve stable widths so the centered row doesn't re-center (jitter)
+   as the readout text length changes while playing/scrubbing. */
+.fam-val { display: inline-block; min-width: 8ch; text-align: left; }
+.fam-ties { color: var(--muted); min-width: 19ch; text-align: left; }
 
 /* Congruence-class dimming: viewer.js sets data-focus-cc on the svg */
 svg[data-focus-cc] .mintri { opacity: .12; transition: opacity .15s; }
