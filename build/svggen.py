@@ -137,7 +137,10 @@ def family_svg(variant, points_str, derived, fam, svg_id="famfig"):
     else:
         tf = transform_for(variant, pts)
 
-    canvas_samples = [[[round(c, 2) for c in tf(x, y)] for (x, y) in s]
+    # 3 decimals: at 1e-2 the coordinate quantization perturbs tie areas by
+    # ~1e-4 relative — the same order as the display tie tolerance, making
+    # persistent ties flicker while scrubbing.
+    canvas_samples = [[[round(c, 3) for c in tf(x, y)] for (x, y) in s]
                       for s in sample_pts]
 
     hull_order = None
@@ -173,7 +176,7 @@ def family_svg(variant, points_str, derived, fam, svg_id="famfig"):
         "moving": fam["moving"],
         "hull": hull_order,
         "param": fam["param"],
-        "tieTol": 1e-4,
+        "tieTol": 1e-3,
     }
     svg = (
         f'<svg id="{svg_id}" xmlns="http://www.w3.org/2000/svg" '
