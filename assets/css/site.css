@@ -128,6 +128,9 @@ h1 .badge { vertical-align: .35em; margin-left: .5rem; }
 /* Value block — Ellsworth-style: exact form first, long decimal under it. */
 .value-block { margin: 1rem 0 1.4rem; }
 .value-main { font-size: 1.15rem; }
+/* Long minimal polynomials (MathML doesn't wrap) scroll in their own box
+   instead of stretching the page. */
+.value-main, .value-poly { overflow-x: auto; max-width: 100%; }
 .exact-form { font-weight: 600; letter-spacing: .01em; }
 .digits, .value-dec { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
 .value-main .digits { font-size: 1.02rem; }
