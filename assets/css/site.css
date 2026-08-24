@@ -261,5 +261,7 @@ thead th { font-family: var(--sans); font-size: .78rem; text-transform: uppercas
 
 /* Tesseract visualizer */
 .tesseract-wrap { max-width: 600px; margin: 1.5rem auto; }
-.tesseract-wrap canvas { width: 100%; aspect-ratio: 1; display: block; border-radius: 6px; background: #000; }
-.tesseract-controls { margin-top: 0.5rem; text-align: center; }
+.tesseract-wrap canvas { width: 100%; aspect-ratio: 1; display: block; border-radius: 6px; cursor: pointer; }
+.tesseract-controls { display: flex; align-items: center; gap: 0.6rem; margin-top: 0.5rem; }
+.tesseract-controls .primary { flex-shrink: 0; min-width: 4.5rem; }
+.tesseract-controls input[type="range"] { flex: 1; height: 6px; accent-color: var(--accent); }
