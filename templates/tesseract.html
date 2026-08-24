@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Heilbronn — Tesseract Visualizer{% endblock %}
+{% block description %}The optimal n=16 Heilbronn configuration is an affine projection of a 4D hypercube. Watch it unfold.{% endblock %}
+{% block content %}
+<h1>The n = 16 tesseract</h1>
+<p>The optimal placement of 16 points in the unit square (minimum triangle area
+7/341, due to Beyleveld 2006) is <em>exactly</em> an affine image of the 16
+vertices of a 4-dimensional hypercube. The animation below rotates the
+tesseract, freezes a 2D projection, then stretches it into the optimal
+configuration and reveals the 64 minimal-area triangles grouped by their
+parallelogram structure.</p>
+
+<noscript><p class="banner">This visualizer needs JavaScript.</p></noscript>
+
+<div class="tesseract-wrap">
+  <canvas id="tesseract-canvas"></canvas>
+  <div class="tesseract-controls">
+    <button id="tesseract-replay" class="primary">Replay</button>
+  </div>
+</div>
+
+<h2>Why a hypercube?</h2>
+<p>The 16 Heilbronn points have rational coordinates with denominators 31
+(x-axis) and 33 (y-axis), 180-degree rotational symmetry, and exactly 64
+triangles tied at the minimum area. A least-squares fit to the
+{0,1}<sup>4</sup> vertex set gives machine-epsilon residual: the global
+optimum lives in the 10-parameter family of affine images of the tesseract, and
+no relaxation to unconstrained 16-point configurations improves on it.</p>
+<p>This structure does not extend to other n = 2<sup>d</sup> cases: neither the
+d = 3 (n = 8) nor d = 5 (n = 32) Heilbronn optima are hypercube projections.</p>
+
+<h2>Structure of the minimal triangles</h2>
+<p>The 64 minimal triangles organize into parallelogram groups corresponding to
+faces of the projected tesseract. Eight of the 24 tesseract 2-faces each
+contain exactly 4 minimal triangles (shown in blue). Six additional
+"diagonal" parallelograms, formed by pairs of minimal triangles sharing an
+edge but not lying on a tesseract face, account for 24 more (shown in orange).
+Together these cover 56 of the 64 minimal triangles.</p>
+
+<script src="{{ base }}/assets/{{ assets['tesseract.js'] }}" defer></script>
+{% endblock %}
