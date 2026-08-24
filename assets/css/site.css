@@ -258,3 +258,8 @@ thead th { font-family: var(--sans); font-size: .78rem; text-transform: uppercas
 .lb-wrap { display: flex; gap: 2.5rem; flex-wrap: wrap; margin: 1rem 0 2rem; }
 .lb-wrap table td.num { text-align: right; font-variant-numeric: tabular-nums; }
 .lb-wrap span[title] { cursor: help; border-bottom: 1px dotted var(--line); }
+
+/* Tesseract visualizer */
+.tesseract-wrap { max-width: 600px; margin: 1.5rem auto; }
+.tesseract-wrap canvas { width: 100%; aspect-ratio: 1; display: block; border-radius: 6px; background: #000; }
+.tesseract-controls { margin-top: 0.5rem; text-align: center; }
