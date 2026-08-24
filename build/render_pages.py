@@ -681,6 +681,10 @@ def render_extra(env, assets, values_name):
     (DIST / "verifier" / "index.html").write_text(
         env.get_template("verifier.html").render(
             dict(common, section="verifier", values_name=values_name)))
+    (DIST / "tesseract").mkdir(parents=True, exist_ok=True)
+    (DIST / "tesseract" / "index.html").write_text(
+        env.get_template("tesseract.html").render(
+            dict(common, section="tesseract")))
     write_sitemap_and_404(env, common)
 
 
@@ -689,7 +693,8 @@ SITE_ORIGIN = "https://math.tejstead.com"
 
 def write_sitemap_and_404(env, common):
     urls = [f"{BASE}/", f"{BASE}/trends/", f"{BASE}/leaderboard/",
-            f"{BASE}/missing/", f"{BASE}/verifier/", f"{BASE}/methods/"]
+            f"{BASE}/missing/", f"{BASE}/verifier/", f"{BASE}/methods/",
+            f"{BASE}/tesseract/"]
     for v in VARIANTS:
         urls.append(f"{BASE}/{v}/")
         for n in NS:
