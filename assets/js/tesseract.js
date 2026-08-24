@@ -39,6 +39,12 @@
     [4, 6, 8, 10], [5, 7, 9, 11], [8, 11, 12, 15]
   ];
 
+  // 8 remaining minimal triangles not in any parallelogram group
+  var STRAY_TRIS = [
+    [0,6,11], [0,6,12], [1,7,13], [2,8,14],
+    [3,5,8], [3,9,15], [4,9,15], [7,10,12]
+  ];
+
   // 32 edges of tesseract (Hamming distance 1)
   var EDGES = [];
   (function buildEdges() {
@@ -334,19 +340,23 @@
 
   function getTriangleRevealState(phaseT) {
     // Total duration = T5 - T4 = 11s. phaseT goes 0 to 1.
-    // Layout: first face tri-by-tri, then 7 axis faces staggered, then 6 diag faces staggered.
-    // Slower pacing: first face 0.15, each axis face 0.08, each diag face 0.08
-    var FIRST_END = 0.15;
-    var AXIS_STAGGER = 0.08;
-    var DIAG_STAGGER = 0.08;
-    var AXIS_START = FIRST_END;
-    var DIAG_START = AXIS_START + 7 * AXIS_STAGGER;
-    var FADE_DUR = 0.06; // each face fades in over this fraction
+    // Layout: first face tri-by-tri, then 7 axis faces staggered, then 6 diag staggered, then 8 strays
+    // Total must fit within phaseT [0, 0.9] to leave hold time at end
+    var FIRST_END = 0.12;
+    var AXIS_STAGGER = 0.05;
+    var DIAG_STAGGER = 0.05;
+    var STRAY_STAGGER = 0.02;
+    var AXIS_START = FIRST_END;                          // 0.12
+    var DIAG_START = AXIS_START + 7 * AXIS_STAGGER;     // 0.47
+    var STRAY_START = DIAG_START + 6 * DIAG_STAGGER;    // 0.77
+    // STRAY ends at 0.77 + 8*0.02 = 0.93 -- fits within 1.0
+    var FADE_DUR = 0.04;
 
     var state = {
       firstAlpha: [],
       faceAlphas: [], // alpha for axis faces 1-7
-      diagAlphas: []  // alpha for diag faces 0-5
+      diagAlphas: [], // alpha for diag faces 0-5
+      strayAlphas: [] // alpha for 8 remaining triangles
     };
 
     // First face: triangle by triangle
@@ -385,6 +395,18 @@
         state.diagAlphas.push((phaseT - dStart) / FADE_DUR);
       } else {
         state.diagAlphas.push(0.0);
+      }
+    }
+
+    // 8 stray triangles
+    for (var si = 0; si < 8; si++) {
+      var sStart = STRAY_START + si * STRAY_STAGGER;
+      if (phaseT >= sStart + FADE_DUR) {
+        state.strayAlphas.push(1.0);
+      } else if (phaseT >= sStart) {
+        state.strayAlphas.push((phaseT - sStart) / FADE_DUR);
+      } else {
+        state.strayAlphas.push(0.0);
       }
     }
 
@@ -496,6 +518,24 @@
             ctx.lineWidth = 1;
             ctx.stroke();
           }
+        }
+      }
+
+      // 8 stray triangles (green-ish)
+      for (var si = 0; si < STRAY_TRIS.length; si++) {
+        var alpha = reveal.strayAlphas[si];
+        if (alpha > 0.01) {
+          var tri = STRAY_TRIS[si];
+          ctx.fillStyle = 'rgba(100,210,130,' + (alpha * 0.4).toFixed(3) + ')';
+          ctx.beginPath();
+          ctx.moveTo(pts[tri[0]][0], pts[tri[0]][1]);
+          ctx.lineTo(pts[tri[1]][0], pts[tri[1]][1]);
+          ctx.lineTo(pts[tri[2]][0], pts[tri[2]][1]);
+          ctx.closePath();
+          ctx.fill();
+          ctx.strokeStyle = 'rgba(100,210,130,' + (alpha * 0.8).toFixed(3) + ')';
+          ctx.lineWidth = 1;
+          ctx.stroke();
         }
       }
     }

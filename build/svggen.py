@@ -192,6 +192,25 @@ def family_svg(variant, points_str, derived, fam, svg_id="famfig"):
     return svg, payload
 
 
+def _tesseract_cc(ties):
+    """For square n=16: color min triangles by parallelogram group.
+    cc-0 (blue) = axis-aligned tesseract faces, cc-1 (orange) = diagonal, cc-2 (green) = stray.
+    Indices are in the canonical file ordering (matched via coordinate lookup)."""
+    AXIS = [{0,2,6,10},{0,4,7,15},{2,9,11,12},{4,8,12,14},
+            {3,8,10,13},{1,5,6,14},{5,9,13,15},{1,3,7,11}]
+    DIAG = [{0,10,12,14},{4,5,8,9},{6,7,12,13},{7,8,10,15},{6,9,11,14},{1,11,13,15}]
+    cc_of = {}
+    for t in ties:
+        s = set(t)
+        if any(s.issubset(f) for f in AXIS):
+            cc_of[t] = 0
+        elif any(s.issubset(f) for f in DIAG):
+            cc_of[t] = 1
+        else:
+            cc_of[t] = 2
+    return cc_of
+
+
 def figure_svg(variant, points_str, derived, svg_id="fig"):
     pts = [(float(x), float(y)) for x, y in points_str]
     tf = transform_for(variant, pts)
@@ -199,10 +218,17 @@ def figure_svg(variant, points_str, derived, svg_id="fig"):
     classes = derived["classes"]
     single = len(classes) > MAX_CC or all(len(c["triangles"]) == 1 for c in classes)
 
-    cc_of = {}
-    for ci, cls in enumerate(classes):
-        for t in cls["triangles"]:
-            cc_of[t] = 0 if single else ci
+    # Special case: square n=16 gets tesseract-based coloring
+    if variant == "square" and len(pts) == 16:
+        cc_of = _tesseract_cc(derived["ties"])
+        single = False
+        class_count = 3
+    else:
+        cc_of = {}
+        class_count = len(classes)
+        for ci, cls in enumerate(classes):
+            for t in cls["triangles"]:
+                cc_of[t] = 0 if single else ci
 
     mintris = []
     for t in derived["ties"]:
@@ -252,7 +278,7 @@ def figure_svg(variant, points_str, derived, svg_id="fig"):
         f'viewBox="0 0 {SIZE} {SIZE}" role="img" '
         f'aria-label="{variant} configuration, n = {len(pts)}"'
         f'{" class=" + chr(34) + "single" + chr(34) if single else ""}>'
-        + _style(len(classes), single)
+        + _style(class_count, single)
         + f'<g class="domain">{domain_outline(variant, points_str, tf)}</g>'
         f'<g class="mintris">{"".join(mintris)}</g>'
         f'<g class="sym">{"".join(sym_elems)}</g>'
