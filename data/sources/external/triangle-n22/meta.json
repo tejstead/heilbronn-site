@@ -1,5 +1,5 @@
 {
- "ref": "github.com/rhyschappell (surgery/cascade search)",
- "credit": "Rhys Chappell, August 2026",
- "note": "Improves the previous value 0.009575756868 by 1.24%. Found by point insertion/deletion surgery between neighboring record configurations followed by constrained local maximin refinement."
+ "ref": "spiralulam heilbronn_square/csearch pipeline, D3 symmetric-start pass 2026-08-24",
+ "credit": "Nathan Sudermann-Merx, August 2026",
+ "note": "found by descending from a threefold-symmetric configuration in the equilateral frame, then symmetry-breaking trust-region SLP refinement"
 }
