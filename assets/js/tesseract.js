@@ -15,6 +15,7 @@
   var T3 = 10.0;  // end of frozen pause
   var T4 = 12.5;  // end of affine stretch
   var T5 = 23.5;  // end of triangle reveal
+  var T_TOTAL = T5;
 
   // Heilbronn affine map
   var A_HEIL = [
@@ -26,16 +27,16 @@
   var ORTHO_ANGLE_XW = 0.12;
   var ORTHO_ANGLE_YZ = 0.08;
 
-  // 8 axis-aligned face parallelograms (ordered quads)
+  // 8 axis-aligned face parallelograms (bit-field vertex indices)
   var AXIS_FACES = [
-    [4, 0, 1, 5], [0, 8, 10, 2], [4, 12, 14, 6], [1, 9, 11, 3],
-    [5, 13, 15, 7], [6, 2, 3, 7], [12, 8, 9, 13], [14, 10, 11, 15]
+    [0, 1, 4, 5], [0, 2, 8, 10], [1, 3, 9, 11], [2, 3, 6, 7],
+    [4, 6, 12, 14], [5, 7, 13, 15], [8, 9, 12, 13], [10, 11, 14, 15]
   ];
 
-  // 6 diagonal parallelograms (ordered quads)
+  // 6 diagonal parallelograms (bit-field vertex indices)
   var DIAG_FACES = [
-    [0, 2, 14, 12], [1, 3, 15, 13], [9, 10, 14, 13],
-    [4, 6, 11, 9], [1, 2, 6, 5], [3, 5, 12, 10]
+    [0, 3, 4, 7], [2, 6, 9, 13], [3, 5, 10, 12],
+    [4, 6, 8, 10], [5, 7, 9, 11], [8, 11, 12, 15]
   ];
 
   // 32 edges of tesseract (Hamming distance 1)
@@ -64,6 +65,17 @@
   var VERTICES_CENTERED = VERTICES_01.map(function (v) {
     return [v[0] - 0.5, v[1] - 0.5, v[2] - 0.5, v[3] - 0.5];
   });
+
+  // --- Theme colors (read from CSS custom properties) ---
+  var theme = { bg: '#16161a', fg: '#e8e6e1', line: '#2c2c33', accent: '#ef7d54' };
+
+  function readTheme() {
+    var style = getComputedStyle(document.documentElement);
+    theme.bg = style.getPropertyValue('--bg').trim() || theme.bg;
+    theme.fg = style.getPropertyValue('--fg').trim() || theme.fg;
+    theme.line = style.getPropertyValue('--line').trim() || theme.line;
+    theme.accent = style.getPropertyValue('--accent').trim() || theme.accent;
+  }
 
   // --- Utility functions ---
   function ease_in_out(t) {
@@ -112,22 +124,12 @@
   }
 
   function compute_ortho_freeze() {
-    // Apply rotation R(0.12, 0.08) to centered vertices, then project via A_HEIL
     var pts = [];
     for (var i = 0; i < 16; i++) {
-      var v = VERTICES_CENTERED[i];
-      v = rotate_xw(v, ORTHO_ANGLE_XW);
-      v = rotate_yz(v, ORTHO_ANGLE_YZ);
-      // Project through A_HEIL applied to {0,1}^4 vertex + rotation offset
-      // We need to map back: rotated centered = rotated(v - 0.5) => for A_HEIL we use the 01 vertex
-      // Actually: A_HEIL @ R.T means we rotate the coordinate system
-      // ortho freeze = A_HEIL applied to R.T @ {0,1}^4 vertices
-      // Let's compute it properly: R.T rotates the basis, so we rotate {0,1}^4 vertices
       var v01 = VERTICES_01[i];
       var vc = [v01[0] - 0.5, v01[1] - 0.5, v01[2] - 0.5, v01[3] - 0.5];
       vc = rotate_xw(vc, ORTHO_ANGLE_XW);
       vc = rotate_yz(vc, ORTHO_ANGLE_YZ);
-      // Map back to 01 range for A_HEIL
       var v01r = [vc[0] + 0.5, vc[1] + 0.5, vc[2] + 0.5, vc[3] + 0.5];
       pts.push(apply_heil(v01r));
     }
@@ -165,63 +167,91 @@
     return result;
   }
 
-  function triangle_area(p0, p1, p2) {
+  function triangle_area_raw(p0, p1, p2) {
     return 0.5 * Math.abs(
       (p1[0] - p0[0]) * (p2[1] - p0[1]) - (p2[0] - p0[0]) * (p1[1] - p0[1])
     );
   }
 
-  // Find minimal triangles from 4 quad vertices in the Heilbronn configuration
-  function find_min_triangles_in_face(faceIndices, pts2d) {
+  // --- Precompute ALL 64 minimal triangles from the full C(16,3) set ---
+  var ALL_MIN_TRIANGLES = [];
+
+  function precomputeAllMinTriangles() {
     var TARGET_AREA = 7.0 / 341.0;
     var TOL = 1e-6;
-    var triangles = [];
-    var indices = faceIndices;
-    // All C(4,3) = 4 triangles from the quad
-    var combos = [[0, 1, 2], [0, 1, 3], [0, 2, 3], [1, 2, 3]];
-
-    // Compute the bounding area to normalize
-    // pts2d are already in the Heilbronn unit: A_HEIL maps {0,1}^4 to ~[0,1]^2
-    // We need to check area relative to the full point set bounding box
-    // Actually the area 7/341 is in the normalized Heilbronn coordinates
-    // We need to work in the raw A_HEIL output coordinates
-
-    for (var c = 0; c < combos.length; c++) {
-      var i0 = indices[combos[c][0]];
-      var i1 = indices[combos[c][1]];
-      var i2 = indices[combos[c][2]];
-      var area = triangle_area(pts2d[i0], pts2d[i1], pts2d[i2]);
-      if (Math.abs(area - TARGET_AREA) < TOL) {
-        triangles.push([i0, i1, i2]);
+    var pts = compute_heil_final();
+    ALL_MIN_TRIANGLES = [];
+    for (var i = 0; i < 16; i++) {
+      for (var j = i + 1; j < 16; j++) {
+        for (var k = j + 1; k < 16; k++) {
+          var area = triangle_area_raw(pts[i], pts[j], pts[k]);
+          if (Math.abs(area - TARGET_AREA) < TOL) {
+            ALL_MIN_TRIANGLES.push([i, j, k]);
+          }
+        }
       }
     }
-    return triangles;
+  }
+  precomputeAllMinTriangles();
+
+  // For each face, filter to triangles whose 3 vertices are all in the face's vertex set
+  function triangles_in_face(faceIndices) {
+    var faceSet = {};
+    for (var i = 0; i < faceIndices.length; i++) {
+      faceSet[faceIndices[i]] = true;
+    }
+    var result = [];
+    for (var t = 0; t < ALL_MIN_TRIANGLES.length; t++) {
+      var tri = ALL_MIN_TRIANGLES[t];
+      if (faceSet[tri[0]] && faceSet[tri[1]] && faceSet[tri[2]]) {
+        result.push(tri);
+      }
+    }
+    return result;
   }
 
-  // --- Main animation ---
-  var canvas, ctx;
-  var animStart = null;
-  var animId = null;
-  var orthoFreeze = compute_ortho_freeze();
-  var heilFinal = compute_heil_final();
-
-  // Precompute min triangles for each face in the final Heilbronn config
+  // Precompute per-face triangles
   var axisTriangles = [];
   var diagTriangles = [];
 
-  function precomputeTriangles() {
+  function precomputeFaceTriangles() {
     axisTriangles = [];
     diagTriangles = [];
     for (var i = 0; i < AXIS_FACES.length; i++) {
-      var tris = find_min_triangles_in_face(AXIS_FACES[i], heilFinal);
-      axisTriangles.push(tris);
+      axisTriangles.push(triangles_in_face(AXIS_FACES[i]));
     }
     for (var i = 0; i < DIAG_FACES.length; i++) {
-      var tris = find_min_triangles_in_face(DIAG_FACES[i], heilFinal);
-      diagTriangles.push(tris);
+      diagTriangles.push(triangles_in_face(DIAG_FACES[i]));
     }
   }
-  precomputeTriangles();
+  precomputeFaceTriangles();
+  console.log('[tesseract] min triangles found:', ALL_MIN_TRIANGLES.length,
+    '| axis faces:', axisTriangles.map(function(t){return t.length;}),
+    '| diag faces:', diagTriangles.map(function(t){return t.length;}));
+
+  // --- Bounding box of Heilbronn points (for drawing the unit square outline) ---
+  var heilFinal = compute_heil_final();
+  var orthoFreeze = compute_ortho_freeze();
+
+  function computeBBox(pts) {
+    var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    for (var i = 0; i < pts.length; i++) {
+      if (pts[i][0] < minX) minX = pts[i][0];
+      if (pts[i][0] > maxX) maxX = pts[i][0];
+      if (pts[i][1] < minY) minY = pts[i][1];
+      if (pts[i][1] > maxY) maxY = pts[i][1];
+    }
+    return { minX: minX, maxX: maxX, minY: minY, maxY: maxY };
+  }
+
+  // --- Main animation state ---
+  var canvas, ctx;
+  var animStart = null;
+  var animId = null;
+  var currentTime = 0;
+  var playing = true;
+  var scrubber = null;
+  var playBtn = null;
 
   function resizeCanvas() {
     var container = canvas.parentElement;
@@ -237,7 +267,6 @@
     var margin = 40;
 
     if (t <= T1) {
-      // Phase 1: rotating perspective
       var angle_xw = START_OFFSET_XW + OMEGA_XW * t;
       var angle_yz = OMEGA_YZ * t;
       var pts2d = [];
@@ -251,12 +280,9 @@
     }
 
     if (t <= T2) {
-      // Phase 2: decelerate + blend perspective to orthographic
       var blend = ease_in_out((t - T1) / (T2 - T1));
-      // Rotation decelerates
       var dt = t - T1;
       var dur = T2 - T1;
-      // Speed goes from full to zero: integrate deceleration
       var frac = dt / dur;
       var angle_xw = START_OFFSET_XW + OMEGA_XW * T1 + OMEGA_XW * dt * (1 - frac / 2);
       var angle_yz = OMEGA_YZ * T1 + OMEGA_YZ * dt * (1 - frac / 2);
@@ -282,13 +308,11 @@
     }
 
     if (t <= T3) {
-      // Phase 3: frozen orthographic
       var pts = normalize_to_box(orthoFreeze, canvas.width, canvas.height, margin);
       return { pts: pts, edgeAlpha: 1.0, phase: 3 };
     }
 
     if (t <= T4) {
-      // Phase 4: affine stretch to Heilbronn, edges fade
       var blend = ease_in_out((t - T3) / (T4 - T3));
       var orthoNorm = normalize_to_box(orthoFreeze, width, height, margin);
       var heilNorm = normalize_to_box(heilFinal, width, height, margin);
@@ -309,85 +333,91 @@
   }
 
   function getTriangleRevealState(phaseT) {
-    // phaseT goes 0 to 1 over the reveal phase (11 seconds)
-    // First face (axis[0]) triangle-by-triangle: 0 to 0.2
-    // Remaining 7 axis faces all at once: 0.2 to 0.5
-    // 6 diagonal faces: 0.5 to 0.85
-    // Hold: 0.85 to 1.0
+    // Total duration = T5 - T4 = 11s. phaseT goes 0 to 1.
+    // Layout: first face tri-by-tri, then 7 axis faces staggered, then 6 diag faces staggered.
+    // Slower pacing: first face 0.15, each axis face 0.08, each diag face 0.08
+    var FIRST_END = 0.15;
+    var AXIS_STAGGER = 0.08;
+    var DIAG_STAGGER = 0.08;
+    var AXIS_START = FIRST_END;
+    var DIAG_START = AXIS_START + 7 * AXIS_STAGGER;
+    var FADE_DUR = 0.06; // each face fades in over this fraction
+
     var state = {
-      firstFaceTris: 0, // 0-4, how many triangles of first face visible
-      axisVisible: 0,   // 0 or 1, whether remaining axis faces visible
-      diagVisible: 0,   // 0 or 1
-      axisAlpha: 0,
-      diagAlpha: 0,
-      firstAlpha: []
+      firstAlpha: [],
+      faceAlphas: [], // alpha for axis faces 1-7
+      diagAlphas: []  // alpha for diag faces 0-5
     };
 
-    if (phaseT < 0.2) {
-      // First face triangles one by one
-      var sub = phaseT / 0.2; // 0-1 over this sub-phase
-      var numTris = axisTriangles[0].length || 4;
-      var perTri = 1.0 / numTris;
-      for (var i = 0; i < numTris; i++) {
-        var triStart = i * perTri;
-        var triEnd = (i + 1) * perTri;
-        if (sub >= triEnd) {
-          state.firstAlpha.push(1.0);
-        } else if (sub >= triStart) {
-          state.firstAlpha.push(ease_in_out((sub - triStart) / perTri));
-        } else {
-          state.firstAlpha.push(0.0);
-        }
-      }
-      state.firstFaceTris = numTris;
-    } else {
-      // All first face triangles visible
-      var numTris = axisTriangles[0].length || 4;
-      for (var i = 0; i < numTris; i++) state.firstAlpha.push(1.0);
-      state.firstFaceTris = numTris;
-
-      if (phaseT < 0.5) {
-        var sub = ease_in_out((phaseT - 0.2) / 0.3);
-        state.axisVisible = 1;
-        state.axisAlpha = sub;
-      } else if (phaseT < 0.85) {
-        state.axisVisible = 1;
-        state.axisAlpha = 1.0;
-        var sub = ease_in_out((phaseT - 0.5) / 0.35);
-        state.diagVisible = 1;
-        state.diagAlpha = sub;
+    // First face: triangle by triangle
+    var numTris = axisTriangles[0] ? axisTriangles[0].length : 4;
+    var perTri = FIRST_END / numTris;
+    for (var i = 0; i < numTris; i++) {
+      var triStart = i * perTri;
+      var triEnd = triStart + perTri * 0.7; // fade in over 70% of slot
+      if (phaseT >= triEnd) {
+        state.firstAlpha.push(1.0);
+      } else if (phaseT >= triStart) {
+        state.firstAlpha.push(Math.min(1.0, (phaseT - triStart) / (perTri * 0.7)));
       } else {
-        state.axisVisible = 1;
-        state.axisAlpha = 1.0;
-        state.diagVisible = 1;
-        state.diagAlpha = 1.0;
+        state.firstAlpha.push(0.0);
       }
     }
+
+    // Remaining 7 axis faces, staggered
+    for (var fi = 0; fi < 7; fi++) {
+      var fStart = AXIS_START + fi * AXIS_STAGGER;
+      if (phaseT >= fStart + FADE_DUR) {
+        state.faceAlphas.push(1.0);
+      } else if (phaseT >= fStart) {
+        state.faceAlphas.push((phaseT - fStart) / FADE_DUR);
+      } else {
+        state.faceAlphas.push(0.0);
+      }
+    }
+
+    // 6 diagonal faces, staggered
+    for (var di = 0; di < 6; di++) {
+      var dStart = DIAG_START + di * DIAG_STAGGER;
+      if (phaseT >= dStart + FADE_DUR) {
+        state.diagAlphas.push(1.0);
+      } else if (phaseT >= dStart) {
+        state.diagAlphas.push((phaseT - dStart) / FADE_DUR);
+      } else {
+        state.diagAlphas.push(0.0);
+      }
+    }
+
     return state;
   }
 
-  function drawFrame(timestamp) {
-    if (!animStart) animStart = timestamp;
-    var t = (timestamp - animStart) / 1000;
-
-    if (t > T5 + 1.0) {
-      // Animation done, draw final frame and stop
-      drawScene(T5);
-      return;
+  // Draw the bounding square outline (only in phases 4 and 5)
+  function drawBoundingSquare(pts) {
+    var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+    for (var i = 0; i < pts.length; i++) {
+      if (pts[i][0] < minX) minX = pts[i][0];
+      if (pts[i][0] > maxX) maxX = pts[i][0];
+      if (pts[i][1] < minY) minY = pts[i][1];
+      if (pts[i][1] > maxY) maxY = pts[i][1];
     }
-
-    drawScene(Math.min(t, T5));
-    animId = requestAnimationFrame(drawFrame);
+    ctx.strokeStyle = theme.line;
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(minX, minY, maxX - minX, maxY - minY);
   }
 
   function drawScene(t) {
     var width = canvas.width;
     var height = canvas.height;
-    ctx.fillStyle = '#000';
+    ctx.fillStyle = theme.bg;
     ctx.fillRect(0, 0, width, height);
 
     var state = getProjectedPoints(t);
     var pts = state.pts;
+
+    // Bounding square in phases 4 and 5
+    if (state.phase === 4 || state.phase === 5) {
+      drawBoundingSquare(pts);
+    }
 
     // Draw edges
     if (state.edgeAlpha > 0.01) {
@@ -407,61 +437,62 @@
     if (state.phase === 5 && state.phaseT !== undefined) {
       var reveal = getTriangleRevealState(state.phaseT);
 
-      // Draw first face triangles
-      for (var ti = 0; ti < reveal.firstAlpha.length; ti++) {
-        if (reveal.firstAlpha[ti] > 0.01 && axisTriangles[0] && axisTriangles[0][ti]) {
-          var tri = axisTriangles[0][ti];
-          var alpha = reveal.firstAlpha[ti] * 0.4;
-          ctx.fillStyle = 'rgba(50,130,255,' + alpha.toFixed(3) + ')';
-          ctx.beginPath();
-          ctx.moveTo(pts[tri[0]][0], pts[tri[0]][1]);
-          ctx.lineTo(pts[tri[1]][0], pts[tri[1]][1]);
-          ctx.lineTo(pts[tri[2]][0], pts[tri[2]][1]);
-          ctx.closePath();
-          ctx.fill();
-          // Edge
-          ctx.strokeStyle = 'rgba(50,130,255,' + (reveal.firstAlpha[ti] * 0.8).toFixed(3) + ')';
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
-      }
-
-      // Draw remaining axis face triangles
-      if (reveal.axisVisible && reveal.axisAlpha > 0.01) {
-        for (var fi = 1; fi < AXIS_FACES.length; fi++) {
-          var tris = axisTriangles[fi];
-          for (var ti = 0; ti < tris.length; ti++) {
-            var tri = tris[ti];
-            var alpha = reveal.axisAlpha * 0.4;
-            ctx.fillStyle = 'rgba(50,130,255,' + alpha.toFixed(3) + ')';
+      // First face triangles (one by one)
+      if (axisTriangles[0]) {
+        for (var ti = 0; ti < reveal.firstAlpha.length; ti++) {
+          var alpha = reveal.firstAlpha[ti];
+          if (alpha > 0.01 && axisTriangles[0][ti]) {
+            var tri = axisTriangles[0][ti];
+            ctx.fillStyle = 'rgba(50,130,255,' + (alpha * 0.4).toFixed(3) + ')';
             ctx.beginPath();
             ctx.moveTo(pts[tri[0]][0], pts[tri[0]][1]);
             ctx.lineTo(pts[tri[1]][0], pts[tri[1]][1]);
             ctx.lineTo(pts[tri[2]][0], pts[tri[2]][1]);
             ctx.closePath();
             ctx.fill();
-            ctx.strokeStyle = 'rgba(50,130,255,' + (reveal.axisAlpha * 0.8).toFixed(3) + ')';
+            ctx.strokeStyle = 'rgba(50,130,255,' + (alpha * 0.8).toFixed(3) + ')';
             ctx.lineWidth = 1;
             ctx.stroke();
           }
         }
       }
 
-      // Draw diagonal face triangles
-      if (reveal.diagVisible && reveal.diagAlpha > 0.01) {
-        for (var fi = 0; fi < DIAG_FACES.length; fi++) {
-          var tris = diagTriangles[fi];
+      // Remaining 7 axis faces (staggered)
+      for (var fi = 0; fi < 7; fi++) {
+        var alpha = reveal.faceAlphas[fi];
+        if (alpha > 0.01 && axisTriangles[fi + 1]) {
+          var tris = axisTriangles[fi + 1];
           for (var ti = 0; ti < tris.length; ti++) {
             var tri = tris[ti];
-            var alpha = reveal.diagAlpha * 0.4;
-            ctx.fillStyle = 'rgba(255,150,30,' + alpha.toFixed(3) + ')';
+            ctx.fillStyle = 'rgba(50,130,255,' + (alpha * 0.4).toFixed(3) + ')';
             ctx.beginPath();
             ctx.moveTo(pts[tri[0]][0], pts[tri[0]][1]);
             ctx.lineTo(pts[tri[1]][0], pts[tri[1]][1]);
             ctx.lineTo(pts[tri[2]][0], pts[tri[2]][1]);
             ctx.closePath();
             ctx.fill();
-            ctx.strokeStyle = 'rgba(255,150,30,' + (reveal.diagAlpha * 0.8).toFixed(3) + ')';
+            ctx.strokeStyle = 'rgba(50,130,255,' + (alpha * 0.8).toFixed(3) + ')';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // 6 diagonal faces (staggered)
+      for (var fi = 0; fi < 6; fi++) {
+        var alpha = reveal.diagAlphas[fi];
+        if (alpha > 0.01 && diagTriangles[fi]) {
+          var tris = diagTriangles[fi];
+          for (var ti = 0; ti < tris.length; ti++) {
+            var tri = tris[ti];
+            ctx.fillStyle = 'rgba(255,150,30,' + (alpha * 0.4).toFixed(3) + ')';
+            ctx.beginPath();
+            ctx.moveTo(pts[tri[0]][0], pts[tri[0]][1]);
+            ctx.lineTo(pts[tri[1]][0], pts[tri[1]][1]);
+            ctx.lineTo(pts[tri[2]][0], pts[tri[2]][1]);
+            ctx.closePath();
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(255,150,30,' + (alpha * 0.8).toFixed(3) + ')';
             ctx.lineWidth = 1;
             ctx.stroke();
           }
@@ -470,7 +501,7 @@
     }
 
     // Draw vertices
-    ctx.fillStyle = '#fff';
+    ctx.fillStyle = theme.fg;
     for (var i = 0; i < 16; i++) {
       ctx.beginPath();
       ctx.arc(pts[i][0], pts[i][1], 3.5, 0, 2 * Math.PI);
@@ -478,11 +509,50 @@
     }
   }
 
-  function startAnimation() {
-    if (animId) cancelAnimationFrame(animId);
+  // --- Playback controls ---
+  function updateScrubber() {
+    if (scrubber) {
+      scrubber.value = Math.round((currentTime / T_TOTAL) * 1000);
+    }
+  }
+
+  function setPlaying(val) {
+    playing = val;
+    if (playBtn) {
+      playBtn.textContent = playing ? 'Pause' : 'Play';
+    }
+    if (playing) {
+      animStart = performance.now() - currentTime * 1000;
+      if (!animId) animId = requestAnimationFrame(tick);
+    }
+  }
+
+  function tick(timestamp) {
+    if (!playing) {
+      animId = null;
+      return;
+    }
+    if (!animStart) animStart = timestamp - currentTime * 1000;
+    currentTime = (timestamp - animStart) / 1000;
+    if (currentTime >= T_TOTAL) {
+      currentTime = T_TOTAL;
+      playing = false;
+      if (playBtn) playBtn.textContent = 'Play';
+    }
+    updateScrubber();
+    drawScene(currentTime);
+    if (playing) {
+      animId = requestAnimationFrame(tick);
+    } else {
+      animId = null;
+    }
+  }
+
+  function seekTo(t) {
+    currentTime = Math.max(0, Math.min(T_TOTAL, t));
     animStart = null;
-    resizeCanvas();
-    animId = requestAnimationFrame(drawFrame);
+    drawScene(currentTime);
+    updateScrubber();
   }
 
   function init() {
@@ -490,20 +560,67 @@
     if (!canvas) return;
     ctx = canvas.getContext('2d');
 
-    resizeCanvas();
-    window.addEventListener('resize', function () {
-      resizeCanvas();
-      if (!animId) drawScene(T5); // redraw final if animation done
-    });
+    playBtn = document.getElementById('tesseract-playpause');
+    scrubber = document.getElementById('tesseract-scrub');
 
-    var replayBtn = document.getElementById('tesseract-replay');
-    if (replayBtn) {
-      replayBtn.addEventListener('click', function () {
-        startAnimation();
+    readTheme();
+    resizeCanvas();
+
+    // Play/pause button
+    if (playBtn) {
+      playBtn.addEventListener('click', function () {
+        if (currentTime >= T_TOTAL) {
+          currentTime = 0;
+          setPlaying(true);
+        } else {
+          setPlaying(!playing);
+        }
       });
     }
 
-    startAnimation();
+    // Scrubber
+    if (scrubber) {
+      scrubber.addEventListener('input', function () {
+        var wasPlaying = playing;
+        if (playing) setPlaying(false);
+        var frac = parseInt(scrubber.value, 10) / 1000;
+        seekTo(frac * T_TOTAL);
+      });
+    }
+
+    // Click canvas to toggle play/pause
+    canvas.addEventListener('click', function () {
+      if (currentTime >= T_TOTAL) {
+        currentTime = 0;
+        setPlaying(true);
+      } else {
+        setPlaying(!playing);
+      }
+    });
+
+    // Resize handling
+    window.addEventListener('resize', function () {
+      resizeCanvas();
+      drawScene(currentTime);
+    });
+
+    // Respond to color scheme changes
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var handler = function () {
+        readTheme();
+        drawScene(currentTime);
+      };
+      if (mq.addEventListener) {
+        mq.addEventListener('change', handler);
+      } else if (mq.addListener) {
+        mq.addListener(handler);
+      }
+    }
+
+    // Start playing
+    currentTime = 0;
+    setPlaying(true);
   }
 
   if (document.readyState === 'loading') {

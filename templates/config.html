@@ -99,6 +99,31 @@
   {% if orbit_line %}<p class="dl-note">{{ orbit_line }}</p>{% endif %}
 </section>
 
+{% if slug == "square" and n == 16 %}
+<section>
+  <h2>Tesseract structure</h2>
+  <p>This configuration is an affine image of the 16 vertices of the
+  4-dimensional hypercube. The animation rotates the tesseract, freezes a
+  projection, stretches it into the optimal Heilbronn placement, then reveals
+  the 64 minimal triangles grouped by parallelogram face.</p>
+  <noscript><p class="banner">This visualizer needs JavaScript.</p></noscript>
+  <div class="tesseract-wrap">
+    <canvas id="tesseract-canvas"></canvas>
+    <div class="tesseract-controls">
+      <button id="tesseract-playpause" class="primary" aria-label="Play/Pause">Pause</button>
+      <input id="tesseract-scrub" type="range" min="0" max="1000" value="0" aria-label="Scrub animation">
+    </div>
+  </div>
+  <details>
+    <summary>About the structure</summary>
+    <p>The 16 points have rational coordinates (denominators 31 and 33),
+    180-degree rotational symmetry, and exactly 64 triangles tied at area
+    7/341. Eight axis-aligned tesseract faces each contain 4 minimal triangles;
+    six diagonal parallelograms contribute the remaining 24 among the 64.</p>
+  </details>
+</section>
+{% endif %}
+
 {% if classes %}
 <section>
   <h2>Minimal triangles</h2>
@@ -164,4 +189,5 @@
 
 {% if figure %}<script src="{{ base }}/assets/{{ assets['viewer.js'] }}" defer></script>{% endif %}
 {% if family %}<script src="{{ base }}/assets/{{ assets['family.js'] }}" defer></script>{% endif %}
+{% if slug == "square" and n == 16 %}<script src="{{ base }}/assets/{{ assets['tesseract.js'] }}" defer></script>{% endif %}
 {% endblock %}
