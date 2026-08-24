@@ -1,5 +1,5 @@
 {
- "ref": "github.com/rhyschappell (surgery/cascade search)",
- "credit": "Rhys Chappell, August 2026",
- "note": "Improves the previous value 0.005244336015 by 1.15%. Found by point insertion/deletion surgery between neighboring record configurations followed by constrained local maximin refinement."
+ "ref": "spiralulam heilbronn_square/csearch pipeline, surgery pass 2026-08-24",
+ "credit": "Nathan Sudermann-Merx, August 2026",
+ "note": "point surgery between neighboring records (insertion into the n-1 configuration) followed by trust-region SLP refinement of the ratio"
 }
