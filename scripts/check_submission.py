@@ -11,9 +11,16 @@ For each submission directory it validates the file format, re-verifies the
 configuration in exact rational arithmetic (same verifier the site uses), and
 compares the value against the current canonical entry. It emits a Markdown
 report (stdout, or --out FILE) and exits nonzero if any submission is invalid.
-A submission that verifies but does not beat the current value is VALID — the
-original author's coordinates for a reconstructed entry are welcome even when
-they score lower — it is simply reported as such.
+
+Value policy (this feeds auto-merge, so every anomaly must BLOCK, not warn):
+- a NEW submission directory that verifies but does not beat the current
+  value is valid — the original author's coordinates for a reconstructed
+  entry are welcome even when they score lower; ingest keeps using the best
+  source, so nothing regresses.
+- MODIFYING an existing submission directory must not lower that directory's
+  exact value (PR #9 replaced a better configuration with a worse one and
+  auto-merge shipped it). Equal is fine (meta edits, added digits, exact
+  forms); lower is refused and needs a maintainer-reviewed PR.
 
 Stdlib only, so CI needs no installs. All parsing is bounded (file sizes,
 digit counts, point counts) because this runs on untrusted pull requests.
@@ -60,8 +67,12 @@ def parse_coordinates(path, problems):
     if path.stat().st_size > MAX_COORD_BYTES:
         fail(problems, f"`coordinates.txt` is larger than {MAX_COORD_BYTES // 1024} KB")
         return None
+    return parse_coordinates_text(path.read_text(), problems)
+
+
+def parse_coordinates_text(text, problems):
     points = []
-    for lineno, raw in enumerate(path.read_text().splitlines(), start=1):
+    for lineno, raw in enumerate(text.splitlines(), start=1):
         line = raw.strip()
         if not line or line.startswith("#"):
             continue
@@ -201,7 +212,7 @@ def canonical_value(variant, n):
     return (Fraction(frac) if frac else None), published
 
 
-def check_dir(dirpath):
+def check_dir(dirpath, base=None):
     """Returns a result dict for one submission directory."""
     res = {"dir": str(dirpath), "problems": [], "warnings": [], "ok": False}
     problems, warnings = res["problems"], res["warnings"]
@@ -287,9 +298,45 @@ def check_dir(dirpath):
         res["relation"] = "exactly equals the current value"
     else:
         res["relation"] = (f"below the current value by {float((cur - value) / cur):.4%} "
-                           "(still accepted if these are e.g. an original author's coordinates)")
+                           "(acceptable only as added provenance, e.g. an original "
+                           "author's coordinates — ingest keeps using the better source)")
+    # A modification of an existing submission directory must never lower its
+    # value: that replaces the only copy of a better configuration, which the
+    # best-source-wins ingest cannot undo (PR #9).
+    if base is not None:
+        prev = base_value(dirpath, base)
+        if prev is not None and value < prev:
+            fail(problems,
+                 f"replaces this directory's previous coordinates (exact value "
+                 f"`{fraction_to_30sig(prev)}`) with a value "
+                 f"{float((prev - value) / prev):.4%} lower — overwriting a better "
+                 f"configuration is refused. Improvements only; worse-but-authentic "
+                 f"coordinates need a maintainer-reviewed PR that keeps the better "
+                 f"source in place")
     res["ok"] = not problems
     return res
+
+
+def base_value(dirpath, base):
+    """Exact value of this directory's coordinates at the merge-base with
+    `base`, or None if the directory (or a verifiable file) wasn't there."""
+    m = DIR_RE.match(dirpath.name)
+    if not m:
+        return None
+    rel = pathlib.Path(dirpath).resolve().relative_to(ROOT).as_posix()
+    mb = subprocess.run(["git", "merge-base", base, "HEAD"],
+                        cwd=ROOT, capture_output=True, text=True)
+    ref = mb.stdout.strip() if mb.returncode == 0 and mb.stdout.strip() else base
+    proc = subprocess.run(["git", "show", f"{ref}:{rel}/coordinates.txt"],
+                          cwd=ROOT, capture_output=True, text=True)
+    if proc.returncode != 0 or len(proc.stdout) > MAX_COORD_BYTES:
+        return None
+    probs = []
+    pts = parse_coordinates_text(proc.stdout, probs)
+    if probs or not pts:
+        return None
+    res = verify(m.group(1), pts)
+    return res["_value"] if res.get("feasible") else None
 
 
 def changed_submission_dirs(base):
@@ -355,7 +402,8 @@ def render(results, out_of_scope):
     lines += ["", "*Verification: exact rational arithmetic over all point "
               "triples (`build/vendor/verify_exact.py`). A valid submission is "
               "adopted by ingest only if its exact value beats every other "
-              "source for that entry.*"]
+              "source for that entry; a PR may not replace an existing "
+              "submission with a lower-valued one.*"]
     return "\n".join(lines)
 
 
@@ -371,7 +419,7 @@ def main():
         dirs, out_of_scope = changed_submission_dirs(args.base)
     else:
         dirs = [pathlib.Path(d).resolve() for d in args.dirs]
-    results = [check_dir(d) for d in dirs]
+    results = [check_dir(d, base=args.base) for d in dirs]
 
     report = render(results, out_of_scope)
     print(report)
