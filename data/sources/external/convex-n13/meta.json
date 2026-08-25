@@ -1,0 +1,5 @@
+{
+ "ref": "spiralulam heilbronn_square/csearch pipeline, ruin-and-recreate sweep 2026-08-25",
+ "credit": "Nathan Sudermann-Merx, August 2026",
+ "note": "stress-weighted ruin and recreate at fixed n. Improves the AlphaEvolve coordinates by 1.03e-5 relative, which is below the resolution of the displayed value"
+}
