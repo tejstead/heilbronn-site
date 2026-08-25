@@ -1,5 +1,5 @@
 {
- "ref": "spiralulam heilbronn_square/csearch pipeline, overnight warm portfolio 2026-08-25",
+ "ref": "spiralulam heilbronn_square/csearch pipeline, ruin-and-recreate pass 2026-08-25",
  "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "warm portfolio of short independent excursions around the previous record, refined with a trust-region SLP over all coordinates"
+ "note": "stress-weighted ruin and recreate at fixed n, refined with a trust-region SLP over all coordinates"
 }
