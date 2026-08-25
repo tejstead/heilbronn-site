@@ -1,0 +1,5 @@
+{
+ "ref": "spiralulam heilbronn_square/csearch pipeline, ruin-and-recreate sweep 2026-08-26",
+ "credit": "Nathan Sudermann-Merx, August 2026",
+ "note": "a structurally different configuration from the AlphaEvolve one, not a re-polish of it: the pairwise distance spectra differ by up to 3.3 per cent after affine normalisation, yet the values agree to seven digits"
+}
