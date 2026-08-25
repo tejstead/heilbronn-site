@@ -1,5 +1,5 @@
 {
  "ref": "spiralulam heilbronn_square/csearch pipeline, ruin-and-recreate pass 2026-08-25",
  "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "stress-weighted ruin and recreate at fixed n (remove the points carrying the most near-minimal triangles, greedily reinsert), refined with a trust-region SLP"
+ "note": "stress-weighted ruin and recreate at fixed n, refined with a trust-region SLP"
 }
