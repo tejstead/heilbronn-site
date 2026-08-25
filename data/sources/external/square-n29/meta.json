@@ -1,5 +1,5 @@
 {
- "ref": "spiralulam heilbronn_square/csearch pipeline, hunt of 2026-08-24",
+ "ref": "spiralulam heilbronn_square/csearch pipeline, ruin-and-recreate pass 2026-08-25",
  "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "portfolio of short warm-started runs over an exact-relocation and epsilon-active ascent engine, finished with a trust-region SLP and equal-area continuation"
+ "note": "stress-weighted ruin and recreate at fixed n, refined with a trust-region SLP over all coordinates"
 }
