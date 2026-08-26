@@ -1,5 +1,5 @@
 {
- "ref": "github.com/rhyschappell (surgery/cascade search)",
- "credit": "Rhys Chappell, August 2026",
- "note": "Improves the previous value 0.004177954667 by 0.48%. Found by point insertion/deletion surgery between neighboring record configurations followed by constrained local maximin refinement."
+ "ref": "spiralulam record_hunt pipeline, neighbour-transplant start 2026-08-26",
+ "credit": "Nathan Sudermann-Merx, August 2026",
+ "note": "ruin and recreate started from the n=33 configuration transplanted down one point, rather than from this row's own best"
 }
