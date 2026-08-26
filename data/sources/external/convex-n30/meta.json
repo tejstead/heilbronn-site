@@ -1,5 +1,5 @@
 {
- "ref": "spiralulam heilbronn_square/csearch pipeline, surgery pass 2026-08-24",
+ "ref": "spiralulam heilbronn_square/csearch pipeline, ruin-and-recreate sweep 2026-08-26",
  "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "point surgery between neighboring records (insertion into the n-1 configuration) followed by trust-region SLP refinement of the ratio"
+ "note": "stress-weighted ruin and recreate at fixed n with insertion scored by the ratio, refined with the Dinkelbach trust-region SLP"
 }
