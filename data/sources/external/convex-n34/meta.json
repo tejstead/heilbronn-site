@@ -1,5 +1,5 @@
 {
- "ref": "github.com/rhyschappell (surgery/cascade search)",
- "credit": "Rhys Chappell, August 2026",
- "note": "Improves the previous value 0.004558545298 by 3.21%. Found by point insertion/deletion surgery between neighboring record configurations followed by constrained local maximin refinement."
+ "ref": "spiralulam heilbronn_square/csearch pipeline, aggressive ruin pass 2026-08-26",
+ "credit": "Nathan Sudermann-Merx, August 2026",
+ "note": "stress-weighted ruin and recreate at fixed n with insertion scored by the ratio, refined with the Dinkelbach trust-region SLP"
 }
