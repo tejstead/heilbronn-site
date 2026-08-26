@@ -1,5 +1,5 @@
 {
- "ref": "github.com/rhyschappell (surgery/cascade search; verified in exact rational arithmetic)",
- "credit": "Rhys Chappell, August 2026",
- "note": "Improves the previous value 0.004690331538 by 7.85%. Found by point insertion/deletion surgery between neighboring record configurations followed by local maximin refinement (SLSQP + high-precision Newton on the active-triangle system)."
+ "ref": "spiralulam heilbronn_square/csearch pipeline, aggressive ruin pass 2026-08-26",
+ "credit": "Nathan Sudermann-Merx, August 2026",
+ "note": "stress-weighted ruin and recreate at fixed n, aggressive setting (remove up to 45 per cent of the points, return to the incumbent only 45 per cent of the time), refined with a trust-region SLP"
 }
