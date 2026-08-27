@@ -1,5 +1,5 @@
 {
- "ref": "spiralulam heilbronn_square/csearch pipeline, surgery pass 2026-08-24",
+ "ref": "spiralulam geometry-problems record_hunt pipeline",
  "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "point surgery between neighboring records (insertion into the n-1 configuration) followed by trust-region SLP refinement of the ratio"
+ "note": "C basin hopping with stress-weighted ruin and recreate, hardened by trust-region SLP, continuation and null-space excursions"
 }
