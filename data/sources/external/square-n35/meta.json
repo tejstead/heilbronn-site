@@ -1,5 +1,5 @@
 {
- "ref": "TejSteadQC/heilbronn-configurations, claims batch 2026-08-21 (heilbronn-experiments pipeline)",
- "credit": "Tej Stead, August 2026",
- "note": "found with the search program evolved by cnemri (heilbronn-alphaevolve), finished with a trust-region SLP polisher; part of the 2026-08-21 batch"
+ "ref": "spiralulam geometry-problems record_hunt pipeline",
+ "credit": "Nathan Sudermann-Merx, August 2026",
+ "note": "C basin hopping with stress-weighted ruin and recreate, hardened by trust-region SLP, continuation and null-space excursions"
 }
