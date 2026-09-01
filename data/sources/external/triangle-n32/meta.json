@@ -1,5 +1,5 @@
 {
- "ref": "spiralulam record_hunt pipeline, neighbour-transplant start 2026-08-26",
+ "ref": "spiralulam geometry-problems record_hunt pipeline",
  "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "ruin and recreate started from the n=33 configuration transplanted down one point, rather than from this row's own best"
+ "note": "C basin hopping with stress-weighted ruin and recreate, hardened by trust-region SLP, continuation and null-space excursions"
 }
