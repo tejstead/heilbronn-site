@@ -1,5 +1,5 @@
 {
- "ref": "spiralulam geometry-problems record_hunt pipeline, 2026-08-27",
+ "ref": "spiralulam geometry-problems record_hunt pipeline",
  "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "warm-started stress-weighted ruin and recreate on the previous record, hardened by trust-region SLP; the 55 equal critical areas Newton-pinned at 60 digits"
+ "note": "C basin hopping with stress-weighted ruin and recreate, hardened by trust-region SLP, continuation and null-space excursions"
 }
