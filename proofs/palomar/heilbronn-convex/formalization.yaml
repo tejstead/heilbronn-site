@@ -1,0 +1,184 @@
+version: v0.4
+
+project:
+  name: "heilbronn-convex-3-8"
+  description: >
+    For n = 3 through n = 8, this formalization determines the supremal
+    minimum triangle area among n indexed planar points whose own convex hull
+    has Lebesgue area one. It proves a pointwise upper bound, attainment, and
+    the exact value for every n in that range. The values are 1, 1/2,
+    (5-sqrt(5))/10, 1/6, 1/9, and, at n = 8, the unique root in
+    (79/1000, 81/1000) of
+    2060x^5 - 2332x^4 + 1064x^3 - 240x^2 + 26x - 1.
+
+    For n = 3, 4, 5, 6, and 8 it also proves pairwise uniqueness of
+    optimizers modulo arbitrary relabeling and arbitrary nonsingular affine
+    transformations. Uniqueness is false at n = 7; instead, an explicit real
+    family is proved to attain throughout its full parameter interval and to
+    exhaust all unit-hull optimizers up to the same equivalence. A real
+    subinterval is pairwise inequivalent, exhibiting a continuum-parameterized
+    set of optimizer orbits; an explicit countable subfamily is retained too.
+
+    The n = 3 and n = 4 cases are elementary folklore. The sharp n = 6 and
+    n = 7 values were published by Dress-Yang-Zeng and Yang-Zeng,
+    respectively; the Lean developments here independently reprove those
+    results rather than formalizing the published arguments. The full n = 5
+    result, the explicit n = 7 family and optimizer classification, and the
+    exact n = 8 result and optimizer classification are first presented in
+    this development. The scoped search described below located prior candidate
+    records but no published full n = 5 proof, no prior exhaustive n = 7
+    optimizer classification, and no published n = 8 proof. This is not an
+    absolute priority claim. These results are intended for researchers in
+    discrete and computational geometry studying extremal configurations,
+    exact geometric bounds, and formalized combinatorial geometry.
+  authors: ["Tej Stead"]
+  license: "MIT"
+  responsible_maintainers: ["Tej Stead"]
+
+classification:
+  arxiv: ["math.CO", "math.MG"]
+  msc2020: ["52C10"]
+
+# Palomar assigns one result origin to the whole Comparator entry. This mixed
+# entry is source-based because it selects known n = 3, 4, 6, and 7 results as
+# well as new ones. The new n = 5, n = 7-family, and n = 8 contributions use
+# `type: other` and `relationship: other`; the notes identify them precisely.
+sources:
+  - title: "Exact convex Heilbronn value and optimizer classification for five points"
+    authors: ["Tej Stead"]
+    type: other
+    relationship: other
+    note: >
+      This repository presents a complete proof for arbitrary five-point
+      configurations, including the lower-hull cases and pairwise affine
+      uniqueness. The recorded prior-art search found the candidate value and
+      configuration in record tables, and found a published polygonal
+      ear-functional result relevant to the convex-position core, but found no
+      published proof of the full convex-region Heilbronn statement. This is a
+      scoped literature finding, not a claim that an absence search can
+      establish absolute priority.
+
+  - title: "An explicit classification of seven-point optimizers"
+    authors: ["Tej Stead"]
+    type: other
+    relationship: other
+    note: >
+      Classification first presented in this repository by an explicit real
+      one-parameter family on [1, 4/3], including a real subinterval of
+      pairwise inequivalent optimizer orbits and an explicit countably infinite
+      subfamily. No prior exhaustive classification was located in the cited
+      sources. The Yang-Zeng chapter cited below supplies the sharp value 1/9;
+      no exhaustive optimizer classification is attributed to it.
+
+  - title: "Exact convex Heilbronn value and optimizer classification for eight points"
+    authors: ["Tej Stead"]
+    type: other
+    relationship: other
+    note: >
+      First presentation in this repository of the selected quintic value,
+      the global upper bound, attainment, and the pairwise optimizer
+      classification. The prior-art audit found numerical candidate records
+      but no published exact value or proof for the own-hull-normalized
+      eight-point problem. As with every absence-of-prior-art search, that
+      audit cannot prove that no earlier work exists.
+
+  - title: "Elementary convex Heilbronn cases for three and four points"
+    type: folklore
+    relationship: independently-proves
+    note: >
+      The n = 3 and n = 4 value, attainment, and optimizer statements are
+      elementary folklore and are proved self-containedly. No novelty is
+      claimed for them.
+
+  - title: "Heilbronn Problem for Six Points in a Planar Convex Body"
+    authors: ["Andreas W. M. Dress", "Lu Yang", "Zhenbing Zeng"]
+    id: "https://doi.org/10.1007/978-1-4613-3557-3_13"
+    type: paper
+    location: "Minimax and Applications (1995), pp. 173-190"
+    relationship: independently-proves
+    note: >
+      This is the published source for the selected sharp n = 6 value. The
+      package's determinant and order-type route independently proves the
+      pointwise bound, attainment, exact value, and optimizer classification;
+      it does not formalize the chapter's argument. The accessible abstract
+      was not used as evidence for optimizer uniqueness.
+
+  - title: "Heilbronn Problem for Seven Points in a Planar Convex Body"
+    authors: ["Lu Yang", "Zhenbing Zeng"]
+    id: "https://doi.org/10.1007/978-1-4613-3557-3_14"
+    type: paper
+    location: "Minimax and Applications (1995), pp. 191-218"
+    relationship: independently-proves
+    note: >
+      This is the published source for the selected sharp n = 7 value. The
+      package independently proves the bound via its own hull-case,
+      Pluecker/Bernstein, and continuant arguments; it does not formalize the
+      chapter's proof. The chapter is not the source of the explicit family or
+      the exhaustive optimizer classification.
+
+  - title: "Affinely Regular Polygons as Extremals of Area Functionals"
+    authors: ["Paolo Gronchi", "Marco Longinetti"]
+    id: "https://doi.org/10.1007/s00454-007-9010-5"
+    type: paper
+    location: "Discrete & Computational Geometry 39 (2008), pp. 273-297"
+    relationship: background
+    note: >
+      The paper's affine rigidity theorem for a polygonal ear functional is
+      relevant background for the n = 5 affinely regular-polygon context. The
+      selected n = 5 proof is self-contained and does not invoke or adapt that
+      theorem, and the paper is not a dependency of the n = 6 or n = 7 routes.
+
+  - title: "The Heilbronn Problem for Convex Regions"
+    authors: ["Erich Friedman"]
+    contributors:
+      - name: "David Cantrell"
+        role: "Credited by the page with the recorded n = 5 and n = 8 configurations"
+    id: "https://erich-friedman.github.io/packing/heilconvex/"
+    type: web discussion
+    relationship: background
+    note: >
+      Public record table for the candidate configurations and numerical
+      values. It labels n = 3 and n = 4 trivial, credits the exact n = 5
+      candidate and a numerical n = 8 candidate to David Cantrell in June
+      2007, and credits the n = 7 proof to Yang and Zeng. It is not cited as a
+      proof of the new n = 5, n = 7 family and classification, or n = 8
+      results.
+
+automation:
+  methods:
+    - method: agent
+      notes: >
+        Statements, proof architecture, Lean proofs, exact certificate search,
+        witness search, source audits, and integration were developed with
+        Claude and OpenAI Codex under human direction. Agents also performed
+        independent algebraic checks and adversarial reviews. Human direction
+        and Lean's kernel, rather than model output alone, determine what is
+        accepted into the submitted proof.
+    - method: other
+      notes: >
+        Exact decision procedures and certificates are used: kernel `decide`
+        checks finite index enumerations, while symbolic arithmetic, compact
+        Farkas certificates, and exact interval certificates discharge finite
+        algebraic obligations. No numerical experiment is trusted by a
+        selected theorem, and no native-evaluation proof primitive is used.
+
+status:
+  scope: >
+    The 29 selected declarations cover the own-convex-hull-normalized problem
+    only for n = 3 through n = 8; they do not concern fixed-container variants.
+    There are no known unresolved proof gaps; Challenge sorries are deliberate
+    Comparator placeholders.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: [propext, Quot.sound, Classical.choice]
+
+review:
+  status: agent-reviewed
+  reviewers:
+    - "OpenAI Codex (independent statement and solution-surface audits)"
+    - "Anthropic Claude Sonnet (independent statement audit)"
+  notes: >
+    Automated reviewers checked all 29 Comparator declarations for alignment
+    between the Challenge, the Solution surface, and the narrative. No human
+    peer review has been performed. Mechanical checking by Comparator, Lean,
+    and NanoDa is separate from this editorial review.

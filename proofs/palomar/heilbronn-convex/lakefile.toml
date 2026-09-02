@@ -1,0 +1,43 @@
+name = "heilbronnConvex"
+version = "0.1.0"
+keywords = ["math"]
+defaultTargets = ["HeilbronnChallenge", "HeilbronnValues", "HeilbronnSolution"]
+
+[leanOptions]
+pp.unicode.fun = true # pretty-prints `fun a ↦ b`
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+maxSynthPendingDepth = 3
+maxRecDepth = 1000000
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.33.1"
+
+[[lean_lib]]
+name = "HeilbronnValues"
+
+[[lean_lib]]
+name = "HeilbronnChallenge"
+
+[[lean_lib]]
+name = "HullBridge"
+
+[[lean_lib]]
+name = "Heil5"
+
+[[lean_lib]]
+name = "Heil6"
+
+[[lean_lib]]
+name = "Heil7"
+
+[[lean_lib]]
+name = "Heilbronn8"
+
+[[lean_lib]]
+name = "Solution"
+
+[[lean_lib]]
+name = "HeilbronnSolution"
