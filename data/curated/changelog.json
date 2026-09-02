@@ -165,12 +165,22 @@
   {
    "date": "2026-08-22",
    "text": "marked proven: optimality of the regular pentagon proved by Tej Stead, August 2026 (unpublished; link to follow)"
+  },
+  {
+   "date": "2026-09-02",
+   "text": "proof link added: the August 2026 optimality proof is now machine-checked in Lean 4 and public in the site repository (proofs/palomar/heilbronn-convex)"
   }
  ],
  "triangle/8": [
   {
    "date": "2026-08-22",
    "text": "exact realization of the certified optimum: tie system solved to 400 digits, every coordinate identified as an explicit degree-7 algebraic number (this site); replaces the reconstruction"
+  }
+ ],
+ "convex/8": [
+  {
+   "date": "2026-09-02",
+   "text": "marked proven: the value is the unique real root of 2060x⁵ − 2332x⁴ + 1064x³ − 240x² + 26x − 1, machine-checked in Lean 4 (Tej Stead, September 2026); Cantrell's 2007 configuration matches the optimum to 1.4 × 10⁻¹⁶"
   }
  ]
 }
