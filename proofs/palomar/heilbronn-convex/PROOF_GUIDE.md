@@ -9,7 +9,7 @@ Write
 $$
   [abc]=\det(b-a,c-a),\qquad
   m=\min_{i<j<k}|[p_ip_jp_k]|,\qquad
-  D=2\,\operatorname{area}(\operatorname{conv}\{p_i\}).
+  D=2\,{\rm area}({\rm conv}\{p_i\}).
 $$
 
 Thus $m$ and $D$ are doubled areas, and $m/D$ is the ratio of the
@@ -133,7 +133,7 @@ For equality, the $h=3,4,5,7$ arguments have strict versions, so only the
 six-hull branch survives. Its unique tight sign orbit has every $d_i>0$
 and alternating $c_i$. The equality equations leave one parameter
 $\lambda\in[3/2,2]$, or equivalently $t=2/\lambda\in[1,4/3]$.
-This produces the explicit family $\operatorname{sevenFamilyAt}(t)$.
+This produces the explicit family `sevenFamilyAt t`.
 
 [heilbronn_convex_seven_family_attains](Heil7/N7OptimizerClassificationFinal.lean)
 proves that every member of that interval has unit hull and $m=2/9$;
