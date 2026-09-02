@@ -55,6 +55,10 @@ The n = 5 and n = 8 algebraic values are selected by the compared support
 theorems `P5_root_existsUnique` and `P8_root_existsUnique`. The linear values
 at n = 3, 4, 6, and 7 need no separate root-support target.
 
+For a mathematician-oriented account of the geometric reductions, sharp
+inequalities, equality cases, and the role of finite computation, see
+[`PROOF_GUIDE.md`](PROOF_GUIDE.md).
+
 ## The n = 7 parameterization
 
 `sevenFamilyAt t` is defined for real `t`.
