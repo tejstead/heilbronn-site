@@ -8,7 +8,7 @@ Write
 
 $$
   [abc]=\det(b-a,c-a),\qquad
-  m=\min_{i<j<k}|[p_ip_jp_k]|,\qquad
+  m=\min_{i < j < k}|[p_ip_jp_k]|,\qquad
   D=2\,{\rm area}({\rm conv}\{p_i\}).
 $$
 
@@ -79,13 +79,13 @@ nondegenerate configuration to one of four hull packets.
 | 3 | three interior | a subdivision into seven configuration triangles gives $7m\le D$ |
 | 4 | two interior | split along a diagonal; if $k$ points lie on one side, the two triangle bounds have coefficients $2k+1$ and $2(2-k)+1$, totaling $6$ |
 | 5 | one interior | under $D\le6m$, the radial diagonal signs are, up to rotation, all nonnegative, one negative, or two adjacent negatives; ear floors and five Plücker relations contradict every type |
-| 6 | none | three complementary bracket pairs and three cyclic Plücker products imply $P<Q<R_c<P$ if $D<6m$ |
+| 6 | none | three complementary bracket pairs and three cyclic Plücker products imply $P < Q < R_c < P$ if $D < 6m$ |
 
 The packet assembly is
 [six_mul_floor_le_doubledHullArea](Heil6/HullPacketBounds.lean). The genuinely
 sharp scalar endpoint is [cycle_bound](Heil6/HexagonScalar.lean). Its key
 elementary sublemma says that if positive $x,y$ satisfy $x+y<4m$ and
-$m(x+y)\le K$, then $(x-y)^2\ge0$ gives $xy<K$. Applied cyclically,
+$m(x+y)\le K$, then $(x-y)^2\ge0$ gives $xy < K$. Applied cyclically,
 this is exactly what produces the impossible chain in the last row.
 
 Equality is strict in the three- and five-hull packets and impossible in the
@@ -182,7 +182,7 @@ routes a hypothetical counterexample through the following six cases.
 | 7 | classify the radial wheel about the one interior point | eight cutoff types $0,\ldots,7$; types $0,1,2,3,4,6,7$ are strict, while type $5$, the $C24$ chamber, is sharp |
 | 8 | all points on the hull | the octagon scalar inequality gives $17m$ from the alternating core and $8m$ from four ears, hence $25m\le2D$ |
 
-Since $2/25<v_8$, every $25m\le2D$ branch is nonsharp; the four-hull
+Since $2/25 < v_8$, every $25m\le2D$ branch is nonsharp; the four-hull
 constant $5/63$ is smaller still. The selected Lean endpoints are
 [geometricHullThreeExclusion](Heilbronn8/UniversalHullGeometryFinal.lean),
 [geometricHullFourExclusion](Heilbronn8/GeometricHullFour.lean),
