@@ -48,7 +48,11 @@
   },
   "trivial": false
  },
- "proof": null,
+ "proof": {
+  "id": "stead-2026-lean-convex",
+  "title": "T. Stead, Convex Heilbronn values and optimizers for n = 3–8, machine-checked in Lean 4 (2026)",
+  "url": "https://github.com/tejstead/heilbronn-site/tree/main/proofs/palomar/heilbronn-convex"
+ },
  "coordinates_source": {
   "kind": "exact-construction",
   "ref": "data/sources/exact/constructions.py",
@@ -60,12 +64,16 @@
   "label": "5-fold dihedral symmetry"
  },
  "notes": [
-  "The optimality proof (Tej Stead, August 2026) is not yet published; a link will follow."
+  "The optimality proof is machine-checked in Lean 4: value, attainment, and uniqueness of the affinely regular pentagon up to relabeling and invertible affine maps."
  ],
  "changelog": [
   {
    "date": "2026-08-22",
    "text": "marked proven: optimality of the regular pentagon proved by Tej Stead, August 2026 (unpublished; link to follow)"
+  },
+  {
+   "date": "2026-09-02",
+   "text": "proof link added: the August 2026 optimality proof is now machine-checked in Lean 4 and public in the site repository (proofs/palomar/heilbronn-convex)"
   }
  ],
  "references": [],

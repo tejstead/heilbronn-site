@@ -148,6 +148,11 @@
    "kind": "web",
    "url": "https://github.com/rhyschappell/heilbronn-n14-exact",
    "title": "R. Chappell, Exact realization of the best-known n=14 Heilbronn configuration (2026), github.com/rhyschappell/heilbronn-n14-exact"
+  },
+  "stead-2026-lean-convex": {
+   "kind": "web",
+   "url": "https://github.com/tejstead/heilbronn-site/tree/main/proofs/palomar/heilbronn-convex",
+   "title": "T. Stead, Convex Heilbronn values and optimizers for n = 3–8, machine-checked in Lean 4 (2026)"
   }
  },
  "by_config": {
@@ -231,6 +236,8 @@
   "triangle/8": "sudermann-merx-2026-triangle",
   "convex/6": "dress-yang-zeng-1995",
   "convex/7": "yang-zeng-1995-convex7",
-  "triangle/7": "zeng-chen-2019-triangle7"
+  "triangle/7": "zeng-chen-2019-triangle7",
+  "convex/5": "stead-2026-lean-convex",
+  "convex/8": "stead-2026-lean-convex"
  }
 }

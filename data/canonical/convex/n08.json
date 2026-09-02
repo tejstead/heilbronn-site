@@ -45,19 +45,34 @@
   "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
-  "minimal_polynomial": null
+  "minimal_polynomial": "2060*x**5 - 2332*x**4 + 1064*x**3 - 240*x**2 + 26*x - 1",
+  "exact_poly": {
+   "poly": "2060*x**5 - 2332*x**4 + 1064*x**3 - 240*x**2 + 26*x - 1",
+   "near": 0.08,
+   "which": "curated",
+   "note": "unique real root; optimality machine-checked in Lean 4"
+  },
+  "exact_decimal": "0.0800001393294664385749398892640329663025550560",
+  "poly_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>2060</mn><msup><mi>x</mi><mn>5</mn></msup><mo>−</mo><mn>2332</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>1064</mn><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>240</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>26</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></math>"
  },
- "status": "record",
+ "status": "proven",
  "page_relation": "OK",
  "credit": {
   "found": {
    "name": "David Cantrell",
    "date": "June 2007"
   },
-  "proved": null,
+  "proved": {
+   "name": "Tej Stead",
+   "date": "September 2026"
+  },
   "trivial": false
  },
- "proof": null,
+ "proof": {
+  "id": "stead-2026-lean-convex",
+  "title": "T. Stead, Convex Heilbronn values and optimizers for n = 3–8, machine-checked in Lean 4 (2026)",
+  "url": "https://github.com/tejstead/heilbronn-site/tree/main/proofs/palomar/heilbronn-convex"
+ },
  "coordinates_source": {
   "kind": "reconstructed",
   "ref": "heilbronn-site reconstruct/reconstruct.py",
@@ -68,8 +83,16 @@
  "symmetry": {
   "label": "2-fold symmetry"
  },
- "notes": [],
- "changelog": [],
+ "notes": [
+  "The optimum is the unique real root of 2060x⁵ − 2332x⁴ + 1064x³ − 240x² + 26x − 1; the optimizer — a reflection-symmetric heptagon with one interior point — is unique up to relabeling and invertible affine maps. Machine-checked in Lean 4.",
+  "Cantrell's 2007 coordinates (shown) agree with the proven optimum to 1.4 × 10⁻¹⁶."
+ ],
+ "changelog": [
+  {
+   "date": "2026-09-02",
+   "text": "marked proven: the value is the unique real root of 2060x⁵ − 2332x⁴ + 1064x³ − 240x² + 26x − 1, machine-checked in Lean 4 (Tej Stead, September 2026); Cantrell's 2007 configuration matches the optimum to 1.4 × 10⁻¹⁶"
+  }
+ ],
  "references": [],
  "verify": {
   "n": 8,

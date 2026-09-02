@@ -125,7 +125,7 @@
    }
   },
   "notes": [
-   "The optimality proof (Tej Stead, August 2026) is not yet published; a link will follow."
+   "The optimality proof is machine-checked in Lean 4: value, attainment, and uniqueness of the affinely regular pentagon up to relabeling and invertible affine maps."
   ]
  },
  "convex/6": {
@@ -226,6 +226,27 @@
   },
   "notes": [
    "Exact value and coordinates computed by <strong>Rhys Chappell</strong>, August 2026 — an exact algebraic realization of Beyleveld's configuration (coordinates in Q(a), 8a³ − 12a² − 12a + 1 = 0), re-verified here."
+  ]
+ },
+ "convex/8": {
+  "status": "proven",
+  "credit": {
+   "proved": {
+    "name": "Tej Stead",
+    "date": "September 2026"
+   }
+  },
+  "value": {
+   "exact_poly": {
+    "poly": "2060*x**5 - 2332*x**4 + 1064*x**3 - 240*x**2 + 26*x - 1",
+    "near": 0.08,
+    "which": "curated",
+    "note": "unique real root; optimality machine-checked in Lean 4"
+   }
+  },
+  "notes": [
+   "The optimum is the unique real root of 2060x⁵ − 2332x⁴ + 1064x³ − 240x² + 26x − 1; the optimizer — a reflection-symmetric heptagon with one interior point — is unique up to relabeling and invertible affine maps. Machine-checked in Lean 4.",
+   "Cantrell's 2007 coordinates (shown) agree with the proven optimum to 1.4 × 10⁻¹⁶."
   ]
  }
 }
