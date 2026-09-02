@@ -23,6 +23,7 @@ automatically in exact arithmetic and live on the site minutes after merge.
 - `data/canonical/` — the unified per-configuration JSONs (ingest output, committed)
 - `build/` — the generator: ingest → verify → derive → render → downloads → compress
 - `reconstruct/` — laptop-only optimization to recover unpublished configurations
+- `proofs/` — source-only formal proofs and external-verifier snapshots
 - `templates/`, `assets/` — jinja2 templates, CSS, vanilla JS
 - `deploy/` — Caddy site snippets + `deploy.sh` (rsync + graceful reload)
 - `landing/` — the tejstead.com apex page

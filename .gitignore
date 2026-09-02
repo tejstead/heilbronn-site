@@ -10,3 +10,10 @@ deploy/host.local
 reconstruct/outreach/
 reconstruct/claims-out/
 .pytest_cache/
+
+# Lean proof projects are committed source-only.
+**/.lake/
+**/*.olean
+**/*.olean.private
+**/*.olean.server
+**/*.ilean
