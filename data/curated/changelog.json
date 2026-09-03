@@ -165,12 +165,22 @@
   {
    "date": "2026-08-22",
    "text": "marked proven: optimality of the regular pentagon proved by Tej Stead, August 2026 (unpublished; link to follow)"
+  },
+  {
+   "date": "2026-09-03",
+   "text": "proof reference added: the optimality proof is registered in the Palomar registry (PALOMAR-2026-09-02-000012)"
   }
  ],
  "triangle/8": [
   {
    "date": "2026-08-22",
    "text": "exact realization of the certified optimum: tie system solved to 400 digits, every coordinate identified as an explicit degree-7 algebraic number (this site); replaces the reconstruction"
+  }
+ ],
+ "convex/8": [
+  {
+   "date": "2026-09-03",
+   "text": "marked proven: exact value and uniqueness of the optimizer proved by Tej Stead, registered in the Palomar registry (PALOMAR-2026-09-02-000012)"
   }
  ]
 }

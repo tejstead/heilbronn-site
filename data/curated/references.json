@@ -148,6 +148,11 @@
    "kind": "web",
    "url": "https://github.com/rhyschappell/heilbronn-n14-exact",
    "title": "R. Chappell, Exact realization of the best-known n=14 Heilbronn configuration (2026), github.com/rhyschappell/heilbronn-n14-exact"
+  },
+  "palomar-2026-heilbronn-convex-3-8": {
+   "kind": "web",
+   "url": "https://palomar-registry.org/entry?id=PALOMAR-2026-09-02-000012&version=1",
+   "title": "T. Stead, heilbronn-convex-3-8, Palomar registry PALOMAR-2026-09-02-000012 v1 (Lean 4 formalization, machine-checked), 2 September 2026"
   }
  },
  "by_config": {
@@ -219,6 +224,12 @@
   ],
   "triangle/7": [
    "zeng-chen-2019-triangle7"
+  ],
+  "convex/5": [
+   "palomar-2026-heilbronn-convex-3-8"
+  ],
+  "convex/8": [
+   "palomar-2026-heilbronn-convex-3-8"
   ]
  },
  "proofs": {
@@ -231,6 +242,8 @@
   "triangle/8": "sudermann-merx-2026-triangle",
   "convex/6": "dress-yang-zeng-1995",
   "convex/7": "yang-zeng-1995-convex7",
-  "triangle/7": "zeng-chen-2019-triangle7"
+  "triangle/7": "zeng-chen-2019-triangle7",
+  "convex/5": "palomar-2026-heilbronn-convex-3-8",
+  "convex/8": "palomar-2026-heilbronn-convex-3-8"
  }
 }
