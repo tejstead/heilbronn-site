@@ -125,7 +125,7 @@
    }
   },
   "notes": [
-   "The optimality proof is a Lean 4 formalization registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
+   "The optimality proof is machine-checked in Lean 4: value, attainment, and uniqueness of the affinely regular pentagon up to relabeling and invertible affine maps. Registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
   ]
  },
  "convex/6": {
@@ -229,13 +229,6 @@
   ]
  },
  "convex/8": {
-  "value": {
-   "exact_poly": {
-    "poly": "2060*v**5 - 2332*v**4 + 1064*v**3 - 240*v**2 + 26*v - 1",
-    "near": 0.08,
-    "which": "unique real"
-   }
-  },
   "status": "proven",
   "credit": {
    "proved": {
@@ -243,8 +236,17 @@
     "date": "September 2026"
    }
   },
+  "value": {
+   "exact_poly": {
+    "poly": "2060*x**5 - 2332*x**4 + 1064*x**3 - 240*x**2 + 26*x - 1",
+    "near": 0.08,
+    "which": "unique real",
+    "note": "optimality machine-checked in Lean 4"
+   }
+  },
   "notes": [
-   "The optimality proof is a Lean 4 formalization registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
+   "The optimum is the unique real root of 2060x⁵ − 2332x⁴ + 1064x³ − 240x² + 26x − 1; the optimizer — a reflection-symmetric heptagon with one interior point — is unique up to relabeling and invertible affine maps. Machine-checked in Lean 4 and registered in the Palomar registry (PALOMAR-2026-09-02-000012).",
+   "Cantrell's 2007 coordinates (shown) agree with the proven optimum to 1.4 × 10⁻¹⁶."
   ]
  }
 }

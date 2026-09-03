@@ -64,7 +64,7 @@
   "label": "5-fold dihedral symmetry"
  },
  "notes": [
-  "The optimality proof is a Lean 4 formalization registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
+  "The optimality proof is machine-checked in Lean 4: value, attainment, and uniqueness of the affinely regular pentagon up to relabeling and invertible affine maps. Registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
  ],
  "changelog": [
   {
@@ -72,12 +72,17 @@
    "text": "marked proven: optimality of the regular pentagon proved by Tej Stead, August 2026 (unpublished; link to follow)"
   },
   {
+   "date": "2026-09-02",
+   "text": "proof link added: the August 2026 optimality proof is now machine-checked in Lean 4 and public in the site repository (proofs/palomar/heilbronn-convex)"
+  },
+  {
    "date": "2026-09-03",
-   "text": "proof reference added: the optimality proof is registered in the Palomar registry (PALOMAR-2026-09-02-000012)"
+   "text": "proof registered: Palomar registry entry PALOMAR-2026-09-02-000012 v1"
   }
  ],
  "references": [
-  "palomar-2026-heilbronn-convex-3-8"
+  "palomar-2026-heilbronn-convex-3-8",
+  "stead-2026-lean-convex"
  ],
  "verify": {
   "n": 5,

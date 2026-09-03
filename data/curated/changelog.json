@@ -167,8 +167,12 @@
    "text": "marked proven: optimality of the regular pentagon proved by Tej Stead, August 2026 (unpublished; link to follow)"
   },
   {
+   "date": "2026-09-02",
+   "text": "proof link added: the August 2026 optimality proof is now machine-checked in Lean 4 and public in the site repository (proofs/palomar/heilbronn-convex)"
+  },
+  {
    "date": "2026-09-03",
-   "text": "proof reference added: the optimality proof is registered in the Palomar registry (PALOMAR-2026-09-02-000012)"
+   "text": "proof registered: Palomar registry entry PALOMAR-2026-09-02-000012 v1"
   }
  ],
  "triangle/8": [
@@ -179,8 +183,12 @@
  ],
  "convex/8": [
   {
+   "date": "2026-09-02",
+   "text": "marked proven: the value is the unique real root of 2060x⁵ − 2332x⁴ + 1064x³ − 240x² + 26x − 1, machine-checked in Lean 4 (Tej Stead, September 2026); Cantrell's 2007 configuration matches the optimum to 1.4 × 10⁻¹⁶"
+  },
+  {
    "date": "2026-09-03",
-   "text": "marked proven: exact value (unique real root of 2060v^5 - 2332v^4 + 1064v^3 - 240v^2 + 26v - 1) and uniqueness of the optimizer proved by Tej Stead, registered in the Palomar registry (PALOMAR-2026-09-02-000012)"
+   "text": "proof registered: Palomar registry entry PALOMAR-2026-09-02-000012 v1"
   }
  ]
 }
