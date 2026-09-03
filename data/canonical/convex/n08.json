@@ -45,7 +45,14 @@
   "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
-  "minimal_polynomial": null
+  "minimal_polynomial": "2060*v**5 - 2332*v**4 + 1064*v**3 - 240*v**2 + 26*v - 1",
+  "exact_poly": {
+   "poly": "2060*v**5 - 2332*v**4 + 1064*v**3 - 240*v**2 + 26*v - 1",
+   "near": 0.08,
+   "which": "unique real"
+  },
+  "exact_decimal": "0.0800001393294664385749398892640329663025550560",
+  "poly_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>2060</mn><msup><mi>v</mi><mn>5</mn></msup><mo>−</mo><mn>2332</mn><msup><mi>v</mi><mn>4</mn></msup><mo>+</mo><mn>1064</mn><msup><mi>v</mi><mn>3</mn></msup><mo>−</mo><mn>240</mn><msup><mi>v</mi><mn>2</mn></msup><mo>+</mo><mn>26</mn><mi>v</mi><mo>−</mo><mn>1</mn></mrow></math>"
  },
  "status": "proven",
  "page_relation": "OK",
@@ -76,12 +83,12 @@
   "label": "2-fold symmetry"
  },
  "notes": [
-  "The exact value is the unique root in (79/1000, 81/1000) of 2060x^5 - 2332x^4 + 1064x^3 - 240x^2 + 26x - 1. The optimality proof is a Lean 4 formalization registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
+  "The optimality proof is a Lean 4 formalization registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
  ],
  "changelog": [
   {
    "date": "2026-09-03",
-   "text": "marked proven: exact value and uniqueness of the optimizer proved by Tej Stead, registered in the Palomar registry (PALOMAR-2026-09-02-000012)"
+   "text": "marked proven: exact value (unique real root of 2060v^5 - 2332v^4 + 1064v^3 - 240v^2 + 26v - 1) and uniqueness of the optimizer proved by Tej Stead, registered in the Palomar registry (PALOMAR-2026-09-02-000012)"
   }
  ],
  "references": [
