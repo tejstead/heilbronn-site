@@ -49,9 +49,9 @@
   "trivial": false
  },
  "proof": {
-  "id": "stead-2026-lean-convex",
-  "title": "T. Stead, Convex Heilbronn values and optimizers for n = 3–8, machine-checked in Lean 4 (2026)",
-  "url": "https://github.com/tejstead/heilbronn-site/tree/main/proofs/palomar/heilbronn-convex"
+  "id": "palomar-2026-heilbronn-convex-3-8",
+  "title": "T. Stead, heilbronn-convex-3-8, Palomar registry PALOMAR-2026-09-02-000012 v1 (Lean 4 formalization, machine-checked), 2 September 2026",
+  "url": "https://palomar-registry.org/entry?id=PALOMAR-2026-09-02-000012&version=1"
  },
  "coordinates_source": {
   "kind": "exact-construction",
@@ -64,7 +64,7 @@
   "label": "5-fold dihedral symmetry"
  },
  "notes": [
-  "The optimality proof is machine-checked in Lean 4: value, attainment, and uniqueness of the affinely regular pentagon up to relabeling and invertible affine maps."
+  "The optimality proof is machine-checked in Lean 4: value, attainment, and uniqueness of the affinely regular pentagon up to relabeling and invertible affine maps. Registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
  ],
  "changelog": [
   {
@@ -74,9 +74,16 @@
   {
    "date": "2026-09-02",
    "text": "proof link added: the August 2026 optimality proof is now machine-checked in Lean 4 and public in the site repository (proofs/palomar/heilbronn-convex)"
+  },
+  {
+   "date": "2026-09-03",
+   "text": "proof registered: Palomar registry entry PALOMAR-2026-09-02-000012 v1"
   }
  ],
- "references": [],
+ "references": [
+  "palomar-2026-heilbronn-convex-3-8",
+  "stead-2026-lean-convex"
+ ],
  "verify": {
   "n": 5,
   "triples_checked": 10,
