@@ -48,7 +48,11 @@
   },
   "trivial": false
  },
- "proof": null,
+ "proof": {
+  "id": "palomar-2026-heilbronn-convex-3-8",
+  "title": "T. Stead, heilbronn-convex-3-8, Palomar registry PALOMAR-2026-09-02-000012 v1 (Lean 4 formalization, machine-checked), 2 September 2026",
+  "url": "https://palomar-registry.org/entry?id=PALOMAR-2026-09-02-000012&version=1"
+ },
  "coordinates_source": {
   "kind": "exact-construction",
   "ref": "data/sources/exact/constructions.py",
@@ -60,15 +64,21 @@
   "label": "5-fold dihedral symmetry"
  },
  "notes": [
-  "The optimality proof (Tej Stead, August 2026) is not yet published; a link will follow."
+  "The optimality proof is a Lean 4 formalization registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
  ],
  "changelog": [
   {
    "date": "2026-08-22",
    "text": "marked proven: optimality of the regular pentagon proved by Tej Stead, August 2026 (unpublished; link to follow)"
+  },
+  {
+   "date": "2026-09-03",
+   "text": "proof reference added: the optimality proof is registered in the Palomar registry (PALOMAR-2026-09-02-000012)"
   }
  ],
- "references": [],
+ "references": [
+  "palomar-2026-heilbronn-convex-3-8"
+ ],
  "verify": {
   "n": 5,
   "triples_checked": 10,

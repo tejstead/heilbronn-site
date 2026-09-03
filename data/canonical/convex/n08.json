@@ -47,17 +47,24 @@
   "exact_sympy": null,
   "minimal_polynomial": null
  },
- "status": "record",
+ "status": "proven",
  "page_relation": "OK",
  "credit": {
   "found": {
    "name": "David Cantrell",
    "date": "June 2007"
   },
-  "proved": null,
+  "proved": {
+   "name": "Tej Stead",
+   "date": "September 2026"
+  },
   "trivial": false
  },
- "proof": null,
+ "proof": {
+  "id": "palomar-2026-heilbronn-convex-3-8",
+  "title": "T. Stead, heilbronn-convex-3-8, Palomar registry PALOMAR-2026-09-02-000012 v1 (Lean 4 formalization, machine-checked), 2 September 2026",
+  "url": "https://palomar-registry.org/entry?id=PALOMAR-2026-09-02-000012&version=1"
+ },
  "coordinates_source": {
   "kind": "reconstructed",
   "ref": "heilbronn-site reconstruct/reconstruct.py",
@@ -68,9 +75,18 @@
  "symmetry": {
   "label": "2-fold symmetry"
  },
- "notes": [],
- "changelog": [],
- "references": [],
+ "notes": [
+  "The exact value is the unique root in (79/1000, 81/1000) of 2060x^5 - 2332x^4 + 1064x^3 - 240x^2 + 26x - 1. The optimality proof is a Lean 4 formalization registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
+ ],
+ "changelog": [
+  {
+   "date": "2026-09-03",
+   "text": "marked proven: exact value and uniqueness of the optimizer proved by Tej Stead, registered in the Palomar registry (PALOMAR-2026-09-02-000012)"
+  }
+ ],
+ "references": [
+  "palomar-2026-heilbronn-convex-3-8"
+ ],
  "verify": {
   "n": 8,
   "triples_checked": 56,
