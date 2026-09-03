@@ -96,6 +96,12 @@ code {
 .entry-fig:hover img { opacity: .82; }
 .entry-fig .placeholder { display: grid; place-items: center; aspect-ratio: 1; color: var(--muted); font-size: 2rem; background: var(--code-bg); }
 .entry-text p { margin: .25rem 0; }
+/* Let the text cell shrink below its widest MathML line — otherwise a long
+   minimal polynomial (square n=24, degree 15) sets the column's min-content
+   and squeezes the figure to its 170px floor. The wide line then scrolls in
+   its own box, like .value-poly on the config pages. */
+.entry-text { min-width: 0; }
+.entry-value, .entry-sym { overflow-x: auto; max-width: 100%; }
 .entry-value { font-size: 1.05rem; }
 .entry-value .digits { font-size: .88rem; color: var(--muted); }
 .entry-line { font-size: .95rem; }

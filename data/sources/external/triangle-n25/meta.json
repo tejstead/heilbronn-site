@@ -1,5 +1,5 @@
 {
- "ref": "spiralulam heilbronn_square/csearch pipeline, ruin-and-recreate pass 2026-08-25",
+ "ref": "spiralulam geometry-problems record_hunt pipeline",
  "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "stress-weighted ruin and recreate at fixed n, refined with a trust-region SLP"
+ "note": "C basin hopping with stress-weighted ruin and recreate, hardened by trust-region SLP, continuation and null-space excursions"
 }
