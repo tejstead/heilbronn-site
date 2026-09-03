@@ -229,6 +229,13 @@
   ]
  },
  "convex/8": {
+  "value": {
+   "exact_poly": {
+    "poly": "2060*v**5 - 2332*v**4 + 1064*v**3 - 240*v**2 + 26*v - 1",
+    "near": 0.08,
+    "which": "unique real"
+   }
+  },
   "status": "proven",
   "credit": {
    "proved": {
@@ -237,7 +244,7 @@
    }
   },
   "notes": [
-   "The exact value is the unique root in (79/1000, 81/1000) of 2060x^5 - 2332x^4 + 1064x^3 - 240x^2 + 26x - 1. The optimality proof is a Lean 4 formalization registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
+   "The optimality proof is a Lean 4 formalization registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
   ]
  }
 }

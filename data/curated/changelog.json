@@ -180,7 +180,7 @@
  "convex/8": [
   {
    "date": "2026-09-03",
-   "text": "marked proven: exact value and uniqueness of the optimizer proved by Tej Stead, registered in the Palomar registry (PALOMAR-2026-09-02-000012)"
+   "text": "marked proven: exact value (unique real root of 2060v^5 - 2332v^4 + 1064v^3 - 240v^2 + 26v - 1) and uniqueness of the optimizer proved by Tej Stead, registered in the Palomar registry (PALOMAR-2026-09-02-000012)"
   }
  ]
 }
