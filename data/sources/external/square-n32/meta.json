@@ -1,5 +1,5 @@
 {
- "ref": "spiralulam heilbronn_square/csearch pipeline, aggressive ruin pass 2026-08-26",
- "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "stress-weighted ruin and recreate at fixed n, aggressive setting (remove up to 45 per cent of the points, return to the incumbent only 45 per cent of the time), refined with a trust-region SLP"
+ "ref": "Heilbronn toolkit, search_d4.py D4 multistart (decomposition libre^3 + axe_v + diag, dimension 8), refined to 300 digits with Gauss-Newton in the reduced space",
+ "credit": "Marc-Emmanuel Coupvent des Graviers, September 2026",
+ "note": "D4 symmetric: three free orbits of eight, the four edge midpoints, and a diagonal orbit of four; 68 critical triangles for 60 degrees of freedom, so the configuration is rigid"
 }
