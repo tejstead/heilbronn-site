@@ -1,5 +1,5 @@
 {
- "ref": "github.com/rhyschappell (surgery/cascade search; verified in exact rational arithmetic)",
- "credit": "Rhys Chappell, August 2026",
- "note": "Improves the previous value 0.007733517704 by 1.14%. Found by point insertion/deletion surgery between neighboring record configurations followed by local maximin refinement (SLSQP + high-precision Newton on the active-triangle system)."
+ "ref": "autoheilbronn v4 topology/annealing campaign; exact rational verification",
+ "credit": "Rhys Chappell, September 2026",
+ "note": "Line-arrangement-guided insertion and stress-weighted ruin/recreate, followed by filtered trust-region SLP polishing; GPU annealing was also used where recorded in the result provenance."
 }
