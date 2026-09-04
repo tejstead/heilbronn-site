@@ -1,5 +1,5 @@
 {
- "ref": "github.com/rhyschappell (surgery/cascade search)",
- "credit": "Rhys Chappell, August 2026",
- "note": "Improves the previous value 0.005702632160 by 0.29%. Found by point insertion/deletion surgery between neighboring record configurations followed by constrained local maximin refinement."
+ "ref": "autoheilbronn v4 topology/annealing campaign; exact rational verification",
+ "credit": "Rhys Chappell, September 2026",
+ "note": "Line-arrangement-guided insertion and stress-weighted ruin/recreate, followed by filtered trust-region SLP polishing; GPU annealing was also used where recorded in the result provenance."
 }
