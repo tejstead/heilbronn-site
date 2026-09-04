@@ -1,5 +1,5 @@
 {
- "ref": "TejSteadQC/heilbronn-configurations, claims batch 2026-08-21 (heilbronn-experiments pipeline)",
- "credit": "Tej Stead, August 2026",
- "note": "found with the search program evolved by cnemri (heilbronn-alphaevolve), finished with a trust-region SLP polisher; part of the 2026-08-21 batch"
+ "ref": "autoheilbronn v4 topology/annealing campaign; exact rational verification",
+ "credit": "Rhys Chappell, September 2026",
+ "note": "Line-arrangement-guided insertion and stress-weighted ruin/recreate, followed by filtered trust-region SLP polishing; GPU annealing was also used where recorded in the result provenance."
 }

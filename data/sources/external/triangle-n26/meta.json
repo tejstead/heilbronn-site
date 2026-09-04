@@ -1,5 +1,5 @@
 {
- "ref": "spiralulam geometry-problems record_hunt pipeline",
- "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "C basin hopping with stress-weighted ruin and recreate, hardened by trust-region SLP, continuation and null-space excursions"
+ "ref": "autoheilbronn v4 topology/annealing campaign; exact rational verification",
+ "credit": "Rhys Chappell, September 2026",
+ "note": "Line-arrangement-guided insertion and stress-weighted ruin/recreate, followed by filtered trust-region SLP polishing; GPU annealing was also used where recorded in the result provenance."
 }

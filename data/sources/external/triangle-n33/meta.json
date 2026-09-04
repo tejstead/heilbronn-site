@@ -1,5 +1,5 @@
 {
- "ref": "spiralulam heilbronn_square/csearch pipeline, ruin-and-recreate sweep 2026-08-26",
- "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "stress-weighted ruin and recreate at fixed n, refined with a trust-region SLP"
+ "ref": "autoheilbronn v4 topology/annealing campaign; exact rational verification",
+ "credit": "Rhys Chappell, September 2026",
+ "note": "Line-arrangement-guided insertion and stress-weighted ruin/recreate, followed by filtered trust-region SLP polishing; GPU annealing was also used where recorded in the result provenance."
 }
