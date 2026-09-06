@@ -1,5 +1,5 @@
 {
- "ref": "TejSteadQC/heilbronn-configurations, claims batch 2026-08-21 (heilbronn-experiments pipeline)",
- "credit": "Tej Stead, August 2026",
- "note": "found with the search program evolved by cnemri (heilbronn-alphaevolve), finished with a trust-region SLP polisher; part of the 2026-08-21 batch"
+ "ref": "Heilbronn toolkit, symmetry-class sweep with parallel successive halving over a C-kernel orbit-reduced triangle evaluator; refined to 600 digits by Gauss-Newton on the equal-critical-area system",
+ "credit": "Marc-Emmanuel Coupvent des Graviers, September 2026",
+ "note": "180-degree rotationally symmetric (C2), nine free orbits of two; 32 critical triangles for 28 degrees of freedom, so the configuration is rigid"
 }
