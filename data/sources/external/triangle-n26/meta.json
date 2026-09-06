@@ -1,5 +1,5 @@
 {
- "ref": "autoheilbronn v4 topology/annealing campaign; exact rational verification",
+ "ref": "autoheilbronn v6 campaign; two independent exact rational verifiers",
  "credit": "Rhys Chappell, September 2026",
- "note": "Line-arrangement-guided insertion and stress-weighted ruin/recreate, followed by filtered trust-region SLP polishing; GPU annealing was also used where recorded in the result provenance."
+ "note": "Basin exploration with triangle-orientation changes and point reinsertion, followed by trust-region linear programming."
 }
