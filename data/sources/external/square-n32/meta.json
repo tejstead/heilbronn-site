@@ -1,5 +1,5 @@
 {
- "ref": "spiralulam geometry-problems record_hunt pipeline",
- "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "C basin hopping with stress-weighted ruin and recreate, hardened by trust-region SLP, continuation and null-space excursions"
+ "ref": "Heilbronn toolkit, D4 multistart over a C-kernel orbit-reduced triangle evaluator (decomposition libre^3 + axe_h + diag, dimension 8); refined to 600 digits by Gauss-Newton on the equal-critical-area system",
+ "credit": "Marc-Emmanuel Coupvent des Graviers, September 2026",
+ "note": "D4 symmetric, eight boundary points (two per side); 64 critical triangles in 8 congruence classes for 56 degrees of freedom, so the configuration is rigid"
 }
