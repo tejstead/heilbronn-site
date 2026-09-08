@@ -140,7 +140,7 @@
  "proof": null,
  "coordinates_source": {
   "kind": "external",
-  "ref": "Original full-precision coordinates of the August 2026 Packing Center submissions by Nathan Sudermann-Merx",
+  "ref": "Original full-precision coordinates of Nathan Sudermann-Merx's August 2026 record submissions",
   "note": "orbit-seeded searcher (LP relocation, min-norm ascent), finished by sign-fixed cell QCP and equal-critical-area continuation",
   "basis": null
  },

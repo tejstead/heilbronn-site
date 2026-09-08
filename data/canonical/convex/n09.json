@@ -72,7 +72,9 @@
  "symmetry": {
   "label": "2-fold symmetry"
  },
- "notes": [],
+ "notes": [
+  "David Cantrell's original coordinates for this entry (2007) are on file in the repository: mirror-symmetric, with the same 11 tied minimal triples and the same value to 10⁻¹⁵. The coordinates shown are this site's re-derivation of that optimum, which breaks the mirror symmetry only at rounding level."
+ ],
  "changelog": [],
  "references": [],
  "verify": {

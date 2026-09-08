@@ -88,7 +88,7 @@
  "proof": null,
  "coordinates_source": {
   "kind": "external",
-  "ref": "Original full-precision coordinates of the August 2026 Packing Center submissions by Nathan Sudermann-Merx",
+  "ref": "Original full-precision coordinates of Nathan Sudermann-Merx's August 2026 record submissions",
   "note": "Fully asymmetric and rigid; replaced Karpov's 2011 entry. orbit-seeded searcher (LP relocation, min-norm ascent), finished by sign-fixed cell QCP and equal-critical-area continuation",
   "basis": null
  },
@@ -108,7 +108,7 @@
   },
   {
    "date": "2026-08-21",
-   "text": ".02121+ — Nathan Sudermann-Merx (Packing Center entry; coordinates never published)"
+   "text": ".02121+ — Nathan Sudermann-Merx (coordinates never published)"
   }
  ],
  "references": [

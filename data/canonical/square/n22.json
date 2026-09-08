@@ -117,7 +117,7 @@
  "coordinates_source": {
   "kind": "external",
   "ref": "github.com/cnemri/heilbronn-alphaevolve",
-  "note": "independently re-verified in exact arithmetic by this site; submitted to Erich Friedman and open as PR #1 on TejSteadQC/heilbronn-configurations since 2026-08-03",
+  "note": "independently re-verified in exact arithmetic by this site",
   "basis": null
  },
  "coordinates_reconstructed": false,
@@ -125,7 +125,7 @@
   "label": "Symmetric with respect to both diagonals"
  },
  "notes": [
-  "Found with AlphaEvolve (Google Cloud) and submitted in August 2026, superseding the <code>.009569+</code> entry (Nathan Sudermann-Merx) the Packing Center listed until it went offline."
+  "Found with AlphaEvolve (Google Cloud) and submitted in August 2026, superseding the previous <code>.009569+</code> record (Nathan Sudermann-Merx)."
  ],
  "changelog": [
   {
@@ -134,7 +134,7 @@
   },
   {
    "date": "2026-08",
-   "text": "0.009569+ — Nathan Sudermann-Merx (Packing Center entry)"
+   "text": "0.009569+ — Nathan Sudermann-Merx"
   },
   {
    "date": "2026-08-03",

@@ -195,13 +195,6 @@ def provenance_lines(doc, derived):
         lines.append(
             f"Verified in exact arithmetic: all {v['triples_checked']} triples "
             f"enumerated, {v['num_min_ties']} tied at the minimum.")
-    if doc["value"].get("published"):
-        if doc.get("page_relation") == "BEATS":
-            lines.append(f"Previous record, as listed at the Packing Center (through "
-                         f"August 2026): <code>{doc['value']['published']}</code>.")
-        else:
-            lines.append(f"Listed at the Packing Center as: "
-                         f"<code>{doc['value']['published']}</code>.")
     return lines
 
 
@@ -211,21 +204,16 @@ def banner_for(doc):
     holder = credit_text(doc)
     if rel == "BEHIND":
         return {"kind": "behind", "text": (
-            f"The record listed at the Packing Center is <code>{pub}+</code> "
-            f"({holder}). Its coordinates were never published and the figure "
-            f"there showed an older configuration, so it cannot be reconstructed "
-            f"from public information. Shown here: the best exactly verified "
-            f"configuration.")}
-    # Entries above the Packing Center's last listed value carry no banner:
-    # with those pages offline this site is the record table, and the old
-    # value appears as history in the provenance lines.
+            f"The record is <code>{pub}+</code> ({holder}); its coordinates were "
+            f"never published, so it cannot be reconstructed. Shown here: the "
+            f"best exactly verified configuration.")}
     return None
 
 
 def symmetry_text(doc, derived):
     label = doc["symmetry"]["label"]
     if derived is None:
-        return f"Published symmetry: {label}." if label else "Unknown."
+        return f"Reported symmetry: {label}." if label else "Unknown."
     sym = derived["symmetry"]
     det = friedman_label(sym, doc["variant"])
     if sym.get("approx"):
@@ -235,14 +223,7 @@ def symmetry_text(doc, derived):
     else:
         txt = f"{det} (group {sym['group']}, order {sym['order']})."
     if label and doc.get("page_relation") == "BEHIND":
-        txt += f" The record configuration is listed as: {label.lower()}."
-    elif label and not _same_symmetry_label(det, label):
-        if doc.get("page_relation") == "BEATS":
-            # The Packing Center showed the superseded configuration — its label
-            # describes a different arrangement, not a disagreement about ours.
-            txt += f" (The previous record was listed as: {label.lower()}.)"
-        else:
-            txt += f" (The Packing Center listed it as: {label.lower()}.)"
+        txt += f" The record configuration is reported as: {label.lower()}."
     return txt
 
 
@@ -543,8 +524,8 @@ exact value for square n = 24.</li>
 <li>Published exact constructions from the proofs (see the bibliography).</li>
 <li>Local reconstruction: for configurations whose coordinates were never
 published (mostly David Cantrell's), we re-derive them by numerical
-optimization seeded from the figures the Packing Center showed, and accept a
-reconstruction only if its exact value and symmetry match its entry. These are
+optimization seeded from the record figures, and accept a reconstruction
+only if its exact value and symmetry match the record entry. These are
 labeled <em>reconstructed</em> and never claim to be the original author's
 exact arrangement.</li>
 </ul>
@@ -582,57 +563,22 @@ re-verified by CI, and the in-browser
 <a href="/heilbronn/verifier/">verifier</a> runs the same computation.</p>
 
 <h2>Normalization conventions</h2>
-<p>Values here follow the Packing Center's convention: the container has
-<strong>unit area</strong>. Beware when comparing with papers: work in the unit
+<p>The container has <strong>unit area</strong>. Beware when comparing with papers: work in the unit
 <em>right</em> triangle (area ½) quotes triangle values half as large, and the
 retired circle variant used a unit-<em>radius</em> disk (area π). The triangle
 problem is affine-invariant, so coordinates are stored in the right frame
 (0,0),(1,0),(0,1) and displayed equilateral.</p>
 
 <h2>Attribution</h2>
-<p>This site grew out of the Heilbronn record tables Erich Friedman curated
-for decades at his Packing Center. Those pages went offline in 2026; the
-values, credits and symmetry labels here were recorded from them while they
-were up (the last parsed snapshot is vendored in the repository under
-<code>data/sources/friedman/</code>), and the tables are continued here.
-His images are not reproduced — every figure is regenerated from
-coordinates. Who holds what is tallied on the
+<p>The record tables here descend from those Erich Friedman curated for
+decades at his Packing Center, offline since 2026: the historical values,
+credits and symmetry labels were recorded from those pages (the last parsed
+snapshot is vendored in the repository under
+<code>data/sources/friedman/</code>). None of his images are reproduced.
+Who holds what is tallied on the
 <a href="/heilbronn/leaderboard/">leaderboard</a>.</p>
 """
 
-
-
-
-def missing_coords(docs):
-    """The wanted list: entries whose record coordinates are not on file.
-    - gap: no coordinates at all (value known only from the page)
-    - behind: the published record exceeds every verified source we hold
-    - wanted: shown as a reconstruction with NO independent source — the
-      original arrangement exists only with its finder."""
-    gap, behind, wanted = [], [], []
-    for (v, n), doc in sorted(docs.items()):
-        row = {
-            "variant": v, "n": n,
-            "published": doc["value"].get("published"),
-            "found": (doc["credit"].get("found") or {}),
-            "ours": (doc["value"].get("decimal") or "")[:10],
-        }
-        if not doc.get("points"):
-            gap.append(row)
-            continue
-        if doc.get("page_relation") == "BEHIND":
-            behind.append(row)
-            continue
-        if doc.get("coordinates_reconstructed"):
-            tag = f"{v}-n{n:02d}"
-            others = [SOURCES_DIR / "tejsteadqc" / tag,
-                      SOURCES_DIR / "external" / tag,
-                      SOURCES_DIR / "papers" / tag,
-                      SOURCES_DIR / "spiralulam" / f"config_n{n:02d}.json" if v == "square" else SOURCES_DIR / "spiralulam" / "absent",
-                      SOURCES_DIR / "alphaevolve" / f"{v}_n{n}.txt"]
-            if not any(p.exists() for p in others):
-                wanted.append(row)
-    return {"gap": gap, "behind": behind, "wanted": wanted}
 
 
 
@@ -649,10 +595,6 @@ def render_extra(env, assets, values_name):
     (DIST / "methods" / "index.html").write_text(
         env.get_template("methods.html").render(
             dict(common, section="methods", body=METHODS_BODY, bib=list(bib.values()))))
-    (DIST / "missing").mkdir(parents=True, exist_ok=True)
-    (DIST / "missing" / "index.html").write_text(
-        env.get_template("missing.html").render(
-            dict(common, section="missing", **missing_coords(load_docs()))))
     from .leaderboard import leaderboards
     (DIST / "leaderboard").mkdir(parents=True, exist_ok=True)
     (DIST / "leaderboard" / "index.html").write_text(
@@ -670,7 +612,7 @@ SITE_ORIGIN = "https://math.tejstead.com"
 
 def write_sitemap_and_404(env, common):
     urls = [f"{BASE}/", f"{BASE}/trends/", f"{BASE}/leaderboard/",
-            f"{BASE}/missing/", f"{BASE}/verifier/", f"{BASE}/methods/"]
+            f"{BASE}/verifier/", f"{BASE}/methods/"]
     for v in VARIANTS:
         urls.append(f"{BASE}/{v}/")
         for n in NS:

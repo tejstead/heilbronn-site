@@ -18,7 +18,6 @@
     <a href="{{ base }}/convex/"{% if section == 'convex' %} aria-current="page"{% endif %}>Convex</a>
     <a href="{{ base }}/trends/"{% if section == 'trends' %} aria-current="page"{% endif %}>Trends</a>
     <a href="{{ base }}/leaderboard/"{% if section == 'leaderboard' %} aria-current="page"{% endif %}>Leaderboard</a>
-    <a href="{{ base }}/missing/"{% if section == 'missing' %} aria-current="page"{% endif %}>Missing</a>
     <a href="{{ base }}/verifier/"{% if section == 'verifier' %} aria-current="page"{% endif %}>Verifier</a>
     <a href="{{ base }}/methods/"{% if section == 'methods' %} aria-current="page"{% endif %}>Methods</a>
   </nav>
@@ -27,10 +26,7 @@
 {% block content %}{% endblock %}
 </main>
 <footer class="site-footer">
-  <p>Values, credits and symmetry labels were recorded from Erich Friedman's
-  Packing Center, which went offline in 2026 (last snapshot {{ snapshot_date }});
-  this site now carries the record tables forward. All figures are regenerated
-  from coordinates — none of the original images are reproduced.
+  <p>Every figure is regenerated from exactly verified coordinates.
   See <a href="{{ base }}/methods/">methods &amp; attribution</a>.</p>
 </footer>
 </body>
