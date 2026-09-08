@@ -126,7 +126,17 @@
   },
   "notes": [
    "The optimality proof is machine-checked in Lean 4: value, attainment, and uniqueness of the affinely regular pentagon up to relabeling and invertible affine maps. Registered in the Palomar registry (PALOMAR-2026-09-02-000012)."
-  ]
+  ],
+  "value": {
+   "exact_display": "(5 − √5) / 10",
+   "exact_sympy": "(5 - sqrt(5))/10",
+   "exact_poly": {
+    "poly": "5*x**2 - 5*x + 1",
+    "near": 0.2764,
+    "which": "smaller root",
+    "note": "regular pentagon: three consecutive vertices span 4 sin²36° / 5 of its area"
+   }
+  }
  },
  "convex/6": {
   "value": {
