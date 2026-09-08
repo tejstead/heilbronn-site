@@ -140,7 +140,9 @@
     "date": "1995"
    }
   },
-  "page_note": "The Packing Center credited only the configuration (Cantrell, 2007); the value itself was settled in 1995 — Dress, Yang and Zeng proved that any six points in a convex body K span a triangle of area at most |K|/6, and that 1/6 is sharp."
+  "notes": [
+   "The Packing Center credited only the configuration (Cantrell, 2007); the value itself was settled in 1995 — Dress, Yang and Zeng proved that any six points in a convex body K span a triangle of area at most |K|/6, and that 1/6 is sharp."
+  ]
  },
  "convex/7": {
   "value": {
@@ -176,10 +178,14 @@
   }
  },
  "square/17": {
-  "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the last published record <code>.016481+</code>. Submitted to Erich Friedman in August 2026 (PR #1 on the companion repository); the Packing Center went offline before recording it."
+  "notes": [
+   "Found with AlphaEvolve (Google Cloud) and submitted in August 2026, superseding the <code>.016481+</code> entry (Tej Stead) the Packing Center listed until it went offline."
+  ]
  },
  "square/22": {
-  "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the last published record <code>.009569+</code>. Submitted to Erich Friedman in August 2026 (PR #1 on the companion repository); the Packing Center went offline before recording it."
+  "notes": [
+   "Found with AlphaEvolve (Google Cloud) and submitted in August 2026, superseding the <code>.009569+</code> entry (Nathan Sudermann-Merx) the Packing Center listed until it went offline."
+  ]
  },
  "triangle/15": {
   "value": {

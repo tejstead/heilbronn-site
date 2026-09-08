@@ -197,10 +197,10 @@ def provenance_lines(doc, derived):
             f"enumerated, {v['num_min_ties']} tied at the minimum.")
     if doc["value"].get("published"):
         if doc.get("page_relation") == "BEATS":
-            lines.append(f"The Packing Center's last table listed the previous record: "
-                         f"<code>{doc['value']['published']}</code>.")
+            lines.append(f"Previous record, as listed at the Packing Center (through "
+                         f"August 2026): <code>{doc['value']['published']}</code>.")
         else:
-            lines.append(f"The Packing Center's last table listed: "
+            lines.append(f"Listed at the Packing Center as: "
                          f"<code>{doc['value']['published']}</code>.")
     return lines
 
@@ -211,30 +211,14 @@ def banner_for(doc):
     holder = credit_text(doc)
     if rel == "BEHIND":
         return {"kind": "behind", "text": (
-            f"The published record is <code>{pub}+</code> ({holder}). Neither its "
-            f"coordinates nor a current figure were ever public — the Packing "
-            f"Center's figure showed an older configuration — so the record cannot "
-            f"be reconstructed from published information. Shown here: the best "
-            f"exactly verified configuration.")}
-    if rel == "BEATS":
-        if doc.get("page_note"):
-            return {"kind": "beats", "text": doc["page_note"]}
-        ref = (doc.get("coordinates_source") or {}).get("ref", "")
-        kind = (doc.get("coordinates_source") or {}).get("kind", "")
-        m = re.search(r"(claims-\d{4}-\d{2}-\d{2})", ref)
-        if m:
-            return {"kind": "beats", "text": (
-                f"These coordinates exceed the last published record "
-                f"<code>{pub}+</code>; they were submitted to the Packing Center "
-                f"(batch <code>{m.group(1)}</code>) before it went offline.")}
-        if kind == "reconstructed":
-            return {"kind": "beats", "text": (
-                f"Re-deriving the record figure produced coordinates exceeding the "
-                f"published <code>{pub}+</code> — an unsubmitted refinement of the "
-                f"record holder's arrangement.")}
-        return {"kind": "beats", "text": (
-            f"These coordinates exceed the last published record "
-            f"<code>{pub}+</code>.")}
+            f"The record listed at the Packing Center is <code>{pub}+</code> "
+            f"({holder}). Its coordinates were never published and the figure "
+            f"there showed an older configuration, so it cannot be reconstructed "
+            f"from public information. Shown here: the best exactly verified "
+            f"configuration.")}
+    # Entries above the Packing Center's last listed value carry no banner:
+    # with those pages offline this site is the record table, and the old
+    # value appears as history in the provenance lines.
     return None
 
 
@@ -254,12 +238,11 @@ def symmetry_text(doc, derived):
         txt += f" The record configuration is listed as: {label.lower()}."
     elif label and not _same_symmetry_label(det, label):
         if doc.get("page_relation") == "BEATS":
-            # The last table showed the superseded configuration — its label
+            # The Packing Center showed the superseded configuration — its label
             # describes a different arrangement, not a disagreement about ours.
-            txt += (f" The Packing Center's last table showed the previous record "
-                    f"(listed as: {label.lower()}).")
+            txt += f" (The previous record was listed as: {label.lower()}.)"
         else:
-            txt += f" (The Packing Center's table said: {label.lower()}.)"
+            txt += f" (The Packing Center listed it as: {label.lower()}.)"
     return txt
 
 
@@ -560,8 +543,8 @@ exact value for square n = 24.</li>
 <li>Published exact constructions from the proofs (see the bibliography).</li>
 <li>Local reconstruction: for configurations whose coordinates were never
 published (mostly David Cantrell's), we re-derive them by numerical
-optimization seeded from the published figures, and accept a reconstruction
-only if its exact value and symmetry match the published entry. These are
+optimization seeded from the figures the Packing Center showed, and accept a
+reconstruction only if its exact value and symmetry match its entry. These are
 labeled <em>reconstructed</em> and never claim to be the original author's
 exact arrangement.</li>
 </ul>

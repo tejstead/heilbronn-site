@@ -124,7 +124,9 @@
  "symmetry": {
   "label": "Symmetric with respect to both diagonals"
  },
- "notes": [],
+ "notes": [
+  "Found with AlphaEvolve (Google Cloud) and submitted in August 2026, superseding the <code>.009569+</code> entry (Nathan Sudermann-Merx) the Packing Center listed until it went offline."
+ ],
  "changelog": [
   {
    "date": "2026-07",
@@ -132,11 +134,11 @@
   },
   {
    "date": "2026-08",
-   "text": "0.009569+ — Nathan Sudermann-Merx (current page entry)"
+   "text": "0.009569+ — Nathan Sudermann-Merx (Packing Center entry)"
   },
   {
    "date": "2026-08-03",
-   "text": "0.0104725344 — cnemri via AlphaEvolve (verified here; awaiting page update)"
+   "text": "0.0104725344 — cnemri via AlphaEvolve (verified here; record)"
   }
  ],
  "references": [],
@@ -154,6 +156,5 @@
   "feasible": true,
   "violations": [],
   "hull_vertex_count": null
- },
- "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the last published record <code>.009569+</code>. Submitted to Erich Friedman in August 2026 (PR #1 on the companion repository); the Packing Center went offline before recording it."
+ }
 }

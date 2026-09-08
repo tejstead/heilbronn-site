@@ -104,15 +104,17 @@
  "symmetry": {
   "label": "Not symmetric"
  },
- "notes": [],
+ "notes": [
+  "Found with AlphaEvolve (Google Cloud) and submitted in August 2026, superseding the <code>.016481+</code> entry (Tej Stead) the Packing Center listed until it went offline."
+ ],
  "changelog": [
   {
    "date": "2026-07",
-   "text": "0.016481+ — Tej Stead (current page entry)"
+   "text": "0.016481+ — Tej Stead (Packing Center entry)"
   },
   {
    "date": "2026-08-03",
-   "text": "0.0172616771 — cnemri via AlphaEvolve (verified here; awaiting page update)"
+   "text": "0.0172616771 — cnemri via AlphaEvolve (verified here; record)"
   }
  ],
  "references": [],
@@ -130,6 +132,5 @@
   "feasible": true,
   "violations": [],
   "hull_vertex_count": null
- },
- "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the last published record <code>.016481+</code>. Submitted to Erich Friedman in August 2026 (PR #1 on the companion repository); the Packing Center went offline before recording it."
+ }
 }
