@@ -9,41 +9,41 @@
    "0.296579224073412"
   ],
   [
-   "0.434924155152327",
-   "0.999994338889454"
+   "0.434910977990233",
+   "0.999994249226408"
   ],
   [
-   "0.99999589779069",
-   "0.488035188537805"
+   "0.999992376092386",
+   "0.488034996732474"
   ],
   [
-   "0.257281939479396",
-   "-1.000005565400091"
+   "0.257306233276222",
+   "-1.000005626065949"
   ],
   [
-   "0.885978174478175",
-   "-0.255961307841494"
+   "0.88598854151071",
+   "-0.255961516726671"
   ],
   [
-   "-0.434923591645804",
-   "0.999994159563876"
+   "-0.434936768807791",
+   "0.999994249226408"
   ],
   [
-   "-1.000014645211402",
-   "0.488034804927121"
+   "-1.000018166909944",
+   "0.488034996732474"
   ],
   [
-   "-0.257356317890861",
-   "-1.000005686732035"
+   "-0.25733202409378",
+   "-1.000005626065949"
   ],
   [
-   "-0.886024699361344",
-   "-0.255961725611752"
+   "-0.886014332328268",
+   "-0.255961516726671"
   ]
  ],
  "value": {
-  "decimal": "0.0640647523079406469924619654015",
-  "fraction": "382913563835362469220826185375/5976977199487297529092352951104",
+  "decimal": "0.0640647523079378595146805969120",
+  "fraction": "95728390959195309110240403615/1494244299877425855234300682684",
   "published": "A = .0640+",
   "published_decimal": "0.0640",
   "published_lower_bound": true,
@@ -65,7 +65,7 @@
  "coordinates_source": {
   "kind": "external",
   "ref": "David Cantrell's Mathematica notebook UltimateHeilbronn.nb (2007), received September 2026",
-  "note": "Original author's mirror-symmetric arrangement, tightened to 15 decimals here; the site's earlier re-derivation of the same optimum scores higher by only 1e-15, through a rounding-level break of the symmetry.",
+  "note": "Original author's mirror-symmetric arrangement, tightened to 15 decimals with the symmetry kept exactly (an asymmetric rounding of the same optimum scores higher by only 4e-14 relative).",
   "basis": null
  },
  "coordinates_reconstructed": false,
@@ -80,12 +80,12 @@
  "verify": {
   "n": 9,
   "triples_checked": 84,
-  "value": "0.0640647523079406469924619654015",
-  "value_fraction": "382913563835362469220826185375/5976977199487297529092352951104",
+  "value": "0.0640647523079378595146805969120",
+  "value_fraction": "95728390959195309110240403615/1494244299877425855234300682684",
   "min_triple": [
    0,
-   3,
-   5
+   2,
+   6
   ],
   "num_min_ties": 11,
   "feasible": true,

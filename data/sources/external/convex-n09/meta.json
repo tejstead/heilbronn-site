@@ -1,5 +1,5 @@
 {
  "ref": "David Cantrell's Mathematica notebook UltimateHeilbronn.nb (2007), received September 2026",
  "credit": "David Cantrell, June 2007",
- "note": "Original author's mirror-symmetric arrangement, tightened to 15 decimals here; the site's earlier re-derivation of the same optimum scores higher by only 1e-15, through a rounding-level break of the symmetry."
+ "note": "Original author's mirror-symmetric arrangement, tightened to 15 decimals with the symmetry kept exactly (an asymmetric rounding of the same optimum scores higher by only 4e-14 relative)."
 }
