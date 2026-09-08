@@ -95,12 +95,12 @@
  },
  "proof": null,
  "coordinates_source": {
-  "kind": "reconstructed",
-  "ref": "heilbronn-site reconstruct/reconstruct.py",
-  "note": "re-polished from the published record figure — the record holder's arrangement with re-derived coordinates",
-  "basis": "figure"
+  "kind": "external",
+  "ref": "heilbronn-site reconstruct/reconstruct.py — re-polish of the triangle n=17 record figure",
+  "note": "Sudermann-Merx's August 2026 arrangement re-polished to convergence: 0.0155336750 against 0.0155311479 for his submitted coordinates (+0.016%), 29 tied minimal triples (his coordinates: 26).",
+  "basis": null
  },
- "coordinates_reconstructed": true,
+ "coordinates_reconstructed": false,
  "symmetry": {
   "label": "Not symmetric"
  },
