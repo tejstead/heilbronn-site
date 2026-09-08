@@ -1,0 +1,26 @@
+# David Cantrell's original 10-point configuration (June 2007), forwarded
+# by Erich Friedman in September 2026. Cantrell's literals, in his unit-area
+# equilateral frame with vertices (0, 2/3^(3/4)) and (±3^(-1/4), -3^(-3/4)):
+#   {-0.4239530851, -(1/3^(3/4))}
+#   {0.6572305907, -(1/3^(3/4))}
+#   {0.5113077447, -0.008228316822194603}
+#   {-0.4499289558, 0.09808286405964994}
+#   {-0.5904406817, -0.3381065411}
+#   {0.1915018448, 0.3406624472}
+#   {-0.0940212592, 0.3808833609}
+#   {0.0006283394, -0.0419999715}
+#   {0.2720503627, -0.3381065411}
+#   {0, 2/3^(3/4)}
+# Below: the same arrangement in the right frame (0,0),(1,0),(0,1), converged to
+# 15 decimals (this site's tightening of the same arrangement, in Cantrell's order); Cantrell's literals reproduce it to within
+# 6e-05 after polishing.
+0.221002771087441	0
+0.932464624621955	0
+0.672889779896044	0.327110220103951
+0	0.407922756981487
+0.073261962336053	0.076424821568453
+0.329919253259536	0.592206877878477
+0.126744324881756	0.622775842160294
+0.349692485216114	0.301462115616943
+0.640835949266549	0.076424821568453
+0	1

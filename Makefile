@@ -1,6 +1,6 @@
 PY := .venv/bin/python
 
-.PHONY: build test serve serve-caddy deploy sync-sources sync-friedman clean check-submission
+.PHONY: build test serve serve-caddy deploy sync-sources clean check-submission
 
 build:
 	$(PY) -m build
@@ -24,9 +24,6 @@ deploy:
 
 sync-sources:
 	$(PY) build/sync_sources.py
-
-sync-friedman:
-	$(PY) scripts/friedman_sync.py
 
 # Verify a coordinate submission the same way the PR workflow does:
 #   make check-submission DIRS=data/sources/external/square-n17

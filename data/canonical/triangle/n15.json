@@ -106,7 +106,8 @@
  },
  "notes": [
   "The tight structure splits 12 + 3: twelve points form a mirror-symmetric frame carrying all 15 minimal triples — the exact critical point of its tie system, with coordinates algebraic of degree 5 — while the other three are floaters whose every triple stays ≥ 1.0178× the minimum.",
-  "Each floater is confined to a triangular cell of diameter ≈ 0.003; the six such cells form two mirror-image orbits and the floaters must occupy alternating cells, so the configuration is chiral — the frame's mirror symmetry cannot extend to all 15 points. Floaters are placed at their cell's maximal-clearance point, which pins the whole configuration algebraically."
+  "Each floater is confined to a triangular cell of diameter ≈ 0.003; the six such cells form two mirror-image orbits and the floaters must occupy alternating cells, so the configuration is chiral — the frame's mirror symmetry cannot extend to all 15 points. Floaters are placed at their cell's maximal-clearance point, which pins the whole configuration algebraically.",
+  "David Cantrell's own coordinates for this entry (forwarded by Erich Friedman, September 2026) are on file in the repository: a mirror-symmetric arrangement with 24 tied minimal triples and value 0.02109025…, about 5.2 × 10⁻⁷ below the chiral configuration shown. Local polishing of his coordinates moves directly into the chiral configuration, so the two are the same basin."
  ],
  "changelog": [
   {

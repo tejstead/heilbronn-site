@@ -6,7 +6,15 @@ written to data/canonical/{variant}/nNN.json and committed, so the rest of
 the pipeline — and reviewers — see one schema and reviewable diffs.
 
 Also prints the coverage audit: per row, the chosen source and how our exact
-value relates to Friedman's published (truncated) value.
+value relates to the value published on Friedman's (now offline) pages.
+
+An entry never regresses: the committed canonical row is itself a candidate,
+so if a source directory is overwritten with a lower-valued configuration
+(typically a submission verified against an older main and merged after a
+better one landed in the same directory), the canonical keeps the higher
+coordinates and their provenance, and the overwrite is reported as a
+REGRESSION line on stderr. To lower an entry on purpose, delete its
+data/canonical/ file and re-run.
 """
 
 import json
@@ -37,7 +45,8 @@ CREDIT_RE = re.compile(
 def latest_snapshot():
     snaps = sorted((SOURCES / "friedman").glob("parsed-*.json"))
     if not snaps:
-        sys.exit("no Friedman snapshot — run scripts/friedman_sync.py first")
+        sys.exit("no Friedman snapshot in data/sources/friedman/ (the pages are "
+                 "offline; the vendored parsed-*.json files are the only source)")
     return json.loads(snaps[-1].read_text())
 
 
@@ -234,6 +243,29 @@ def gather_candidates(variant, n):
             }
 
 
+def sticky_candidate(prev):
+    """The committed canonical row as a candidate of its own, carrying the
+    provenance it was built from. None when the row has no coordinates."""
+    if not prev or not prev.get("points") or not prev.get("coordinates_source"):
+        return None
+    src = prev["coordinates_source"]
+    cand = {
+        "points": prev["points"],
+        "kind": src.get("kind"),
+        "ref": src.get("ref"),
+        "note": src.get("note"),
+        "basis": src.get("basis"),
+        "sticky": True,
+    }
+    found = (prev.get("credit") or {}).get("found") or {}
+    if src.get("kind") == "external" and found.get("name"):
+        cand["credit"] = found["name"] + (f", {found['date']}" if found.get("date") else "")
+    poly = (prev.get("value") or {}).get("exact_poly")
+    if poly and poly.get("which") == "coordinate-matched":
+        cand["exact_poly_prev"] = poly
+    return cand
+
+
 def parse_credits(entry):
     """Split Friedman's credit sentences into found/proved records."""
     found = proved = None
@@ -296,6 +328,8 @@ def ingest():
         for n in NS:
             key = f"{variant}/{n}"
             entry = snapshot["variants"][variant].get(str(n))
+            path = outdir / f"n{n:02d}.json"
+            prev = json.loads(path.read_text()) if path.exists() else None
             best = None
             for cand in gather_candidates(variant, n):
                 pts = [(Fraction(x), Fraction(y)) for x, y in cand["points"]]
@@ -306,6 +340,23 @@ def ingest():
                     continue
                 if best is None or res["_value"] > best[1]["_value"]:
                     best = (cand, res)
+            # Never regress (see module docstring): the committed row competes
+            # too, and wins only strictly, so identical literals keep their
+            # source-directory provenance.
+            sticky = sticky_candidate(prev)
+            if sticky is not None:
+                pts = [(Fraction(x), Fraction(y)) for x, y in sticky["points"]]
+                res = verify(variant, pts)
+                if res["feasible"] and (best is None or res["_value"] > best[1]["_value"]):
+                    print(f"  REGRESSION {key}: sources now top out at "
+                          f"{fraction_to_30sig(best[1]['_value'])[:18] if best else 'nothing'} "
+                          f"but the committed canonical holds "
+                          f"{fraction_to_30sig(res['_value'])[:18]} ({sticky['kind']}: "
+                          f"{sticky['ref']}) — keeping the canonical coordinates; a "
+                          f"source directory was overwritten with a lower-valued "
+                          f"configuration. Delete {path.relative_to(ROOT)} to lower "
+                          f"this entry on purpose.", file=sys.stderr)
+                    best = (sticky, res)
 
             window = published_window(entry) if entry else None
             if best is None:
@@ -331,7 +382,6 @@ def ingest():
                 doc = canonical_doc(variant, n, entry, cand, res, rel,
                                     overrides.get(key), changelog.get(key),
                                     refs_by_config.get(key), proof_for(key))
-            path = outdir / f"n{n:02d}.json"
             path.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")
 
     print(f"{'row':<14}{'rel':<8}{'source':<16}value")
@@ -403,9 +453,9 @@ def canonical_doc(variant, n, entry, cand, res, page_relation, override, changel
     # find belongs to the submitter (meta.json credit), not to the holder of
     # the superseded page entry. Only at BEATS: at OK the page's credit is
     # authoritative (external submissions can also be exact realizations of
-    # someone else's known record, e.g. square n=14). If Friedman adopts a
-    # submitted record but credits the wrong person, pin the right credit in
-    # data/curated/overrides.json when reviewing the friedman-watch PR.
+    # someone else's known record, e.g. square n=14). The Packing Center is
+    # offline, so the snapshot never changes; corrections to credits go in
+    # data/curated/overrides.json.
     if (cand and cand.get("kind") == "external" and cand.get("credit")
             and page_relation == "BEATS"):
         m = re.match(r"^(.+?),\s*((?:%s)\s+\d{4}|\d{4})$" % "|".join(MONTHS),
@@ -432,6 +482,11 @@ def canonical_doc(variant, n, entry, cand, res, page_relation, override, changel
             "which": "coordinate-matched",
             "note": "minimal polynomial submitted with the coordinates",
         }
+    elif (cand and cand.get("exact_poly_prev") and res is not None
+            and not doc["value"].get("exact_sympy")
+            and not doc["value"].get("exact_poly")):
+        # Carried over with a sticky canonical row whose exact.json is gone.
+        doc["value"]["exact_poly"] = dict(cand["exact_poly_prev"])
     finalize_exact(doc, res)
     return doc
 

@@ -1,9 +1,10 @@
 # heilbronn-site
 
 Static site for the Heilbronn problem, served at
-<https://math.tejstead.com/heilbronn>. An enhanced take on Erich Friedman's
-[Packing Center pages](https://erich-friedman.github.io/packing/) (squares,
-triangles, convex regions; n = 3–35): downloadable exact coordinates, an
+<https://math.tejstead.com/heilbronn>. It began as an enhanced take on the
+Heilbronn pages of Erich Friedman's Packing Center (squares, triangles,
+convex regions; n = 3–35) and continues those record tables now that the
+Packing Center is offline (since 2026): downloadable exact coordinates, an
 interactive symmetry/congruence viewer, a client-side verifier, proof links,
 and per-n record history.
 
@@ -47,8 +48,9 @@ instant manual pushes and is still required for Caddyfile changes.
 ## Data provenance
 
 Values, credits, and symmetry labels are facts recorded from Erich Friedman's
-pages (snapshot in `data/sources/friedman/`); all figures are regenerated from
-coordinates — none of his images are copied. Coordinates come from
+Packing Center pages before they went offline (frozen parsed snapshot in
+`data/sources/friedman/`, see its `ATTRIBUTION.md`); all figures are
+regenerated from coordinates — none of his images are copied. Coordinates come from
 [TejSteadQC/heilbronn-configurations](https://github.com/TejSteadQC/heilbronn-configurations),
 [spiralulam/heilbronn](https://github.com/spiralulam/heilbronn) (MIT),
 [google-deepmind/alphaevolve_results](https://github.com/google-deepmind/alphaevolve_results),

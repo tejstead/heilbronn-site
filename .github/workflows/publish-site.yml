@@ -55,7 +55,21 @@ jobs:
         run: |
           python -m venv .venv
           .venv/bin/pip install -r requirements.txt
-          .venv/bin/python -m build
+          .venv/bin/python -m build 2> >(tee build.stderr >&2)
+
+      - name: Flag entries a merge tried to lower
+        # ingest keeps the committed canonical when a source directory was
+        # overwritten with a lower-valued configuration (e.g. a submission
+        # verified against an older main and merged after a better one landed
+        # in the same directory). Make that visible instead of silent.
+        run: |
+          if grep -q "REGRESSION" build.stderr; then
+            grep "REGRESSION" build.stderr | while IFS= read -r line; do
+              echo "::warning title=submission overwrote a better record::$line"
+            done
+            { echo "## Overwritten records kept by ingest"; echo; echo '```';
+              grep "REGRESSION" build.stderr; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Commit regenerated canonical data (if ingest changed it)
         # Keeps the committed data/canonical/ in sync with what the deployed

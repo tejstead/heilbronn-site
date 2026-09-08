@@ -5,43 +5,23 @@
  "frame": "right",
  "points": [
   [
-   "0.06153043694148",
-   "0.06153043694148"
-  ],
-  [
-   "0.87693912611704",
-   "0.06153043694148"
-  ],
-  [
-   "0.06153043694148",
-   "0.87693912611704"
-  ],
-  [
    "0.24805329455881",
    "0"
   ],
   [
-   "0.75194670544119",
-   "0.24805329455881"
-  ],
-  [
    "0",
-   "0.75194670544119"
-  ],
-  [
-   "0.400934406562155",
-   "0.19813118687569"
-  ],
-  [
-   "0.400934406562155",
-   "0.400934406562155"
+   "0.24805329455881"
   ],
   [
    "0.19813118687569",
    "0.400934406562155"
   ],
   [
-   "0",
+   "0.06153043694148",
+   "0.87693912611704"
+  ],
+  [
+   "0.75194670544119",
    "0.24805329455881"
   ],
   [
@@ -49,8 +29,28 @@
    "0"
   ],
   [
+   "0.400934406562155",
+   "0.19813118687569"
+  ],
+  [
+   "0.06153043694148",
+   "0.06153043694148"
+  ],
+  [
+   "0",
+   "0.75194670544119"
+  ],
+  [
    "0.24805329455881",
    "0.75194670544119"
+  ],
+  [
+   "0.400934406562155",
+   "0.400934406562155"
+  ],
+  [
+   "0.87693912611704",
+   "0.06153043694148"
   ]
  ],
  "value": {
@@ -75,12 +75,12 @@
  },
  "proof": null,
  "coordinates_source": {
-  "kind": "reconstructed",
-  "ref": "heilbronn-site reconstruct/reconstruct.py",
-  "note": "reconstructed by local optimization; matches published value 0.0310+ and symmetry (3-fold dihedral symmetry)",
-  "basis": "value-and-symmetry"
+  "kind": "external",
+  "ref": "David Cantrell's original coordinates (Mathematica list), forwarded by Erich Friedman, September 2026",
+  "note": "Original author's arrangement for the entry, previously shown only as a reconstruction; Cantrell's literals converge to the same configuration under local polishing, and the literals here are that arrangement tightened to 15 decimals.",
+  "basis": null
  },
- "coordinates_reconstructed": true,
+ "coordinates_reconstructed": false,
  "symmetry": {
   "label": "Completely symmetric"
  },
@@ -94,8 +94,8 @@
   "value_fraction": "62009563487050626695543477/2000000000000000000000000000",
   "min_triple": [
    0,
-   3,
-   9
+   1,
+   7
   ],
   "num_min_ties": 21,
   "feasible": true,

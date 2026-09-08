@@ -68,8 +68,8 @@
 </figure>
 {% else %}
 <div class="placeholder-fig">
-  <p>Coordinates for this configuration are not publicly available yet.
-  The published figure is on <a href="{{ friedman_url }}">Friedman's page</a>.</p>
+  <p>Coordinates for this configuration are not publicly available. The
+  only published figure was on Friedman's page, which is no longer online.</p>
 </div>
 {% endif %}
 
@@ -184,7 +184,6 @@
 <nav class="cross-links">
   <span>Same n elsewhere:</span>
   {% for x in cross %}<a href="{{ base }}/{{ x.slug }}/{{ n }}/">{{ x.title }}</a>{% endfor %}
-  <a href="{{ friedman_url }}">Friedman's page</a>
 </nav>
 
 {% if figure %}<script src="{{ base }}/assets/{{ assets['viewer.js'] }}" defer></script>{% endif %}

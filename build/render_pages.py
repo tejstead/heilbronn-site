@@ -33,7 +33,6 @@ META = {
             "triangle determined by any three of them has area A as large as "
             "possible. Optimality is proven for n ≤ 9; every later entry is a "
             "best known configuration.</p>"),
-        "friedman": "https://erich-friedman.github.io/packing/heilbronn/",
     },
     "triangle": {
         "title": "The Heilbronn problem for triangles",
@@ -47,7 +46,6 @@ META = {
             "drawn equilateral. Papers that use the unit <em>right</em> triangle "
             "(area ½) quote values half as large as these. Optimality is proven "
             "for n ≤ 8.</p>"),
-        "friedman": "https://erich-friedman.github.io/packing/heiltri/",
     },
     "convex": {
         "title": "The Heilbronn problem for convex regions",
@@ -59,8 +57,7 @@ META = {
             "lie in <em>any</em> convex region of unit area. The optimal region is the "
             "convex hull of the points, so every configuration is a polygon and "
             "A is the smallest triangle area divided by the hull area. Settled "
-            "for n ≤ 7.</p>"),
-        "friedman": "https://erich-friedman.github.io/packing/heilconvex/",
+            "for n ≤ 8.</p>"),
     },
 }
 
@@ -135,8 +132,8 @@ def fmt_dec(dec, limit=18):
 
 def fixed8(doc):
     """Uniform 8-decimal rendering for the values table (truncated, which
-    keeps every entry a valid lower bound). Rows known only from Friedman's
-    truncated decimal keep his short form + '+' — padding them with zeros
+    keeps every entry a valid lower bound). Rows known only from the Packing
+    Center's truncated decimal keep its short form + '+' — padding them with zeros
     would fake precision we don't have."""
     d = doc["value"].get("exact_decimal") or doc["value"]["decimal"]
     if d is None:
@@ -200,10 +197,11 @@ def provenance_lines(doc, derived):
             f"enumerated, {v['num_min_ties']} tied at the minimum.")
     if doc["value"].get("published"):
         if doc.get("page_relation") == "BEATS":
-            lines.append(f"Friedman's page still lists the previous record: "
+            lines.append(f"The Packing Center's last table listed the previous record: "
                          f"<code>{doc['value']['published']}</code>.")
         else:
-            lines.append(f"Friedman's page lists: <code>{doc['value']['published']}</code>.")
+            lines.append(f"The Packing Center's last table listed: "
+                         f"<code>{doc['value']['published']}</code>.")
     return lines
 
 
@@ -214,10 +212,10 @@ def banner_for(doc):
     if rel == "BEHIND":
         return {"kind": "behind", "text": (
             f"The published record is <code>{pub}+</code> ({holder}). Neither its "
-            f"coordinates nor a current figure are public — the page's figure shows "
-            f"an older configuration — so the record cannot be reconstructed from "
-            f"published information. Shown here: the best exactly verified "
-            f"configuration.")}
+            f"coordinates nor a current figure were ever public — the Packing "
+            f"Center's figure showed an older configuration — so the record cannot "
+            f"be reconstructed from published information. Shown here: the best "
+            f"exactly verified configuration.")}
     if rel == "BEATS":
         if doc.get("page_note"):
             return {"kind": "beats", "text": doc["page_note"]}
@@ -226,17 +224,17 @@ def banner_for(doc):
         m = re.search(r"(claims-\d{4}-\d{2}-\d{2})", ref)
         if m:
             return {"kind": "beats", "text": (
-                f"These coordinates exceed the page's <code>{pub}+</code>; they were "
-                f"submitted for review (batch <code>{m.group(1)}</code>) and the page "
-                f"has not been updated yet.")}
+                f"These coordinates exceed the last published record "
+                f"<code>{pub}+</code>; they were submitted to the Packing Center "
+                f"(batch <code>{m.group(1)}</code>) before it went offline.")}
         if kind == "reconstructed":
             return {"kind": "beats", "text": (
                 f"Re-deriving the record figure produced coordinates exceeding the "
                 f"published <code>{pub}+</code> — an unsubmitted refinement of the "
                 f"record holder's arrangement.")}
         return {"kind": "beats", "text": (
-            f"These coordinates exceed the published <code>{pub}+</code> "
-            f"(improvement pending review).")}
+            f"These coordinates exceed the last published record "
+            f"<code>{pub}+</code>.")}
     return None
 
 
@@ -256,17 +254,17 @@ def symmetry_text(doc, derived):
         txt += f" The record configuration is listed as: {label.lower()}."
     elif label and not _same_symmetry_label(det, label):
         if doc.get("page_relation") == "BEATS":
-            # His page still shows the superseded configuration — its label
+            # The last table showed the superseded configuration — its label
             # describes a different arrangement, not a disagreement about ours.
-            txt += (f" Friedman's page still shows the previous record "
+            txt += (f" The Packing Center's last table showed the previous record "
                     f"(listed as: {label.lower()}).")
         else:
-            txt += f" (Friedman's page says: {label.lower()}.)"
+            txt += f" (The Packing Center's table said: {label.lower()}.)"
     return txt
 
 
 def _same_symmetry_label(a, b):
-    """Friedman's convex pages write "No symmetry" where the square/triangle
+    """Friedman's convex page wrote "No symmetry" where the square/triangle
     pages (and our labels) say "Not symmetric" — the same statement."""
     def norm(s):
         s = s.rstrip(".").strip().lower()
@@ -408,7 +406,6 @@ def render_all(env, docs, derived_map, assets):
             prev=avail[idx - 1] if idx > 0 else None,
             next=avail[idx + 1] if idx + 1 < len(avail) else None,
             cross=[{"slug": w, "title": META[w]["short"]} for w in VARIANTS if w != v and (w, n) in docs],
-            friedman_url=META[v]["friedman"],
         )
         out = DIST / v / str(n) / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -529,8 +526,7 @@ data; the pages you're reading are static files. The generator, the data,
 the verification and search code, and the deployment all live in one public
 repository, <a href="https://github.com/tejstead/heilbronn-site">tejstead/heilbronn-site</a>:
 every value shown here can be reproduced from what is in that tree. Merges
-to it deploy automatically; the record tables are re-checked daily against
-Friedman's pages.</p>
+to it deploy automatically.</p>
 
 <h2>Where the coordinates come from</h2>
 <ul>
@@ -603,20 +599,22 @@ re-verified by CI, and the in-browser
 <a href="/heilbronn/verifier/">verifier</a> runs the same computation.</p>
 
 <h2>Normalization conventions</h2>
-<p>Values here follow Friedman's pages: the container has <strong>unit
-area</strong>. Beware when comparing with papers: work in the unit
+<p>Values here follow the Packing Center's convention: the container has
+<strong>unit area</strong>. Beware when comparing with papers: work in the unit
 <em>right</em> triangle (area ½) quotes triangle values half as large, and the
 retired circle variant used a unit-<em>radius</em> disk (area π). The triangle
 problem is affine-invariant, so coordinates are stored in the right frame
 (0,0),(1,0),(0,1) and displayed equilateral.</p>
 
 <h2>Attribution</h2>
-<p>This site is an enhanced presentation of the record tables curated for
-decades by <a href="https://erich-friedman.github.io/packing/">Erich
-Friedman</a>; values, credits and symmetry labels are recorded from his
-pages, and each configuration page links back to its row. His images are not
-reproduced — every figure is regenerated from coordinates. Who holds what is
-tallied on the <a href="/heilbronn/leaderboard/">leaderboard</a>.</p>
+<p>This site grew out of the Heilbronn record tables Erich Friedman curated
+for decades at his Packing Center. Those pages went offline in 2026; the
+values, credits and symmetry labels here were recorded from them while they
+were up (the last parsed snapshot is vendored in the repository under
+<code>data/sources/friedman/</code>), and the tables are continued here.
+His images are not reproduced — every figure is regenerated from
+coordinates. Who holds what is tallied on the
+<a href="/heilbronn/leaderboard/">leaderboard</a>.</p>
 """
 
 
@@ -625,7 +623,7 @@ tallied on the <a href="/heilbronn/leaderboard/">leaderboard</a>.</p>
 def missing_coords(docs):
     """The wanted list: entries whose record coordinates are not on file.
     - gap: no coordinates at all (value known only from the page)
-    - behind: the page's record exceeds every verified source we hold
+    - behind: the published record exceeds every verified source we hold
     - wanted: shown as a reconstruction with NO independent source — the
       original arrangement exists only with its finder."""
     gap, behind, wanted = [], [], []

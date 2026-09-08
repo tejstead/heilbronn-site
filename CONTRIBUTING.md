@@ -122,6 +122,13 @@ After merge, `build/ingest.py` picks the best source per entry by exact
 value, regenerates `data/canonical/`, and the site rebuilds and deploys
 automatically — your configuration is live within about ten minutes.
 
+Merging never lowers an entry. The check compares your coordinates against
+`main` as it was when the check ran; if a better configuration lands in the
+same directory before your PR is merged, the build keeps the higher-valued
+coordinates (the committed canonical entry competes as a candidate of its
+own and the overwrite is flagged in the build log). Rebase and re-check if
+you believe you still improve on it.
+
 ## Checklist for automated agents
 
 1. One directory per configuration under `data/sources/external/`, named

@@ -140,7 +140,7 @@
     "date": "1995"
    }
   },
-  "page_note": "Friedman's page credits only the configuration (Cantrell, 2007); the value itself was settled in 1995 — Dress, Yang and Zeng proved that any six points in a convex body K span a triangle of area at most |K|/6, and that 1/6 is sharp."
+  "page_note": "The Packing Center credited only the configuration (Cantrell, 2007); the value itself was settled in 1995 — Dress, Yang and Zeng proved that any six points in a convex body K span a triangle of area at most |K|/6, and that 1/6 is sharp."
  },
  "convex/7": {
   "value": {
@@ -176,10 +176,10 @@
   }
  },
  "square/17": {
-  "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the page's value <code>.016481+</code>. Submitted to Erich Friedman and open as PR #1 on the companion repository since 2026-08-03."
+  "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the last published record <code>.016481+</code>. Submitted to Erich Friedman in August 2026 (PR #1 on the companion repository); the Packing Center went offline before recording it."
  },
  "square/22": {
-  "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the page's value <code>.009569+</code>. Submitted to Erich Friedman and open as PR #1 on the companion repository since 2026-08-03."
+  "page_note": "Verified improvement by <strong>Chouaieb Nemri</strong> (AlphaEvolve, Google Cloud): these coordinates exceed the last published record <code>.009569+</code>. Submitted to Erich Friedman in August 2026 (PR #1 on the companion repository); the Packing Center went offline before recording it."
  },
  "triangle/15": {
   "value": {
@@ -192,7 +192,8 @@
   },
   "notes": [
    "The tight structure splits 12 + 3: twelve points form a mirror-symmetric frame carrying all 15 minimal triples — the exact critical point of its tie system, with coordinates algebraic of degree 5 — while the other three are floaters whose every triple stays ≥ 1.0178× the minimum.",
-   "Each floater is confined to a triangular cell of diameter ≈ 0.003; the six such cells form two mirror-image orbits and the floaters must occupy alternating cells, so the configuration is chiral — the frame's mirror symmetry cannot extend to all 15 points. Floaters are placed at their cell's maximal-clearance point, which pins the whole configuration algebraically."
+   "Each floater is confined to a triangular cell of diameter ≈ 0.003; the six such cells form two mirror-image orbits and the floaters must occupy alternating cells, so the configuration is chiral — the frame's mirror symmetry cannot extend to all 15 points. Floaters are placed at their cell's maximal-clearance point, which pins the whole configuration algebraically.",
+   "David Cantrell's own coordinates for this entry (forwarded by Erich Friedman, September 2026) are on file in the repository: a mirror-symmetric arrangement with 24 tied minimal triples and value 0.02109025…, about 5.2 × 10⁻⁷ below the chiral configuration shown. Local polishing of his coordinates moves directly into the chiral configuration, so the two are the same basin."
   ]
  },
  "square/10": {
