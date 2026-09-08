@@ -268,7 +268,12 @@
  },
  "convex/9": {
   "notes": [
-   "David Cantrell's original coordinates for this entry (2007) are on file in the repository: mirror-symmetric, with the same 11 tied minimal triples and the same value to 10⁻¹⁵. The coordinates shown are this site's re-derivation of that optimum, which breaks the mirror symmetry only at rounding level."
+   "David Cantrell's original mirror-symmetric coordinates (2007), tightened to 15 decimals; this site's earlier asymmetric re-derivation of the same optimum differed only at rounding level."
   ]
+ },
+ "square/20": {
+  "symmetry": {
+   "label": "90° Rotationally symmetric"
+  }
  }
 }

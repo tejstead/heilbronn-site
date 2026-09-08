@@ -5,45 +5,45 @@
  "frame": "free",
  "points": [
   [
-   "-0.978143313864012",
-   "0.251963288405615"
+   "-0.000012895408779",
+   "0.296579224073412"
   ],
   [
-   "1.154064770213658",
-   "-0.319911253495731"
+   "0.434924155152327",
+   "0.999994338889454"
   ],
   [
-   "0.316952722982959",
-   "0.599958673097161"
+   "0.99999589779069",
+   "0.488035188537805"
   ],
   [
-   "-0.555956326574031",
-   "-0.63212140271807"
+   "0.257281939479396",
+   "-1.000005565400091"
   ],
   [
-   "-0.53241073469228",
-   "0.641322313326714"
+   "0.885978174478175",
+   "-0.255961307841494"
   ],
   [
-   "0.51606855210519",
-   "-0.599686540838394"
+   "-0.434923591645804",
+   "0.999994159563876"
   ],
   [
-   "-0.989916485794449",
-   "-0.384778904698857"
+   "-1.000014645211402",
+   "0.488034804927121"
   ],
   [
-   "1.050437376849919",
-   "0.181897418207972"
+   "-0.257356317890861",
+   "-1.000005686732035"
   ],
   [
-   "0.171386768168136",
-   "0.074609941595343"
+   "-0.886024699361344",
+   "-0.255961725611752"
   ]
  ],
  "value": {
-  "decimal": "0.0640647523079415295202316672673",
-  "fraction": "93077583085619256136431357545/1452867290241302746159233367836",
+  "decimal": "0.0640647523079406469924619654015",
+  "fraction": "382913563835362469220826185375/5976977199487297529092352951104",
   "published": "A = .0640+",
   "published_decimal": "0.0640",
   "published_lower_bound": true,
@@ -63,29 +63,29 @@
  },
  "proof": null,
  "coordinates_source": {
-  "kind": "reconstructed",
-  "ref": "heilbronn-site reconstruct/reconstruct.py",
-  "note": "reconstructed by local optimization; matches published value 0.0640+",
-  "basis": "value-and-symmetry"
+  "kind": "external",
+  "ref": "David Cantrell's Mathematica notebook UltimateHeilbronn.nb (2007), received September 2026",
+  "note": "Original author's mirror-symmetric arrangement, tightened to 15 decimals here; the site's earlier re-derivation of the same optimum scores higher by only 1e-15, through a rounding-level break of the symmetry.",
+  "basis": null
  },
- "coordinates_reconstructed": true,
+ "coordinates_reconstructed": false,
  "symmetry": {
   "label": "2-fold symmetry"
  },
  "notes": [
-  "David Cantrell's original coordinates for this entry (2007) are on file in the repository: mirror-symmetric, with the same 11 tied minimal triples and the same value to 10⁻¹⁵. The coordinates shown are this site's re-derivation of that optimum, which breaks the mirror symmetry only at rounding level."
+  "David Cantrell's original mirror-symmetric coordinates (2007), tightened to 15 decimals; this site's earlier asymmetric re-derivation of the same optimum differed only at rounding level."
  ],
  "changelog": [],
  "references": [],
  "verify": {
   "n": 9,
   "triples_checked": 84,
-  "value": "0.0640647523079415295202316672673",
-  "value_fraction": "93077583085619256136431357545/1452867290241302746159233367836",
+  "value": "0.0640647523079406469924619654015",
+  "value_fraction": "382913563835362469220826185375/5976977199487297529092352951104",
   "min_triple": [
-   6,
-   7,
-   8
+   0,
+   3,
+   5
   ],
   "num_min_ties": 11,
   "feasible": true,
