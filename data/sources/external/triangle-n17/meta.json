@@ -1,5 +1,5 @@
 {
- "ref": "Original full-precision coordinates of Nathan Sudermann-Merx's August 2026 record submissions",
- "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "Original author's full-precision coordinates for the entry credited to Sudermann-Merx (August 2026). orbit-seeded searcher (LP relocation, min-norm ascent), finished by sign-fixed cell QCP and equal-critical-area continuation"
+ "ref": "heilbronn-site reconstruct/reconstruct.py \u2014 re-polish of the triangle n=17 record figure",
+ "credit": "Tej Stead, September 2026",
+ "note": "Sudermann-Merx's August 2026 arrangement re-polished to convergence: 0.0155336750 against 0.0155311479 for his submitted coordinates (+0.016%), 29 tied minimal triples (his coordinates: 26)."
 }
