@@ -1,5 +1,5 @@
 {
- "ref": "autoheilbronn v6 campaign; two independent exact rational verifiers",
- "credit": "Rhys Chappell, September 2026",
- "note": "Derived from Nathan Sudermann-Merx's n=32 construction by point deletion and basin exploration, followed by trust-region linear programming."
+ "ref": "heilbronn-site search/refine.py \u2014 square n=32 record minus one point, re-polished",
+ "credit": "Tej Stead, September 2026",
+ "note": "Marc-Emmanuel Coupvent des Graviers' n=32 configuration with one point deleted and re-polished; removing a point cannot lower the minimum area, and the n=32 value already exceeded the n=31 record."
 }
