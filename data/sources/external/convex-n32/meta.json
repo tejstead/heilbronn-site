@@ -1,5 +1,5 @@
 {
- "ref": "spiralulam geometry-problems record_hunt pipeline",
- "credit": "Nathan Sudermann-Merx, August 2026",
- "note": "C basin hopping with stress-weighted ruin and recreate, hardened by trust-region SLP, continuation and null-space excursions"
+ "ref": "heilbronn-site search/ — square n=32 record scored as a convex configuration",
+ "credit": "Tej Stead, September 2026",
+ "note": "Marc-Emmanuel Coupvent des Graviers's square n=32 configuration, unchanged. Only eight of its points lie on the boundary, so its convex hull is an octagon of area 0.994, and dividing by hull area lifts the value 0.53% above the previous convex record. D4 symmetric; 64 tied minimal triangles against 58 degrees of freedom, so it is rigid in the free frame too: trust-region polish and basin hopping under the convex objective find no improvement."
 }
