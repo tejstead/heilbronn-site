@@ -3,7 +3,7 @@
 Static site for the Heilbronn problem, served at
 <https://math.tejstead.com/heilbronn>. It began as an enhanced take on the
 Heilbronn pages of Erich Friedman's Packing Center (squares, triangles,
-convex regions; n = 3–35) and continues those record tables now that the
+convex regions; n = 3–35, squares now to 36) and continues those record tables now that the
 Packing Center is offline (since 2026): downloadable exact coordinates, an
 interactive symmetry/congruence viewer, a client-side verifier, proof links,
 and per-n record history.

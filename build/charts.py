@@ -103,7 +103,7 @@ def build_charts(docs):
     a_series, a2_series, tie_series = {}, {}, {}
     for v in ("square", "triangle", "convex"):
         a, a2, t = [], [], []
-        for n in range(3, 36):
+        for n in range(3, 37):
             d = docs.get((v, n))
             if not d or not d["points"]:
                 continue

@@ -31,7 +31,16 @@ CURATED = ROOT / "data" / "curated"
 CANONICAL = ROOT / "data" / "canonical"
 
 VARIANTS = ("square", "triangle", "convex")
-NS = range(3, 36)
+# Per-variant n range: the square table runs to 36 (AlphaEvolve submission),
+# the other two stop at 35.
+N_MAX = {"square": 36, "triangle": 35, "convex": 35}
+
+
+def ns(variant):
+    return range(3, N_MAX[variant] + 1)
+
+
+NS = range(3, max(N_MAX.values()) + 1)
 
 FRAMES = {"square": "unit-square", "triangle": "right", "convex": "free"}
 
@@ -325,7 +334,7 @@ def ingest():
     for variant in VARIANTS:
         outdir = CANONICAL / variant
         outdir.mkdir(parents=True, exist_ok=True)
-        for n in NS:
+        for n in ns(variant):
             key = f"{variant}/{n}"
             entry = snapshot["variants"][variant].get(str(n))
             path = outdir / f"n{n:02d}.json"

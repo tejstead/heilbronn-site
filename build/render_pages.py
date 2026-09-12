@@ -19,7 +19,7 @@ CANONICAL = ROOT / "data" / "canonical"
 DIST = ROOT / "dist" / "heilbronn"
 
 VARIANTS = ("square", "triangle", "convex")
-NS = list(range(3, 36))
+NS = list(range(3, 37))  # union over variants; missing docs are skipped
 BASE = "/heilbronn"
 
 META = {
@@ -503,7 +503,7 @@ regulars merge automatically once verification passes and are live minutes
 later. Recent records arrived this way from Nathan Sudermann-Merx, Rhys
 Chappell, and Chouaieb Nemri.</li>
 <li><a href="https://github.com/TejSteadQC/heilbronn-configurations">TejSteadQC/heilbronn-configurations</a>
-— the working repository for this site's own record campaigns (n = 17…35
+— the working repository for this site's own record campaigns (n = 17…36
 across the variants and batches below that); its search toolkit is vendored
 here under <code>search/</code>.</li>
 <li><a href="https://github.com/cnemri/heilbronn-alphaevolve">cnemri/heilbronn-alphaevolve</a>
