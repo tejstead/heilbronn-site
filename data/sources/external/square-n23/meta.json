@@ -1,5 +1,5 @@
 {
- "ref": "autoheilbronn v4 topology/annealing campaign; exact rational verification",
- "credit": "Rhys Chappell, September 2026",
- "note": "Line-arrangement-guided insertion and stress-weighted ruin/recreate, followed by filtered trust-region SLP polishing; GPU annealing was also used where recorded in the result provenance."
+ "ref": "heilbronn-site search/refine.py \u2014 square n=24 record minus one point, re-polished",
+ "credit": "Tej Stead, September 2026",
+ "note": "Ilkyoo Choi's n=24 configuration with one point deleted and re-polished. Removing a point cannot lower the minimum area, and the n=24 value sat only 1% below the n=23 record."
 }
