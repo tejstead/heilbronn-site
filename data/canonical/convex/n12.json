@@ -56,9 +56,6 @@
  "value": {
   "decimal": "0.0392156862745098039215686274270",
   "fraction": "9622504486493762741819146336150998205402494903272341463/245373864405590949916388231721666666666666666666666666667",
-  "published": "A = 2/51 = .0392+",
-  "published_decimal": "0.0392",
-  "published_lower_bound": true,
   "exact_text": "2/51",
   "exact_sympy": "2/51",
   "minimal_polynomial": null,
@@ -67,7 +64,6 @@
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>2</mn></mrow><mrow><mn>51</mn></mrow></mfrac></math>"
  },
  "status": "record",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "David Cantrell",

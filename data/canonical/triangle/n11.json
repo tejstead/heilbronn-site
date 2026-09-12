@@ -52,15 +52,11 @@
  "value": {
   "decimal": "0.036529889880029800850674405395",
   "fraction": "7305977976005960170134881079/200000000000000000000000000000",
-  "published": "A = .03652+",
-  "published_decimal": "0.03652",
-  "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "AlphaEvolve",

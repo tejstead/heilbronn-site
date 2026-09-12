@@ -1,0 +1,1297 @@
+{
+ "square/3": {
+  "decimal": "0.5",
+  "lower_bound": false,
+  "exact_text": "1/2",
+  "found": null,
+  "proved": null,
+  "trivial": true,
+  "symmetry": "Symmetric about a diagonal",
+  "notes": [
+   "One of an infinite family of solutions."
+  ]
+ },
+ "square/4": {
+  "decimal": "0.5",
+  "lower_bound": false,
+  "exact_text": "1/2",
+  "found": null,
+  "proved": null,
+  "trivial": true,
+  "symmetry": "Completely symmetric",
+  "notes": []
+ },
+ "square/5": {
+  "decimal": "0.19245",
+  "lower_bound": true,
+  "exact_text": "√3 / 9",
+  "found": null,
+  "proved": {
+   "name": "Yang Lu, Zhang Jingzhong, and Zeng Zhenbing",
+   "date": "1991"
+  },
+  "trivial": false,
+  "symmetry": "Symmetric about a diagonal",
+  "notes": []
+ },
+ "square/6": {
+  "decimal": "0.125",
+  "lower_bound": false,
+  "exact_text": "1/8",
+  "found": null,
+  "proved": {
+   "name": "A. Dress, L. Yang, and Z. B. Zeng",
+   "date": "1995"
+  },
+  "trivial": false,
+  "symmetry": "Vertically and horizontally symmetric",
+  "notes": [
+   "One of an infinite family of solutions."
+  ]
+ },
+ "square/7": {
+  "decimal": "0.08386",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "F. Comellas and J. Yebra",
+   "date": "December 2001"
+  },
+  "proved": {
+   "name": "Zhenbing Chen and Liangyu Chen",
+   "date": "2011"
+  },
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/8": {
+  "decimal": "0.07237",
+  "lower_bound": true,
+  "exact_text": "(√13-1) / 36",
+  "found": {
+   "name": "F. Comellas and J. Yebra",
+   "date": "December 2001"
+  },
+  "proved": {
+   "name": "L. Dehbi and Z. Zeng",
+   "date": "2022"
+  },
+  "trivial": false,
+  "symmetry": "180° Rotationally symmetric",
+  "notes": []
+ },
+ "square/9": {
+  "decimal": "0.05487",
+  "lower_bound": true,
+  "exact_text": "(9√65-55) / 320",
+  "found": {
+   "name": "F. Comellas and J. Yebra",
+   "date": "December 2001"
+  },
+  "proved": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "March 2026"
+  },
+  "trivial": false,
+  "symmetry": "Symmetric about a diagonal",
+  "notes": []
+ },
+ "square/10": {
+  "decimal": "0.04654",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "F. Comellas and J. Yebra",
+   "date": "December 2001"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Symmetric about both diagonals",
+  "notes": []
+ },
+ "square/11": {
+  "decimal": "0.03704",
+  "lower_bound": true,
+  "exact_text": "1/27",
+  "found": {
+   "name": "Michael Goldberg",
+   "date": "1972"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Horizontally symmetric",
+  "notes": []
+ },
+ "square/12": {
+  "decimal": "0.03260",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "F. Comellas and J. Yebra",
+   "date": "December 2001"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Completely symmetric",
+  "notes": []
+ },
+ "square/13": {
+  "decimal": "0.02702",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Peter Karpov",
+   "date": "August 2011"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/14": {
+  "decimal": "0.02430",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Mark Beyleveld",
+   "date": "August 2006"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Vertically and horizontally symmetric",
+  "notes": []
+ },
+ "square/15": {
+  "decimal": "0.02121",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/16": {
+  "decimal": "0.02053",
+  "lower_bound": true,
+  "exact_text": "7 / 341",
+  "found": {
+   "name": "Mark Beyleveld",
+   "date": "August 2006"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "180° Rotationally symmetric",
+  "notes": []
+ },
+ "square/17": {
+  "decimal": "0.016481",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "July 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/18": {
+  "decimal": "0.01498",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/19": {
+  "decimal": "0.01394",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/20": {
+  "decimal": "0.01291",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "William Shanley",
+   "date": "July 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "180° Rotationally symmetric",
+  "notes": []
+ },
+ "square/21": {
+  "decimal": "0.01117",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/22": {
+  "decimal": "0.009569",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Symmetric with respect to both diagonals",
+  "notes": []
+ },
+ "square/23": {
+  "decimal": "0.009112",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/24": {
+  "decimal": "0.008495",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Marc-Emmanuel Coupvent des Graviers",
+   "date": "July 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Completely symmetric",
+  "notes": []
+ },
+ "square/25": {
+  "decimal": "0.007733",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/26": {
+  "decimal": "0.007078",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/27": {
+  "decimal": "0.006790",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Marc-Emmanuel Coupvent des Graviers",
+   "date": "July 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/28": {
+  "decimal": "0.006775",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Marc-Emmanuel Coupvent des Graviers",
+   "date": "July 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Completely symmetric",
+  "notes": []
+ },
+ "square/29": {
+  "decimal": "0.005669",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/30": {
+  "decimal": "0.005445",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/31": {
+  "decimal": "0.005362",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/32": {
+  "decimal": "0.004690",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/33": {
+  "decimal": "0.004269",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/34": {
+  "decimal": "0.004004",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "square/35": {
+  "decimal": "0.003716",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/3": {
+  "decimal": "1",
+  "lower_bound": false,
+  "exact_text": null,
+  "found": null,
+  "proved": null,
+  "trivial": true,
+  "symmetry": "Completely symmetric",
+  "notes": []
+ },
+ "triangle/4": {
+  "decimal": "0.333",
+  "lower_bound": true,
+  "exact_text": "1/3",
+  "found": null,
+  "proved": null,
+  "trivial": true,
+  "symmetry": "Completely symmetric",
+  "notes": []
+ },
+ "triangle/5": {
+  "decimal": "0.171",
+  "lower_bound": true,
+  "exact_text": "3 - 2√2",
+  "found": null,
+  "proved": {
+   "name": "Royce Peng",
+   "date": "1989"
+  },
+  "trivial": false,
+  "symmetry": "Horizontally symmetric",
+  "notes": [
+   "One of an infinite family of solutions."
+  ]
+ },
+ "triangle/6": {
+  "decimal": "0.125",
+  "lower_bound": false,
+  "exact_text": "1/8",
+  "found": {
+   "name": "L. Yang, J. Z. Zhang, and Z. B. Zeng",
+   "date": "1991"
+  },
+  "proved": {
+   "name": "L. Yang, J. Z. Zhang, and Z. B. Zeng",
+   "date": "1994"
+  },
+  "trivial": false,
+  "symmetry": "Horizontally symmetric",
+  "notes": [
+   "One of an infinite family of solutions."
+  ]
+ },
+ "triangle/7": {
+  "decimal": "0.0972",
+  "lower_bound": true,
+  "exact_text": "7/72",
+  "found": {
+   "name": "David Cantrell",
+   "date": "July 2006"
+  },
+  "proved": {
+   "name": "Z. Zeng and L. Chen",
+   "date": "2019"
+  },
+  "trivial": false,
+  "symmetry": "120° Rotationally symmetric",
+  "notes": []
+ },
+ "triangle/8": {
+  "decimal": "0.0677",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "David Cantrell",
+   "date": "July 2006"
+  },
+  "proved": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "2026"
+  },
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/9": {
+  "decimal": "0.0548",
+  "lower_bound": true,
+  "exact_text": "43/784",
+  "found": {
+   "name": "David Cantrell",
+   "date": "July 2006"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "120° Rotationally symmetric",
+  "notes": []
+ },
+ "triangle/10": {
+  "decimal": "0.0433",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/11": {
+  "decimal": "0.03652",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "AlphaEvolve",
+   "date": "June 2025"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Reflectional symmetry",
+  "notes": []
+ },
+ "triangle/12": {
+  "decimal": "0.0310",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "David Cantrell",
+   "date": "July 2006"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Completely symmetric",
+  "notes": []
+ },
+ "triangle/13": {
+  "decimal": "0.02655",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "July 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/14": {
+  "decimal": "0.0237",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/15": {
+  "decimal": "0.0210",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "120° Rotationally symmetric",
+  "notes": []
+ },
+ "triangle/16": {
+  "decimal": "0.0179",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "120° Rotationally symmetric",
+  "notes": []
+ },
+ "triangle/17": {
+  "decimal": "0.01553",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/18": {
+  "decimal": "0.01489",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Fully symmetric",
+  "notes": []
+ },
+ "triangle/19": {
+  "decimal": "0.01201",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/20": {
+  "decimal": "0.01119",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/21": {
+  "decimal": "0.01090",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/22": {
+  "decimal": "0.009575",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/23": {
+  "decimal": "0.009269",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/24": {
+  "decimal": "0.008985",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Fully symmetric",
+  "notes": []
+ },
+ "triangle/25": {
+  "decimal": "0.007174",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/26": {
+  "decimal": "0.006530",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/27": {
+  "decimal": "0.006361",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/28": {
+  "decimal": "0.005702",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/29": {
+  "decimal": "0.005410",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/30": {
+  "decimal": "0.005098",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/31": {
+  "decimal": "0.004755",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/32": {
+  "decimal": "0.004177",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/33": {
+  "decimal": "0.003973",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/34": {
+  "decimal": "0.003758",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "triangle/35": {
+  "decimal": "0.003613",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "Not symmetric",
+  "notes": []
+ },
+ "convex/3": {
+  "decimal": "1",
+  "lower_bound": false,
+  "exact_text": null,
+  "found": null,
+  "proved": null,
+  "trivial": true,
+  "symmetry": "3-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/4": {
+  "decimal": "0.500",
+  "lower_bound": false,
+  "exact_text": "1/2",
+  "found": null,
+  "proved": null,
+  "trivial": true,
+  "symmetry": "4-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/5": {
+  "decimal": "0.276",
+  "lower_bound": true,
+  "exact_text": "(5 - √5) / 10",
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "5-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/6": {
+  "decimal": "0.166",
+  "lower_bound": true,
+  "exact_text": "1/6",
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "6-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/7": {
+  "decimal": "0.111",
+  "lower_bound": true,
+  "exact_text": "1/9",
+  "found": null,
+  "proved": {
+   "name": "Zhenbing Zeng and Lu Yang",
+   "date": "1995"
+  },
+  "trivial": false,
+  "symmetry": "3-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/8": {
+  "decimal": "0.0800",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "2-fold symmetry",
+  "notes": []
+ },
+ "convex/9": {
+  "decimal": "0.0640",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "2-fold symmetry",
+  "notes": []
+ },
+ "convex/10": {
+  "decimal": "0.0519",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "2-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/11": {
+  "decimal": "0.0425",
+  "lower_bound": true,
+  "exact_text": "2/47",
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "2-fold symmetry",
+  "notes": []
+ },
+ "convex/12": {
+  "decimal": "0.0392",
+  "lower_bound": true,
+  "exact_text": "2/51",
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "3-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/13": {
+  "decimal": "0.03093",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/14": {
+  "decimal": "0.02783",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "AlphaEvolve",
+   "date": "June 2025"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/15": {
+  "decimal": "0.02456",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "July 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/16": {
+  "decimal": "0.0222",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "David Cantrell",
+   "date": "June 2007"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "4-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/17": {
+  "decimal": "0.01875",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/18": {
+  "decimal": "0.018238",
+  "lower_bound": true,
+  "exact_text": "[2 - (3/2 - √(239/3)/6)^(1/3) - (3/2 + √(239/3)/6)^(1/3)] / 18",
+  "found": {
+   "name": "Tej Stead",
+   "date": "July 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "6-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/19": {
+  "decimal": "0.01500",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/20": {
+  "decimal": "0.01446",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "5-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/21": {
+  "decimal": "0.01272",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/22": {
+  "decimal": "0.01225",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/23": {
+  "decimal": "0.01108",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/24": {
+  "decimal": "0.01071",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "3-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/25": {
+  "decimal": "0.008870",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/26": {
+  "decimal": "0.008403",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/27": {
+  "decimal": "0.007877",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/28": {
+  "decimal": "0.007627",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "7-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/29": {
+  "decimal": "0.006078",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/30": {
+  "decimal": "0.005949",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "6-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/31": {
+  "decimal": "0.005615",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "5-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/32": {
+  "decimal": "0.005244",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "8-fold dihedral symmetry",
+  "notes": []
+ },
+ "convex/33": {
+  "decimal": "0.004842",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/34": {
+  "decimal": "0.004558",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Tej Stead",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ },
+ "convex/35": {
+  "decimal": "0.004228",
+  "lower_bound": true,
+  "exact_text": null,
+  "found": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "August 2026"
+  },
+  "proved": null,
+  "trivial": false,
+  "symmetry": "No symmetry",
+  "notes": []
+ }
+}

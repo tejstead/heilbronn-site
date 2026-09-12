@@ -20,9 +20,6 @@
  "value": {
   "decimal": "1",
   "fraction": "1/1",
-  "published": "A = 1",
-  "published_decimal": "1",
-  "published_lower_bound": false,
   "exact_text": null,
   "exact_sympy": "1",
   "minimal_polynomial": null,
@@ -31,7 +28,6 @@
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn></math>"
  },
  "status": "proven",
- "page_relation": "OK",
  "credit": {
   "found": null,
   "proved": null,

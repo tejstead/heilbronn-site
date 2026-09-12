@@ -20,7 +20,7 @@ automatically in exact arithmetic and live on the site minutes after merge.
 ## Layout
 
 - `data/sources/` — vendored upstream inputs, each with `ATTRIBUTION.md`
-- `data/curated/` — hand-maintained provenance, references, overrides
+- `data/curated/` — hand-maintained record ledger (`records.json`), references, overrides
 - `data/canonical/` — the unified per-configuration JSONs (ingest output, committed)
 - `build/` — the generator: ingest → verify → derive → render → downloads → compress
 - `reconstruct/` — laptop-only optimization to recover unpublished configurations
@@ -47,10 +47,10 @@ instant manual pushes and is still required for Caddyfile changes.
 
 ## Data provenance
 
-Values, credits, and symmetry labels are facts recorded from Erich Friedman's
-Packing Center pages before they went offline (frozen parsed snapshot in
-`data/sources/friedman/`, see its `ATTRIBUTION.md`); all figures are
-regenerated from coordinates — none of his images are copied. Coordinates come from
+Historical values, credits, and symmetry labels are facts recorded from Erich
+Friedman's Packing Center pages before they went offline, now maintained by
+hand in `data/curated/records.json`; all figures are regenerated from
+coordinates — none of his images are copied. Coordinates come from
 [TejSteadQC/heilbronn-configurations](https://github.com/TejSteadQC/heilbronn-configurations),
 [spiralulam/heilbronn](https://github.com/spiralulam/heilbronn) (MIT),
 [google-deepmind/alphaevolve_results](https://github.com/google-deepmind/alphaevolve_results),

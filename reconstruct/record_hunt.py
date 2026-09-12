@@ -58,10 +58,10 @@ spec = importlib.util.spec_from_file_location("rec", ROOT / "reconstruct" / "rec
 rec = importlib.util.module_from_spec(spec); spec.loader.exec_module(rec)
 import refine
 from fractions import Fraction
-from build.ingest import latest_snapshot
+from build.ingest import load_records
 from build.vendor.verify_exact import verify
-from build.derive import detect_symmetry, friedman_label
-snap = latest_snapshot()
+from build.derive import detect_symmetry, symmetry_label
+records = load_records()
 for v, n in TARGETS:
     r = heil.load_result(SEARCH / "results" / v / f"n{n}.json")
     doc = json.loads((ROOT / "data" / "canonical" / v / f"n{n:02d}.json").read_text())
@@ -74,9 +74,9 @@ for v, n in TARGETS:
     if not res["feasible"] or val <= beat:
         print(f"{v}/{n}: no improvement ({float(val):.12f} vs {float(beat):.12f})", flush=True)
         continue
-    entry = snap["variants"][v][str(n)]
+    entry = records[f"{v}/{n}"]
     det = detect_symmetry(v, [(float(a), float(b)) for a, b in pts])
-    lab = friedman_label(det, v)
+    lab = symmetry_label(det, v)
     result = {"points": pts, "verify": res, "value": val,
               "detected_symmetry": det, "detected_label": lab,
               "sym_match": rec._labels_compatible(lab, entry["symmetry"])}

@@ -68,9 +68,6 @@
  "value": {
   "decimal": "0.0210907694602666879593204075894",
   "fraction": "210907694602666879593204075893662632011429957310123250499/10000000000000000000000000000000000000000000000000000000000",
-  "published": "A = .0210+",
-  "published_decimal": "0.0210",
-  "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": "5250987*x**5 + 1609650*x**4 + 161469*x**3 + 5438*x**2 - 13*x - 4",
@@ -84,7 +81,6 @@
   "poly_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>5250987</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>1609650</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>161469</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>5438</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>13</mn><mi>x</mi><mo>−</mo><mn>4</mn></mrow></math>"
  },
  "status": "record",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "David Cantrell",

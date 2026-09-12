@@ -112,15 +112,11 @@
  "value": {
   "decimal": "0.00733876568983764372246912907622",
   "fraction": "7338765689837643722469129076219/1000000000000000000000000000000000",
-  "published": "A = .007078+",
-  "published_decimal": "0.007078",
-  "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "BEATS",
  "credit": {
   "found": {
    "name": "Rhys Chappell",

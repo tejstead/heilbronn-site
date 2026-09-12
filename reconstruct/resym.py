@@ -11,18 +11,18 @@ import importlib.util
 spec = importlib.util.spec_from_file_location("rec", ROOT / "reconstruct" / "reconstruct.py")
 rec = importlib.util.module_from_spec(spec); spec.loader.exec_module(rec)
 import heil, sym, refine
-from build.ingest import latest_snapshot
+from build.ingest import load_records
 from build.vendor.verify_exact import verify, parse_points_text
-from build.derive import detect_symmetry, friedman_label
+from build.derive import detect_symmetry, symmetry_label
 
-snap = latest_snapshot()
+records = load_records()
 
 def accept(variant, n, X, tag):
-    entry = snap["variants"][variant][str(n)]
+    entry = records[f"{variant}/{n}"]
     pts = rec.truncate_repair(X, variant)
     res = verify(variant, pts)
     v = res["_value"]
-    win = rec.published_window(entry)
+    win = rec.record_window(entry)
     exact = rec.EXACT.get((variant, n))
     if exact is not None and abs(float(v)/exact - 1) > 1e-9:
         print(f"{variant}/{n} [{tag}]: missed exact ({float(v):.12f})", flush=True); return False
@@ -31,7 +31,7 @@ def accept(variant, n, X, tag):
     if not res["feasible"]:
         print(f"{variant}/{n} [{tag}]: infeasible", flush=True); return False
     det = detect_symmetry(variant, [(float(a), float(b)) for a, b in pts])
-    lab = friedman_label(det, variant)
+    lab = symmetry_label(det, variant)
     result = {"points": pts, "verify": res, "value": v,
               "detected_symmetry": det, "detected_label": lab,
               "sym_match": rec._labels_compatible(lab, entry["symmetry"])}

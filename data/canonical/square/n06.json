@@ -32,9 +32,6 @@
  "value": {
   "decimal": "0.125",
   "fraction": "1/8",
-  "published": "A = 1/8 = .125",
-  "published_decimal": "0.125",
-  "published_lower_bound": false,
   "exact_text": "1/8",
   "exact_sympy": "1/8",
   "minimal_polynomial": null,
@@ -43,7 +40,6 @@
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>8</mn></mrow></mfrac></math>"
  },
  "status": "proven",
- "page_relation": "OK",
  "credit": {
   "found": null,
   "proved": {

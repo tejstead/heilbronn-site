@@ -28,9 +28,6 @@
  "value": {
   "decimal": "0.192450089729875254836382926827",
   "fraction": "3849001794597505096727658536548386173964601074656677791/20000000000000000000000000000000000000000000000000000000",
-  "published": "A = √3 / 9 = .19245+",
-  "published_decimal": "0.19245",
-  "published_lower_bound": true,
   "exact_text": "√3 / 9",
   "exact_sympy": "sqrt(3)/9",
   "minimal_polynomial": null,
@@ -39,7 +36,6 @@
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><msqrt><mn>3</mn></msqrt></mrow><mrow><mn>9</mn></mrow></mfrac></math>"
  },
  "status": "proven",
- "page_relation": "OK",
  "credit": {
   "found": null,
   "proved": {

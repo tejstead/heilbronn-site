@@ -92,15 +92,11 @@
  "value": {
   "decimal": "0.0111734121303578216072537402341",
   "fraction": "27933530325894554018134350585267/2500000000000000000000000000000000",
-  "published": "A = .01117+",
-  "published_decimal": "0.01117",
-  "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "Tej Stead",

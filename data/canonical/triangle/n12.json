@@ -56,15 +56,11 @@
  "value": {
   "decimal": "0.0310047817435253133477717385",
   "fraction": "62009563487050626695543477/2000000000000000000000000000",
-  "published": "A = .0310+",
-  "published_decimal": "0.0310",
-  "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "David Cantrell",

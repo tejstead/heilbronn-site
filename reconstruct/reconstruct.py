@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Reconstruct configurations whose coordinates were never published.
 
-For each target (variant, n) with a Friedman entry but no public coordinates,
+For each target (variant, n) with a ledger entry but no public coordinates,
 search numerically — symmetry-restricted first when the page names a symmetry,
 plus free multistart — polish, tighten to ~1e-15, truncate to 15 decimals,
 repair feasibility exactly, and accept only if the exact value of the
@@ -36,8 +36,8 @@ import heil          # noqa: E402  (vendored search toolkit)
 import refine        # noqa: E402
 import sym           # noqa: E402
 
-from build.ingest import latest_snapshot, published_window, fmt15  # noqa: E402
-from build.derive import detect_symmetry, friedman_label           # noqa: E402
+from build.ingest import load_records, record_window, fmt15  # noqa: E402
+from build.derive import detect_symmetry, symmetry_label           # noqa: E402
 from build.vendor.verify_exact import verify                       # noqa: E402
 
 OUT = ROOT / "data" / "sources" / "reconstructed"
@@ -202,7 +202,7 @@ def reconstruct_one(variant, n, entry, budget, seed=0, image_dir=None,
     figure), acceptance means beating our current coordinates; exceeding the
     truncated published value is the expected good outcome, not a refusal."""
     label = entry["symmetry"]
-    window = published_window(entry)
+    window = record_window(entry)
     exact = EXACT.get((variant, n))
 
     best_v, best_X = -1.0, None
@@ -266,7 +266,7 @@ def reconstruct_one(variant, n, entry, budget, seed=0, image_dir=None,
                           f"potential new record, route through the claims workflow")
 
     det = detect_symmetry(variant, [(float(a), float(b)) for a, b in pts])
-    det_label = friedman_label(det, variant)
+    det_label = symmetry_label(det, variant)
     sym_match = _labels_compatible(det_label, label)
     return {
         "points": pts, "verify": res, "value": v,
@@ -311,7 +311,7 @@ def write_out(variant, n, entry, result, budget_note, behind=False):
     lines = [
         f"# Heilbronn {variant} n={n} — RECONSTRUCTED configuration",
         f"# exact value of these literals: {res['value']}",
-        f"# published entry: {entry['value_text']} ({'; '.join(entry['credits'])})",
+        f"# recorded entry: {entry['decimal']}{'+' if entry['lower_bound'] else ''} (found: {(entry.get('found') or {}).get('name')})",
         *blurb,
     ]
     for x, y in result["points"]:
@@ -342,31 +342,17 @@ def main():
     ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--images", metavar="DIR",
                     help="seed from Friedman figure images in DIR instead of searching")
-    ap.add_argument("--behind", action="store_true",
-                    help="target rows where the published record beats our coordinates; "
-                         "accept anything that improves on them")
     args = ap.parse_args()
 
-    snap = latest_snapshot()
+    records = load_records()
     beat_values = {}
     if args.targets:
         targets = [tuple(t.split("/")) for t in args.targets]
         targets = [(v, int(n)) for v, n in targets]
-    elif args.behind:
-        targets = []
-        for v in ("square", "triangle", "convex"):
-            for n in range(3, 36):
-                p = ROOT / "data" / "canonical" / v / f"n{n:02d}.json"
-                if not p.exists():
-                    continue
-                doc = json.loads(p.read_text())
-                if doc.get("page_relation") == "BEHIND":
-                    targets.append((v, n))
-                    beat_values[(v, n)] = Fraction(doc["value"]["fraction"])
     else:
         targets = []
         for v in ("square", "triangle", "convex"):
-            for n in range(3, 36):
+            for n in range(3, 37):
                 p = ROOT / "data" / "canonical" / v / f"n{n:02d}.json"
                 if p.exists() and json.loads(p.read_text())["points"] is None:
                     targets.append((v, n))
@@ -374,9 +360,9 @@ def main():
     print(f"{len(targets)} target(s), budget {args.budget}s each")
     failures = []
     for v, n in targets:
-        entry = snap["variants"][v].get(str(n))
+        entry = records.get(f"{v}/{n}")
         if entry is None:
-            print(f"{v}/{n}: no Friedman entry, skipped")
+            print(f"{v}/{n}: no ledger entry, skipped")
             continue
         t0 = time.time()
         result, err = reconstruct_one(v, n, entry, args.budget, seed=args.seed,

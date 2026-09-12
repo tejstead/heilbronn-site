@@ -136,15 +136,11 @@
  "value": {
   "decimal": "0.00581090220763199441877943339947",
   "fraction": "726362775953999302347429174934078355697595537982840697/125000000000000000000000000000000000000000000000000000000",
-  "published": "A = .004690+",
-  "published_decimal": "0.004690",
-  "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "BEATS",
  "credit": {
   "found": {
    "name": "Marc-Emmanuel Coupvent des Graviers",

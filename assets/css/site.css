@@ -160,10 +160,6 @@ h1 .badge { vertical-align: .35em; margin-left: .5rem; }
   border-left: 3px solid var(--accent); background: var(--accent-soft);
   padding: .6rem .9rem; border-radius: 0 8px 8px 0; margin: 1rem 0; font-size: .92rem;
 }
-.banner-behind { border-color: #23568f; background: #e3ecf7; }
-@media (prefers-color-scheme: dark) {
-  .banner-behind { background: #1c2a3d; }
-}
 
 /* Viewer */
 .viewer { margin: 1.5rem 0; }

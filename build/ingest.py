@@ -6,7 +6,8 @@ written to data/canonical/{variant}/nNN.json and committed, so the rest of
 the pipeline — and reviewers — see one schema and reviewable diffs.
 
 Also prints the coverage audit: per row, the chosen source and how our exact
-value relates to the value published on Friedman's (now offline) pages.
+value relates to the value in the record ledger (data/curated/records.json:
+the historical values, credits, symmetry labels and notes per entry).
 
 An entry never regresses: the committed canonical row is itself a candidate,
 so if a source directory is overwritten with a lower-valued configuration
@@ -46,17 +47,11 @@ FRAMES = {"square": "unit-square", "triangle": "right", "convex": "free"}
 
 MONTHS = ("January", "February", "March", "April", "May", "June", "July",
           "August", "September", "October", "November", "December")
-CREDIT_RE = re.compile(
-    r"^(Found(?: and proved)? by|Proved(?: optimal)? by)\s+(.+?)"
-    r"(?:,\s*| in )((?:%s)\s+\d{4}|\d{4})\.?$" % "|".join(MONTHS))
-
-
-def latest_snapshot():
-    snaps = sorted((SOURCES / "friedman").glob("parsed-*.json"))
-    if not snaps:
-        sys.exit("no Friedman snapshot in data/sources/friedman/ (the pages are "
-                 "offline; the vendored parsed-*.json files are the only source)")
-    return json.loads(snaps[-1].read_text())
+def load_records():
+    """The record ledger: per "variant/n", the value the credited record was
+    announced with (decimal, lower_bound), the credit (found / proved /
+    trivial), the exact form if known, the symmetry label and page notes."""
+    return load_curated("records.json")
 
 
 def load_curated(name):
@@ -275,34 +270,13 @@ def sticky_candidate(prev):
     return cand
 
 
-def parse_credits(entry):
-    """Split Friedman's credit sentences into found/proved records."""
-    found = proved = None
-    trivial = False
-    for s in entry["credits"]:
-        if s.lower().startswith("trivial"):
-            trivial = True
-            continue
-        m = CREDIT_RE.match(s)
-        rec = ({"name": m.group(2), "date": m.group(3)} if m
-               else {"name": s, "date": None})
-        verb = (m.group(1) if m else s).lower()
-        if verb.startswith("found and proved"):
-            found = proved = rec
-        elif verb.startswith("found"):
-            found = rec
-        else:
-            proved = rec
-    return trivial, found, proved
-
-
-def published_window(entry):
-    """Return (low, high) exact bounds implied by the published value, or
-    None if unparseable. Friedman's "+" entries are usually truncations
-    (value in [d, d+ulp)) but sometimes roundings (e.g. square n=7: proven
-    optimum .0838590… shown as ".08386+"), so accept the union of both:
-    [d - ulp/2, d + ulp). Values below that are genuinely BEHIND, at or
-    above the top genuinely BEATS."""
+def record_window(entry):
+    """Return (low, high) exact bounds implied by the ledger's recorded value,
+    or None if it has none. Truncated entries ("+", lower_bound) usually mean
+    value in [d, d+ulp) but were sometimes roundings (square n=7: proven
+    optimum .0838590… recorded as .08386+), so accept the union of both:
+    [d - ulp/2, d + ulp). Values below that are genuinely BELOW the record,
+    at or above the top genuinely IMPROVE on it."""
     d = entry["decimal"]
     if d is None:
         return None
@@ -315,7 +289,7 @@ def published_window(entry):
 
 
 def ingest():
-    snapshot = latest_snapshot()
+    records = load_records()
     overrides = load_curated("overrides.json")
     changelog = load_curated("changelog.json")
     refdata = load_curated("references.json")
@@ -336,7 +310,7 @@ def ingest():
         outdir.mkdir(parents=True, exist_ok=True)
         for n in ns(variant):
             key = f"{variant}/{n}"
-            entry = snapshot["variants"][variant].get(str(n))
+            entry = records.get(key)
             path = outdir / f"n{n:02d}.json"
             prev = json.loads(path.read_text()) if path.exists() else None
             best = None
@@ -367,7 +341,7 @@ def ingest():
                           f"this entry on purpose.", file=sys.stderr)
                     best = (sticky, res)
 
-            window = published_window(entry) if entry else None
+            window = record_window(entry) if entry else None
             if best is None:
                 rel = "GAP"
                 audit.append((key, rel, "-", entry["decimal"] if entry else "-"))
@@ -378,12 +352,14 @@ def ingest():
             else:
                 cand, res = best
                 value = res["_value"]
-                if window is None:
+                if entry is None:
+                    rel = "NEW"
+                elif window is None:
                     rel = "OK"
                 elif value < window[0]:
-                    rel = "BEHIND"
+                    rel = "BELOW"
                 elif value >= window[1]:
-                    rel = "BEATS"
+                    rel = "IMPROVES"
                 else:
                     rel = "OK"
                 audit.append((key, rel, cand["kind"],
@@ -406,7 +382,9 @@ def ingest():
 
 def canonical_doc(variant, n, entry, cand, res, page_relation, override, changelog,
                   refs, proof=None):
-    trivial, found, proved = parse_credits(entry) if entry else (False, None, None)
+    trivial = bool(entry and entry.get("trivial"))
+    found = entry.get("found") if entry else None
+    proved = entry.get("proved") if entry else None
     # Status describes the VALUE only; coordinate provenance (including
     # reconstruction) is a separate fact carried by coordinates_source and
     # surfaced as its own tag, never as a competing status.
@@ -426,19 +404,11 @@ def canonical_doc(variant, n, entry, cand, res, page_relation, override, changel
         "value": {
             "decimal": res["value"] if res else None,
             "fraction": res["value_fraction"] if res else None,
-            "published": entry["value_text"] if entry else None,
-            "published_decimal": entry["decimal"] if entry else None,
-            "published_lower_bound": entry["lower_bound"] if entry else None,
             "exact_text": entry["exact_text"] if entry else None,
             "exact_sympy": None,
             "minimal_polynomial": None,
         },
         "status": status,
-        # How our exact value relates to Friedman's published value:
-        # OK (within its truncation window), BEATS (exceeds it — a pending
-        # or unsubmitted improvement), BEHIND (someone holds a better record
-        # without public coordinates), GAP (no coordinates at all).
-        "page_relation": page_relation,
         "credit": {
             "found": found,
             "proved": proved,
@@ -458,15 +428,15 @@ def canonical_doc(variant, n, entry, cand, res, page_relation, override, changel
         "references": refs or [],
         "verify": res and {k: v for k, v in res.items() if k != "_value"},
     }
-    # When an external submission's value beats the published record, the
-    # find belongs to the submitter (meta.json credit), not to the holder of
-    # the superseded page entry. Only at BEATS: at OK the page's credit is
-    # authoritative (external submissions can also be exact realizations of
-    # someone else's known record, e.g. square n=14). The Packing Center is
-    # offline, so the snapshot never changes; corrections to credits go in
-    # data/curated/overrides.json.
+    # When an external submission's value improves on the recorded value (or
+    # the ledger has no entry at all), the find belongs to the submitter
+    # (meta.json credit), not to the holder of the superseded record. Only
+    # then: within the record's window the ledger's credit is authoritative
+    # (external submissions can also be exact realizations of someone else's
+    # known record, e.g. square n=14). Corrections to credits go in
+    # data/curated/records.json or overrides.json.
     if (cand and cand.get("kind") == "external" and cand.get("credit")
-            and page_relation == "BEATS"):
+            and page_relation in ("IMPROVES", "NEW")):
         m = re.match(r"^(.+?),\s*((?:%s)\s+\d{4}|\d{4})$" % "|".join(MONTHS),
                      cand["credit"].strip())
         if m:

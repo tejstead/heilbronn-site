@@ -76,15 +76,11 @@
  "value": {
   "decimal": "0.0172616770725236010888553888455",
   "fraction": "34523354145047202177710777691/2000000000000000000000000000000",
-  "published": "A = .016481+",
-  "published_decimal": "0.016481",
-  "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "BEATS",
  "credit": {
   "found": {
    "name": "Chouaieb Nemri (AlphaEvolve, Google Cloud)",

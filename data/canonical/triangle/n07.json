@@ -36,9 +36,6 @@
  "value": {
   "decimal": "0.0972222222222222222222222221778",
   "fraction": "4861111111111111111111111108888888888888888888888888889/50000000000000000000000000000000000000000000000000000000",
-  "published": "A = 7/72 = .0972+",
-  "published_decimal": "0.0972",
-  "published_lower_bound": true,
   "exact_text": "7/72",
   "exact_sympy": "7/72",
   "minimal_polynomial": null,
@@ -47,7 +44,6 @@
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>7</mn></mrow><mrow><mn>72</mn></mrow></mfrac></math>"
  },
  "status": "proven",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "David Cantrell",

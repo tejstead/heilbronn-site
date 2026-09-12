@@ -32,9 +32,6 @@
  "value": {
   "decimal": "0.166666666666666666666666666666",
   "fraction": "999999999999999999999999999998/5999999999999999999999999999997",
-  "published": "A = 1/6 = .166+",
-  "published_decimal": "0.166",
-  "published_lower_bound": true,
   "exact_text": "1/6",
   "exact_sympy": "1/6",
   "minimal_polynomial": null,
@@ -43,7 +40,6 @@
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>6</mn></mrow></mfrac></math>"
  },
  "status": "proven",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "David Cantrell",

@@ -40,8 +40,6 @@
 {% endif %}
 </div>
 
-{% if banner %}<div class="banner banner-{{ banner.kind }}">{{ banner.text | safe }}</div>{% endif %}
-
 {% if figure %}
 <figure class="viewer" data-variant="{{ slug }}" data-n="{{ n }}">
   {{ figure | safe }}

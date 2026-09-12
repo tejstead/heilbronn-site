@@ -4,7 +4,7 @@ import json
 import pathlib
 from fractions import Fraction
 
-from build.ingest import eq_to_right_frame, published_window
+from build.ingest import eq_to_right_frame, record_window
 from build.vendor.verify_exact import verify, parse_points_text
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -21,9 +21,9 @@ def test_eq_to_right_frame_preserves_value_and_feasibility():
     assert abs(res["_value"] - Fraction("0.036529889880030156")) < Fraction(1, 10**13)
 
 
-def test_published_window_accepts_rounded_and_truncated():
+def test_record_window_accepts_rounded_and_truncated():
     entry = {"decimal": "0.08386", "lower_bound": True}
-    low, high = published_window(entry)
+    low, high = record_window(entry)
     proven = Fraction("0.08385900900751340663796674354476")
     assert low <= proven < high
 

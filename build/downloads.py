@@ -50,9 +50,7 @@ def write_downloads(docs):
         values.setdefault(v, {})[str(n)] = {
             "decimal": doc["value"]["decimal"],
             "fraction": doc["value"]["fraction"],
-            "published": doc["value"]["published_decimal"],
             "status": doc["status"],
-            "page_relation": doc.get("page_relation"),
         }
         if not doc["points"]:
             continue

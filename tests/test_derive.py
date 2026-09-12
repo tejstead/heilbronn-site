@@ -4,7 +4,7 @@ import json
 import pathlib
 import sys
 
-from build.derive import derive, friedman_label
+from build.derive import derive, symmetry_label
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "data" / "sources" / "exact"))
@@ -19,7 +19,7 @@ def _derive_exact(variant, n):
 def test_pentagon_is_d5():
     d = _derive_exact("convex", 5)
     assert d["symmetry"]["group"] == "D5"
-    assert friedman_label(d["symmetry"], "convex") == "5-fold dihedral symmetry"
+    assert symmetry_label(d["symmetry"], "convex") == "5-fold dihedral symmetry"
 
 
 def test_hexagon_is_d6():

@@ -152,17 +152,16 @@
  "value": {
   "decimal": "0.00380549689948663107362562072",
   "fraction": "47568711243582888420320259/12500000000000000000000000000",
-  "published": null,
-  "published_decimal": null,
-  "published_lower_bound": null,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "OK",
  "credit": {
-  "found": null,
+  "found": {
+   "name": "Ilkyoo Choi",
+   "date": "May 2026"
+  },
   "proved": null,
   "trivial": false
  },

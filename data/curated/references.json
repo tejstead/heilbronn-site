@@ -95,17 +95,17 @@
   "friedman-square": {
    "kind": "web",
    "url": null,
-   "title": "E. Friedman, The Heilbronn problem for squares — Packing Center record table (offline since 2026; parsed snapshot in data/sources/friedman/)"
+   "title": "E. Friedman, The Heilbronn problem for squares — Packing Center record table (offline since 2026)"
   },
   "friedman-triangle": {
    "kind": "web",
    "url": null,
-   "title": "E. Friedman, The Heilbronn problem for triangles — Packing Center record table (offline since 2026; parsed snapshot in data/sources/friedman/)"
+   "title": "E. Friedman, The Heilbronn problem for triangles — Packing Center record table (offline since 2026)"
   },
   "friedman-convex": {
    "kind": "web",
    "url": null,
-   "title": "E. Friedman, The Heilbronn problem for convex regions — Packing Center record table (offline since 2026; parsed snapshot in data/sources/friedman/)"
+   "title": "E. Friedman, The Heilbronn problem for convex regions — Packing Center record table (offline since 2026)"
   },
   "mathworld": {
    "kind": "web",

@@ -198,8 +198,8 @@ def _detect_at(variant, points, tol):
     }
 
 
-def friedman_label(sym, variant):
-    """Map a detected group to Friedman's wording, for cross-checking."""
+def symmetry_label(sym, variant):
+    """Map a detected group to the record ledger's wording, for cross-checking."""
     g, axes = sym["group"], sym["axes"]
     if g == "C1":
         return "Not symmetric"

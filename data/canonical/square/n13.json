@@ -60,15 +60,11 @@
  "value": {
   "decimal": "0.027019916669111101000446039172",
   "fraction": "6754979167277775250111509793/250000000000000000000000000000",
-  "published": "A = .02702+",
-  "published_decimal": "0.02702",
-  "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "Peter Karpov",

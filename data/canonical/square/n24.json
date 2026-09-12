@@ -104,15 +104,11 @@
  "value": {
   "decimal": "0.009089008077248714764430035994",
   "fraction": "4544504038624357382215017997/500000000000000000000000000000",
-  "published": "A = .008495+",
-  "published_decimal": "0.008495",
-  "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "BEATS",
  "credit": {
   "found": {
    "name": "Ilkyoo Choi",

@@ -9,7 +9,7 @@ import shutil
 
 import jinja2
 
-from .derive import derive, friedman_label
+from .derive import derive, symmetry_label
 from .families import generate as family_generate
 from .svggen import family_svg, figure_svg
 
@@ -74,11 +74,6 @@ def load_docs():
     return docs
 
 
-def snapshot_date():
-    snaps = sorted((ROOT / "data" / "sources" / "friedman").glob("parsed-*.json"))
-    return json.loads(snaps[-1].read_text())["fetched"]
-
-
 def hash_assets():
     """Copy css/js into dist with content-hashed names; return the map."""
     assets = {}
@@ -107,8 +102,7 @@ def pretty_poly(p):
 
 
 def short_value(doc, digits=8):
-    d = doc["value"].get("exact_decimal") or doc["value"]["decimal"] \
-        or doc["value"]["published_decimal"]
+    d = doc["value"].get("exact_decimal") or doc["value"]["decimal"]
     if d is None:
         return "?"
     if len(d) <= digits + 2:
@@ -132,13 +126,10 @@ def fmt_dec(dec, limit=18):
 
 def fixed8(doc):
     """Uniform 8-decimal rendering for the values table (truncated, which
-    keeps every entry a valid lower bound). Rows known only from the Packing
-    Center's truncated decimal keep its short form + '+' — padding them with zeros
-    would fake precision we don't have."""
+    keeps every entry a valid lower bound)."""
     d = doc["value"].get("exact_decimal") or doc["value"]["decimal"]
     if d is None:
-        p = doc["value"]["published_decimal"]
-        return f"{p}+" if p else None
+        return None
     if "." not in d:
         d += "."
     head, tail = d.split(".", 1)
@@ -198,38 +189,24 @@ def provenance_lines(doc, derived):
     return lines
 
 
-def banner_for(doc):
-    rel = doc.get("page_relation")
-    pub = doc["value"].get("published_decimal")
-    holder = credit_text(doc)
-    if rel == "BEHIND":
-        return {"kind": "behind", "text": (
-            f"The record is <code>{pub}+</code> ({holder}); its coordinates were "
-            f"never published, so it cannot be reconstructed. Shown here: the "
-            f"best exactly verified configuration.")}
-    return None
-
-
 def symmetry_text(doc, derived):
     label = doc["symmetry"]["label"]
     if derived is None:
         return f"Reported symmetry: {label}." if label else "Unknown."
     sym = derived["symmetry"]
-    det = friedman_label(sym, doc["variant"])
+    det = symmetry_label(sym, doc["variant"])
     if sym.get("approx"):
         txt = (f"Approximately {det[0].lower()}{det[1:]} (group {sym['group']}: the "
                f"configuration sits within ~10⁻⁴ of exact symmetry, but the optimum "
                f"is not exactly symmetric at coordinate precision).")
     else:
         txt = f"{det} (group {sym['group']}, order {sym['order']})."
-    if label and doc.get("page_relation") == "BEHIND":
-        txt += f" The record configuration is reported as: {label.lower()}."
     return txt
 
 
 def _same_symmetry_label(a, b):
-    """Friedman's convex page wrote "No symmetry" where the square/triangle
-    pages (and our labels) say "Not symmetric" — the same statement."""
+    """The historical convex labels wrote "No symmetry" where the square and
+    triangle labels (and ours) say "Not symmetric" — the same statement."""
     def norm(s):
         s = s.rstrip(".").strip().lower()
         return "not symmetric" if s == "no symmetry" else s
@@ -287,7 +264,6 @@ def render_all(env, docs, derived_map, assets):
     common = {
         "base": BASE,
         "assets": assets,
-        "snapshot_date": snapshot_date(),
     }
 
     # Per-config pages.
@@ -345,7 +321,6 @@ def render_all(env, docs, derived_map, assets):
             poly=pretty_poly(val.get("minimal_polynomial")),
             poly_which=(val.get("exact_poly") or {}).get("which"),
             poly_note=(val.get("exact_poly") or {}).get("note"),
-            banner=banner_for(doc),
             figure=figure,
             fig_caption=fig_caption,
             classes=cls,
@@ -418,7 +393,7 @@ def render_all(env, docs, derived_map, assets):
             symline = None
             if derived:
                 sym = derived["symmetry"]
-                det = friedman_label(sym, v)
+                det = symmetry_label(sym, v)
                 if sym.get("approx"):
                     det = "approximately " + det[0].lower() + det[1:]
                 ties = len(derived["ties"])
@@ -435,7 +410,6 @@ def render_all(env, docs, derived_map, assets):
                 "dec": fmt_dec(dec),
                 "credit_lines": credit_lines,
                 "symline": symline,
-                "behind": doc.get("page_relation") == "BEHIND",
             })
         ctx = dict(common, section=v, slug=v,
                    title=META[v]["title"], intro=META[v]["intro"],
@@ -572,10 +546,9 @@ problem is affine-invariant, so coordinates are stored in the right frame
 <h2>Attribution</h2>
 <p>The record tables here descend from those Erich Friedman curated for
 decades at his Packing Center, offline since 2026: the historical values,
-credits and symmetry labels were recorded from those pages (the last parsed
-snapshot is vendored in the repository under
-<code>data/sources/friedman/</code>). None of his images are reproduced.
-Who holds what is tallied on the
+credits and symmetry labels recorded from those pages are now maintained
+in this repository as <code>data/curated/records.json</code>. None of his
+images are reproduced. Who holds what is tallied on the
 <a href="/heilbronn/leaderboard/">leaderboard</a>.</p>
 """
 
@@ -584,7 +557,7 @@ Who holds what is tallied on the
 
 def render_extra(env, assets, values_name):
     """Pages that need the values.json asset name (written by downloads)."""
-    common = {"base": BASE, "assets": assets, "snapshot_date": snapshot_date()}
+    common = {"base": BASE, "assets": assets}
     from .charts import build_charts
     (DIST / "trends").mkdir(parents=True, exist_ok=True)
     (DIST / "trends" / "index.html").write_text(

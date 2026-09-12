@@ -52,9 +52,6 @@
  "value": {
   "decimal": "0.0425531914893617021276595744272",
   "fraction": "3703703703703703703703703700185185185185185185185185185/87037037037037037037037037037962962962962962962962962963",
-  "published": "A = 2/47 = .0425+",
-  "published_decimal": "0.0425",
-  "published_lower_bound": true,
   "exact_text": "2/47",
   "exact_sympy": "2/47",
   "minimal_polynomial": null,
@@ -63,7 +60,6 @@
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>2</mn></mrow><mrow><mn>47</mn></mrow></mfrac></math>"
  },
  "status": "record",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "David Cantrell",

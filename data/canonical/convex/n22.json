@@ -96,15 +96,11 @@
  "value": {
   "decimal": "0.0122549627897763988736409431848",
   "fraction": "2543035926494791622874380741327/207510701592362097207313595678475",
-  "published": "A = .01225+",
-  "published_decimal": "0.01225",
-  "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "Nathan Sudermann-Merx",

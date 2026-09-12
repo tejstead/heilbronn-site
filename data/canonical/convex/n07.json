@@ -36,9 +36,6 @@
  "value": {
   "decimal": "0.111111111111111111111111111111",
   "fraction": "577350269189625764509148780501/5196152422706631880582339024512",
-  "published": "A = 1/9 = .111+",
-  "published_decimal": "0.111",
-  "published_lower_bound": true,
   "exact_text": "1/9",
   "exact_sympy": "1/9",
   "minimal_polynomial": null,
@@ -47,7 +44,6 @@
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>9</mn></mrow></mfrac></math>"
  },
  "status": "proven",
- "page_relation": "OK",
  "credit": {
   "found": null,
   "proved": {

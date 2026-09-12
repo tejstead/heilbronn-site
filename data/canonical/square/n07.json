@@ -36,9 +36,6 @@
  "value": {
   "decimal": "0.0838590090075134066379667435197",
   "fraction": "838590090075134066379667435197342934045817492759588773/10000000000000000000000000000000000000000000000000000000",
-  "published": "A = .08386+",
-  "published_decimal": "0.08386",
-  "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": "152*x**3 + 12*x**2 - 14*x + 1",
@@ -52,7 +49,6 @@
   "poly_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>152</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>12</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>14</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow></math>"
  },
  "status": "proven",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "F. Comellas and J. Yebra",

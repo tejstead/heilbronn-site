@@ -44,9 +44,6 @@
  "value": {
   "decimal": "0.0548469387755102040816326530608",
   "fraction": "54846938775510204081632653060793367346938775510204081632653/1000000000000000000000000000000000000000000000000000000000000",
-  "published": "A = 43/784 = .0548+",
-  "published_decimal": "0.0548",
-  "published_lower_bound": true,
   "exact_text": "43/784",
   "exact_sympy": "43/784",
   "minimal_polynomial": null,
@@ -55,7 +52,6 @@
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>43</mn></mrow><mrow><mn>784</mn></mrow></mfrac></math>"
  },
  "status": "record",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "David Cantrell",

@@ -52,9 +52,6 @@
  "value": {
   "decimal": "0.0370370370370370370370370370019",
   "fraction": "740740740740740740740740740037037037037037037037037037/20000000000000000000000000000000000000000000000000000000",
-  "published": "A = 1/27 = .03704+",
-  "published_decimal": "0.03704",
-  "published_lower_bound": true,
   "exact_text": "1/27",
   "exact_sympy": "1/27",
   "minimal_polynomial": null,
@@ -63,7 +60,6 @@
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>27</mn></mrow></mfrac></math>"
  },
  "status": "record",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "Michael Goldberg",

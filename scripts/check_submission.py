@@ -38,7 +38,7 @@ from fractions import Fraction
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 from build.vendor.verify_exact import verify, fraction_to_30sig  # noqa: E402
-from build.derive import (detect_symmetry, friedman_label,  # noqa: E402
+from build.derive import (detect_symmetry, symmetry_label,  # noqa: E402
                           minimal_triangles, congruence_classes)
 
 # Lanes the automated pipeline verifies. external/ is THE submission lane
@@ -204,12 +204,11 @@ def check_exact(path, value, problems, warnings):
 def canonical_value(variant, n):
     path = ROOT / "data" / "canonical" / variant / f"n{n:02d}.json"
     if not path.exists():
-        return None, None
+        return None
     doc = json.loads(path.read_text())
     v = doc.get("verify") or {}
     frac = v.get("value_fraction")
-    published = (doc.get("value") or {}).get("published")
-    return (Fraction(frac) if frac else None), published
+    return Fraction(frac) if frac else None
 
 
 def check_dir(dirpath, base=None):
@@ -256,7 +255,7 @@ def check_dir(dirpath, base=None):
     res["value_30sig"] = fraction_to_30sig(value)
     fpoints = [(float(x), float(y)) for x, y in points]
     sym = detect_symmetry(variant, fpoints)
-    res["symmetry"] = friedman_label(sym, variant) + f" ({sym['group']})" + \
+    res["symmetry"] = symmetry_label(sym, variant) + f" ({sym['group']})" + \
         (" — approximate" if sym.get("approx") else "")
 
     # Tie structure as the page will render it, plus an under-convergence
@@ -288,8 +287,7 @@ def check_dir(dirpath, base=None):
             res["exact"] = (f"degree-{ex['degree']} polynomial has a root within "
                             "1e-9 of the coordinate value ✓ (minimality/irreducibility "
                             "not machine-checked)")
-    cur, published = canonical_value(variant, n)
-    res["published"] = published
+    cur = canonical_value(variant, n)
     if cur is None:
         res["relation"] = "no canonical entry to compare against"
     elif value > cur:
@@ -377,7 +375,6 @@ def render(results, out_of_scope):
                 f"| verdict | **valid** — feasible in exact arithmetic |",
                 f"| value (exact, 30 digits) | `{r['value_30sig']}` |",
                 f"| vs current canonical | {r['relation']} |",
-                f"| published page entry | `{r['published'] or '—'}` |",
                 f"| detected symmetry | {r['symmetry']} |",
                 *([f"| exact value claim | {r['exact']} |"] if r.get("exact") else []),
                 f"| triples checked | {v['triples_checked']}, "

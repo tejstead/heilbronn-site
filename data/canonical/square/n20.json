@@ -88,15 +88,11 @@
  "value": {
   "decimal": "0.012911555683941858938602390276",
   "fraction": "3227888920985464734650597569/250000000000000000000000000000",
-  "published": "A = 0.01291+",
-  "published_decimal": "0.01291",
-  "published_lower_bound": true,
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
  },
  "status": "record",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "William Shanley",

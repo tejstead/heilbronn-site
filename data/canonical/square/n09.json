@@ -44,9 +44,6 @@
  "value": {
   "decimal": "0.0548759991708967089728109970899",
   "fraction": "1371899979272417724320274927247997801385893892730824037/25000000000000000000000000000000000000000000000000000000",
-  "published": "A = (9√65-55) / 320 = .05487+",
-  "published_decimal": "0.05487",
-  "published_lower_bound": true,
   "exact_text": "(9√65-55) / 320",
   "exact_sympy": "(9*sqrt(65) - 55)/320",
   "minimal_polynomial": null,
@@ -55,7 +52,6 @@
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mrow><mrow><mn>9</mn><msqrt><mn>65</mn></msqrt></mrow><mo>−</mo><mn>55</mn></mrow></mrow><mrow><mn>320</mn></mrow></mfrac></math>"
  },
  "status": "proven",
- "page_relation": "OK",
  "credit": {
   "found": {
    "name": "F. Comellas and J. Yebra",
