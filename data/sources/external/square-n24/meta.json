@@ -1,5 +1,5 @@
 {
-  "ref": "AlphaEvolve Early Access experiment, run 2026-05-14",
-  "credit": "Ilkyoo Choi, May 2026",
-  "note": "Coordinates generated during an AlphaEvolve experiment."
+ "ref": "AlphaEvolve Early Access experiment, run 2026-05-14; re-polished in heilbronn-site (search/refine.py)",
+ "credit": "Ilkyoo Choi, May 2026",
+ "note": "Coordinates generated during Ilkyoo Choi's AlphaEvolve experiment, re-polished to convergence by the site maintainer: 0.0090890081 against 0.0090890061 for the submitted coordinates (+0.00002%), 48 tied minimal triples (submitted: 28)."
 }
