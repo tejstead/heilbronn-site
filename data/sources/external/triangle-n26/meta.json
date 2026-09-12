@@ -1,5 +1,5 @@
 {
- "ref": "autoheilbronn v6 campaign; two independent exact rational verifiers",
- "credit": "Rhys Chappell, September 2026",
- "note": "Basin exploration with triangle-orientation changes and point reinsertion, followed by trust-region linear programming."
+ "ref": "heilbronn-site structured search (overnight 2026-09-13): delete points 21,24 from n=28, seeded from the triangle n=28 record",
+ "credit": "Tej Stead, September 2026",
+ "note": "Found by delete points 21,24 from n=28 applied to the triangle n=28 record (Rhys Chappell, September 2026), then re-polished to convergence; 47 tied minimal triples. Improves the previous value by 0.078%."
 }
