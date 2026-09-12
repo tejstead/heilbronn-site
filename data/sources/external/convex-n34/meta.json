@@ -1,5 +1,5 @@
 {
- "ref": "autoheilbronn v4 topology/annealing campaign; exact rational verification",
- "credit": "Rhys Chappell, September 2026",
- "note": "Line-arrangement-guided insertion and stress-weighted ruin/recreate, followed by filtered trust-region SLP polishing; GPU annealing was also used where recorded in the result provenance."
+ "ref": "heilbronn-site structured search (overnight 2026-09-13): relocate point 23, seeded from the convex n=34 record",
+ "credit": "Tej Stead, September 2026",
+ "note": "Found by relocate point 23 applied to the convex n=34 record (Rhys Chappell, September 2026), then re-polished to convergence; 61 tied minimal triples. Improves the previous value by 0.541%."
 }
