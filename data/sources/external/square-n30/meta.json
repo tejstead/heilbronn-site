@@ -1,5 +1,5 @@
 {
- "ref": "autoheilbronn v4 topology/annealing campaign; exact rational verification",
- "credit": "Rhys Chappell, September 2026",
- "note": "Line-arrangement-guided insertion and stress-weighted ruin/recreate, followed by filtered trust-region SLP polishing; GPU annealing was also used where recorded in the result provenance."
+ "ref": "heilbronn-site search/refine.py \u2014 square n=31 record minus one point, re-polished",
+ "credit": "Tej Stead, September 2026",
+ "note": "The n=31 configuration (Coupvent des Graviers' n=32 minus one point) with one more point deleted and re-polished; the ladder stops here, as one further deletion falls 2.6% short of the n=29 record."
 }
