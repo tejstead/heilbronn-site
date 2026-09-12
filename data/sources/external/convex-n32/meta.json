@@ -1,5 +1,5 @@
 {
- "ref": "heilbronn-site search/ — square n=32 record scored as a convex configuration",
+ "ref": "heilbronn-site search/ — cross-variant transfer, square record scored as convex",
  "credit": "Tej Stead, September 2026",
- "note": "Marc-Emmanuel Coupvent des Graviers's square n=32 configuration, unchanged. Only eight of its points lie on the boundary, so its convex hull is an octagon of area 0.994, and dividing by hull area lifts the value 0.53% above the previous convex record. D4 symmetric; 64 tied minimal triangles against 58 degrees of freedom, so it is rigid in the free frame too: trust-region polish and basin hopping under the convex objective find no improvement."
+ "note": "Found by noticing that the square n=32 record puts only eight of its 32 points on the boundary, so its convex hull is an octagon of area 0.994 and it scores 0.53% above the previous convex record once divided by hull area. The coordinates are those of the square record, D4 symmetric, and turn out to be rigid in the free frame as well: 64 tied minimal triangles against 58 degrees of freedom, and trust-region polish and basin hopping under the convex objective find no improvement. n=32 is the only n where this transfer wins."
 }
