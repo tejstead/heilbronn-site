@@ -1,5 +1,5 @@
 {
- "ref": "Heilbronn triangle toolkit: derived from the D3-symmetric n=30 configuration by deleting one point, then epigraph SLSQP polishing in full dimension; refined to 120 digits by damped Gauss-Newton",
- "credit": "Marc-Emmanuel Coupvent des Graviers, September 2026",
- "note": "No exact symmetry (one point removed from the D3 n=30 configuration, then polished; approximately mirror symmetric); two points on each side; 52 minimal triangles for 58 coordinates, not rigid (2 free directions), so likely improvable"
+  "ref": "one-point deletion from the D3-symmetric triangle n=30 record, polished by trust-region successive linear programming",
+  "credit": "Shengtong Zhang, September 2026",
+  "note": "Three symmetry-related deletions of the n=30 record polish to the same value. 53 triangles tie at the minimum."
 }
