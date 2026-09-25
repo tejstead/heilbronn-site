@@ -1,5 +1,5 @@
 {
- "ref": "Fable51 search campaign, September 2026: symmetry-reduced basin hopping (orbit parametrization, greedy ruin-and-recreate, soft-min warm-up, trust-region SLP) and insertion ladders from neighbouring records; tie system refined to 80 digits by damped Gauss-Newton; verified in exact rational arithmetic",
- "credit": "Fable 5.1 with Shengtong Zhang, September 2026",
- "note": "not symmetric; 58 tied minimal triangles"
+ "ref": "Basin hopping search (with best spot reinsertion and shake moves, elite pool, laddered/symmetric seeds) with SLSQP polishing of the max-min-area problem. Originally implemented by Alexandar Lackovic in Python, then optimized and ported to C++ by Opus 5.5. https://github.com/codrAlex/heilbronn-search",
+ "credit": "Alexandar Lackovic with help of Opus 5.5, September 2026",
+ "note": "Not symmetric. Found by basin hopping with best spot reinsertion moves and SLSQP polishing of the max-min-area problem"
 }
