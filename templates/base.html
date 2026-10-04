@@ -19,7 +19,9 @@
 {% endif %}
 <link rel="alternate" type="application/atom+xml" title="New Heilbronn records" href="{{ base }}/records.xml">
 <link rel="stylesheet" href="{{ base }}/assets/{{ assets['site.css'] }}">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpolygon points='50,10 90,85 10,85' fill='%23e4572e'/%3E%3C/svg%3E">
+<link rel="icon" href="{{ base }}/favicon.ico" sizes="48x48">
+<link rel="icon" href="{{ base }}/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ base }}/apple-touch-icon.png">
 {% block head %}{% endblock %}
 </head>
 <body>

@@ -11,6 +11,7 @@ import jinja2
 
 from .derive import derive, symmetry_label
 from .families import generate as family_generate
+from .icons import write_icons
 from .ogimage import write_card
 from .records_feed import atom, record_events
 from .svggen import family_svg, figure_svg
@@ -465,6 +466,7 @@ def render_all(env, docs, derived_map, assets):
     write_card(DIST / "og.png", figure_svg("square", docs[("square", 16)]["points"],
                                            derived_map[("square", 16)]),
                "Record tables", "n = 3 to 36", "square · triangle · convex")
+    write_icons(docs[("square", 8)]["points"], DIST, DIST.parent)
     events = record_events()
     (DIST / "records.xml").write_text(atom(events, SITE_ORIGIN, BASE))
     recent = [{
