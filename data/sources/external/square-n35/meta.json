@@ -1,5 +1,5 @@
 {
-  "ref": "Rob Gardiner, Heilbronn square configurations, September 2026; original starting configuration: https://math.tejstead.com/heilbronn/square/34/.",
-  "credit": "Rob Gardiner, September 2026",
-  "note": "Further optimisation of our n=35 construction derived from the published n=34 configuration credited to Fable 5.1 with Shengtong Zhang."
+ "ref": "autoheilbronn v7 campaign; two independent exact rational verifiers",
+ "credit": "Rhys Chappell, October 2026",
+ "note": "Basin exploration followed by full-configuration optimization and exact rational verification."
 }
