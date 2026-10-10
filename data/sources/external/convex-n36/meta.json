@@ -1,0 +1,5 @@
+{
+ "ref": "Nathan Sudermann-Merx search campaign, October 2026: C basin hopping with soft-min L-BFGS, symmetric orbit parametrisation, ruin-and-recreate moves, vertical seeding from n-1/n+1 records, HiGHS trust-region SLP polish",
+ "credit": "Nathan Sudermann-Merx, October 2026",
+ "note": "Found by vertical seeding / basin hopping; coordinates are the SLP-polished double-precision optimum, truncated toward zero."
+}
