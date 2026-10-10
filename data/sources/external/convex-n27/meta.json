@@ -1,5 +1,5 @@
 {
- "ref": "Fable51 search campaign, September 2026: symmetry-reduced basin hopping (orbit parametrization, greedy ruin-and-recreate, soft-min warm-up, trust-region SLP) and insertion ladders from neighbouring records; tie system refined to 80 digits by damped Gauss-Newton; verified in exact rational arithmetic",
- "credit": "Fable 5.1 with Shengtong Zhang, September 2026",
- "note": "not symmetric; 48 tied minimal triangles"
+ "ref": "Nathan Sudermann-Merx search campaign, October 2026: C basin hopping with soft-min L-BFGS, symmetric orbit parametrisation, ruin-and-recreate moves, vertical seeding from n-1/n+1 records, HiGHS trust-region SLP polish",
+ "credit": "Nathan Sudermann-Merx, October 2026",
+ "note": "Found by vertical seeding / basin hopping; coordinates are the SLP-polished double-precision optimum, truncated toward zero."
 }
