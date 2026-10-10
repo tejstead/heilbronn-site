@@ -1,5 +1,5 @@
 {
- "ref": "autoheilbronn v7 campaign; two independent exact rational verifiers",
- "credit": "Rhys Chappell, October 2026",
- "note": "Basin exploration followed by full-configuration optimization and exact rational verification."
+ "ref": "Claude Opus 5.5 search session, 9 October 2026: feasibility-penalty basin hopping restricted to the D4 symmetry group, trust-region SLP polishing, 60-digit Newton refinement, two independent exact rational verifiers.",
+ "credit": "Claude Opus 5.5 with Maxime Jan, October 2026",
+ "note": "Full D4 symmetry: four 8-point orbits (one of them on the boundary) and one 4-point orbit on the medians, 9 free parameters. 72 minimal triangles in 9 orbits of 8. Reached by 10 of 12 independent random-start searches in this D4 subspace."
 }
