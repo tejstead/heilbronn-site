@@ -1,0 +1,5 @@
+{
+ "ref": "Own search for the unit-square Heilbronn problem at n=37: multi-start simulated annealing in C, sequential-LP polish, basin hopping.",
+ "credit": "Henri Roeck, October 2026",
+ "note": "Multi-start simulated annealing on the minimum triangle area, followed by sequential linear programming polish and basin hopping; found with Claude as a coding assistant."
+}
