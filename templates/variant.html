@@ -23,7 +23,7 @@
     <p class="entry-links">
       <a href="{{ base }}/{{ slug }}/{{ e.n }}/">details &amp; viewer</a> ·
       <a href="{{ base }}/{{ slug }}/{{ e.n }}/points.txt">coordinates</a>
-      <span class="badge badge-{{ e.status }}">{{ e.status }}</span>
+      <span class="badge badge-{{ e.status }}">{{ status_labels.get(e.status, e.status) }}</span>
     </p>
   </div>
 </section>

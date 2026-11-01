@@ -51,22 +51,23 @@
   "exact_decimal": "0.0548759991708967089728109971022935630631548961",
   "exact_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mrow><mrow><mn>9</mn><msqrt><mn>65</mn></msqrt></mrow><mo>−</mo><mn>55</mn></mrow></mrow><mrow><mn>320</mn></mrow></mfrac></math>"
  },
- "status": "proven",
+ "status": "numerical",
  "credit": {
   "found": {
    "name": "F. Comellas and J. Yebra",
    "date": "December 2001"
   },
-  "proved": {
+  "proved": null,
+  "trivial": false,
+  "numerical": {
    "name": "Nathan Sudermann-Merx",
    "date": "March 2026"
-  },
-  "trivial": false
+  }
  },
  "proof": {
   "id": "sudermann-merx-2026-square",
-  "title": "N. Sudermann-Merx, Certified global optimality and exact coordinates for Heilbronn configurations in the square (2026)",
-  "url": "https://arxiv.org/abs/2603.11107"
+  "title": "N. Sudermann-Merx, From global optimization to exact coordinates: Heilbronn's triangle problem on the unit square using mixed-integer nonlinear optimization, arXiv:2603.11107 v3 (October 2026)",
+  "url": "https://arxiv.org/abs/2603.11107v3"
  },
  "coordinates_source": {
   "kind": "paper",
@@ -83,7 +84,12 @@
   "reported": "Symmetric about a diagonal"
  },
  "notes": [],
- "changelog": [],
+ "changelog": [
+  {
+   "date": "2026-11",
+   "text": "status changed from proven to numerically optimal: the solver certificate (arXiv:2603.11107) holds within floating-point tolerances, and the paper states that no rigorous optimality proof is known"
+  }
+ ],
  "references": [
   "sudermann-merx-2026-square",
   "chen-gpgpu-2016",

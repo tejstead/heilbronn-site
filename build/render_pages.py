@@ -35,8 +35,11 @@ META = {
         "intro": (
             "<p>Distribute <em>n</em> points in the unit square [0,1]² to maximize the area "
             "A(n) of the smallest triangle formed by any three points. Optimality is formally "
-            "proven for n ≤ 9; for n ≥ 10, the values shown represent the current best-known "
-            "configurations found by numerical search and geometric construction.</p>"),
+            "proven for n ≤ 8. For n = 9 and 10 a global solver has certified the known "
+            "configurations as optimal within its floating-point tolerances, which is strong "
+            "numerical evidence but not a proof. For n ≥ 11, the values shown represent the "
+            "current best-known configurations found by numerical search and geometric "
+            "construction.</p>"),
     },
     "triangle": {
         "title": "The Heilbronn Problem for Triangles",
@@ -50,7 +53,8 @@ META = {
             "(0,0), (1,0), (0,1) and displayed as an equilateral figure. Note that literature "
             "using the unnormalized right triangle with vertices (0,0),(1,0),(0,1) has area 1/2, "
             "and therefore reports values exactly half of those shown here. Optimality is proven "
-            "for n ≤ 8.</p>"),
+            "for n ≤ 7. For n = 8 a global solver has certified optimality within its "
+            "floating-point tolerances, which is strong numerical evidence but not a proof.</p>"),
     },
     "convex": {
         "title": "The Heilbronn Problem for Convex Regions",
@@ -148,6 +152,22 @@ def fixed8(doc):
     return f"{head}.{(tail + '00000000')[:8]}"
 
 
+STATUS_LABELS = {"numerical": "numerically optimal"}
+
+
+def numerical_line(doc, name_html):
+    """Credit line for optimality certified only numerically, never worded
+    as a proof. name_html is the (already escaped / marked-up) name."""
+    c = doc["credit"]["numerical"]
+    proof = doc.get("proof")
+    head = "Numerically optimal"
+    if proof and proof.get("url"):
+        head = f'<a href="{html.escape(proof["url"], quote=True)}">Numerically optimal</a>'
+    return (f"{head}: solved to global optimality within solver tolerances by {name_html}"
+            + (f", {html.escape(c['date'])}" if c["date"] else "")
+            + ". The certificate is floating-point, not a rigorous proof.")
+
+
 def credit_text(doc):
     c = doc["credit"]
     if c["trivial"]:
@@ -157,6 +177,9 @@ def credit_text(doc):
         parts.append(f"{c['found']['name']}" + (f", {c['found']['date']}" if c["found"]["date"] else ""))
     if c["proved"]:
         parts.append(f"proved {c['proved']['name']}" + (f" {c['proved']['date']}" if c["proved"]["date"] else ""))
+    if c.get("numerical"):
+        parts.append(f"numerically optimal {c['numerical']['name']}"
+                     + (f" {c['numerical']['date']}" if c["numerical"]["date"] else ""))
     return "; ".join(parts) if parts else "—"
 
 
@@ -175,6 +198,8 @@ def provenance_lines(doc, derived):
             head = f'<a href="{html.escape(proof["url"], quote=True)}">Proved optimal</a>'
         lines.append(f"{head} by <strong>{c['proved']['name']}</strong>"
                      + (f", {c['proved']['date']}" if c["proved"]["date"] else "") + ".")
+    if c.get("numerical"):
+        lines.append(numerical_line(doc, f"<strong>{html.escape(c['numerical']['name'])}</strong>"))
     for note in doc.get("notes", []):
         lines.append(note)
     src = doc.get("coordinates_source")
@@ -371,7 +396,8 @@ def render_all(env, docs, derived_map, assets):
                 '<?xml version="1.0" encoding="UTF-8"?>\n' + figure)
             write_card(out.parent / "og.png", figure, f"{META[v]['short']}, n = {n}",
                        f"A = {card_value(doc)}",
-                       "proven optimal" if doc["status"] == "proven" else "best known")
+                       {"proven": "proven optimal", "numerical": "numerically optimal"}
+                       .get(doc["status"], "best known"))
         if fam_spec:
             (out.parent / "family.json").write_text(json.dumps({
                 "variant": v, "n": n,
@@ -410,6 +436,8 @@ def render_all(env, docs, derived_map, assets):
                     head = f'<a href="{html.escape(proof["url"], quote=True)}">Proved optimal</a>'
                 credit_lines.append(f"{head} by {html.escape(c['proved']['name'])}"
                                     + (f", {html.escape(c['proved']['date'])}" if c["proved"]["date"] else "") + ".")
+            if c.get("numerical"):
+                credit_lines.append(numerical_line(doc, html.escape(c["numerical"]["name"])))
             symline = None
             if derived:
                 sym = derived["symmetry"]
@@ -461,6 +489,7 @@ def render_all(env, docs, derived_map, assets):
                 "slug": v,
                 "display": fixed8(doc),
                 "proven": doc["status"] in ("proven", "trivial"),
+                "numerical": doc["status"] == "numerical",
             } if doc else None)
         value_rows.append({"n": n, "cells": cells})
     write_card(DIST / "og.png", figure_svg("square", docs[("square", 16)]["points"],
@@ -639,9 +668,11 @@ def write_sitemap_and_404(env, common):
 
 
 def make_env():
-    return jinja2.Environment(
+    env = jinja2.Environment(
         loader=jinja2.FileSystemLoader(ROOT / "templates"),
         autoescape=True, trim_blocks=True, lstrip_blocks=True)
+    env.globals["status_labels"] = STATUS_LABELS
+    return env
 
 
 def render(docs=None, derived_map=None):

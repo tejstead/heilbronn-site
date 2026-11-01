@@ -70,6 +70,10 @@ def leaderboards(docs):
         for (v, n), doc in sorted(docs.items()):
             credit = doc.get("credit") or {}
             c = credit.get(kind)
+            # The proofs board also counts solver certificates (numerically
+            # optimal within floating-point tolerances).
+            if kind == "proved" and not c:
+                c = credit.get("numerical")
             if not c or credit.get("trivial"):
                 continue
             val = value_of(doc)

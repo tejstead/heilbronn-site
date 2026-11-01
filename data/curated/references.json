@@ -53,14 +53,14 @@
   "sudermann-merx-2026-square": {
    "kind": "arxiv",
    "id": "2603.11107",
-   "url": "https://arxiv.org/abs/2603.11107",
-   "title": "N. Sudermann-Merx, Certified global optimality and exact coordinates for Heilbronn configurations in the square (2026)"
+   "url": "https://arxiv.org/abs/2603.11107v3",
+   "title": "N. Sudermann-Merx, From global optimization to exact coordinates: Heilbronn's triangle problem on the unit square using mixed-integer nonlinear optimization, arXiv:2603.11107 v3 (October 2026)"
   },
   "sudermann-merx-2026-triangle": {
    "kind": "arxiv",
    "id": "2607.15021",
    "url": "https://arxiv.org/abs/2607.15021",
-   "title": "N. Sudermann-Merx, The Heilbronn problem in triangles: boundary structure and certified optima for n ≤ 8 (2026)"
+   "title": "N. Sudermann-Merx, Heilbronn's problem in the unit triangle: certified optimal configurations for n ≤ 8, arXiv:2607.15021 (July 2026)"
   },
   "cohen-pohoata-zakharov-2023": {
    "kind": "arxiv",
@@ -179,6 +179,7 @@
    "oeis-a379534"
   ],
   "square/10": [
+   "sudermann-merx-2026-square",
    "comellas-yebra-2002"
   ],
   "square/11": [
@@ -239,13 +240,16 @@
   "square/6": "dress-yang-zeng-1995",
   "square/7": "chen-zeng-2011",
   "square/8": "dehbi-zeng-2022",
-  "square/9": "sudermann-merx-2026-square",
   "triangle/6": "yang-zhang-zeng-1992",
-  "triangle/8": "sudermann-merx-2026-triangle",
   "convex/6": "dress-yang-zeng-1995",
   "convex/7": "yang-zeng-1995-convex7",
   "triangle/7": "zeng-chen-2019-triangle7",
   "convex/5": "palomar-2026-heilbronn-convex-3-8",
   "convex/8": "palomar-2026-heilbronn-convex-3-8"
+ },
+ "numerical": {
+  "square/9": "sudermann-merx-2026-square",
+  "square/10": "sudermann-merx-2026-square",
+  "triangle/8": "sudermann-merx-2026-triangle"
  }
 }

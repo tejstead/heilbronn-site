@@ -129,6 +129,10 @@
   {
    "date": "2026-08-21",
    "text": "value identified as the unique real root of 3456A³ − 1764A² + 268A − 9 = 0 (this site, from the published closed-form configuration)"
+  },
+  {
+   "date": "2026-10-27",
+   "text": "solved to global optimality within solver tolerances by Nathan Sudermann-Merx (arXiv:2603.11107 v3), confirming the Comellas–Yebra configuration; numerically optimal, not a rigorous proof"
   }
  ],
  "square/12": [
@@ -179,6 +183,10 @@
   {
    "date": "2026-08-22",
    "text": "exact realization of the certified optimum: tie system solved to 400 digits, every coordinate identified as an explicit degree-7 algebraic number (this site); replaces the reconstruction"
+  },
+  {
+   "date": "2026-11",
+   "text": "status changed from proven to numerically optimal: the certificate (arXiv:2607.15021) is a Gurobi run with a 10⁻⁴ relative MIP gap in floating point, and the exact optimum (the septic root) remains a conjecture of Chen, Zeng and Zhou"
   }
  ],
  "convex/8": [
@@ -321,6 +329,12 @@
   {
    "date": "2026-09-15",
    "text": "coordinates replaced by the exact tie-system solution (30 decimals); value identified as the smallest positive root of 4636072741330A¹⁴ + 1774549666005A¹³ − 1233481443979A¹² − 1367692325626A¹¹ − 694825007492A¹⁰ + 38268929375A⁹ + 102061390459A⁸ + 123696372A⁷ − 5255868622A⁶ + 66844595A⁵ + 131075035A⁴ − 8755802A³ − 171936A² − 24711A + 2645 = 0.064064752307941… (this site, from the symmetry-reduced tie system)"
+  }
+ ],
+ "square/9": [
+  {
+   "date": "2026-11",
+   "text": "status changed from proven to numerically optimal: the solver certificate (arXiv:2603.11107) holds within floating-point tolerances, and the paper states that no rigorous optimality proof is known"
   }
  ]
 }

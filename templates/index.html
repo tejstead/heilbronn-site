@@ -43,7 +43,8 @@ and an in-browser <a href="{{ base }}/verifier/">rational arithmetic verifier</a
 
 <h2>Best known values</h2>
 <p class="table-legend">Truncated to 8 decimals; <span class="proven-mark">▲</span> marks
-entries proven optimal.</p>
+entries proven optimal, <span class="proven-mark">△</span> entries numerically optimal (certified
+by a global solver within its tolerances, not proven).</p>
 <div class="table-scroll">
 <table class="values">
   <thead><tr><th>n</th><th>square</th><th>triangle</th><th>convex</th></tr></thead>
@@ -53,7 +54,7 @@ entries proven optimal.</p>
       <th>{{ row.n }}</th>
       {% for cell in row.cells %}
       <td>{% if cell %}<a href="{{ base }}/{{ cell.slug }}/{{ row.n }}/"
-        {% if cell.proven %}class="proven"{% endif %}>{{ cell.display }}</a>{% else %}—{% endif %}</td>
+        {% if cell.proven %}class="proven"{% elif cell.numerical %}class="numerical"{% endif %}>{{ cell.display }}</a>{% else %}—{% endif %}</td>
       {% endfor %}
     </tr>
   {% endfor %}

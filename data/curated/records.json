@@ -89,13 +89,14 @@
    "name": "F. Comellas and J. Yebra",
    "date": "December 2001"
   },
-  "proved": {
-   "name": "Nathan Sudermann-Merx",
-   "date": "March 2026"
-  },
+  "proved": null,
   "trivial": false,
   "symmetry": "Symmetric about a diagonal",
-  "notes": []
+  "notes": [],
+  "numerical": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "March 2026"
+  }
  },
  "square/10": {
   "decimal": "0.04654",
@@ -108,7 +109,11 @@
   "proved": null,
   "trivial": false,
   "symmetry": "Symmetric about both diagonals",
-  "notes": []
+  "notes": [],
+  "numerical": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "October 2026"
+  }
  },
  "square/11": {
   "decimal": "0.03704",
@@ -512,13 +517,14 @@
    "name": "David Cantrell",
    "date": "July 2006"
   },
-  "proved": {
-   "name": "Nathan Sudermann-Merx",
-   "date": "2026"
-  },
+  "proved": null,
   "trivial": false,
   "symmetry": "Not symmetric",
-  "notes": []
+  "notes": [],
+  "numerical": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "July 2026"
+  }
  },
  "triangle/9": {
   "decimal": "0.0548",

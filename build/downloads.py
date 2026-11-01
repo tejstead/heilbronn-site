@@ -30,6 +30,10 @@ def points_txt(doc):
     if c["proved"]:
         date = f", {c['proved']['date']}" if c["proved"]["date"] else ""
         lines.append(f"# proved optimal by {c['proved']['name']}{date}")
+    if c.get("numerical"):
+        date = f", {c['numerical']['date']}" if c["numerical"]["date"] else ""
+        lines.append(f"# numerically optimal (global solver, within tolerances; not a proof): "
+                     f"{c['numerical']['name']}{date}")
     src = doc.get("coordinates_source")
     if src:
         lines.append(f"# coordinates: {src['ref']}" + (f" ({src['note']})" if src.get("note") else ""))

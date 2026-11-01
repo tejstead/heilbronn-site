@@ -60,16 +60,24 @@
   "exact_decimal": "0.0465374195825417725616117681001455132887128455",
   "poly_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>3456</mn><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>1764</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>268</mn><mi>x</mi><mo>−</mo><mn>9</mn></mrow></math>"
  },
- "status": "record",
+ "status": "numerical",
  "credit": {
   "found": {
    "name": "F. Comellas and J. Yebra",
    "date": "December 2001"
   },
   "proved": null,
-  "trivial": false
+  "trivial": false,
+  "numerical": {
+   "name": "Nathan Sudermann-Merx",
+   "date": "October 2026"
+  }
  },
- "proof": null,
+ "proof": {
+  "id": "sudermann-merx-2026-square",
+  "title": "N. Sudermann-Merx, From global optimization to exact coordinates: Heilbronn's triangle problem on the unit square using mixed-integer nonlinear optimization, arXiv:2603.11107 v3 (October 2026)",
+  "url": "https://arxiv.org/abs/2603.11107v3"
+ },
  "coordinates_source": {
   "kind": "paper",
   "ref": "arXiv:2603.11107",
@@ -89,9 +97,14 @@
   {
    "date": "2026-08-21",
    "text": "value identified as the unique real root of 3456A³ − 1764A² + 268A − 9 = 0 (this site, from the published closed-form configuration)"
+  },
+  {
+   "date": "2026-10-27",
+   "text": "solved to global optimality within solver tolerances by Nathan Sudermann-Merx (arXiv:2603.11107 v3), confirming the Comellas–Yebra configuration; numerically optimal, not a rigorous proof"
   }
  ],
  "references": [
+  "sudermann-merx-2026-square",
   "comellas-yebra-2002"
  ],
  "verify": {

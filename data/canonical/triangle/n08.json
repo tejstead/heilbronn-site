@@ -53,21 +53,22 @@
   "exact_decimal": "0.0677892132541972123588108049740286304958007014",
   "poly_mathml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mrow><mn>1216512</mn><msup><mi>t</mi><mn>7</mn></msup><mo>+</mo><mn>1022976</mn><msup><mi>t</mi><mn>6</mn></msup><mo>−</mo><mn>2745456</mn><msup><mi>t</mi><mn>5</mn></msup><mo>+</mo><mn>2218730</mn><msup><mi>t</mi><mn>4</mn></msup><mo>+</mo><mn>32206304</mn><msup><mi>t</mi><mn>3</mn></msup><mo>−</mo><mn>19148615</mn><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mn>3156103</mn><mi>t</mi><mo>−</mo><mn>86233</mn></mrow></math>"
  },
- "status": "proven",
+ "status": "numerical",
  "credit": {
   "found": {
    "name": "David Cantrell",
    "date": "July 2006"
   },
-  "proved": {
+  "proved": null,
+  "trivial": false,
+  "numerical": {
    "name": "Nathan Sudermann-Merx",
-   "date": "2026"
-  },
-  "trivial": false
+   "date": "July 2026"
+  }
  },
  "proof": {
   "id": "sudermann-merx-2026-triangle",
-  "title": "N. Sudermann-Merx, The Heilbronn problem in triangles: boundary structure and certified optima for n ≤ 8 (2026)",
+  "title": "N. Sudermann-Merx, Heilbronn's problem in the unit triangle: certified optimal configurations for n ≤ 8, arXiv:2607.15021 (July 2026)",
   "url": "https://arxiv.org/abs/2607.15021"
  },
  "coordinates_source": {
@@ -89,6 +90,10 @@
   {
    "date": "2026-08-22",
    "text": "exact realization of the certified optimum: tie system solved to 400 digits, every coordinate identified as an explicit degree-7 algebraic number (this site); replaces the reconstruction"
+  },
+  {
+   "date": "2026-11",
+   "text": "status changed from proven to numerically optimal: the certificate (arXiv:2607.15021) is a Gurobi run with a 10⁻⁴ relative MIP gap in floating point, and the exact optimum (the septic root) remains a conjecture of Chen, Zeng and Zhou"
   }
  ],
  "references": [

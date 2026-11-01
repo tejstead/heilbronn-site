@@ -326,6 +326,9 @@ def ingest():
     refs_by_config = refdata.get("by_config", {})
     bib = refdata.get("bib", {})
     proofs = refdata.get("proofs", {})
+    # Optimality certified only numerically (a global solver run within
+    # floating-point tolerances): linked the same way, never called a proof.
+    proofs = {**refdata.get("numerical", {}), **proofs}
 
     def proof_for(key):
         rid = proofs.get(key)
@@ -419,13 +422,18 @@ def canonical_doc(variant, n, entry, cand, res, page_relation, override, changel
     trivial = bool(entry and entry.get("trivial"))
     found = entry.get("found") if entry else None
     proved = entry.get("proved") if entry else None
+    numerical = entry.get("numerical") if entry else None
     # Status describes the VALUE only; coordinate provenance (including
     # reconstruction) is a separate fact carried by coordinates_source and
     # surfaced as its own tag, never as a competing status.
     # Trivial cases are proven (the credit keeps the trivial flag, and the
     # page comments "Trivial configuration." instead of a separate badge).
+    # "numerical": a global solver certified optimality only within its
+    # floating-point tolerances — strong evidence, but not a proof.
     if trivial or proved:
         status = "proven"
+    elif numerical:
+        status = "numerical"
     else:
         status = "record"
 
@@ -447,6 +455,7 @@ def canonical_doc(variant, n, entry, cand, res, page_relation, override, changel
             "found": found,
             "proved": proved,
             "trivial": trivial,
+            **({"numerical": numerical} if numerical else {}),
         },
         "proof": proof,
         "coordinates_source": ({
