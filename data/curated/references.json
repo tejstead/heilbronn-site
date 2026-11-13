@@ -153,6 +153,11 @@
    "kind": "web",
    "url": "https://palomar-registry.org/entry?id=PALOMAR-2026-09-02-000012&version=1",
    "title": "T. Stead, heilbronn-convex-3-8, Palomar registry PALOMAR-2026-09-02-000012 v1 (Lean 4 formalization, machine-checked), 2 September 2026"
+  },
+  "hendren-2026-square9": {
+   "kind": "web",
+   "url": "https://github.com/NERD-NEH007/heilbronn-discovery-lab",
+   "title": "E. Hendren, A computer-assisted proof that the known nine-point Heilbronn configuration in the unit square is optimal (November 2026), github.com/NERD-NEH007/heilbronn-discovery-lab"
   }
  },
  "by_config": {
@@ -174,6 +179,7 @@
   ],
   "square/9": [
    "sudermann-merx-2026-square",
+   "hendren-2026-square9",
    "chen-gpgpu-2016",
    "comellas-yebra-2002",
    "oeis-a379534"

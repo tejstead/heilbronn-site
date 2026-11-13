@@ -335,6 +335,10 @@
   {
    "date": "2026-11",
    "text": "status changed from proven to numerically optimal: the solver certificate (arXiv:2603.11107) holds within floating-point tolerances, and the paper states that no rigorous optimality proof is known"
+  },
+  {
+   "date": "2026-11-13",
+   "text": "computer-assisted proof of optimality posted by Ethan Hendren: an exact-arithmetic branch and bound (LP bounds verified in exact integer arithmetic, neighbourhood of the optimum closed by an interval-arithmetic certificate) shows H(9) = (9√65 − 55)/320 with the Comellas–Yebra configuration unique up to symmetry; AI-assisted and not yet independently verified, so the entry stays numerically optimal"
   }
  ]
 }
