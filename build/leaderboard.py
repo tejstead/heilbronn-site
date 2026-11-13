@@ -20,6 +20,7 @@ ALIASES = {
     "z. zeng": "Zhenbing Zeng",
     "zeng zhenbing": "Zhenbing Zeng",
     "j. z. zhang": "Jingzhong Zhang",
+    "j. zhang": "Jingzhong Zhang",
     "zhang jingzhong": "Jingzhong Zhang",
     "l. chen": "Liangyu Chen",
     "a. dress": "Andreas Dress",

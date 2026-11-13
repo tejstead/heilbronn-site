@@ -14,10 +14,11 @@ square for small n and converge as n grows.</figcaption></figure>
 
 <figure class="chart">{{ charts["normalized"] | safe }}
 <figcaption>Plotting the normalized product n² · A(n) highlights the gap between
-asymptotic theory and finite-n behavior. In 1982, Komlós, Pintz, and Szemerédi
-proved that A(n) ≥ c · (log n) / n², establishing that n² · A(n) must eventually grow
-without bound. Meanwhile, the sharpest known upper bound, A(n) ≤ n<sup>−8/7 − 1/2000</sup>
-(Cohen, Pohoata, and Zakharov, 2023), leaves substantial room between logarithmic growth
+asymptotic theory and finite-n behavior. For the optimal value Δ<sub>n</sub> (of which A(n) is
+the best known lower estimate), Komlós, Pintz, and Szemerédi proved in 1982 that
+Δ<sub>n</sub> ≥ c · (log n) / n², so n² · Δ<sub>n</sub> must eventually grow without bound.
+Meanwhile, the sharpest known upper bound, Δ<sub>n</sub> ≤ n<sup>−7/6 + o(1)</sup>
+(Cohen, Pohoata, and Zakharov, 2025), leaves substantial room between logarithmic growth
 and polynomial decay. Within our computational window (n ≤ 36), the normalized curve
 hovers in a stable band, demonstrating that asymptotic regimes remain distant at small n.</figcaption></figure>
 

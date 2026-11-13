@@ -21,7 +21,17 @@
   "value": {
    "exact_display": "1/8",
    "exact_sympy": "1/8"
-  }
+  },
+  "credit": {
+   "proved": {
+    "name": "L. Yang, J. Zhang, and Z. Zeng",
+    "date": "1992"
+   }
+  },
+  "notes": [
+   "One of an infinite family of solutions.",
+   "The proof is Theorem 3 of L. Yang, J. Zhang, Z. Zeng, Chinese Ann. Math. Ser. A 13 (1992) 503–515. That paper names L. Yang and J. Zhang, “The six-point problem in the square” (1980, in Chinese), as the first solution. Dress, Yang, and Zeng (1995) later treated six points in a general planar convex body."
+  ]
  },
  "square/7": {
   "value": {

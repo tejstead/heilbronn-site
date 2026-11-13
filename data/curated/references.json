@@ -9,6 +9,10 @@
    "kind": "note",
    "title": "L. Yang, J. Z. Zhang, Z. B. Zeng, A conjecture on the first several Heilbronn numbers and a computation, Chinese Ann. Math. Ser. A 13 (1992) 503–515"
   },
+  "yang-zhang-1980": {
+   "kind": "note",
+   "title": "L. Yang, J. Zhang, The six-point problem in the square, Mathematics Lectures (Part II), Sichuan People's Publishing House (1980) 159–175 (in Chinese)"
+  },
   "dress-yang-zeng-1995": {
    "kind": "web",
    "url": "https://doi.org/10.1007/978-1-4613-3557-3_13",
@@ -60,13 +64,19 @@
    "kind": "arxiv",
    "id": "2607.15021",
    "url": "https://arxiv.org/abs/2607.15021",
-   "title": "N. Sudermann-Merx, Heilbronn's problem in the unit triangle: certified optimal configurations for n ≤ 8, arXiv:2607.15021 (July 2026)"
+   "title": "N. Sudermann-Merx, Heilbronn's Problem in the Unit Triangle: Computational Optimality Certificates for n ≤ 8, arXiv:2607.15021, to appear in Operations Research Proceedings 2026"
   },
   "cohen-pohoata-zakharov-2023": {
    "kind": "arxiv",
    "id": "2305.18253",
    "url": "https://arxiv.org/abs/2305.18253",
-   "title": "A. Cohen, C. Pohoata, D. Zakharov, A new upper bound for the Heilbronn triangle problem (2023)"
+   "title": "A. Cohen, C. Pohoata, D. Zakharov, A new upper bound for the Heilbronn triangle problem, arXiv:2305.18253 (2023) — the earlier result, Δ_n ≤ n^(−8/7−1/2000)"
+  },
+  "cohen-pohoata-zakharov-2025": {
+   "kind": "doi",
+   "id": "10.1007/s00222-025-01331-2",
+   "url": "https://doi.org/10.1007/s00222-025-01331-2",
+   "title": "A. Cohen, C. Pohoata, D. Zakharov, Lower bounds for incidences, Invent. Math. 240 (2025) 1045–1118, arXiv:2409.07658 — Δ_n ≤ n^(−7/6+o(1))"
   },
   "monji-modir-kocuk-2025": {
    "kind": "arxiv",
@@ -160,6 +170,8 @@
    "yang-zhang-zeng-1992"
   ],
   "square/6": [
+   "yang-zhang-zeng-1992",
+   "yang-zhang-1980",
    "dress-yang-zeng-1995"
   ],
   "square/7": [
@@ -237,7 +249,7 @@
  },
  "proofs": {
   "square/5": "yang-zhang-zeng-1992",
-  "square/6": "dress-yang-zeng-1995",
+  "square/6": "yang-zhang-zeng-1992",
   "square/7": "chen-zeng-2011",
   "square/8": "dehbi-zeng-2022",
   "triangle/6": "yang-zhang-zeng-1992",

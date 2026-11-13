@@ -43,15 +43,15 @@
  "credit": {
   "found": null,
   "proved": {
-   "name": "A. Dress, L. Yang, and Z. B. Zeng",
-   "date": "1995"
+   "name": "L. Yang, J. Zhang, and Z. Zeng",
+   "date": "1992"
   },
   "trivial": false
  },
  "proof": {
-  "id": "dress-yang-zeng-1995",
-  "title": "A. Dress, L. Yang, Z. Zeng, Heilbronn problem for six points in a planar convex body, in Minimax and Applications, Springer (1995) 173–190",
-  "url": "https://doi.org/10.1007/978-1-4613-3557-3_13"
+  "id": "yang-zhang-zeng-1992",
+  "title": "L. Yang, J. Z. Zhang, Z. B. Zeng, A conjecture on the first several Heilbronn numbers and a computation, Chinese Ann. Math. Ser. A 13 (1992) 503–515",
+  "url": null
  },
  "coordinates_source": {
   "kind": "spiralulam",
@@ -68,10 +68,13 @@
   "reported": "Vertically and horizontally symmetric"
  },
  "notes": [
-  "One of an infinite family of solutions."
+  "One of an infinite family of solutions.",
+  "The proof is Theorem 3 of L. Yang, J. Zhang, Z. Zeng, Chinese Ann. Math. Ser. A 13 (1992) 503–515. That paper names L. Yang and J. Zhang, “The six-point problem in the square” (1980, in Chinese), as the first solution. Dress, Yang, and Zeng (1995) later treated six points in a general planar convex body."
  ],
  "changelog": [],
  "references": [
+  "yang-zhang-zeng-1992",
+  "yang-zhang-1980",
   "dress-yang-zeng-1995"
  ],
  "verify": {
