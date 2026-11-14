@@ -163,6 +163,11 @@
    "kind": "web",
    "url": "https://palomar-registry.org/entry?id=PALOMAR-2026-09-02-000012&version=1",
    "title": "T. Stead, heilbronn-convex-3-8, Palomar registry PALOMAR-2026-09-02-000012 v1 (Lean 4 formalization, machine-checked), 2 September 2026"
+  },
+  "hendren-2026-triangle8": {
+   "kind": "web",
+   "url": "https://github.com/NERD-NEH007/heilbronn-discovery-lab/releases/tag/v1.1-tri8",
+   "title": "E. Hendren, A computer-assisted proof of optimality for Heilbronn's problem with eight points in a triangle (November 2026), github.com/NERD-NEH007/heilbronn-discovery-lab"
   }
  },
  "by_config": {
@@ -218,6 +223,7 @@
   ],
   "triangle/8": [
    "sudermann-merx-2026-triangle",
+   "hendren-2026-triangle8",
    "chen-zeng-zhou-2014"
   ],
   "triangle/11": [

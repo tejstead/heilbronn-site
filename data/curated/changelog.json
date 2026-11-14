@@ -187,6 +187,10 @@
   {
    "date": "2026-11",
    "text": "status changed from proven to numerically optimal: the certificate (arXiv:2607.15021) is a Gurobi run with a 10⁻⁴ relative MIP gap in floating point, and the exact optimum (the septic root) remains a conjecture of Chen, Zeng and Zhou"
+  },
+  {
+   "date": "2026-11-14",
+   "text": "computer-assisted proof of optimality posted by Ethan Hendren: an exact-arithmetic branch and bound over the whole configuration space (LP bounds verified in exact integer arithmetic, neighbourhood of the optimum closed by an interval-arithmetic certificate) shows that the value is twice the unique real root of the septic, with the known configuration unique up to symmetry; AI-assisted and not yet independently verified, so the entry stays numerically optimal"
   }
  ],
  "convex/8": [
