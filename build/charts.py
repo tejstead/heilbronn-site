@@ -6,6 +6,8 @@ recessive grid, direct labels + native <title> tooltips)."""
 
 import math
 
+from .ingest import N_MAX
+
 W, H = 720, 400
 ML, MR, MT, MB = 62, 120, 18, 46  # margins: right one leaves room for labels
 
@@ -62,7 +64,8 @@ def chart(series, *, title, ylabel, logy=False, yticks, ytick_fmt=str,
         y = Y(t)
         parts.append(f'<line class="grid" x1="{ML}" y1="{_fmt(y)}" x2="{W - MR}" y2="{_fmt(y)}"/>')
         parts.append(f'<text x="{ML - 8}" y="{_fmt(y + 4)}" text-anchor="end">{ytick_fmt(t)}</text>')
-    for n in range(5, x1 + 1, 5):
+    step = 5 if x1 - x0 <= 50 else 10
+    for n in range(step, x1 + 1, step):
         parts.append(f'<text x="{_fmt(X(n))}" y="{H - MB + 18}" text-anchor="middle">{n}</text>')
     parts.append(f'<line class="axis" x1="{ML}" y1="{H - MB}" x2="{W - MR}" y2="{H - MB}"/>')
     parts.append(f'<text x="{_fmt((ML + W - MR) / 2)}" y="{H - 8}" text-anchor="middle">n</text>')
@@ -103,7 +106,7 @@ def build_charts(docs):
     a_series, a2_series, tie_series = {}, {}, {}
     for v in ("square", "triangle", "convex"):
         a, a2, t = [], [], []
-        for n in range(3, 37):
+        for n in range(3, max(N_MAX.values()) + 1):
             d = docs.get((v, n))
             if not d or not d["points"]:
                 continue
@@ -115,10 +118,14 @@ def build_charts(docs):
             t.append((n, ties, proven, f"{ties} tied minimal triangles"))
         a_series[v], a2_series[v], tie_series[v] = a, a2, t
 
+    top = max(t for pts in tie_series.values() for _, t, *_ in pts)
+    tstep = 10 if top <= 70 else 50
+    tie_ticks = list(range(0, (top // tstep + 1) * tstep + 1, tstep))
+
     return {
         "values": chart(a_series, title="Best known A(n), unit-area container",
                         ylabel="A(n), log scale", logy=True,
-                        yticks=[1, 0.3, 0.1, 0.03, 0.01, 0.003],
+                        yticks=[1, 0.3, 0.1, 0.03, 0.01, 0.003, 0.001, 0.0003],
                         ytick_fmt=lambda t: f"{t:g}", svg_id="c-values"),
         "normalized": chart(a2_series, title="n²·A(n) — the asymptotic view",
                             ylabel="n²·A(n)",
@@ -126,7 +133,7 @@ def build_charts(docs):
                             ytick_fmt=lambda t: f"{t:g}", svg_id="c-normalized"),
         "ties": chart(tie_series, title="Tied minimal triangles per configuration",
                       ylabel="count of tied minima",
-                      yticks=[0, 10, 20, 30, 40, 50, 60, 70],
+                      yticks=tie_ticks,
                       ytick_fmt=lambda t: f"{t:g}", proven_marker=False,
                       svg_id="c-ties"),
     }

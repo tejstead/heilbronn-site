@@ -40,13 +40,14 @@ sys.path.insert(0, str(ROOT))
 from build.vendor.verify_exact import verify, fraction_to_30sig  # noqa: E402
 from build.derive import (detect_symmetry, symmetry_label,  # noqa: E402
                           minimal_triangles, congruence_classes)
+from build.ingest import N_MAX  # noqa: E402
 
 # Lanes the automated pipeline verifies. external/ is THE submission lane
 # (meta.json needs "ref") — see CONTRIBUTING.md.
 SUBMISSION_ROOTS = {
     "data/sources/external": "ref",
 }
-DIR_RE = re.compile(r"^(square|triangle|convex)-n(\d{2})$")
+DIR_RE = re.compile(r"^(square|triangle|convex)-n(\d{2,3})$")
 NUM_RE = re.compile(r"^-?\d{1,6}(\.\d{1,200})?$")
 MAX_COORD_BYTES = 64 * 1024
 MAX_META_BYTES = 8 * 1024
@@ -215,10 +216,18 @@ def check_dir(dirpath, base=None):
 
     m = DIR_RE.match(dirpath.name)
     if not m:
-        fail(problems, "directory name must be `<square|triangle|convex>-nNN`")
+        fail(problems, "directory name must be `<square|triangle|convex>-nNN` "
+                       "(`-n100` for n = 100)")
         return res
     variant, n = m.group(1), int(m.group(2))
     res["variant"], res["n"] = variant, n
+    if m.group(2) != f"{n:02d}" or not 3 <= n <= MAX_POINTS:
+        fail(problems, f"n must be 3 to {MAX_POINTS}, written with two digits "
+                       "below 100 (`square-n07`, `square-n100`)")
+        return res
+    if n > N_MAX[variant]:
+        fail(problems, f"the {variant} table runs to n = {N_MAX[variant]}")
+        return res
 
     coord_path = dirpath / "coordinates.txt"
     if not coord_path.exists():

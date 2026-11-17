@@ -32,8 +32,10 @@ CURATED = ROOT / "data" / "curated"
 CANONICAL = ROOT / "data" / "canonical"
 
 VARIANTS = ("square", "triangle", "convex")
-# Per-variant n range; all three tables currently run to 36.
-N_MAX = {"square": 36, "triangle": 36, "convex": 36}
+# Per-variant n cap. Sizes inside the cap with neither a source nor a ledger
+# entry are skipped (no canonical row, no page), so a cap can run ahead of
+# the data. Directory names are n{n:02d}, so n = 100 is "n100".
+N_MAX = {"square": 100, "triangle": 36, "convex": 36}
 
 
 def ns(variant):
@@ -379,6 +381,12 @@ def ingest():
                     best = (sticky, res)
 
             window = record_window(entry) if entry else None
+            if best is None and entry is None:
+                # Nothing known at this n (e.g. square n = 97): no row at all,
+                # rather than a page claiming a record with no value.
+                if path.exists():
+                    path.unlink()
+                continue
             if best is None:
                 rel = "GAP"
                 audit.append((key, rel, "-", entry["decimal"] if entry else "-"))

@@ -5,7 +5,8 @@ Record tables for the Heilbronn triangle problem, live at
 
 The problem: put n points in a region of unit area so that the smallest
 triangle with vertices among them is as large as possible. The site covers
-the square, the triangle, and convex regions for n = 3 to 36. Each entry
+the square for n = 3 to 100 and the triangle and convex regions for
+n = 3 to 36. Each entry
 has exact coordinates, a closed form or minimal polynomial when one is
 known, its symmetry and tie structure drawn on the figure, and links to any
 optimality proof. A verifier runs in the browser so you can check a

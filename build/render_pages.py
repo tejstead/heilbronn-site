@@ -12,6 +12,7 @@ import jinja2
 from .derive import derive, symmetry_label
 from .families import generate as family_generate
 from .icons import write_icons
+from .ingest import N_MAX
 from .ogimage import write_card
 from .records_feed import atom, record_events
 from .svggen import family_svg, figure_svg
@@ -22,7 +23,7 @@ CANONICAL = ROOT / "data" / "canonical"
 DIST = ROOT / "dist" / "heilbronn"
 
 VARIANTS = ("square", "triangle", "convex")
-NS = list(range(3, 37))  # union over variants; missing docs are skipped
+NS = list(range(3, max(N_MAX.values()) + 1))  # union over variants; missing docs are skipped
 BASE = "/heilbronn"
 SITE_ORIGIN = "https://math.tejstead.com"
 
@@ -494,7 +495,8 @@ def render_all(env, docs, derived_map, assets):
         value_rows.append({"n": n, "cells": cells})
     write_card(DIST / "og.png", figure_svg("square", docs[("square", 16)]["points"],
                                            derived_map[("square", 16)]),
-               "Record tables", "n = 3 to 36", "square · triangle · convex")
+               "Record tables", f"n = 3 to {max(n for _, n in docs)}",
+               "square · triangle · convex")
     write_icons(docs[("square", 8)]["points"], DIST, DIST.parent)
     events = record_events()
     (DIST / "records.xml").write_text(atom(events, SITE_ORIGIN, BASE))
@@ -542,6 +544,8 @@ from Nathan Sudermann-Merx, Rhys Chappell, and Chouaieb Nemri.</li>
 <li><strong>This site's own search campaigns</strong> — records for
 n = 17…36 across the variants, found with the toolkit under
 <code>search/</code> and submitted through the same lane as everyone else's.</li>
+<li><a href="https://github.com/NERD-NEH007/heilbronn-discovery-lab">NERD-NEH007/heilbronn-discovery-lab</a>
+— Ethan Hendren's search campaign: the first square entries for n = 37…99.</li>
 <li><a href="https://github.com/cnemri/heilbronn-alphaevolve">cnemri/heilbronn-alphaevolve</a>
 — Chouaieb Nemri's AlphaEvolve-evolved search program (square n = 17, 21, 22
 records); the evolved program's architecture also powers several of the later
@@ -621,13 +625,16 @@ are tracked on the <a href="/heilbronn/leaderboard/">leaderboard</a>.</p>
 
 def render_extra(env, assets, values_name):
     """Pages that need the values.json asset name (written by downloads)."""
-    common = {"base": BASE, "site_origin": SITE_ORIGIN, "assets": assets}
+    docs = load_docs()
+    n_max = {v: max(n for w, n in docs if w == v) for v in VARIANTS}
+    common = {"base": BASE, "site_origin": SITE_ORIGIN, "assets": assets,
+              "n_max": n_max}
     from .charts import build_charts
     (DIST / "trends").mkdir(parents=True, exist_ok=True)
     (DIST / "trends" / "index.html").write_text(
         env.get_template("trends.html").render(
             dict(common, section="trends", page_path=f"{BASE}/trends/",
-                 charts=build_charts(load_docs()))))
+                 charts=build_charts(docs))))
     bib = json.loads((ROOT / "data" / "curated" / "references.json").read_text())["bib"]
     (DIST / "methods").mkdir(parents=True, exist_ok=True)
     (DIST / "methods" / "index.html").write_text(
@@ -639,7 +646,7 @@ def render_extra(env, assets, values_name):
     (DIST / "leaderboard" / "index.html").write_text(
         env.get_template("leaderboard.html").render(
             dict(common, section="leaderboard", page_path=f"{BASE}/leaderboard/",
-                 boards=leaderboards(load_docs()))))
+                 boards=leaderboards(docs))))
     (DIST / "verifier").mkdir(parents=True, exist_ok=True)
     (DIST / "verifier" / "index.html").write_text(
         env.get_template("verifier.html").render(

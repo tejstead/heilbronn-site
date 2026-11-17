@@ -19,8 +19,11 @@ the best known lower estimate), Komlós, Pintz, and Szemerédi proved in 1982 th
 Δ<sub>n</sub> ≥ c · (log n) / n², so n² · Δ<sub>n</sub> must eventually grow without bound.
 Meanwhile, the sharpest known upper bound, Δ<sub>n</sub> ≤ n<sup>−7/6 + o(1)</sup>
 (Cohen, Pohoata, and Zakharov, 2025), leaves substantial room between logarithmic growth
-and polynomial decay. Within our computational window (n ≤ 36), the normalized curve
-hovers in a stable band, demonstrating that asymptotic regimes remain distant at small n.</figcaption></figure>
+and polynomial decay. Within the range tabulated here (n ≤ {{ n_max.square }}), the normalized curve
+hovers in a stable band, demonstrating that asymptotic regimes remain distant at small n.
+Square entries beyond n = 36 are first entries from a single search campaign. Their n² · A(n)
+drifts down from about 5.6 near n = 40 to about 4.9 near n = 99, while the better-searched range
+n ≤ 36 trends upward, so the larger sizes are most likely further from optimal than the smaller ones.</figcaption></figure>
 
 <figure class="chart">{{ charts["ties"] | safe }}
 <figcaption>The number of triangles that simultaneously achieve the minimal area (the critical set).
