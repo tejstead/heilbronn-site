@@ -1,5 +1,5 @@
 {
  "ref": "Derived from Ethan Hendren's square n = 98 configuration (github.com/NERD-NEH007/heilbronn-discovery-lab, PR #82) by deleting one point",
- "credit": "Tej Stead, November 2026",
+ "credit": "Ethan Hendren, November 2026",
  "note": "The n = 98 configuration with one point removed. That point lies on none of the minimal triangles, so the value equals the n = 98 value exactly; it is a placeholder bound, not an optimized 97-point configuration."
 }
