@@ -1,5 +1,1 @@
-{
- "ref": "David Cantrell's original coordinates (Mathematica list), received September 2026",
- "credit": "David Cantrell, June 2007",
- "note": "Original author's arrangement for the entry, previously shown only as a reconstruction; Cantrell's literals converge to the same configuration under local polishing, and the literals here are that arrangement tightened to 15 decimals."
-}
+{"ref": "Discovery lab computational search. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab", "credit": "Configuration: David Cantrell, June 2007 (original basin credit). Exact refinement to the local maximum: Ethan Hendren, November 2026", "note": "Exact refinement of the canonical configuration to its local maximum (certified unique solution of its tie system); coordinates truncated toward zero to 30 decimals."}

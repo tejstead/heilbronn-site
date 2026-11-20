@@ -1,5 +1,1 @@
-{
- "ref": "Fable51 search campaign, September 2026: symmetry-reduced basin hopping (orbit parametrization, greedy ruin-and-recreate, soft-min warm-up, trust-region SLP) and insertion ladders from neighbouring records; tie system refined to 80 digits by damped Gauss-Newton; verified in exact rational arithmetic",
- "credit": "Fable 5.1 with Shengtong Zhang, September 2026",
- "note": "not symmetric; 28 tied minimal triangles"
-}
+{"ref": "Discovery lab computational search. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab", "credit": "Configuration: Fable 5.1 with Shengtong Zhang, September 2026 (original basin credit). Exact refinement to the local maximum: Ethan Hendren, November 2026", "note": "Exact refinement of the canonical configuration to its local maximum (certified unique solution of its tie system); coordinates truncated toward zero to 30 decimals."}

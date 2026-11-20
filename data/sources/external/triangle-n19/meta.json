@@ -1,5 +1,1 @@
-{
- "ref": "One-point deletion from the n=20 record, refined to 120 digits by Gauss-Newton (refine_tri.py)",
- "credit": "Marc-Emmanuel Coupvent des Graviers, September 2026",
- "note": "No symmetry; obtained by deleting one point of the n=20 record (Fable 5.1 with Shengtong Zhang): two points on each side, 30 minimal triangles, not rigid (rank 30/33)."
-}
+{"ref": "Discovery lab computational search. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab", "credit": "Configuration: Marc-Emmanuel Coupvent des Graviers, September 2026 (original basin credit). Exact refinement to the local maximum: Ethan Hendren, November 2026", "note": "Exact refinement of the canonical configuration to its local maximum (certified unique solution of its tie system); coordinates truncated toward zero to 30 decimals."}
