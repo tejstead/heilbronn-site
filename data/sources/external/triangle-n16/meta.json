@@ -1,5 +1,5 @@
 {
- "ref": "Fable51 search campaign, September 2026: symmetry-reduced basin hopping (orbit parametrization, greedy ruin-and-recreate, soft-min warm-up, trust-region SLP) and insertion ladders from neighbouring records; tie system refined to 80 digits by damped Gauss-Newton; verified in exact rational arithmetic",
- "credit": "Fable 5.1 with Shengtong Zhang, September 2026",
- "note": "not symmetric; 24 tied minimal triangles"
+ "ref": "https://github.com/sunil123456897/lean-dag-rsi (heilbronn_pr_package/n16_exact_500dps.json); bordered KKT-Newton refinement of Fable 5.1 & Zhang's Sept 2026 configuration",
+ "credit": "Fable 5.1 with Shengtong Zhang, September 2026 (KKT refinement: Ivan Staroselets, November 2026)",
+ "note": "High-precision bordered KKT-Newton refinement (80 decimals truncated toward zero from 500-dps certificate) of Fable 5.1 & Shengtong Zhang's September 2026 arrangement (+5.77e-14). Resolves the corank-1 1D equiareal tie-system trap (rank(J_frame) = 23 < 24, KKT curvature c_16 = 0.011234563954 > 0) and identifies the 15+1 interior floater decomposition (one vertex has 0 active minimal triangles, clearance 0.018532001428)."
 }

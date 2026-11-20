@@ -1,5 +1,5 @@
 {
- "ref": "this site's search campaign claims/01-record-triangle-n13",
- "credit": "Tej Stead, July 2026",
- "note": "this site's own search campaign (companion repository); dual-verified upstream, see verify_output.json"
+ "ref": "https://github.com/sunil123456897/lean-dag-rsi (heilbronn_pr_package/n13_exact_500dps.json); bordered KKT-Newton refinement of Tej Stead's July 2026 configuration",
+ "credit": "Tej Stead, July 2026 (KKT refinement: Ivan Staroselets, November 2026)",
+ "note": "High-precision bordered KKT-Newton refinement (80 decimals truncated toward zero from 500-dps certificate) of Tej Stead's July 2026 arrangement (+3.73e-14). The 20-triangle active frame Jacobian has corank 1 (rank 19 < 20), forming a 1D equiareal tie curve with KKT curvature c_13 = 0.036078780238 > 0 and three exact parallel chords."
 }
