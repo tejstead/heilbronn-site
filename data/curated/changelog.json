@@ -167,6 +167,10 @@
   {
    "date": "2026-11-15",
    "text": "computer-assisted proof of optimality posted by Ethan Hendren: a minimum-enclosing-triangle normalization to eight contact families, an exact cell-graph search and exactly checked LP certificates, with a certified local basin, show the value 43/784 with the known configuration unique up to symmetry; AI-assisted and not yet independently verified"
+  },
+  {
+   "date": "2026-11-18",
+   "text": "optimality proof completed with a replayable certificate trace (Ethan Hendren): every split and closure of the exact search, 3,854 shards and 69,194,387 closures, is replayed in exact arithmetic by a separate checker that does not use the search code; the trace, checker and strict eight-family release receipt are archived on Zenodo; AI-assisted"
   }
  ],
  "convex/5": [
