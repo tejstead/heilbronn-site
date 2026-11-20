@@ -1,5 +1,5 @@
 {
  "ref": "this site's search campaign claims/01-record-triangle-n13",
  "credit": "Tej Stead, July 2026",
- "note": "this site's own search campaign (companion repository); dual-verified upstream, see verify_output.json"
+ "note": "this site's own search campaign (companion repository); dual-verified upstream, see verify_output.json. Coordinates refined by Ivan Staroselets, November 2026: bordered KKT-Newton refinement to 80 decimals from a 500-digit certificate (+3.7e-14); certificates at github.com/sunil123456897/lean-dag-rsi."
 }

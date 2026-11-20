@@ -545,7 +545,9 @@ from Nathan Sudermann-Merx, Rhys Chappell, and Chouaieb Nemri.</li>
 n = 17…36 across the variants, found with the toolkit under
 <code>search/</code> and submitted through the same lane as everyone else's.</li>
 <li><a href="https://github.com/NERD-NEH007/heilbronn-discovery-lab">NERD-NEH007/heilbronn-discovery-lab</a>
-— Ethan Hendren's search campaign: the first square entries for n = 37…99.</li>
+— Ethan Hendren's search campaign: the first entries beyond n = 36 (square
+n = 37…99, triangle n = 37…100, convex n = 40), several of them since improved by
+Nathan Sudermann-Merx and others.</li>
 <li><a href="https://github.com/cnemri/heilbronn-alphaevolve">cnemri/heilbronn-alphaevolve</a>
 — Chouaieb Nemri's AlphaEvolve-evolved search program (square n = 17, 21, 22
 records); the evolved program's architecture also powers several of the later

@@ -21,8 +21,7 @@ data/sources/external/<variant>-nNN/
 
 `<variant>` is `square`, `triangle`, or `convex`. `NN` is the point count,
 zero-padded to two digits: `triangle-n15`, `square-n07`, `square-n100`.
-The tables take n = 3 to 100 for the square and n = 3 to 36 for the
-triangle and convex variants. `coordinates.txt` must contain
+All three tables take n = 3 to 100. `coordinates.txt` must contain
 exactly `NN` points.
 
 A PR may add or change any number of these directories. It should not

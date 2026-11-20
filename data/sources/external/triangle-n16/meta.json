@@ -1,5 +1,5 @@
 {
  "ref": "Fable51 search campaign, September 2026: symmetry-reduced basin hopping (orbit parametrization, greedy ruin-and-recreate, soft-min warm-up, trust-region SLP) and insertion ladders from neighbouring records; tie system refined to 80 digits by damped Gauss-Newton; verified in exact rational arithmetic",
  "credit": "Fable 5.1 with Shengtong Zhang, September 2026",
- "note": "not symmetric; 24 tied minimal triangles"
+ "note": "not symmetric; 24 tied minimal triangles. Coordinates refined by Ivan Staroselets, November 2026: bordered KKT-Newton refinement to 80 decimals from a 500-digit certificate (+5.8e-14); certificates at github.com/sunil123456897/lean-dag-rsi."
 }

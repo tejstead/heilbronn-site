@@ -1,5 +1,5 @@
 {
  "ref": "One-point deletion from the n=20 record, refined to 120 digits by Gauss-Newton (refine_tri.py)",
  "credit": "Marc-Emmanuel Coupvent des Graviers, September 2026",
- "note": "No symmetry; obtained by deleting one point of the n=20 record (Fable 5.1 with Shengtong Zhang): two points on each side, 30 minimal triangles, not rigid (rank 30/33)."
+ "note": "No symmetry; obtained by deleting one point of the n=20 record (Fable 5.1 with Shengtong Zhang): two points on each side, 30 minimal triangles, not rigid (rank 30/33). Coordinates refined by Ethan Hendren, November 2026: exact refinement to the local maximum, the certified unique solution of the tie system (+2.0e-16); github.com/NERD-NEH007/heilbronn-discovery-lab."
 }

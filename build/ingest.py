@@ -35,7 +35,7 @@ VARIANTS = ("square", "triangle", "convex")
 # Per-variant n cap. Sizes inside the cap with neither a source nor a ledger
 # entry are skipped (no canonical row, no page), so a cap can run ahead of
 # the data. Directory names are n{n:02d}, so n = 100 is "n100".
-N_MAX = {"square": 100, "triangle": 36, "convex": 36}
+N_MAX = {"square": 100, "triangle": 100, "convex": 100}
 
 
 def ns(variant):
