@@ -170,14 +170,21 @@
    "title": "E. Hendren, A computer-assisted proof that the known nine-point Heilbronn configuration in the unit square is optimal (November 2026), github.com/NERD-NEH007/heilbronn-discovery-lab"
   },
   "hendren-2026-triangle8": {
-   "kind": "web",
-   "url": "https://github.com/NERD-NEH007/heilbronn-discovery-lab/releases/tag/v1.1-tri8",
-   "title": "E. Hendren, A computer-assisted proof of optimality for Heilbronn's problem with eight points in a triangle (November 2026), github.com/NERD-NEH007/heilbronn-discovery-lab"
+   "kind": "doi",
+   "id": "10.5281/zenodo.24338251",
+   "url": "https://doi.org/10.5281/zenodo.24338251",
+   "title": "E. Hendren, A computer-assisted proof of optimality for Heilbronn's problem with eight points in a triangle, Zenodo (November 2026)"
   },
   "hendren-2026-triangle9": {
    "kind": "web",
    "url": "https://github.com/NERD-NEH007/heilbronn-discovery-lab/releases/tag/v1.2-tri9",
    "title": "E. Hendren, A computer-assisted proof of optimality for Heilbronn's problem with nine points in a triangle (November 2026), github.com/NERD-NEH007/heilbronn-discovery-lab"
+  },
+  "hendren-2026-triangle8-trace": {
+   "kind": "doi",
+   "id": "10.5281/zenodo.24337873",
+   "url": "https://doi.org/10.5281/zenodo.24337873",
+   "title": "E. Hendren, Certificate trace and checker for the computer-assisted proof of Heilbronn's problem for eight points in a triangle, Zenodo dataset (November 2026)"
   }
  },
  "by_config": {
@@ -235,6 +242,7 @@
   "triangle/8": [
    "sudermann-merx-2026-triangle",
    "hendren-2026-triangle8",
+   "hendren-2026-triangle8-trace",
    "chen-zeng-zhou-2014"
   ],
   "triangle/11": [
@@ -277,7 +285,8 @@
   "convex/7": "yang-zeng-1995-convex7",
   "triangle/7": "zeng-chen-2019-triangle7",
   "convex/5": "palomar-2026-heilbronn-convex-3-8",
-  "convex/8": "palomar-2026-heilbronn-convex-3-8"
+  "convex/8": "palomar-2026-heilbronn-convex-3-8",
+  "triangle/8": "hendren-2026-triangle8"
  },
  "numerical": {
   "square/9": "sudermann-merx-2026-square",

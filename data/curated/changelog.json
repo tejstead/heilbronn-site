@@ -195,6 +195,10 @@
   {
    "date": "2026-11-14",
    "text": "computer-assisted proof of optimality posted by Ethan Hendren: an exact-arithmetic branch and bound over the whole configuration space (LP bounds verified in exact integer arithmetic, neighbourhood of the optimum closed by an interval-arithmetic certificate) shows that the value is twice the unique real root of the septic, with the known configuration unique up to symmetry; AI-assisted and not yet independently verified, so the entry stays numerically optimal"
+  },
+  {
+   "date": "2026-11-18",
+   "text": "optimality proof with a replayable certificate trace (Ethan Hendren): a second, independent proof by the cell-graph method records every split and closure, 2,950 shards and 4,379,630 closures, replayed in exact arithmetic by a separate checker that does not use the search code (it also re-checks the local certificate: Newton-Kantorovich existence and the first-order basin); trace, checker and release receipt archived on Zenodo; AI-assisted"
   }
  ],
  "convex/8": [
