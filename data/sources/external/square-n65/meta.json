@@ -1,1 +1,5 @@
-{"ref": "Discovery lab computational search; certified as a strict local maximum in exact/interval arithmetic. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab", "credit": "Ethan Hendren, November 2026", "note": "Found by computational search (growth ladders, symmetrization, SLP refinement); coordinates are the certified polished optimum truncated toward zero to 30 decimals."}
+{
+ "ref": "November 2026 computational search submitted by GitHub user rasokiwayami; seed coordinates: https://math.tejstead.com/heilbronn/square/64/points.json",
+ "credit": "rasokiwayami, November 2026",
+ "note": "An AI agent (OpenAI Codex, GPT-6.2) added one point to Nathan Sudermann-Merx's published 64-point square configuration and reoptimized all 65 points by sequential linear programming."
+}
