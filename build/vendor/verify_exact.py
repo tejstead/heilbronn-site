@@ -8,9 +8,12 @@ configuration. The CLI form is kept byte-compatible:
 
     python3 verify_exact.py VARIANT FILE
 
-All arithmetic is performed with exact rationals (fractions.Fraction).
-The only floating/decimal conversion happens at the very end, purely for
-display of the value as a 30-significant-digit decimal string.
+All arithmetic is exact. Coordinates are read as rationals
+(fractions.Fraction); the triangle scan puts them over one common
+denominator and works with Python integers, which is the same arithmetic
+without a gcd per operation. The only floating/decimal conversion happens
+at the very end, purely for display of the value as a 30-significant-digit
+decimal string.
 """
 
 import sys
@@ -104,6 +107,46 @@ def polygon_area(vertices):
     return abs(total) / 2
 
 
+def scan_triangles(points):
+    """Exact minimum triangle area over ALL C(n,3) triples, and the tie set.
+
+    Every coordinate is scaled by L, the lcm of all denominators, to an
+    integer; twice the area of a triple is then |cross| / L**2 with cross an
+    exact integer. Returns (min_area as a Fraction, the first triple in
+    itertools.combinations order attaining it, the list of all triples whose
+    area is within relative 1e-9 of the minimum (area <= min * (1 + 1e-9),
+    tested exactly as cross * 10**9 <= min_cross * (10**9 + 1)), and the
+    number of triples checked)."""
+    pts = [(Fraction(x), Fraction(y)) for x, y in points]
+    L = 1
+    for x, y in pts:
+        L = math.lcm(L, x.denominator, y.denominator)
+    X = [x.numerator * (L // x.denominator) for x, _ in pts]
+    Y = [y.numerator * (L // y.denominator) for _, y in pts]
+    n = len(pts)
+    crosses = []
+    append = crosses.append
+    best = None
+    best_triple = None
+    for i in range(n - 2):
+        xi, yi = X[i], Y[i]
+        for j in range(i + 1, n - 1):
+            dx, dy = X[j] - xi, Y[j] - yi
+            for k in range(j + 1, n):
+                c = dx * (Y[k] - yi) - dy * (X[k] - xi)
+                if c < 0:
+                    c = -c
+                append(c)
+                if best is None or c < best:
+                    best = c
+                    best_triple = (i, j, k)
+    scale = 10 ** 9
+    bound = best * (scale + 1)
+    ties = [t for t, c in zip(itertools.combinations(range(n), 3), crosses)
+            if c * scale <= bound]
+    return Fraction(best, 2 * L * L), best_triple, ties, len(crosses)
+
+
 def check_feasibility(variant, points):
     """Exact domain membership tests. Returns (feasible, violations)."""
     violations = []
@@ -151,24 +194,9 @@ def verify(variant, points):
 
     feasible, violations = check_feasibility(variant, points)
 
-    # Enumerate ALL C(n,3) triples explicitly and find the exact minimum area.
-    min_area = None
-    min_triple = None
-    areas = []
-    triples_checked = 0
-    for (i, j, k) in itertools.combinations(range(n), 3):
-        a = triangle_area(points[i], points[j], points[k])
-        areas.append(a)
-        triples_checked += 1
-        if min_area is None or a < min_area:
-            min_area = a
-            min_triple = (i, j, k)
+    min_area, min_triple, ties, triples_checked = scan_triangles(points)
     assert triples_checked == math.comb(n, 3)
-
-    # Exact tie count: triples whose area is within relative 1e-9 of the
-    # minimum, i.e. area <= min_area * (1 + 1e-9), tested in exact rationals.
-    threshold = min_area * TIE_FACTOR
-    num_min_ties = sum(1 for a in areas if a <= threshold)
+    num_min_ties = len(ties)
 
     # Normalize by the containing region's exact area.
     hull_vertex_count = None

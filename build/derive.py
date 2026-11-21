@@ -11,7 +11,7 @@ import itertools
 import math
 from fractions import Fraction
 
-from .vendor.verify_exact import TIE_FACTOR, triangle_area, convex_hull
+from .vendor.verify_exact import convex_hull, scan_triangles
 
 # Friedman's GIF palette, reused so our figures rhyme with the originals.
 PALETTE = ["#e02020", "#2020e0", "#00a020", "#d4b400", "#f07800",
@@ -23,15 +23,7 @@ SQ3 = math.sqrt(3.0)
 def minimal_triangles(points_frac):
     """All triples within the exact tie tolerance of the minimum area.
     Returns (min_area: Fraction, ties: list[(i, j, k)])."""
-    areas = {}
-    min_area = None
-    for t in itertools.combinations(range(len(points_frac)), 3):
-        a = triangle_area(*(points_frac[i] for i in t))
-        areas[t] = a
-        if min_area is None or a < min_area:
-            min_area = a
-    threshold = min_area * TIE_FACTOR
-    ties = [t for t, a in areas.items() if a <= threshold]
+    min_area, _, ties, _ = scan_triangles(points_frac)
     return min_area, ties
 
 
