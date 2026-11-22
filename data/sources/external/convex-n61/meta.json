@@ -1,5 +1,5 @@
 {
- "ref": "Discovery lab computational search. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab",
- "credit": "Ethan Hendren, November 2026",
- "note": "The n = 62 entry with point 36 removed. Deleting that point shrinks the hull less than it helps the smallest triangle, so this beats the configuration first submitted for n = 61."
+ "ref": "this site's search toolkit (search/grow.py, search/attack.py), overnight campaign of 21-22 November 2026, seeded from the previous entry",
+ "credit": "Tej Stead, November 2026",
+ "note": "Found by basin hopping (search/attack.py) from the previous entry; trust-region LP polish, coordinates truncated toward zero to 30 decimals."
 }

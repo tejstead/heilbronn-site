@@ -1,5 +1,5 @@
 {
  "ref": "Nathan Sudermann-Merx search campaign, November 2026: stress-weighted ruin-and-recreate (scheme adapted from cnemri/heilbronn-alphaevolve; C1 and symmetric orbits), soft-min basin hopping, vertical seeding, trust-region SLP polish",
  "credit": "Nathan Sudermann-Merx, November 2026",
- "note": "Found by ruin-and-recreate / basin-hopping search; coordinates are the SLP-polished double-precision optimum, truncated toward zero."
+ "note": "Found by ruin-and-recreate / basin-hopping search; coordinates are the SLP-polished double-precision optimum, truncated toward zero. Coordinates refined by Tej Stead, November 2026: trust-region LP polish of the same configuration (+1.5e-7 relative), which takes the tie set from a single minimal triangle to 141 tied minimal triangles."
 }

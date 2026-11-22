@@ -1,1 +1,5 @@
-{"ref": "Discovery lab computational search. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab", "credit": "Ethan Hendren, November 2026", "note": "Computational search (discovery lab); coordinates are the refined optimum, translated to non-negative coordinates and truncated toward zero to 30 decimals."}
+{
+ "ref": "Discovery lab computational search. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab",
+ "credit": "Ethan Hendren, November 2026",
+ "note": "Computational search (discovery lab); coordinates are the refined optimum, translated to non-negative coordinates and truncated toward zero to 30 decimals. Coordinates refined by Tej Stead, November 2026: trust-region LP polish of the same configuration (+1.3e-8 relative)."
+}
