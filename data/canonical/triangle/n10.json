@@ -5,40 +5,40 @@
  "frame": "right",
  "points": [
   [
-   "0.221002771087441",
+   "0.221002747195466811823496588062",
    "0"
   ],
   [
-   "0.932464624621955",
+   "0.932464604218174706261716636272",
    "0"
   ],
   [
-   "0.672889779896044",
-   "0.327110220103951"
+   "0.672889745886135408861210347268",
+   "0.327110254113864591138789652731"
   ],
   [
    "0",
-   "0.407922756981487"
+   "0.407922830189469627252120041711"
   ],
   [
-   "0.073261962336053",
-   "0.076424821568453"
+   "0.073261971394603713857233916532",
+   "0.076424817950703860783633930281"
   ],
   [
-   "0.329919253259536",
-   "0.592206877878477"
+   "0.32991924666619797492012063664",
+   "0.592206908379637984959159987231"
   ],
   [
-   "0.126744324881756",
-   "0.622775842160294"
+   "0.126744307143865090308024939535",
+   "0.622775881640632761957477820099"
   ],
   [
-   "0.349692485216114",
-   "0.301462115616943"
+   "0.349692472510557820190477109842",
+   "0.301462164599233424456360338719"
   ],
   [
-   "0.640835949266549",
-   "0.076424821568453"
+   "0.64083598519253267143701090746",
+   "0.076424817950703860783633930281"
   ],
   [
    "0",
@@ -46,8 +46,8 @@
   ]
  ],
  "value": {
-  "decimal": "0.043376740678049452938271455183",
-  "fraction": "43376740678049452938271455183/1000000000000000000000000000000",
+  "decimal": "0.0433767406780570017601897945668",
+  "fraction": "21688370339028500880094897283383072672850825733783973529069/500000000000000000000000000000000000000000000000000000000000",
   "exact_text": null,
   "exact_sympy": null,
   "minimal_polynomial": null
@@ -65,7 +65,7 @@
  "coordinates_source": {
   "kind": "external",
   "ref": "David Cantrell's original coordinates (Mathematica list), received September 2026",
-  "note": "Original author's arrangement for the entry, previously shown only as a reconstruction; Cantrell's literals converge to the same configuration under local polishing, and the literals here are that arrangement tightened to 15 decimals.",
+  "note": "Original author's arrangement for the entry, previously shown only as a reconstruction; Cantrell's literals converge to the same configuration under local polishing. Coordinates refined by Ethan Hendren, November 2026: exact refinement to the local maximum, the certified unique solution of the tie system (+7.5e-15); github.com/NERD-NEH007/heilbronn-discovery-lab.",
   "basis": null
  },
  "coordinates_reconstructed": false,
@@ -82,12 +82,12 @@
  "verify": {
   "n": 10,
   "triples_checked": 120,
-  "value": "0.043376740678049452938271455183",
-  "value_fraction": "43376740678049452938271455183/1000000000000000000000000000000",
+  "value": "0.0433767406780570017601897945668",
+  "value_fraction": "21688370339028500880094897283383072672850825733783973529069/500000000000000000000000000000000000000000000000000000000000",
   "min_triple": [
    0,
-   3,
-   4
+   6,
+   9
   ],
   "num_min_ties": 14,
   "feasible": true,
