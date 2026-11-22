@@ -18,12 +18,16 @@ REGRESSION line on stderr. To lower an entry on purpose, delete its
 data/canonical/ file and re-run.
 """
 
+import contextlib
+import io
 import json
+import os
 import pathlib
 import re
 import sys
 from fractions import Fraction
 
+from .parallel import pmap
 from .vendor.verify_exact import parse_points_text, verify, fraction_to_30sig
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -320,17 +324,41 @@ def record_window(entry):
     return (frac - ulp / 2, frac + ulp / 2)
 
 
-def ingest():
-    records = load_records()
-    overrides = load_curated("overrides.json")
-    changelog = load_curated("changelog.json")
+def _load_context():
     refdata = load_curated("references.json")
-    refs_by_config = refdata.get("by_config", {})
-    bib = refdata.get("bib", {})
     proofs = refdata.get("proofs", {})
     # Optimality certified only numerically (a global solver run within
     # floating-point tolerances): linked the same way, never called a proof.
     proofs = {**refdata.get("numerical", {}), **proofs}
+    return {
+        "records": load_records(),
+        "overrides": load_curated("overrides.json"),
+        "changelog": load_curated("changelog.json"),
+        "refs_by_config": refdata.get("by_config", {}),
+        "bib": refdata.get("bib", {}),
+        "proofs": proofs,
+    }
+
+
+_CTX = None
+
+
+def _ingest_one(job):
+    """Build and write the canonical row for one (variant, n). Returns
+    (audit row or None, stderr text), so the parent can print in order."""
+    global _CTX
+    if _CTX is None:
+        _CTX = _load_context()
+    variant, n = job
+    buf = io.StringIO()
+    with contextlib.redirect_stderr(buf):
+        row = _ingest_entry(variant, n, _CTX)
+    return row, buf.getvalue()
+
+
+def _ingest_entry(variant, n, ctx):
+    records, overrides, changelog = ctx["records"], ctx["overrides"], ctx["changelog"]
+    refs_by_config, bib, proofs = ctx["refs_by_config"], ctx["bib"], ctx["proofs"]
 
     def proof_for(key):
         rid = proofs.get(key)
@@ -339,80 +367,90 @@ def ingest():
         entry = bib.get(rid, {})
         return {"id": rid, "title": entry.get("title"), "url": entry.get("url")}
 
-    audit = []
-    for variant in VARIANTS:
-        outdir = CANONICAL / variant
-        outdir.mkdir(parents=True, exist_ok=True)
-        for n in ns(variant):
-            key = f"{variant}/{n}"
-            entry = records.get(key)
-            path = outdir / f"n{n:02d}.json"
-            prev = json.loads(path.read_text()) if path.exists() else None
-            best = None
-            for cand in gather_candidates(variant, n):
-                if variant == "triangle":
-                    cand["points"] = orient_triangle_mirror(cand["points"])
-                pts = [(Fraction(x), Fraction(y)) for x, y in cand["points"]]
-                res = verify(variant, pts)
-                if not res["feasible"]:
-                    print(f"  WARN {key}: {cand['kind']} candidate infeasible, skipped",
-                          file=sys.stderr)
-                    continue
-                if best is None or res["_value"] > best[1]["_value"]:
-                    best = (cand, res)
-            # Never regress (see module docstring): the committed row competes
-            # too, and wins only strictly, so identical literals keep their
-            # source-directory provenance.
-            sticky = sticky_candidate(prev)
-            if sticky is not None:
-                if variant == "triangle":
-                    sticky["points"] = orient_triangle_mirror(sticky["points"])
-                pts = [(Fraction(x), Fraction(y)) for x, y in sticky["points"]]
-                res = verify(variant, pts)
-                if res["feasible"] and (best is None or res["_value"] > best[1]["_value"]):
-                    print(f"  REGRESSION {key}: sources now top out at "
-                          f"{fraction_to_30sig(best[1]['_value'])[:18] if best else 'nothing'} "
-                          f"but the committed canonical holds "
-                          f"{fraction_to_30sig(res['_value'])[:18]} ({sticky['kind']}: "
-                          f"{sticky['ref']}) — keeping the canonical coordinates; a "
-                          f"source directory was overwritten with a lower-valued "
-                          f"configuration. Delete {path.relative_to(ROOT)} to lower "
-                          f"this entry on purpose.", file=sys.stderr)
-                    best = (sticky, res)
+    outdir = CANONICAL / variant
+    outdir.mkdir(parents=True, exist_ok=True)
+    key = f"{variant}/{n}"
+    entry = records.get(key)
+    path = outdir / f"n{n:02d}.json"
+    prev = json.loads(path.read_text()) if path.exists() else None
+    best = None
+    for cand in gather_candidates(variant, n):
+        if variant == "triangle":
+            cand["points"] = orient_triangle_mirror(cand["points"])
+        pts = [(Fraction(x), Fraction(y)) for x, y in cand["points"]]
+        res = verify(variant, pts)
+        if not res["feasible"]:
+            print(f"  WARN {key}: {cand['kind']} candidate infeasible, skipped",
+                  file=sys.stderr)
+            continue
+        if best is None or res["_value"] > best[1]["_value"]:
+            best = (cand, res)
+    # Never regress (see module docstring): the committed row competes
+    # too, and wins only strictly, so identical literals keep their
+    # source-directory provenance.
+    sticky = sticky_candidate(prev)
+    if sticky is not None:
+        if variant == "triangle":
+            sticky["points"] = orient_triangle_mirror(sticky["points"])
+        if best is not None and sticky["points"] == best[0]["points"]:
+            res = best[1]  # same literals, same exact result; never wins strictly
+        else:
+            pts = [(Fraction(x), Fraction(y)) for x, y in sticky["points"]]
+            res = verify(variant, pts)
+        if res["feasible"] and (best is None or res["_value"] > best[1]["_value"]):
+            print(f"  REGRESSION {key}: sources now top out at "
+                  f"{fraction_to_30sig(best[1]['_value'])[:18] if best else 'nothing'} "
+                  f"but the committed canonical holds "
+                  f"{fraction_to_30sig(res['_value'])[:18]} ({sticky['kind']}: "
+                  f"{sticky['ref']}) — keeping the canonical coordinates; a "
+                  f"source directory was overwritten with a lower-valued "
+                  f"configuration. Delete {path.relative_to(ROOT)} to lower "
+                  f"this entry on purpose.", file=sys.stderr)
+            best = (sticky, res)
 
-            window = record_window(entry) if entry else None
-            if best is None and entry is None:
-                # Nothing known at this n (e.g. square n = 97): no row at all,
-                # rather than a page claiming a record with no value.
-                if path.exists():
-                    path.unlink()
-                continue
-            if best is None:
-                rel = "GAP"
-                audit.append((key, rel, "-", entry["decimal"] if entry else "-"))
-                # Still emit a coordinate-less canonical row so pages render.
-                doc = canonical_doc(variant, n, entry, None, None, rel,
-                                    overrides.get(key), changelog.get(key),
-                                    refs_by_config.get(key), proof_for(key))
-            else:
-                cand, res = best
-                value = res["_value"]
-                if entry is None:
-                    rel = "NEW"
-                elif window is None:
-                    rel = "OK"
-                elif value < window[0]:
-                    rel = "BELOW"
-                elif value >= window[1]:
-                    rel = "IMPROVES"
-                else:
-                    rel = "OK"
-                audit.append((key, rel, cand["kind"],
-                              fraction_to_30sig(value)[:12]))
-                doc = canonical_doc(variant, n, entry, cand, res, rel,
-                                    overrides.get(key), changelog.get(key),
-                                    refs_by_config.get(key), proof_for(key))
-            path.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")
+    window = record_window(entry) if entry else None
+    if best is None and entry is None:
+        # Nothing known at this n (e.g. square n = 97): no row at all,
+        # rather than a page claiming a record with no value.
+        if path.exists():
+            path.unlink()
+        return None
+    if best is None:
+        rel = "GAP"
+        row = (key, rel, "-", entry["decimal"] if entry else "-")
+        # Still emit a coordinate-less canonical row so pages render.
+        doc = canonical_doc(variant, n, entry, None, None, rel,
+                            overrides.get(key), changelog.get(key),
+                            refs_by_config.get(key), proof_for(key))
+    else:
+        cand, res = best
+        value = res["_value"]
+        if entry is None:
+            rel = "NEW"
+        elif window is None:
+            rel = "OK"
+        elif value < window[0]:
+            rel = "BELOW"
+        elif value >= window[1]:
+            rel = "IMPROVES"
+        else:
+            rel = "OK"
+        row = (key, rel, cand["kind"], fraction_to_30sig(value)[:12])
+        doc = canonical_doc(variant, n, entry, cand, res, rel,
+                            overrides.get(key), changelog.get(key),
+                            refs_by_config.get(key), proof_for(key))
+    path.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")
+    return row
+
+
+def ingest():
+    work = [(variant, n) for variant in VARIANTS for n in ns(variant)]
+    audit = []
+    for row, err in pmap(_ingest_one, work):
+        if err:
+            sys.stderr.write(err)
+        if row is not None:
+            audit.append(row)
 
     print(f"{'row':<14}{'rel':<8}{'source':<16}value")
     for key, rel, kind, val in audit:
@@ -564,9 +602,15 @@ def finalize_exact(doc, res):
         p = val["exact_poly"]
         poly = sympy.sympify(p["poly"])
         x = list(poly.free_symbols)[0]
-        roots = sympy.Poly(poly, x).nroots(n=55, maxsteps=500)
-        real = [sympy.re(r) for r in roots if abs(sympy.im(r)) < sympy.Float(10) ** -40]
-        root = min(real, key=lambda r: abs(float(r) - p["near"]))
+        # Exact real-root isolation: every real root in an interval of
+        # width <= 1e-30, take the one nearest "near", refine it to 1e-58.
+        P = sympy.Poly(poly, x)
+        near = sympy.Rational(p["near"])
+        ivs = [iv for iv, _ in P.intervals(eps=sympy.Rational(1, 10 ** 30))]
+        a, b = min(ivs, key=lambda iv: abs((iv[0] + iv[1]) / 2 - near))
+        while b - a > sympy.Rational(1, 10 ** 58):
+            a, b = P.refine_root(a, b, eps=sympy.Rational(1, 10 ** 58))
+        root = (a + b) / 2
         decs["poly"] = mpmath.mpf(str(sympy.N(root, 55))) * p.get("scale", 1)
 
     vals = list(decs.values())

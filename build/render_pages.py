@@ -14,6 +14,7 @@ from .families import generate as family_generate
 from .icons import write_icons
 from .ingest import N_MAX
 from .ogimage import write_card
+from .parallel import pmap
 from .records_feed import atom, record_events
 from .svggen import family_svg, figure_svg
 
@@ -307,7 +308,8 @@ def render_all(env, docs, derived_map, assets):
         "assets": assets,
     }
 
-    # Per-config pages.
+    # Per-config pages. Their social cards are drawn afterwards, in parallel.
+    cards = []
     for (v, n), doc in docs.items():
         derived = derived_map.get((v, n))
         figure = None
@@ -395,10 +397,10 @@ def render_all(env, docs, derived_map, assets):
         if figure:
             (out.parent / "figure.svg").write_text(
                 '<?xml version="1.0" encoding="UTF-8"?>\n' + figure)
-            write_card(out.parent / "og.png", figure, f"{META[v]['short']}, n = {n}",
-                       f"A = {card_value(doc)}",
-                       {"proven": "proven optimal", "numerical": "numerically optimal"}
-                       .get(doc["status"], "best known"))
+            cards.append((out.parent / "og.png", figure, f"{META[v]['short']}, n = {n}",
+                          f"A = {card_value(doc)}",
+                          {"proven": "proven optimal", "numerical": "numerically optimal"}
+                          .get(doc["status"], "best known")))
         if fam_spec:
             (out.parent / "family.json").write_text(json.dumps({
                 "variant": v, "n": n,
@@ -411,6 +413,8 @@ def render_all(env, docs, derived_map, assets):
                     "arithmetic to within relative 1e-20 of the stored "
                     "configuration's exact value at build time"),
             }, indent=1))
+
+    pmap(_card_job, cards, chunksize=4)
 
     # Variant pages: one long page of classic entry rows, one per n.
     for v in VARIANTS:
@@ -684,13 +688,22 @@ def make_env():
     return env
 
 
+def _derive_job(job):
+    return derive(*job)
+
+
+def _card_job(args):
+    path, svg, heading, value, status = args
+    write_card(path, svg, heading, value, status)
+
+
 def render(docs=None, derived_map=None):
     docs = docs or load_docs()
     if derived_map is None:
-        derived_map = {}
-        for key, doc in docs.items():
-            if doc["points"]:
-                derived_map[key] = derive(key[0], doc["points"])
+        keys = [key for key, doc in docs.items() if doc["points"]]
+        derived_map = dict(zip(keys, pmap(_derive_job,
+                                          [(key[0], docs[key]["points"]) for key in keys],
+                                          chunksize=4)))
     env = make_env()
     assets = hash_assets()
     render_all(env, docs, derived_map, assets)

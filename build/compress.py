@@ -6,18 +6,22 @@ import pathlib
 
 import brotli
 
+from .parallel import pmap
+
 DIST = pathlib.Path(__file__).resolve().parent.parent / "dist"
 
 TEXT_SUFFIXES = {".html", ".css", ".js", ".svg", ".json", ".txt", ".csv", ".xml"}
 
 
+def _compress_one(path):
+    f = pathlib.Path(path)
+    data = f.read_bytes()
+    f.with_name(f.name + ".gz").write_bytes(gzip.compress(data, 9))
+    f.with_name(f.name + ".br").write_bytes(brotli.compress(data, quality=11))
+
+
 def compress_all():
-    count = 0
-    for f in DIST.rglob("*"):
-        if not f.is_file() or f.suffix not in TEXT_SUFFIXES:
-            continue
-        data = f.read_bytes()
-        f.with_name(f.name + ".gz").write_bytes(gzip.compress(data, 9))
-        f.with_name(f.name + ".br").write_bytes(brotli.compress(data, quality=11))
-        count += 1
-    return count
+    files = sorted(str(f) for f in DIST.rglob("*")
+                   if f.is_file() and f.suffix in TEXT_SUFFIXES)
+    pmap(_compress_one, files, chunksize=16)
+    return len(files)
