@@ -1,5 +1,5 @@
 {
- "ref": "this site's search toolkit (search/grow.py, search/attack.py), overnight campaign of 21-22 November 2026, seeded from the previous entry",
- "credit": "Tej Stead, November 2026",
- "note": "Found by basin hopping (search/attack.py) from the previous entry; trust-region LP polish, coordinates truncated toward zero to 30 decimals."
+  "ref": "Staroselets2026-tri-flip",
+  "credit": "Ivan Staroselets, November 2026",
+  "note": "Found by iterative orientation-flip trust-region SLP (HiGHS) escaping order-type collinearity barriers from the prior n=50 record (+0.447%); coordinates truncated toward zero to 30 decimals and verified in exact rational arithmetic."
 }

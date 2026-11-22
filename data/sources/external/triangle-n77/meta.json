@@ -1,1 +1,5 @@
-{"ref": "Discovery lab computational search. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab", "credit": "Ethan Hendren, November 2026", "note": "Computational search (discovery lab); coordinates are the refined optimum, coordinates truncated toward zero to 30 decimals."}
+{
+  "ref": "Staroselets2026-tri-flip",
+  "credit": "Ivan Staroselets, November 2026",
+  "note": "Found by iterative orientation-flip trust-region SLP (HiGHS) escaping order-type collinearity barriers from the prior n=77 record (+0.111%); coordinates truncated toward zero to 30 decimals and verified in exact rational arithmetic."
+}
