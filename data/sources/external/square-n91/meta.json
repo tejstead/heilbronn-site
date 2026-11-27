@@ -1,5 +1,5 @@
 {
- "ref": "Nathan Sudermann-Merx search campaign, November 2026: stress-weighted ruin-and-recreate (scheme adapted from cnemri/heilbronn-alphaevolve; C1 and symmetric orbits), soft-min basin hopping, vertical seeding, trust-region SLP polish",
- "credit": "Nathan Sudermann-Merx, November 2026",
- "note": "Found by ruin-and-recreate / basin-hopping search; coordinates are the SLP-polished double-precision optimum, truncated toward zero."
+ "ref": "Arul Saxena search, November 2026: seeded by deleting one point from the n+1 configuration, then trust-region SLP polish and ruin-and-recreate basin hopping",
+ "credit": "Arul Saxena, November 2026",
+ "note": "Seeded from the n+1 configuration by deleting one point, then refined by ruin-and-recreate basin hopping; coordinates are the SLP-polished double-precision optimum, truncated toward zero."
 }
