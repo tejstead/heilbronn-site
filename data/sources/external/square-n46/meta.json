@@ -1,1 +1,5 @@
-{"ref": "Discovery lab computational search; certified as a strict local maximum in exact/interval arithmetic. Paper, data and certificates: https://github.com/NERD-NEH007/heilbronn-discovery-lab", "credit": "Ethan Hendren, November 2026", "note": "Found by basin hopping (tie-targeted reinsertion and LP refinement) from the previous configuration; coordinates are the certified polished optimum truncated toward zero to 30 decimals."}
+{
+  "ref": "AI-assisted numerical search for Henri Roeck, 27 November 2026, using the published 45-point square of Ethan Hendren: https://math.tejstead.com/heilbronn/square/45/",
+  "credit": "Henri Roeck, November 2026",
+  "note": "Added a point beyond the right edge of the published 45-point square using a search along line segments, refitted the hull to the square and refined all points by successive linear programming."
+}

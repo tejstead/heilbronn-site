@@ -1,5 +1,5 @@
 {
- "ref": "Computational search (discovery lab), github.com/NERD-NEH007/heilbronn-discovery-lab",
- "credit": "Ethan Hendren, November 2026",
- "note": "New configuration from computational search; coordinates converged to the exact tie system and truncated toward zero to 30 decimals."
+  "ref": "AI-assisted numerical search for Henri Roeck, 27 November 2026, using the published 60-point square of Nathan Sudermann-Merx: https://math.tejstead.com/heilbronn/square/60/",
+  "credit": "Henri Roeck, November 2026",
+  "note": "Extended our new 61-point square by placing another point below its lower edge, refitted the hull to the unit square and applied successive linear programming."
 }

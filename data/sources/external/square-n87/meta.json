@@ -1,5 +1,5 @@
 {
- "ref": "Nathan Sudermann-Merx search campaign, November 2026: stress-weighted ruin-and-recreate (scheme adapted from cnemri/heilbronn-alphaevolve; C1 and symmetric orbits), soft-min basin hopping, vertical seeding, trust-region SLP polish",
- "credit": "Nathan Sudermann-Merx, November 2026",
- "note": "Found by ruin-and-recreate / basin-hopping search; coordinates are the SLP-polished double-precision optimum, truncated toward zero."
+  "ref": "AI-assisted numerical search for Henri Roeck, 27 November 2026, using the published 89-point square of Nathan Sudermann-Merx: https://math.tejstead.com/heilbronn/square/89/",
+  "credit": "Henri Roeck, November 2026",
+  "note": "Removed points 51 and 57 from the published 89-point set using a hull-vertex beam search, fitted the remaining points affinely to the square and refined them by successive linear programming."
 }
